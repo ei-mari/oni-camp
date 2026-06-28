@@ -255,7 +255,9 @@
     }
 
     .plan-deadline {
-      margin-top: 30px;
+      position: relative;
+      z-index: 1;
+      margin-top: 10px;
     }
 
     .section-title {
@@ -391,6 +393,62 @@
       font-weight: 700;
     }
 
+    .problem-list li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 13px;
+      align-items: flex-start;
+    }
+
+    .problem-icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255, 209, 93, 0.34);
+      border-radius: 12px;
+      background:
+        linear-gradient(135deg, rgba(255, 209, 93, 0.18), rgba(255, 75, 51, 0.12)),
+        rgba(0, 0, 0, 0.45);
+      color: var(--gold);
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 950;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    }
+
+    .problem-text {
+      display: block;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 13px;
+      align-items: flex-start;
+    }
+
+    .step-icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255, 209, 93, 0.34);
+      border-radius: 12px;
+      background:
+        linear-gradient(135deg, rgba(255, 209, 93, 0.18), rgba(255, 75, 51, 0.12)),
+        rgba(0, 0, 0, 0.45);
+      color: var(--gold);
+      font-size: 21px;
+      line-height: 1;
+      font-weight: 950;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    }
+
+    .step-text {
+      display: block;
+    }
+
     .problem-list b,
     .step b {
       display: block;
@@ -456,6 +514,15 @@
       font-size: 15px;
       line-height: 1.75;
       font-weight: 700;
+    }
+
+    .bonus-thumb {
+      overflow: hidden;
+      margin: 0 0 14px;
+      border: 1px solid rgba(255, 209, 93, 0.24);
+      border-radius: 12px;
+      background: #080808;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.34);
     }
 
     .bonus-list {
@@ -642,17 +709,36 @@
       z-index: 20;
       max-width: 410px;
       margin: 0 auto;
-      padding: 8px;
+      padding: 10px;
       border: 1px solid rgba(255, 209, 93, 0.28);
       border-radius: 15px;
       background: rgba(0, 0, 0, 0.78);
       backdrop-filter: blur(16px);
       box-shadow: 0 -16px 48px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(18px);
+      transition: opacity 0.24s ease, transform 0.24s ease;
+    }
+
+    .fixed-cta.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
     }
 
     .fixed-cta .button {
-      min-height: 58px;
-      font-size: 18px;
+      min-height: 54px;
+      font-size: 17px;
+    }
+
+    .fixed-cta small {
+      margin-top: 8px;
+      padding-top: 7px;
+      border-top: 1px solid rgba(255, 255, 255, 0.24);
+      font-size: 12px;
+      line-height: 1.35;
+      opacity: 0.94;
     }
 
     @media (min-width: 431px) {
@@ -692,10 +778,10 @@
           <div class="stat"><b>1年間</b><span>アーカイブ</span></div>
           <div class="stat"><b>8名</b><span>添削枠限定</span></div>
         </div>
-        <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
+        <a class="button button-primary" id="primary-cta" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
           <span>添削付プランに申し込む →<small>8名限定 / 早割価格は7月5日（日）まで</small></span>
         </a>
-        <p class="microcopy">添削が難しい方向けの見学参加プランはページの途中で。</p>
+        <p class="microcopy">添削付での参加が難しい方向けの見学プランはページの途中で。</p>
       </header>
 
       <section class="section">
@@ -729,6 +815,9 @@
         <div class="bonus-grid">
           <article class="bonus-card">
             <b>❶ 鬼キャンライブラリー</b>
+            <figure class="bonus-thumb">
+              <img src="assets/oni-library-thumbnail.png" alt="鬼キャンライブラリー">
+            </figure>
             <ul class="bonus-list">
               <li>鬼キャン前後の復習に使える母音攻略動画</li>
               <li>鬼キャン参加者限定の復習課題</li>
@@ -739,6 +828,9 @@
           </article>
           <article class="bonus-card">
             <b>❷ 添削プラン限定｜発音診断</b>
+            <figure class="bonus-thumb">
+              <img src="assets/pronunciation-diagnosis.png" alt="添削プラン限定 発音診断">
+            </figure>
             <p>添削付プランの方限定で、今の発音を客観的に見つめ直す発音診断をご用意します。</p>
             <ul class="bonus-list">
               <li>事前の提出音読課題</li>
@@ -755,9 +847,18 @@
         <h2 class="section-title">発音で止まっている人へ</h2>
         <p class="section-lead">独学で伸びない理由は、努力不足ではなく「どこを直すか」が見えていないことが多いです。</p>
         <ul class="problem-list">
-          <li><b>カタカナっぽさが抜けない</b>発音記号やアクセントが、劇的な改善のヒントに。そのヒントを鬼キャンで手に入れよう。</li>
-          <li><b>速い英語が聞き取れない</b>音が繋がって違う音に聞こえたり、そもそも消えることも。リスニング向上にもつながる発音のルールを鬼キャンで手に入れてください。</li>
-          <li><b>英語らしいリズムにならない</b>英文には目立つ箇所と目立たない箇所（a.k.a 温水ボックス）があります。それの見分け方を伝授した後、文章で一緒に練習しましょう。</li>
+          <li>
+            <span class="problem-icon" aria-hidden="true">a</span>
+            <span class="problem-text"><b>カタカナっぽさが抜けない</b>発音記号やアクセントが、劇的な改善のヒントに。そのヒントを鬼キャンで手に入れよう。</span>
+          </li>
+          <li>
+            <span class="problem-icon" aria-hidden="true">↔</span>
+            <span class="problem-text"><b>速い英語が聞き取れない</b>音が繋がって違う音に聞こえたり、そもそも消えることも。リスニング向上にもつながる発音のルールを鬼キャンで手に入れてください。</span>
+          </li>
+          <li>
+            <span class="problem-icon" aria-hidden="true">♪</span>
+            <span class="problem-text"><b>英語らしいリズムにならない</b>英文には目立つ箇所と目立たない箇所（a.k.a 温水ボックス）があります。それの見分け方を伝授した後、文章で一緒に練習しましょう。</span>
+          </li>
         </ul>
       </section>
 
@@ -765,8 +866,9 @@
         <div class="cta-panel">
           <h2>今回は8名限定の添削付。</h2>
           <p>できているかどうかの不安をなくす鍵は、客観的なフィードバック、すなわち添削。自分の発音を見つめ直し、成長のための大きなヒントが欲しい方はぜひ添削付プランへお越しください。</p>
-          <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">空き枠を確認する →</a>
-          <p class="microcopy">お得な早割価格は7月5日（日）まで</p>
+          <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
+            <span>空き枠を確認する →<small>お得な早割価格は7月5日（日）まで</small></span>
+          </a>
         </div>
       </section>
 
@@ -790,10 +892,22 @@
       <section class="section">
         <h2 class="section-title">この1日で整えること</h2>
         <div class="step-list">
-          <div class="step"><b>発音記号（母音）</b>日本語に引っ張られやすい音を、口の形と舌の位置から確認。</div>
-          <div class="step"><b>強勢（アクセント）</b>単語のどこを強く言うかを掴み、平坦な読み方から抜け出す。</div>
-          <div class="step"><b>リンキング・リズム</b>音のつながりと強弱の波を作り、聞き取れる・言える状態へ。</div>
-          <div class="step"><b>イントネーション・総合練習</b>文全体の上げ下げを整え、最後は文章で実践。</div>
+          <div class="step">
+            <span class="step-icon" aria-hidden="true">a</span>
+            <span class="step-text"><b>発音記号（母音）</b>日本語に引っ張られやすい音を、口の形と舌の位置から確認。</span>
+          </div>
+          <div class="step">
+            <span class="step-icon" aria-hidden="true">●</span>
+            <span class="step-text"><b>強勢（アクセント）</b>単語のどこを強く言うかを掴み、平坦な読み方から抜け出す。</span>
+          </div>
+          <div class="step">
+            <span class="step-icon" aria-hidden="true">↔</span>
+            <span class="step-text"><b>リンキング・リズム</b>音のつながりと強弱の波を作り、聞き取れる・言える状態へ。</span>
+          </div>
+          <div class="step">
+            <span class="step-icon" aria-hidden="true">↗</span>
+            <span class="step-text"><b>イントネーション・総合練習</b>文全体の上げ下げを整え、最後は文章で実践。</span>
+          </div>
         </div>
       </section>
 
@@ -804,15 +918,17 @@
             <span class="plan-label">一番おすすめ・8名限定</span>
             <h3>添削付プラン</h3>
             <p>自分の発音を見てもらい、どこをどう直せばいいかまで掴みたい方向け。本気で変えたい方はこちら。</p>
-            <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">添削付プランに申し込む →</a>
-            <p class="microcopy plan-deadline">8名限定 / 早割価格は7月5日（日）まで</p>
+            <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
+              <span>添削付プランに申し込む →<small>8名限定 / 早割価格は7月5日（日）まで</small></span>
+            </a>
           </article>
           <article class="plan">
             <span class="plan-label">顔出しなしで参加</span>
             <h3>見学プラン</h3>
             <p>講座を見ながら学びたい方向け。顔出しなしで、まずは内容を受け取りたい方に。</p>
-            <a class="button button-secondary" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">見学プランに申し込む →</a>
-            <p class="microcopy plan-deadline">早割価格は7月5日（日）まで</p>
+            <a class="button button-secondary" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
+              <span>見学プランに申し込む →<small>早割価格は7月5日（日）まで</small></span>
+            </a>
           </article>
         </div>
       </section>
@@ -839,16 +955,9 @@
         </div>
       </section>
 
-      <section class="section">
-        <div class="cta-panel">
-          <h2>発音が変わる1日にしよう。</h2>
-          <p>この1日に参加することで、これから先の英語学習が変わります。「発音」を伸ばすための1日を一緒に過ごしましょう。早割価格は7月5日（日）までです。</p>
-          <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">添削付プランに申し込む →</a>
-        </div>
-      </section>
     </div>
 
-    <div class="fixed-cta">
+    <div class="fixed-cta" id="fixed-cta">
       <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
         <span>添削付プランに申し込む →<small>8名限定 / 早割価格は7月5日（日）まで</small></span>
       </a>
@@ -869,6 +978,20 @@
         reviews.scrollBy({ left: direction * (cardWidth + gap), behavior: "smooth" });
       });
     });
+
+    const primaryCta = document.getElementById("primary-cta");
+    const fixedCta = document.getElementById("fixed-cta");
+
+    if (primaryCta && fixedCta) {
+      const toggleFixedCta = () => {
+        const rect = primaryCta.getBoundingClientRect();
+        fixedCta.classList.toggle("is-visible", rect.bottom < 0);
+      };
+
+      toggleFixedCta();
+      window.addEventListener("scroll", toggleFixedCta, { passive: true });
+      window.addEventListener("resize", toggleFixedCta);
+    }
   </script>
 </body>
 </html>
