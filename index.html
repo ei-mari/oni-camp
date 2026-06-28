@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>鬼の発音キャンプ - 2026 Summer</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #050505;
+      --panel: #101010;
+      --panel-2: #17120f;
+      --paper: #fff7e8;
+      --paper-text: #201b16;
+      --paper-muted: #685b4d;
+      --text: #fff8e4;
+      --muted: rgba(255, 248, 228, 0.84);
+      --gold: #ffd15d;
+      --gold-2: #fff0b4;
+      --red: #ff4b33;
+      --red-dark: #c82112;
+      --blue: #3538ff;
+      --line: rgba(255, 209, 93, 0.24);
+      --white-line: rgba(255, 255, 255, 0.12);
+      --shadow: 0 20px 52px rgba(255, 75, 51, 0.22);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background:
+        radial-gradient(circle at 50% -10%, rgba(255, 75, 51, 0.28), transparent 30%),
+        linear-gradient(180deg, #111 0%, #000 30%, #070302 100%);
+      color: var(--text);
+      font-family: "Meiryo", "メイリオ", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", sans-serif;
+      letter-spacing: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .page {
+      position: relative;
+      width: min(100%, 430px);
+      min-height: 100svh;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.97)),
+        url("assets/thumbnail.png") top center / 148% auto no-repeat,
+        var(--bg);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, transparent 0, rgba(0, 0, 0, 0.9) 360px, #000 620px);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding-bottom: 112px;
+    }
+
+    .video-section {
+      padding: 22px 18px 0;
+    }
+
+    .video-card {
+      padding: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 14px;
+      background: rgba(0, 0, 0, 0.72);
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.42);
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      overflow: hidden;
+      border-radius: 9px;
+      background: #050505;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .fallback {
+      display: block;
+      width: fit-content;
+      margin: 14px auto 0;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 14px;
+      font-weight: 800;
+      text-underline-offset: 4px;
+    }
+
+    .hero {
+      padding: 34px 22px 30px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 16px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 209, 93, 0.36);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.6);
+      color: var(--gold-2);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 14px var(--red);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 12px;
+      color: #fff;
+      font-size: 33px;
+      line-height: 1.2;
+      font-weight: 950;
+      text-shadow: 0 3px 0 rgba(180, 24, 12, 0.72), 0 0 24px rgba(255, 209, 93, 0.3);
+    }
+
+    .hero-copy {
+      margin: 0 auto 18px;
+      color: #fff2bd;
+      font-size: 18px;
+      line-height: 1.8;
+      font-weight: 800;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 20px 0 22px;
+    }
+
+    .stat {
+      min-height: 72px;
+      padding: 10px 5px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.64);
+    }
+
+    .stat b {
+      display: block;
+      color: var(--gold);
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 950;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 5px;
+      color: rgba(255, 248, 228, 0.86);
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      min-height: 66px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 0;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      font-size: 20px;
+      line-height: 1.28;
+      font-weight: 950;
+      box-shadow: none;
+    }
+
+    .button small {
+      display: block;
+      margin-top: 3px;
+      font-size: 11px;
+      font-weight: 850;
+      opacity: 0.88;
+    }
+
+    .button-primary {
+      background: linear-gradient(180deg, #ff624c 0%, var(--red) 54%, var(--red-dark) 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .button-secondary {
+      background: #3438ff;
+    }
+
+    .section {
+      padding: 28px 18px 0;
+    }
+
+    .microcopy {
+      margin: 10px 0 0;
+      color: rgba(255, 248, 228, 0.82);
+      font-size: 13px;
+      line-height: 1.65;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .plan-deadline {
+      margin-top: 30px;
+    }
+
+    .section-title {
+      margin: 0 0 16px;
+      color: #fff;
+      font-size: 29px;
+      line-height: 1.28;
+      font-weight: 950;
+      text-align: center;
+    }
+
+    .section-lead {
+      margin: 0 auto 18px;
+      color: rgba(255, 248, 228, 0.82);
+      font-size: 15px;
+      line-height: 1.8;
+      font-weight: 750;
+      text-align: center;
+    }
+
+    .paper {
+      overflow: hidden;
+      border-radius: 16px;
+      background: var(--paper);
+      color: var(--paper-text);
+      box-shadow: 0 22px 56px rgba(0, 0, 0, 0.38);
+    }
+
+    .paper-image {
+      margin: 0;
+      background: #111;
+    }
+
+    .paper-body {
+      padding: 26px 20px 24px;
+    }
+
+    .paper h2 {
+      margin: 0 0 12px;
+      color: var(--paper-text);
+      font-size: 28px;
+      line-height: 1.28;
+      font-weight: 950;
+      text-align: center;
+    }
+
+    .paper p {
+      margin: 0 0 18px;
+      color: var(--paper-muted);
+      font-size: 16px;
+      line-height: 1.75;
+      font-weight: 700;
+    }
+
+    .check-list {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 13px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
+      color: #221f1c;
+      font-size: 16px;
+      line-height: 1.55;
+      font-weight: 850;
+    }
+
+    .check-text {
+      display: block;
+    }
+
+    .check-note {
+      display: block;
+      margin-top: 4px;
+      color: #6f5f52;
+      font-size: 12px;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    .check {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: var(--red);
+      color: #fff;
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 950;
+    }
+
+    .bonus-link {
+      display: block;
+      margin-top: 18px;
+      padding: 15px;
+      border: 1px solid rgba(255, 75, 51, 0.25);
+      border-radius: 12px;
+      background: rgba(255, 75, 51, 0.08);
+      color: #9c1e10;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      line-height: 1.55;
+      font-weight: 950;
+    }
+
+    .problem-list,
+    .step-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .problem-list li,
+    .step {
+      padding: 16px;
+      border: 1px solid var(--white-line);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.055);
+      color: rgba(255, 248, 228, 0.84);
+      font-size: 15px;
+      line-height: 1.7;
+      font-weight: 700;
+    }
+
+    .problem-list b,
+    .step b {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--gold-2);
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .cta-panel {
+      padding: 20px;
+      border: 1px solid rgba(255, 209, 93, 0.34);
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(255, 75, 51, 0.22), transparent 50%),
+        rgba(12, 8, 6, 0.9);
+      text-align: center;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+    }
+
+    .cta-panel h2 {
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: 25px;
+      line-height: 1.35;
+      font-weight: 950;
+    }
+
+    .cta-panel p {
+      margin: 0 0 16px;
+      color: rgba(255, 248, 228, 0.84);
+      font-size: 15px;
+      line-height: 1.75;
+      font-weight: 700;
+    }
+
+    .bonus-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .bonus-card {
+      padding: 18px;
+      border: 1px solid rgba(255, 209, 93, 0.28);
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, rgba(255, 209, 93, 0.12), transparent 52%),
+        rgba(255, 255, 255, 0.055);
+    }
+
+    .bonus-card b {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--gold-2);
+      font-size: 18px;
+      line-height: 1.45;
+      font-weight: 950;
+    }
+
+    .bonus-card p {
+      margin: 0 0 14px;
+      color: rgba(255, 248, 228, 0.84);
+      font-size: 15px;
+      line-height: 1.75;
+      font-weight: 700;
+    }
+
+    .bonus-list {
+      display: grid;
+      gap: 8px;
+      margin: 0 0 14px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .bonus-list li {
+      position: relative;
+      padding-left: 21px;
+      color: rgba(255, 248, 228, 0.86);
+      font-size: 15px;
+      line-height: 1.7;
+      font-weight: 750;
+    }
+
+    .bonus-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--gold);
+      font-weight: 950;
+    }
+
+    .bonus-card .button {
+      min-height: 52px;
+      font-size: 16px;
+    }
+
+    .review-wrap {
+      position: relative;
+    }
+
+    .reviews {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      margin: 0 -18px;
+      padding: 4px 18px 18px;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .reviews::-webkit-scrollbar {
+      display: none;
+    }
+
+    .review {
+      flex: 0 0 76%;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 24px;
+      background: #111;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+      scroll-snap-align: center;
+    }
+
+    .review img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .review:nth-child(even) {
+      margin-top: 24px;
+    }
+
+    .review-controls {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .review-arrow {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      font-size: 24px;
+      font-weight: 950;
+      line-height: 1;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .plans {
+      display: grid;
+      gap: 12px;
+    }
+
+    .plan {
+      padding: 18px;
+      border: 1px solid var(--white-line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .plan.featured {
+      border-color: rgba(255, 209, 93, 0.55);
+      background:
+        linear-gradient(135deg, rgba(255, 75, 51, 0.28), transparent 58%),
+        rgba(24, 15, 10, 0.96);
+      box-shadow: var(--shadow);
+    }
+
+    .plan-label {
+      display: inline-flex;
+      margin-bottom: 10px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: rgba(255, 209, 93, 0.16);
+      color: var(--gold-2);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .plan h3 {
+      margin: 0 0 8px;
+      color: #fff;
+      font-size: 22px;
+      line-height: 1.35;
+      font-weight: 950;
+    }
+
+    .plan p {
+      margin: 0 0 14px;
+      color: rgba(255, 248, 228, 0.84);
+      font-size: 15px;
+      line-height: 1.75;
+      font-weight: 700;
+    }
+
+    .plan .button {
+      min-height: 56px;
+      font-size: 17px;
+    }
+
+    .faq {
+      display: grid;
+      gap: 10px;
+    }
+
+    details {
+      border: 1px solid var(--white-line);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.055);
+      color: rgba(255, 248, 228, 0.84);
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 15px;
+      color: #fff;
+      font-size: 15px;
+      line-height: 1.5;
+      font-weight: 900;
+    }
+
+    details p {
+      margin: 0;
+      padding: 0 15px 15px;
+      color: rgba(255, 248, 228, 0.84);
+      font-size: 15px;
+      line-height: 1.7;
+      font-weight: 700;
+    }
+
+    .fixed-cta {
+      position: fixed;
+      right: max(10px, calc((100vw - 430px) / 2 + 10px));
+      bottom: 10px;
+      left: max(10px, calc((100vw - 430px) / 2 + 10px));
+      z-index: 20;
+      max-width: 410px;
+      margin: 0 auto;
+      padding: 8px;
+      border: 1px solid rgba(255, 209, 93, 0.28);
+      border-radius: 15px;
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 -16px 48px rgba(0, 0, 0, 0.5);
+    }
+
+    .fixed-cta .button {
+      min-height: 58px;
+      font-size: 18px;
+    }
+
+    @media (min-width: 431px) {
+      body {
+        padding: 20px 0;
+      }
+
+      .page {
+        border-radius: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="content">
+      <section class="video-section" aria-label="紹介動画">
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe
+              src="https://player.vimeo.com/video/1205147159?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              title="鬼の発音キャンプ - 2026 Summer"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+        <a class="fallback" href="https://player.vimeo.com/video/1205147159?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479">▶ 動画が表示されない方はこちら</a>
+      </section>
+
+      <header class="hero">
+        <div class="badge">8名限定 / 早割価格は7月5日（日）まで</div>
+        <h1>1日で、発音の<br>土台を作り直す。</h1>
+        <p class="hero-copy">母音・アクセント・リンキング・リズム・イントネーションをまとめて整える集中キャンプ、それが鬼キャン。</p>
+        <div class="stats" aria-label="講座情報">
+          <div class="stat"><b>6時間</b><span>集中講座</span></div>
+          <div class="stat"><b>1年間</b><span>アーカイブ</span></div>
+          <div class="stat"><b>8名</b><span>添削枠限定</span></div>
+        </div>
+        <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
+          <span>添削付プランに申し込む →<small>8名限定 / 早割価格は7月5日（日）まで</small></span>
+        </a>
+        <p class="microcopy">添削が難しい方向けの見学参加プランはページの途中で。</p>
+      </header>
+
+      <section class="section">
+        <article class="paper">
+          <figure class="paper-image">
+            <img src="assets/thumbnail.png" alt="鬼の発音キャンプ">
+          </figure>
+          <div class="paper-body">
+            <h2>鬼キャンとは？</h2>
+            <p>アメリカ英語の発音を、徹底攻略する1日集中の発音ブートキャンプです。</p>
+            <ul class="check-list">
+              <li>
+                <span class="check">✓</span>
+                <span class="check-text">
+                  顔出しなし・ビデオOFFでの参加もOK※
+                  <span class="check-note">（※添削を希望するタイミングでは必ずビデオをONにしてください）</span>
+                </span>
+              </li>
+              <li><span class="check">✓</span>アーカイブあり（1年間視聴可能）</li>
+              <li><span class="check">✓</span>スライド共有あり</li>
+              <li><span class="check">✓</span>添削付プランは8名限定</li>
+            </ul>
+            <a class="bonus-link" href="#bonus">さらに特別特典をご用意🎁</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="bonus">
+        <h2 class="section-title">特別特典</h2>
+        <p class="section-lead">鬼キャン当日だけで終わらせず、参加後の復習と発音学習のスタートダッシュまで支える２つの特典をご用意しております。</p>
+        <div class="bonus-grid">
+          <article class="bonus-card">
+            <b>❶ 鬼キャンライブラリー</b>
+            <ul class="bonus-list">
+              <li>鬼キャン前後の復習に使える母音攻略動画</li>
+              <li>鬼キャン参加者限定の復習課題</li>
+              <li>鬼キャンのアーカイブ動画</li>
+            </ul>
+            <p>これらが全てまとまったスペシャル学習ページをお届けします。鬼キャン終了後も1年間ご利用いただけます。</p>
+            <a class="button button-secondary" href="oni-library.html">ライブラリーを見る →</a>
+          </article>
+          <article class="bonus-card">
+            <b>❷ 添削プラン限定｜発音診断</b>
+            <p>添削付プランの方限定で、今の発音を客観的に見つめ直す発音診断をご用意します。</p>
+            <ul class="bonus-list">
+              <li>事前の提出音読課題</li>
+              <li>提出課題に対するフィードバック</li>
+              <li>鬼キャンレッスン内での添削結果をまとめたシートの共有</li>
+              <li>えいまり専属カウンセラーとの30分程度の学習相談（後日開催）</li>
+            </ul>
+            <p>鬼キャンが終わったあと、何に取り組めばいいかを明確にし、発音学習のスタートダッシュを切るお役に立ててください。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">発音で止まっている人へ</h2>
+        <p class="section-lead">独学で伸びない理由は、努力不足ではなく「どこを直すか」が見えていないことが多いです。</p>
+        <ul class="problem-list">
+          <li><b>カタカナっぽさが抜けない</b>発音記号やアクセントが、劇的な改善のヒントに。そのヒントを鬼キャンで手に入れよう。</li>
+          <li><b>速い英語が聞き取れない</b>音が繋がって違う音に聞こえたり、そもそも消えることも。リスニング向上にもつながる発音のルールを鬼キャンで手に入れてください。</li>
+          <li><b>英語らしいリズムにならない</b>英文には目立つ箇所と目立たない箇所（a.k.a 温水ボックス）があります。それの見分け方を伝授した後、文章で一緒に練習しましょう。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <div class="cta-panel">
+          <h2>今回は8名限定の添削付。</h2>
+          <p>できているかどうかの不安をなくす鍵は、客観的なフィードバック、すなわち添削。自分の発音を見つめ直し、成長のための大きなヒントが欲しい方はぜひ添削付プランへお越しください。</p>
+          <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">空き枠を確認する →</a>
+          <p class="microcopy">お得な早割価格は7月5日（日）まで</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">参加者のお声</h2>
+        <p class="section-lead">過去の回に参加された皆さんのお声です。</p>
+        <div class="review-wrap">
+          <div class="reviews" id="reviews" aria-label="参加者の声">
+            <figure class="review"><img src="assets/review-1.png" alt="参加者の声 1"></figure>
+            <figure class="review"><img src="assets/review-2.png" alt="参加者の声 2"></figure>
+            <figure class="review"><img src="assets/review-3.png" alt="参加者の声 3"></figure>
+            <figure class="review"><img src="assets/review-4.png" alt="参加者の声 4"></figure>
+          </div>
+          <div class="review-controls" aria-label="口コミの操作">
+            <button class="review-arrow" type="button" data-review-dir="-1" aria-label="前の口コミ">‹</button>
+            <button class="review-arrow" type="button" data-review-dir="1" aria-label="次の口コミ">›</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">この1日で整えること</h2>
+        <div class="step-list">
+          <div class="step"><b>発音記号（母音）</b>日本語に引っ張られやすい音を、口の形と舌の位置から確認。</div>
+          <div class="step"><b>強勢（アクセント）</b>単語のどこを強く言うかを掴み、平坦な読み方から抜け出す。</div>
+          <div class="step"><b>リンキング・リズム</b>音のつながりと強弱の波を作り、聞き取れる・言える状態へ。</div>
+          <div class="step"><b>イントネーション・総合練習</b>文全体の上げ下げを整え、最後は文章で実践。</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">プランを選ぶ</h2>
+        <div class="plans">
+          <article class="plan featured">
+            <span class="plan-label">一番おすすめ・8名限定</span>
+            <h3>添削付プラン</h3>
+            <p>自分の発音を見てもらい、どこをどう直せばいいかまで掴みたい方向け。本気で変えたい方はこちら。</p>
+            <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">添削付プランに申し込む →</a>
+            <p class="microcopy plan-deadline">8名限定 / 早割価格は7月5日（日）まで</p>
+          </article>
+          <article class="plan">
+            <span class="plan-label">顔出しなしで参加</span>
+            <h3>見学プラン</h3>
+            <p>講座を見ながら学びたい方向け。顔出しなしで、まずは内容を受け取りたい方に。</p>
+            <a class="button button-secondary" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">見学プランに申し込む →</a>
+            <p class="microcopy plan-deadline">早割価格は7月5日（日）まで</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">FAQ - よくあるご質問</h2>
+        <div class="faq">
+          <details open>
+            <summary>顔出ししないと参加できませんか？</summary>
+            <p>ビデオOFFで参加できます。見学プランは顔出しなしで参加したい方向けです。</p>
+          </details>
+          <details>
+            <summary>当日リアルタイムで全部見られないかも。</summary>
+            <p>アーカイブがあります。1年間視聴できるので、復習にも使えます。</p>
+          </details>
+          <details>
+            <summary>発音初心者でも大丈夫ですか？</summary>
+            <p>母音、強勢、リンキング、リズムなど土台から扱います。どこから直すかを見つけたい方に向いています。</p>
+          </details>
+          <details>
+            <summary>2日とも参加しないといけませんか？</summary>
+            <p>片方だけの参加でOKです。ご都合の合う日程でご参加ください。</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta-panel">
+          <h2>発音が変わる1日にしよう。</h2>
+          <p>この1日に参加することで、これから先の英語学習が変わります。「発音」を伸ばすための1日を一緒に過ごしましょう。早割価格は7月5日（日）までです。</p>
+          <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">添削付プランに申し込む →</a>
+        </div>
+      </section>
+    </div>
+
+    <div class="fixed-cta">
+      <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
+        <span>添削付プランに申し込む →<small>8名限定 / 早割価格は7月5日（日）まで</small></span>
+      </a>
+    </div>
+  </div>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script>
+    const reviews = document.getElementById("reviews");
+    const reviewButtons = document.querySelectorAll("[data-review-dir]");
+
+    reviewButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        if (!reviews) return;
+        const firstCard = reviews.querySelector(".review");
+        const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : reviews.clientWidth * 0.76;
+        const gap = 12;
+        const direction = Number(button.dataset.reviewDir);
+        reviews.scrollBy({ left: direction * (cardWidth + gap), behavior: "smooth" });
+      });
+    });
+  </script>
+</body>
+</html>

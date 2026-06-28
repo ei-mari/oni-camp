@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>鬼キャンライブラリー</title>
+  <style>
+    :root {
+      --bg: #f7f3eb;
+      --paper: #fffdfa;
+      --ink: #171310;
+      --muted: #6f665d;
+      --line: rgba(35, 28, 20, 0.14);
+      --teal: #087b78;
+      --teal-dark: #045d5a;
+      --gold: #d6a64a;
+      --cream: #fff7e8;
+      --shadow: 0 18px 44px rgba(35, 28, 20, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background:
+        radial-gradient(circle at 95% 0%, rgba(8, 123, 120, 0.12), transparent 34%),
+        linear-gradient(180deg, #fffaf2 0%, var(--bg) 100%);
+      color: var(--ink);
+      font-family: "Meiryo", "メイリオ", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", sans-serif;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .app {
+      width: min(100%, 520px);
+      min-height: 100svh;
+      margin: 0 auto;
+      background: rgba(255, 253, 250, 0.94);
+      box-shadow: 0 0 0 1px rgba(35, 28, 20, 0.08);
+    }
+
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 16px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 253, 250, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 19px;
+      font-weight: 950;
+    }
+
+    .logo-mark {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+      color: #fff;
+      font-weight: 950;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #f1ece5;
+      color: #655d54;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    main {
+      display: grid;
+      gap: 18px;
+      padding: 18px 10px 32px;
+    }
+
+    .hero {
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-image {
+      overflow: hidden;
+      margin: 0 -4px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #111;
+      box-shadow: var(--shadow);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin: 18px 0 10px;
+      font-size: 30px;
+      line-height: 1.25;
+      font-weight: 950;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+      font-weight: 750;
+    }
+
+    .panel {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 14px 34px rgba(35, 28, 20, 0.08);
+    }
+
+    .home-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .home-button {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      min-height: 86px;
+      padding: 15px;
+      border: 1px solid rgba(8, 123, 120, 0.18);
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fffdfa, #f1fbf8);
+      color: var(--ink);
+      text-align: left;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(35, 28, 20, 0.07);
+    }
+
+    button.home-button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    button.home-button::after {
+      content: "タップして見る  →";
+      position: absolute;
+      right: 14px;
+      bottom: 10px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+      color: #fff;
+      font-size: 11px;
+      font-weight: 950;
+      box-shadow: 0 8px 18px rgba(8, 123, 120, 0.22);
+    }
+
+    button.home-button {
+      border-color: rgba(8, 123, 120, 0.44);
+      background: linear-gradient(135deg, #f2fffb, #ffffff);
+      box-shadow: 0 14px 34px rgba(8, 123, 120, 0.18);
+    }
+
+    .home-button[aria-disabled="true"] {
+      border-color: rgba(35, 28, 20, 0.1);
+      background: #f3f1ed;
+      color: #777069;
+      box-shadow: none;
+      opacity: 0.86;
+      cursor: default;
+    }
+
+    .home-button[aria-disabled="true"] .home-button-icon {
+      background: #9b9690;
+    }
+
+    .home-button[aria-disabled="true"] .home-button-note::before {
+      content: "🔒 ";
+    }
+
+    .home-button-icon {
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 950;
+    }
+
+    .home-button-title {
+      display: block;
+      font-size: 21px;
+      line-height: 1.35;
+      font-weight: 950;
+    }
+
+    .home-button-note {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+      font-weight: 800;
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.35;
+      font-weight: 950;
+    }
+
+    .count {
+      color: var(--teal-dark);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .video-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--paper);
+    }
+
+    .sample-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .sample-item {
+      padding: 13px 14px;
+      border: 1px solid rgba(8, 123, 120, 0.18);
+      border-radius: 12px;
+      background: linear-gradient(135deg, #fffdfa, #f6fbf9);
+    }
+
+    .sample-item b {
+      display: block;
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .sample-item span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 800;
+    }
+
+    .video-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      background: var(--cream);
+    }
+
+    .number {
+      color: var(--teal-dark);
+      font-weight: 950;
+    }
+
+    .tag {
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #fff0bf;
+      color: #715215;
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .video-body {
+      padding: 16px;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      line-height: 1.35;
+      font-weight: 950;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #e8f8f4;
+      color: var(--teal-dark);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      padding-top: 177.78%;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #111;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .locked-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .locked {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid rgba(8, 123, 120, 0.18);
+      border-radius: 14px;
+      background: linear-gradient(135deg, #fffdfa, #f1fbf8);
+    }
+
+    .locked-icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+      color: #fff;
+      font-weight: 950;
+    }
+
+    .locked b {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .locked span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+      font-weight: 750;
+    }
+
+    .notice {
+      margin: 14px 0 0;
+      padding: 14px;
+      border-left: 5px solid var(--gold);
+      border-radius: 10px;
+      background: #fff7df;
+      color: #58442a;
+      font-size: 14px;
+      line-height: 1.75;
+      font-weight: 800;
+    }
+
+    .cta-panel {
+      padding: 18px;
+      border: 1px solid rgba(8, 123, 120, 0.2);
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(8, 123, 120, 0.1), transparent 54%),
+        #fffdfa;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-panel h2 {
+      margin: 0 0 8px;
+      font-size: 24px;
+      line-height: 1.35;
+      font-weight: 950;
+    }
+
+    .cta-panel p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+      font-weight: 800;
+    }
+
+    .cta-actions {
+      display: grid;
+      gap: 10px;
+    }
+
+    .cta-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 58px;
+      padding: 13px 16px;
+      border-radius: 12px;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font-size: 17px;
+      line-height: 1.35;
+      font-weight: 950;
+    }
+
+    .cta-primary {
+      background: linear-gradient(180deg, #ff624c, #d92917);
+      box-shadow: 0 14px 28px rgba(217, 41, 23, 0.22);
+    }
+
+    .cta-secondary {
+      background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="top-bar">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">鬼</span>
+        <span>ONI CAMP LIBRARY</span>
+      </a>
+      <a class="back" href="index.html">戻る</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <figure class="hero-image">
+          <img src="assets/oni-library-thumbnail.png" alt="鬼キャンライブラリー">
+        </figure>
+        <h1>鬼キャンライブラリー</h1>
+        <p class="lead">レッスンのアーカイブ、発音動画、課題をまとめています。ご希望の内容を選んで学習にお役立てください。</p>
+      </section>
+
+      <section class="panel">
+        <div class="home-grid">
+          <button class="home-button" type="button" id="show-videos">
+            <span class="home-button-icon">ɑ</span>
+            <span>
+              <span class="home-button-title">発音動画</span>
+              <span class="home-button-note">母音の発音解説を確認しよう。</span>
+            </span>
+          </button>
+
+          <div class="home-button" aria-disabled="true">
+            <span class="home-button-icon">▦</span>
+            <span>
+              <span class="home-button-title">アーカイブ</span>
+              <span class="home-button-note">鬼キャンが終了後、追って解放されます。</span>
+            </span>
+          </div>
+
+          <div class="home-button" aria-disabled="true">
+            <span class="home-button-icon">✓</span>
+            <span>
+              <span class="home-button-title">課題</span>
+              <span class="home-button-note">鬼キャンが終了後、追って解放されます。</span>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="pronunciation-samples" hidden>
+        <div class="panel-head">
+          <h2>発音動画一覧</h2>
+          <span class="count">8 SAMPLES</span>
+        </div>
+
+        <article class="video-card">
+          <div class="video-meta">
+            <span class="number">01</span>
+            <span class="tag">母音</span>
+          </div>
+          <div class="video-body">
+            <h3>æ｜母音解説</h3>
+            <div class="chips">
+              <span class="chip">発音記号</span>
+              <span class="chip">母音</span>
+              <span class="chip">æ</span>
+            </div>
+            <div class="video-frame">
+              <iframe
+                title="æ_sample"
+                src="https://player.vimeo.com/video/1205166779?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </article>
+
+        <p class="notice">鬼キャンにご参加いただくと、以下の動画も確認できます。</p>
+
+        <div class="sample-list" aria-label="参加後に確認できる発音動画サンプル">
+          <div class="sample-item"><b>02｜ɑ｜母音解説</b></div>
+          <div class="sample-item"><b>03｜ʌ｜母音解説</b></div>
+          <div class="sample-item"><b>04｜ɔ｜母音解説</b></div>
+          <div class="sample-item"><b>05｜ɝ｜母音解説</b></div>
+          <div class="sample-item"><b>06｜ar｜母音解説</b></div>
+          <div class="sample-item"><b>07｜ɔr｜母音解説</b></div>
+          <div class="sample-item"><b>08｜oʊ｜母音解説</b></div>
+        </div>
+      </section>
+
+      <section class="cta-panel" id="library-cta" hidden>
+        <h2>鬼キャンに参加する</h2>
+        <p>ライブラリーの動画や課題は、鬼キャン参加後にさらに活用できます。希望の参加プランを選んでお申し込みください。</p>
+        <div class="cta-actions">
+          <a class="cta-button cta-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">添削付プランに申し込む →</a>
+          <a class="cta-button cta-secondary" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">見学プランに申し込む →</a>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script>
+    const showVideosButton = document.getElementById("show-videos");
+    const pronunciationSamples = document.getElementById("pronunciation-samples");
+    const libraryCta = document.getElementById("library-cta");
+
+    showVideosButton?.addEventListener("click", () => {
+      if (!pronunciationSamples) return;
+      pronunciationSamples.hidden = false;
+      if (libraryCta) libraryCta.hidden = false;
+      pronunciationSamples.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>
