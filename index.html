@@ -205,6 +205,43 @@
       font-weight: 800;
     }
 
+    .schedule-card {
+      margin: 0 0 18px;
+      padding: 15px 16px;
+      border: 1px solid rgba(255, 209, 93, 0.3);
+      border-radius: 12px;
+      background:
+        linear-gradient(135deg, rgba(255, 209, 93, 0.11), rgba(255, 75, 51, 0.08)),
+        rgba(0, 0, 0, 0.68);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
+    }
+
+    .schedule-card b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 950;
+    }
+
+    .schedule-card p {
+      margin: 0;
+      color: #fff8e4;
+      font-size: 15px;
+      line-height: 1.75;
+      font-weight: 900;
+    }
+
+    .schedule-card small {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255, 248, 228, 0.82);
+      font-size: 12px;
+      line-height: 1.65;
+      font-weight: 800;
+    }
+
     .button {
       display: flex;
       align-items: center;
@@ -556,6 +593,99 @@
       font-size: 16px;
     }
 
+    .flow-list {
+      display: grid;
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .flow-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 13px;
+      align-items: flex-start;
+      padding: 17px 16px;
+      border: 1px solid rgba(255, 209, 93, 0.22);
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, rgba(255, 209, 93, 0.09), transparent 52%),
+        rgba(255, 255, 255, 0.055);
+      color: rgba(255, 248, 228, 0.84);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    .flow-item + .flow-item {
+      margin-top: 34px;
+    }
+
+    .flow-item + .flow-item::before {
+      content: "▼";
+      position: absolute;
+      top: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--gold);
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 950;
+      text-shadow: 0 0 18px rgba(255, 209, 93, 0.28);
+    }
+
+    .flow-item {
+      position: relative;
+    }
+
+    .flow-icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 209, 93, 0.34);
+      background:
+        linear-gradient(135deg, rgba(255, 209, 93, 0.2), rgba(255, 75, 51, 0.14)),
+        rgba(0, 0, 0, 0.45);
+      color: var(--gold);
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 950;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    }
+
+    .flow-text {
+      display: block;
+      min-width: 0;
+    }
+
+    .flow-text b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--gold-2);
+      font-size: 17px;
+      line-height: 1.45;
+      font-weight: 950;
+    }
+
+    .flow-text p {
+      margin: 0;
+      color: rgba(255, 248, 228, 0.84);
+      font-size: 15px;
+      line-height: 1.75;
+      font-weight: 700;
+    }
+
+    .flow-link {
+      display: inline-flex;
+      margin-top: 10px;
+      color: var(--gold);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+      font-size: 14px;
+      font-weight: 950;
+    }
+
     .review-wrap {
       position: relative;
     }
@@ -770,7 +900,7 @@
       </section>
 
       <header class="hero">
-        <div class="badge">8名限定 / 早割価格は7月5日（日）まで</div>
+        <div class="badge">添削は8名限定 / 早割価格は7月5日（日）まで</div>
         <h1>1日で、発音の<br>土台を作り直す。</h1>
         <p class="hero-copy">母音・アクセント・リンキング・リズム・イントネーションをまとめて整える集中キャンプ、それが鬼キャン。</p>
         <div class="stats" aria-label="講座情報">
@@ -778,10 +908,14 @@
           <div class="stat"><b>1年間</b><span>アーカイブ</span></div>
           <div class="stat"><b>8名</b><span>添削枠限定</span></div>
         </div>
+        <div class="schedule-card" aria-label="開催日程">
+          <b>開催日程</b>
+          <p>7/25（土）10:00 - 16:00<br>7/26（日）10:00 - 16:00</p>
+          <small>※同内容のため、どちらか1日のご参加でOKです。</small>
+        </div>
         <a class="button button-primary" id="primary-cta" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
-          <span>添削付プランに申し込む →<small>8名限定 / 早割価格は7月5日（日）まで</small></span>
+          <span>添削付プランに申し込む →<small>添削は8名限定 / 早割価格は7月5日（日）まで</small></span>
         </a>
-        <p class="microcopy">添削付での参加が難しい方向けの見学プランはページの途中で。</p>
       </header>
 
       <section class="section">
@@ -873,23 +1007,6 @@
       </section>
 
       <section class="section">
-        <h2 class="section-title">参加者のお声</h2>
-        <p class="section-lead">過去の回に参加された皆さんのお声です。</p>
-        <div class="review-wrap">
-          <div class="reviews" id="reviews" aria-label="参加者の声">
-            <figure class="review"><img src="assets/review-1.png" alt="参加者の声 1"></figure>
-            <figure class="review"><img src="assets/review-2.png" alt="参加者の声 2"></figure>
-            <figure class="review"><img src="assets/review-3.png" alt="参加者の声 3"></figure>
-            <figure class="review"><img src="assets/review-4.png" alt="参加者の声 4"></figure>
-          </div>
-          <div class="review-controls" aria-label="口コミの操作">
-            <button class="review-arrow" type="button" data-review-dir="-1" aria-label="前の口コミ">‹</button>
-            <button class="review-arrow" type="button" data-review-dir="1" aria-label="次の口コミ">›</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
         <h2 class="section-title">この1日で整えること</h2>
         <div class="step-list">
           <div class="step">
@@ -912,22 +1029,90 @@
       </section>
 
       <section class="section">
+        <h2 class="section-title">参加者のお声</h2>
+        <p class="section-lead">過去の回に参加された皆さんのお声です。</p>
+        <div class="review-wrap">
+          <div class="reviews" id="reviews" aria-label="参加者の声">
+            <figure class="review"><img src="assets/review-1.png" alt="参加者の声 1"></figure>
+            <figure class="review"><img src="assets/review-2.png" alt="参加者の声 2"></figure>
+            <figure class="review"><img src="assets/review-3.png" alt="参加者の声 3"></figure>
+            <figure class="review"><img src="assets/review-4.png" alt="参加者の声 4"></figure>
+          </div>
+          <div class="review-controls" aria-label="口コミの操作">
+            <button class="review-arrow" type="button" data-review-dir="-1" aria-label="前の口コミ">‹</button>
+            <button class="review-arrow" type="button" data-review-dir="1" aria-label="次の口コミ">›</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">鬼キャンって結局何するの？</h2>
+        <div class="flow-list">
+          <article class="flow-item">
+            <span class="flow-icon" aria-hidden="true">▶</span>
+            <span class="flow-text">
+              <b>【予習】母音解説動画の視聴</b>
+              <p>まりあ元帥が解説する、オリジナルの母音攻略動画をご用意。お申し込み後24時間以内に動画が届くので、そちらを見て本番まで少しずつ予習することができます。</p>
+            </span>
+          </article>
+          <article class="flow-item">
+            <span class="flow-icon" aria-hidden="true">◉</span>
+            <span class="flow-text">
+              <b>【予習】音読の録音提出（任意提出）</b>
+              <p>あなたの現在地を測定し、レッスンをスムーズに提供するための課題をご用意しております。提出は任意ですが、鬼キャンの3日前までにご提出いただくとより充実したフィードバックを得られます。</p>
+            </span>
+          </article>
+          <article class="flow-item">
+            <span class="flow-icon" aria-hidden="true">⚡</span>
+            <span class="flow-text">
+              <b>【本番】6時間のグループレッスンに参加</b>
+              <p>いよいよ本番です！発音の重要なポイントを添削付で学びましょう。お昼休憩も挟み、充実した6時間へ。</p>
+            </span>
+          </article>
+          <article class="flow-item">
+            <span class="flow-icon" aria-hidden="true">?</span>
+            <span class="flow-text">
+              <b>【終了後】Q&Aタイム（任意参加）</b>
+              <p>6時間のグループレッスン終了後、Q&Aタイムをご用意しております。1日の振り返りや普段の学習で気になっていることをご質問いただけます。</p>
+            </span>
+          </article>
+          <article class="flow-item">
+            <span class="flow-icon" aria-hidden="true">▦</span>
+            <span class="flow-text">
+              <b>【復習】鬼キャンライブラリーの確認</b>
+              <p>参加者限定の「アーカイブ」「スライド」「復習課題」「母音攻略動画」をまとめた特別ページを共有いたします。</p>
+              <p>1年間利用いただけるので、学んだ知識を定着するために繰り返し復習できます。</p>
+              <a class="flow-link" href="oni-library.html">サンプルはこちら →</a>
+            </span>
+          </article>
+          <article class="flow-item">
+            <span class="flow-icon" aria-hidden="true">✓</span>
+            <span class="flow-text">
+              <b>【添削付プランの特典】発音診断</b>
+              <p>録音課題・レッスン中のフィードバックをまとめた発音レポートをもとに、あなたの苦手と得意をお伝えします。</p>
+            </span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
         <h2 class="section-title">プランを選ぶ</h2>
+        <p class="section-lead">今回は２つのプランをご用意しております。</p>
         <div class="plans">
           <article class="plan featured">
             <span class="plan-label">一番おすすめ・8名限定</span>
             <h3>添削付プラン</h3>
             <p>自分の発音を見てもらい、どこをどう直せばいいかまで掴みたい方向け。本気で変えたい方はこちら。</p>
             <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
-              <span>添削付プランに申し込む →<small>8名限定 / 早割価格は7月5日（日）まで</small></span>
+              <span>添削付プランに申し込む →<small>添削は8名限定 / 早割価格は7月5日（日）まで</small></span>
             </a>
           </article>
-          <article class="plan">
+          <article class="plan" id="observer-plan">
             <span class="plan-label">顔出しなしで参加</span>
             <h3>見学プラン</h3>
             <p>講座を見ながら学びたい方向け。顔出しなしで、まずは内容を受け取りたい方に。</p>
             <a class="button button-secondary" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
-              <span>見学プランに申し込む →<small>早割価格は7月5日（日）まで</small></span>
+              <span>見学プランに申し込む →<small>ビデオOFFで参加したい方はこちら</small></span>
             </a>
           </article>
         </div>
@@ -938,7 +1123,7 @@
         <div class="faq">
           <details open>
             <summary>顔出ししないと参加できませんか？</summary>
-            <p>ビデオOFFで参加できます。見学プランは顔出しなしで参加したい方向けです。</p>
+            <p>プランによって異なります。<br><br>・添削プランの方は、ビデオON<br>・見学プランの方は、ビデオOFF<br><br>にて基本的にご参加ください。添削プランの方でも、添削を希望されないタイミングではビデオをOFFにしていただいて問題ございません。</p>
           </details>
           <details>
             <summary>当日リアルタイムで全部見られないかも。</summary>
@@ -959,7 +1144,7 @@
 
     <div class="fixed-cta" id="fixed-cta">
       <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
-        <span>添削付プランに申し込む →<small>8名限定 / 早割価格は7月5日（日）まで</small></span>
+        <span>添削付プランに申し込む →<small>添削は8名限定 / 早割価格は7月5日（日）まで</small></span>
       </a>
     </div>
   </div>
