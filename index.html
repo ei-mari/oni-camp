@@ -79,7 +79,39 @@
     .content {
       position: relative;
       z-index: 1;
-      padding-bottom: 112px;
+      padding-bottom: 174px;
+    }
+
+    .urgency-bar {
+      position: sticky;
+      top: 0;
+      z-index: 12;
+      padding: 10px 12px;
+      background: linear-gradient(90deg, #9f2017, #ef4a34);
+      color: #fff8e4;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.45;
+      font-weight: 950;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.42);
+    }
+
+    .urgency-bar .full {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 5px;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background: #fff8e4;
+      color: #c22d22;
+      font-size: 12px;
+      line-height: 1.25;
+      font-weight: 950;
+    }
+
+    .urgency-bar .countdown {
+      color: #ffe58f;
+      white-space: nowrap;
     }
 
     .video-section {
@@ -242,6 +274,83 @@
       font-weight: 800;
     }
 
+    .sold-notice {
+      margin: 0 0 18px;
+      padding: 20px 16px;
+      border: 1px solid rgba(255, 209, 93, 0.36);
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, rgba(255, 209, 93, 0.1), rgba(255, 75, 51, 0.08)),
+        rgba(14, 4, 2, 0.78);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.3);
+      text-align: left;
+    }
+
+    .sold-notice h2 {
+      margin: 0 0 16px;
+      color: var(--gold);
+      font-size: 19px;
+      line-height: 1.35;
+      font-weight: 950;
+      text-align: center;
+    }
+
+    .date-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      padding: 14px 13px;
+      border-radius: 11px;
+      background: rgba(0, 0, 0, 0.54);
+      color: #fff8e4;
+      font-size: 15px;
+      line-height: 1.35;
+      font-weight: 950;
+    }
+
+    .date-row.closed {
+      opacity: 0.72;
+    }
+
+    .date-row.open {
+      border: 2px solid rgba(255, 75, 51, 0.92);
+      box-shadow: 0 0 0 1px rgba(255, 209, 93, 0.08);
+    }
+
+    .date-row .status-full {
+      padding: 5px 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.18);
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .date-row .status-open {
+      padding: 5px 10px;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #d84c3a, #b93225);
+      color: #fff;
+      font-size: 12px;
+      white-space: nowrap;
+      box-shadow: 0 10px 18px rgba(255, 75, 51, 0.18);
+    }
+
+    .sold-notice .note {
+      margin: 12px 0 0;
+      color: rgba(255, 248, 228, 0.78);
+      font-size: 13px;
+      line-height: 1.8;
+      font-weight: 750;
+    }
+
+    .sold-notice .note strong {
+      color: var(--gold-2);
+      font-weight: 950;
+    }
+
     .button {
       display: flex;
       align-items: center;
@@ -276,6 +385,13 @@
 
     .button-secondary {
       background: #3438ff;
+    }
+
+    .button-soldout {
+      background: linear-gradient(180deg, #5a5652, #34302d);
+      color: rgba(255, 255, 255, 0.86);
+      box-shadow: none;
+      pointer-events: none;
     }
 
     .section {
@@ -755,6 +871,7 @@
     }
 
     .plan {
+      position: relative;
       padding: 18px;
       border: 1px solid var(--white-line);
       border-radius: 14px;
@@ -788,6 +905,21 @@
       font-weight: 950;
     }
 
+    .plan-visual {
+      overflow: hidden;
+      margin: 0 0 14px;
+      border: 1px solid rgba(255, 209, 93, 0.26);
+      border-radius: 12px;
+      background: #070302;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+    }
+
+    .plan-visual img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
     .plan p {
       margin: 0 0 14px;
       color: rgba(255, 248, 228, 0.84);
@@ -801,30 +933,207 @@
       font-size: 17px;
     }
 
+    .plan-ribbon {
+      display: block;
+      width: fit-content;
+      margin: -32px auto 13px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #ff624c, var(--red));
+      color: #fff;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 950;
+      box-shadow: 0 10px 22px rgba(255, 75, 51, 0.22);
+    }
+
+    .plan-slots {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: 13px;
+      line-height: 1.45;
+      font-weight: 950;
+      text-align: center;
+    }
+
+    .plan-price {
+      margin: 0 0 15px;
+      padding: 14px 12px;
+      border: 1px solid rgba(255, 209, 93, 0.18);
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.28);
+      text-align: center;
+    }
+
+    .plan-price .old {
+      margin-right: 7px;
+      color: rgba(255, 248, 228, 0.55);
+      font-size: 13px;
+      font-weight: 850;
+      text-decoration: line-through;
+    }
+
+    .plan-price .now {
+      color: var(--gold);
+      font-size: 27px;
+      line-height: 1.15;
+      font-weight: 950;
+    }
+
+    .plan-price .now small {
+      font-size: 12px;
+    }
+
+    .plan-price .tag {
+      display: inline-flex;
+      margin-left: 6px;
+      padding: 3px 7px;
+      border-radius: 6px;
+      background: var(--gold);
+      color: #1a0904;
+      font-size: 11px;
+      line-height: 1.2;
+      font-weight: 950;
+      vertical-align: middle;
+    }
+
+    .plan-features {
+      display: grid;
+      gap: 0;
+      margin: 0 0 17px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .plan-features li {
+      position: relative;
+      padding: 9px 0 9px 24px;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+      color: rgba(255, 248, 228, 0.84);
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 800;
+    }
+
+    .plan-features li::before {
+      content: "◉";
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .plan-note {
+      margin: 12px 0 0;
+      color: rgba(255, 248, 228, 0.68);
+      font-size: 11px;
+      line-height: 1.65;
+      font-weight: 750;
+      text-align: center;
+    }
+
     .faq {
       display: grid;
+      gap: 12px;
+    }
+
+    .faq-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       gap: 10px;
     }
 
-    details {
-      border: 1px solid var(--white-line);
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.055);
-      color: rgba(255, 248, 228, 0.84);
+    .faq-title::before {
+      content: "?";
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(255, 209, 93, 0.55);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 25%, rgba(255, 240, 180, 0.38), transparent 38%),
+        linear-gradient(135deg, rgba(255, 75, 51, 0.95), rgba(155, 24, 13, 0.92));
+      color: #fff8e4;
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 950;
+      box-shadow: 0 0 18px rgba(255, 75, 51, 0.3);
     }
 
-    summary {
+    .faq details {
+      overflow: hidden;
+      border: 1px solid rgba(255, 209, 93, 0.2);
+      border-radius: 12px;
+      background:
+        linear-gradient(135deg, rgba(255, 209, 93, 0.07), rgba(255, 75, 51, 0.045)),
+        rgba(255, 255, 255, 0.055);
+      color: rgba(255, 248, 228, 0.84);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    }
+
+    .faq summary {
+      position: relative;
+      display: grid;
+      grid-template-columns: 34px 1fr 22px;
+      gap: 10px;
+      align-items: center;
       cursor: pointer;
-      padding: 15px;
+      padding: 15px 14px;
       color: #fff;
       font-size: 15px;
       line-height: 1.5;
       font-weight: 900;
+      list-style: none;
     }
 
-    details p {
+    .faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq summary::before {
+      content: "Q";
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: rgba(255, 75, 51, 0.16);
+      color: var(--gold);
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 950;
+      box-shadow: inset 0 0 0 1px rgba(255, 209, 93, 0.22);
+    }
+
+    .faq summary::after {
+      content: "+";
+      display: inline-grid;
+      place-items: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--gold);
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 950;
+    }
+
+    .faq details[open] summary {
+      border-bottom: 1px solid rgba(255, 209, 93, 0.14);
+      background: rgba(0, 0, 0, 0.18);
+    }
+
+    .faq details[open] summary::after {
+      content: "-";
+    }
+
+    .faq details p {
       margin: 0;
-      padding: 0 15px 15px;
+      padding: 14px 16px 17px 58px;
       color: rgba(255, 248, 228, 0.84);
       font-size: 15px;
       line-height: 1.7;
@@ -839,12 +1148,13 @@
       z-index: 20;
       max-width: 410px;
       margin: 0 auto;
-      padding: 10px;
-      border: 1px solid rgba(255, 209, 93, 0.28);
-      border-radius: 15px;
-      background: rgba(0, 0, 0, 0.78);
+      padding: 0;
+      border: 0;
+      border-radius: 17px;
+      background: rgba(14, 2, 0, 0.88);
       backdrop-filter: blur(16px);
       box-shadow: 0 -16px 48px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
       opacity: 0;
       pointer-events: none;
       transform: translateY(18px);
@@ -860,6 +1170,40 @@
     .fixed-cta .button {
       min-height: 54px;
       font-size: 17px;
+    }
+
+    .fixed-cta-body {
+      padding: 8px;
+      background: rgba(10, 0, 0, 0.86);
+    }
+
+    .fixed-main-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 74px;
+      padding: 15px 16px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #ff6650 0%, #ff4b33 55%, #d82112 100%);
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      font-size: 20px;
+      line-height: 1.3;
+      font-weight: 950;
+      box-shadow: 0 14px 30px rgba(255, 75, 51, 0.24);
+    }
+
+    .fixed-main-cta small {
+      display: block;
+      width: 82%;
+      margin: 9px auto 0;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.28);
+      color: rgba(255, 255, 255, 0.94);
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 900;
     }
 
     .fixed-cta small {
@@ -884,6 +1228,9 @@
 </head>
 <body>
   <div class="page">
+    <div class="urgency-bar">
+      <span class="full">満</span>7/26(日)満席｜7/25(土)残りわずか｜早割は <span class="countdown" id="top-early-countdown">あと少し</span>
+    </div>
     <div class="content">
       <section class="video-section" aria-label="紹介動画">
         <div class="video-card">
@@ -900,16 +1247,23 @@
       </section>
 
       <header class="hero">
-        <div class="badge">添削は8名限定 / 早割価格は7/5（日）まで</div>
+        <div class="badge">7/26(日)満席 / 7/25(土)残りわずか</div>
         <h1>1日で、発音の<br>土台を作り直す。</h1>
         <p class="hero-copy">母音・アクセント・リンキング・リズム・イントネーションをまとめて整える集中キャンプ、それが鬼キャン。</p>
-        <div class="schedule-card" aria-label="開催日程">
-          <b>開催日程</b>
-          <p>❶ 7/25（土）10:00 - 16:00<br>❷ 7/26（日）10:00 - 16:00</p>
-          <small>※同じ内容のため、どちらか1日のご参加でOKです。</small>
+        <div class="sold-notice" aria-label="開催日程・空席状況">
+          <h2>開催日程・空席状況</h2>
+          <div class="date-row open">
+            <span>❶ 7/25（土）10:00 - 16:00</span>
+            <span class="status-open">残りわずか</span>
+          </div>
+          <div class="date-row closed">
+            <span>❷ 7/26（日）10:00 - 16:00</span>
+            <span class="status-full">満席御礼</span>
+          </div>
+          <p class="note">※両日同じ内容です。日曜は定員に達したため、<strong>お申し込みいただけるのは土曜のみ</strong>となりました。土曜も定員に達し次第、募集を締め切ります。</p>
         </div>
         <a class="button button-primary" id="primary-cta" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
-          <span>添削付プランに申し込む →<small>添削は8名限定 / 早割価格は7/5（日）まで</small></span>
+          <span>7/25(土)の枠を確保する →<small>添削は8名限定 / 早割価格は7/5（日）まで</small></span>
         </a>
         <div class="stats" aria-label="講座情報">
           <div class="stat"><b>6時間</b><span>集中講座</span></div>
@@ -1001,7 +1355,7 @@
           <h2>今回は8名限定の添削付。</h2>
           <p>できているかどうかの不安をなくす鍵は、客観的なフィードバック、すなわち添削。自分の発音を見つめ直し、成長のための大きなヒントが欲しい方はぜひ添削付プランへお越しください。</p>
           <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
-            <span>空き枠を確認する →<small>お得な早割価格は7/5（日）まで</small></span>
+            <span>7/25(土)の空き枠を確認する →<small>お得な早割価格は7/5（日）まで</small></span>
           </a>
         </div>
       </section>
@@ -1100,42 +1454,132 @@
         <p class="section-lead">今回は２つのプランをご用意しております。</p>
         <div class="plans">
           <article class="plan featured">
-            <span class="plan-label">一番おすすめ・8名限定</span>
-            <h3>添削付プラン</h3>
-            <p>自分の発音を見てもらい、どこをどう直せばいいかまで掴みたい方向け。本気で変えたい方はこちら。</p>
+            <span class="plan-ribbon">🔥 8名限定・添削枠 残りわずか</span>
+            <span class="plan-label">一番おすすめ</span>
+            <h3>添削付きプラン</h3>
+            <figure class="plan-visual">
+              <img src="assets/price-visual.png" alt="鬼の発音キャンプ 添削付きプラン 早割価格">
+            </figure>
+            <ul class="plan-features">
+              <li>6時間の集中講座（7/25 or 7/26）</li>
+              <li>まりあ元帥による発音添削</li>
+              <li>発音診断・フィードバックシート</li>
+              <li>アーカイブ視聴 1年間</li>
+              <li>鬼キャンライブラリー利用</li>
+            </ul>
             <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
-              <span>添削付プランに申し込む →<small>添削は8名限定 / 早割価格は7/5（日）まで</small></span>
+              <span>添削付きプランに申し込む →<small>日曜満席につき、土曜が最後の添削枠です</small></span>
             </a>
           </article>
           <article class="plan" id="observer-plan">
-            <span class="plan-label">顔出しなしで参加</span>
+            <span class="plan-label">顔出しなしで参加OK</span>
             <h3>見学プラン</h3>
-            <p>講座を見ながら学びたい方向け。顔出しなしで、まずは内容を受け取りたい方に。</p>
+            <div class="plan-price">
+              <span class="old">通常 ¥25,000</span>
+              <span class="now">¥19,800<small>（税込）</small></span>
+              <span class="tag">早割 7/5まで</span>
+            </div>
+            <ul class="plan-features">
+              <li>6時間の集中講座（7/25 or 7/26）</li>
+              <li>顔出しなし・ビデオOFF参加OK</li>
+              <li>アーカイブ視聴 1年間</li>
+              <li>鬼キャンライブラリー利用</li>
+              <li>添削なしで講座内容を受け取れるプラン</li>
+            </ul>
             <a class="button button-secondary" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
               <span>見学プランに申し込む →<small>ビデオOFFで参加したい方はこちら</small></span>
             </a>
           </article>
         </div>
+        <p class="plan-note">※7/26(日)は満席です。現在お申し込みいただけるのは7/25(土)枠です。早割価格は7/5（日）23:59までのお申し込みが対象です。</p>
       </section>
 
       <section class="section">
-        <h2 class="section-title">FAQ - よくあるご質問</h2>
+        <h2 class="section-title faq-title">FAQ - よくあるご質問</h2>
         <div class="faq">
           <details open>
-            <summary>顔出ししないと参加できませんか？</summary>
-            <p>プランによって異なります。<br><br>・添削プランの方は、ビデオON<br>・見学プランの方は、ビデオOFF<br><br>にて基本的にご参加ください。添削プランの方でも、添削を希望されないタイミングではビデオをOFFにしていただいて問題ございません。</p>
+            <summary>Q1. 初心者でも参加できますか？</summary>
+            <p>はい、ご参加いただけます。<br><br>鬼の発音キャンプは、発音を一から整理したい方にもご参加いただける内容です。母音・子音だけでなく、強勢、リンキング、リズム、イントネーションまで、土台から順番に扱っていきます。</p>
           </details>
           <details>
-            <summary>当日リアルタイムで全部見られないかも。</summary>
-            <p>アーカイブがあります。1年間視聴できるので、復習にも使えます。</p>
+            <summary>Q2. 発音記号に自信がなくても大丈夫ですか？</summary>
+            <p>はい、大丈夫です。<br><br>発音記号に苦手意識がある方でも、全体の流れの中で整理しながら進めていきます。いきなり難しい内容に入るのではなく、土台から順番に学べる構成です。</p>
           </details>
           <details>
-            <summary>発音初心者でも大丈夫ですか？</summary>
-            <p>母音、強勢、リンキング、リズムなど土台から扱います。どこから直すかを見つけたい方に向いています。</p>
+            <summary>Q3. 「添削付プラン」では何が受けられますか？</summary>
+            <p>添削付プランでは、講座中に個別フィードバック（矯正）を受けていただけます。<br><br>実際にご自身の発音を確認しながら学べるため、「理解したつもり」で終わらず、改善ポイントをつかみやすいのが特長です。</p>
           </details>
           <details>
-            <summary>2日とも参加しないといけませんか？</summary>
-            <p>片方だけの参加でOKです。ご都合の合う日程でご参加ください。</p>
+            <summary>Q4. カメラONは必須ですか？</summary>
+            <p>見学参加プラン（矯正なし）はビデオOFFでの参加となります。リラックスしてご参加ください。</p>
+          </details>
+          <details>
+            <summary>Q5. どのような内容を学びますか？</summary>
+            <p>発音記号だけでなく、強勢（アクセント）・リンキング・リズム・イントネーションまで、英語らしく伝わる発音をまとめて整理していきます。<br><br>基礎から実践までを1日で一気に学べる構成です。</p>
+          </details>
+          <details>
+            <summary>Q6. 1日で本当についていけますか？</summary>
+            <p>鬼キャンは、発音学習の全体像をつかみ、土台を整えることを目的にした集中講座です。<br><br>1日ですべてを完璧にするというより、今後の学習の軸を作り、どこをどう練習すればよいかを明確にするイメージです。</p>
+          </details>
+          <details>
+            <summary>Q7. アーカイブはありますか？</summary>
+            <p>はい、講座後にアーカイブ動画をご案内します。<br><br>当日学んだ内容を後から見返して復習できるため、1回で終わらせず、定着につなげやすくなっています。</p>
+          </details>
+          <details>
+            <summary>Q8. 今回の日にちで参加できないのですが、アーカイブだけを視聴することもできますか？</summary>
+            <p>はい、アーカイブだけの視聴も可能です。参加した皆さんと同様にアーカイブ・各種資料をお届けします。</p>
+          </details>
+          <details>
+            <summary>Q9. 当日参加できなくなった場合でも大丈夫ですか？</summary>
+            <p>当日のご参加が難しくなった場合でも、アーカイブ動画で内容をご確認いただけます。</p>
+          </details>
+          <details>
+            <summary>Q10. 鬼キャン終了後にもサポートはありますか？</summary>
+            <p>はい。鬼キャン終了後には、アーカイブ動画、レッスンスライド、えいまりが提供している講座の特別優待チケットをご案内します。</p>
+          </details>
+          <details>
+            <summary>Q11. 鬼キャンの後に、別の講座を受ける必要はありますか？</summary>
+            <p>いいえ、必須ではありません。<br><br>鬼キャンは、発音学習の土台を整理し、今後の学習の方向性を明確にするための集中講座です。まずは鬼キャン単体で学んでいただけます。</p>
+          </details>
+          <details>
+            <summary>Q12. 鬼キャンの後に、別講座への案内はありますか？</summary>
+            <p>講座終了後に、今後の学習に役立つご案内をお届けする予定です。<br><br>ただし、別講座の受講が必須になることはありません。ご自身に合った学び方を選んでいただけます。</p>
+          </details>
+          <details>
+            <summary>Q13. 他にも講座がある中で、鬼キャンを選んで大丈夫ですか？</summary>
+            <p>鬼キャンは、発音を一から整理したい方や、全体像をまとめてつかみたい方に向いている講座です。<br><br>一方で、まずは気軽に参加したい方や、ビデオOFF・マイクOFFで参加したい方には見学プランもご用意しています。ご自身の目的や参加スタイルに合わせてお選びいただけます。</p>
+          </details>
+          <details>
+            <summary>Q14. どんな人におすすめですか？</summary>
+            <p>英語らしいリズムやイントネーションまでまとめて学びたい方、独学で何から練習すればよいか分からない方、カタカナ発音から抜け出したい方などにおすすめです。</p>
+          </details>
+          <details>
+            <summary>Q15. 鬼キャンの後は、どんな学習をしたらいいですか？</summary>
+            <p>鬼キャンの後は、講座内で見えたご自身の課題に合わせて学習を進めるのがおすすめです。<br><br>添削付プランでは、講座中のフィードバックに加え、後日の1-on-1発音診断もあるため、「次に何を優先して練習すべきか」を整理しやすくなっています。</p>
+          </details>
+          <details>
+            <summary>Q16. 英会話に自信がなくても参加できますか？</summary>
+            <p>はい、ご参加いただけます。<br><br>鬼キャンは、英語をたくさん話せることよりも、発音の土台を整理することに重点を置いた講座です。英会話に自信がない方でも安心してご参加いただけます。</p>
+          </details>
+          <details>
+            <summary>Q17. 当日は途中参加・途中退出できますか？</summary>
+            <p>途中参加・途中退出も可能です。<br><br>ただし、鬼キャンは積み上げ式で進むため、できるだけ最初から最後までご参加いただくのがおすすめです。途中で参加が難しくなった場合も、アーカイブ動画で復習していただけます。</p>
+          </details>
+          <details>
+            <summary>Q18. パソコンがなくても参加できますか？</summary>
+            <p>Zoomをご覧いただける端末があればご参加いただけます。<br><br>ただし、スライドの見やすさや学習のしやすさの面では、パソコンまたはタブレットでの参加がおすすめです。スマートフォンでも参加は可能ですが、長時間講座のため、見やすい環境をご用意いただくと安心です。</p>
+          </details>
+          <details>
+            <summary>Q19. 発音をその場でたくさん見てもらえますか？</summary>
+            <p>鬼キャン本編参加プラン（矯正なし）は矯正がないのでご了承ください。</p>
+          </details>
+          <details>
+            <summary>Q20. 海外からでも参加できますか？</summary>
+            <p>はい、オンライン開催のため、海外からでもご参加いただけます。<br><br>ただし、開催日時は日本時間となりますので、お住まいの地域との時差をご確認のうえ、お申し込みください。</p>
+          </details>
+          <details>
+            <summary>Q21. 鬼キャンだけでも効果はありますか？</summary>
+            <p>鬼キャンは、発音学習の全体像を整理し、土台を整えるための集中講座です。<br><br>1日で完璧にするというより、「何をどう練習すればよいか」が明確になり、その後の学習効率を上げやすくなるのが大きな特長です。</p>
           </details>
         </div>
       </section>
@@ -1143,9 +1587,11 @@
     </div>
 
     <div class="fixed-cta" id="fixed-cta">
-      <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
-        <span>添削付プランに申し込む →<small>添削は8名限定 / 早割価格は7/5（日）まで</small></span>
-      </a>
+      <div class="fixed-cta-body">
+        <a class="fixed-main-cta" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
+          <span>7/25(土) 添削付プランに申し込む →<small>添削は8名限定 / 早割価格は7/5（日）まで</small></span>
+        </a>
+      </div>
     </div>
   </div>
   <script src="https://player.vimeo.com/api/player.js"></script>
@@ -1166,6 +1612,7 @@
 
     const primaryCta = document.getElementById("primary-cta");
     const fixedCta = document.getElementById("fixed-cta");
+    const countdownEls = document.querySelectorAll("#early-countdown, #top-early-countdown");
 
     if (primaryCta && fixedCta) {
       const toggleFixedCta = () => {
@@ -1176,6 +1623,36 @@
       toggleFixedCta();
       window.addEventListener("scroll", toggleFixedCta, { passive: true });
       window.addEventListener("resize", toggleFixedCta);
+    }
+
+    if (countdownEls.length) {
+      const earlyDeadline = new Date("2026-07-05T23:59:59+09:00").getTime();
+
+      const updateCountdown = () => {
+        const diff = earlyDeadline - Date.now();
+        if (diff <= 0) {
+          countdownEls.forEach((el) => {
+            el.textContent = "終了しました";
+          });
+          return;
+        }
+
+        const totalMinutes = Math.floor(diff / 60000);
+        const days = Math.floor(totalMinutes / 1440);
+        const hours = Math.floor((totalMinutes % 1440) / 60);
+        const minutes = totalMinutes % 60;
+
+        const text = days > 0
+          ? `あと${days}日${hours}時間${minutes}分`
+          : `あと${hours}時間${minutes}分`;
+
+        countdownEls.forEach((el) => {
+          el.textContent = text;
+        });
+      };
+
+      updateCountdown();
+      window.setInterval(updateCountdown, 60000);
     }
   </script>
 </body>
