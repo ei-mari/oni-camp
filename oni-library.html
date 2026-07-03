@@ -338,6 +338,11 @@
       background: #111;
     }
 
+    .video-frame-vertical {
+      padding-top: 177.78%;
+    }
+
+
     .video-frame iframe {
       position: absolute;
       inset: 0;
@@ -426,6 +431,7 @@
       line-height: 1.55;
       font-weight: 750;
     }
+
   </style>
 </head>
 <body>
@@ -444,7 +450,7 @@
           <img src="assets/oni-library-thumbnail.png" alt="鬼キャンライブラリー">
         </figure>
         <h1>鬼キャンライブラリー</h1>
-        <p class="lead">レッスンのアーカイブ、発音動画、課題をまとめています。ご希望の内容を選んで学習にお役立てください。</p>
+        <p class="lead">サンプルとしてæの母音攻略動画をご確認いただけます。</p>
       </section>
 
       <section class="panel">
@@ -456,37 +462,21 @@
               <span class="home-button-note">母音の発音解説を確認しよう。</span>
             </span>
           </button>
-
-          <div class="home-button" aria-disabled="true">
-            <span class="home-button-icon">▦</span>
-            <span>
-              <span class="home-button-title">アーカイブ</span>
-              <span class="home-button-note">鬼キャンが終了後、追って解放されます。</span>
-            </span>
-          </div>
-
-          <div class="home-button" aria-disabled="true">
-            <span class="home-button-icon">✓</span>
-            <span>
-              <span class="home-button-title">課題</span>
-              <span class="home-button-note">鬼キャンが終了後、追って解放されます。</span>
-            </span>
-          </div>
         </div>
       </section>
 
       <section class="panel" id="pronunciation-samples" hidden>
         <div class="panel-head">
           <h2>発音動画一覧</h2>
-          <span class="count">8 ITEMS</span>
+          <span class="count">1 ITEM</span>
         </div>
 
         <p class="notice">
-          母音攻略動画をまとめています。各動画の下に、登場する単語・フレーズも掲載しています。
+          サンプルとしてæの母音攻略動画をご確認いただけます。
         </p>
 
         <div class="video-grid">
-          <article class="video-card">
+          <article class="video-card" id="video-ae">
             <div class="video-meta">
               <span class="number">01</span>
               <span class="tag">母音</span>
@@ -498,8 +488,8 @@
                 <span class="chip">母音</span>
                 <span class="chip">æ</span>
               </div>
-              <div class="video-frame">
-                <iframe title="æ｜母音解説" src="https://player.vimeo.com/video/1191834453?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
+              <div class="video-frame video-frame-vertical">
+                <iframe title="æ_sample" src="https://player.vimeo.com/video/1205166779?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
               </div>
               <div class="details">
                 <h4>登場する単語・フレーズ</h4>
@@ -510,241 +500,6 @@
                   <li>bad /bæd/</li>
                   <li>habit /ˈhæbɪt/</li>
                   <li>That cat is getting fatter and fatter.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="video-card">
-            <div class="video-meta">
-              <span class="number">02</span>
-              <span class="tag">母音</span>
-            </div>
-            <div class="video-body">
-              <h3>ɑ｜母音解説</h3>
-              <div class="chips">
-                <span class="chip">発音記号</span>
-                <span class="chip">母音</span>
-                <span class="chip">ɑ</span>
-              </div>
-              <div class="video-frame">
-                <iframe title="ɑ｜母音解説" src="https://player.vimeo.com/video/1191835019?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
-              </div>
-              <div class="details">
-                <h4>登場する単語・フレーズ</h4>
-                <ul>
-                  <li>hot /hɑt/</li>
-                  <li>got /gɑt/</li>
-                  <li>job /dʒɑb/</li>
-                  <li>top /tɑp/</li>
-                  <li>stop /stɑp/</li>
-                  <li>bottom /ˈbɑtəm/</li>
-                  <li>office /ˈɑfɪs/</li>
-                  <li>olive /ˈɑlɪv/</li>
-                  <li>hospital /ˈhɑspɪtəl/</li>
-                  <li>Tom Cruise /tɑm kruz/</li>
-                  <li>It's not impossible. Not for Tom Cruise.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="video-card">
-            <div class="video-meta">
-              <span class="number">03</span>
-              <span class="tag">母音</span>
-            </div>
-            <div class="video-body">
-              <h3>ʌ｜母音解説</h3>
-              <div class="chips">
-                <span class="chip">発音記号</span>
-                <span class="chip">母音</span>
-                <span class="chip">ʌ</span>
-              </div>
-              <div class="video-frame">
-                <iframe title="ʌ｜母音解説" src="https://player.vimeo.com/video/1191835455?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
-              </div>
-              <div class="details">
-                <h4>登場する単語・フレーズ</h4>
-                <ul>
-                  <li>But /bʌt/</li>
-                  <li>Some /sʌm/</li>
-                  <li>Was /wʌz/</li>
-                  <li>Of /ʌv/</li>
-                  <li>Run /rʌn/</li>
-                  <li>Love /lʌv/</li>
-                  <li>Mother /ˈmʌðɚ/</li>
-                  <li>Country /ˈkʌntri/</li>
-                  <li>Onion /ˈʌnjən/</li>
-                  <li>Blood /blʌd/</li>
-                  <li>London /ˈlʌndən/</li>
-                  <li>Above /əˈbʌv/</li>
-                  <li>Oven /ˈʌvən/</li>
-                  <li>Monday /ˈmʌndeɪ/</li>
-                  <li>The sun is up.</li>
-                  <li>Dark Lの後ろに続くʌ</li>
-                  <li>Result /rɪˈzʌlt/</li>
-                  <li>Culture /ˈkʌltʃɚ/</li>
-                  <li>Skull /skʌl/</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="video-card">
-            <div class="video-meta">
-              <span class="number">04</span>
-              <span class="tag">母音</span>
-            </div>
-            <div class="video-body">
-              <h3>ɔ｜母音解説</h3>
-              <div class="chips">
-                <span class="chip">発音記号</span>
-                <span class="chip">母音</span>
-                <span class="chip">ɔ</span>
-              </div>
-              <div class="video-frame">
-                <iframe title="ɔ｜母音解説" src="https://player.vimeo.com/video/1191836318?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
-              </div>
-              <div class="details">
-                <h4>登場する単語・フレーズ</h4>
-                <ul>
-                  <li>Saw /sɔ/</li>
-                  <li>Law /lɔ/</li>
-                  <li>Dog /dɔɡ/</li>
-                  <li>August /ˈɔɡəst/</li>
-                  <li>Daughter /ˈdɔtɚ/</li>
-                  <li>Bought /bɔt/</li>
-                  <li>Thought /θɔt/</li>
-                  <li>Fought /fɔt/</li>
-                  <li>Caught /kɔt/</li>
-                  <li>Taught /tɔt/</li>
-                  <li>I saw my daughter in the audience.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="video-card">
-            <div class="video-meta">
-              <span class="number">05</span>
-              <span class="tag">母音</span>
-            </div>
-            <div class="video-body">
-              <h3>ɝ｜母音解説</h3>
-              <div class="chips">
-                <span class="chip">発音記号</span>
-                <span class="chip">母音</span>
-                <span class="chip">R性母音</span>
-                <span class="chip">ɝ</span>
-              </div>
-              <div class="video-frame">
-                <iframe title="ɝ｜母音解説" src="https://player.vimeo.com/video/1191836317?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
-              </div>
-              <div class="details">
-                <h4>登場する単語・フレーズ</h4>
-                <ul>
-                  <li>Bird /bɝd/</li>
-                  <li>Heard /hɝd/</li>
-                  <li>Early /ˈɝli/</li>
-                  <li>First /ˈfɝst/</li>
-                  <li>Birthday /ˈbɝθ.deɪ/</li>
-                  <li>Circle /ˈsɝ.kəl/</li>
-                  <li>Earth /ɝθ/</li>
-                  <li>Better /ˈbɛt.ɚ/</li>
-                  <li>Dinner /ˈdɪn.ɚ/</li>
-                  <li>It's his first birthday.</li>
-                  <li>Her mother is a doctor, and father is a teacher.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="video-card">
-            <div class="video-meta">
-              <span class="number">06</span>
-              <span class="tag">母音</span>
-            </div>
-            <div class="video-body">
-              <h3>ar｜母音解説</h3>
-              <div class="chips">
-                <span class="chip">発音記号</span>
-                <span class="chip">母音</span>
-                <span class="chip">ɑr</span>
-              </div>
-              <div class="video-frame">
-                <iframe title="ɑr｜母音解説" src="https://player.vimeo.com/video/1191836461?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
-              </div>
-              <div class="details">
-                <h4>登場する単語・フレーズ</h4>
-                <ul>
-                  <li>Star /stɑr/</li>
-                  <li>Car /kɑr/</li>
-                  <li>Heart /hɑrt/</li>
-                  <li>Dark /dɑrk/</li>
-                  <li>Department /dɪˈpɑrt.mənt/</li>
-                  <li>Hard /hɑrd/ - Heard /hɝd/</li>
-                  <li>Star /stɑr/ - Stir /stɝ/</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="video-card">
-            <div class="video-meta">
-              <span class="number">07</span>
-              <span class="tag">母音</span>
-            </div>
-            <div class="video-body">
-              <h3>ɔr｜母音解説</h3>
-              <div class="chips">
-                <span class="chip">発音記号</span>
-                <span class="chip">母音</span>
-                <span class="chip">ɔr</span>
-              </div>
-              <div class="video-frame">
-                <iframe title="ɔr｜母音解説" src="https://player.vimeo.com/video/1191836469?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
-              </div>
-              <div class="details">
-                <h4>登場する単語・フレーズ</h4>
-                <ul>
-                  <li>Store /stɔr/</li>
-                  <li>Four /fɔr/</li>
-                  <li>Born /bɔrn/</li>
-                  <li>Report /rɪˈpɔrt/</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="video-card">
-            <div class="video-meta">
-              <span class="number">08</span>
-              <span class="tag">母音</span>
-            </div>
-            <div class="video-body">
-              <h3>oʊ｜母音解説</h3>
-              <div class="chips">
-                <span class="chip">発音記号</span>
-                <span class="chip">母音</span>
-                <span class="chip">二重母音</span>
-                <span class="chip">oʊ</span>
-              </div>
-              <div class="video-frame">
-                <iframe title="oʊ｜母音解説" src="https://player.vimeo.com/video/1191836474?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
-              </div>
-              <div class="details">
-                <h4>登場する単語・フレーズ</h4>
-                <ul>
-                  <li>No /noʊ/</li>
-                  <li>Home /hoʊm/</li>
-                  <li>Note /noʊt/</li>
-                  <li>Over /ˈoʊvɚ/</li>
-                  <li>Only /ˈoʊnli/</li>
-                  <li>She spoke too slow.</li>
-                  <li>Law /lɔ/ vs. Low /loʊ/</li>
-                  <li>Saw /sɔ/ vs. So /soʊ/</li>
-                  <li>Bought /bɔt/ vs. Boat /boʊt/</li>
                 </ul>
               </div>
             </div>
@@ -763,6 +518,14 @@
       pronunciationSamples.hidden = false;
       pronunciationSamples.scrollIntoView({ behavior: "smooth", block: "start" });
     });
+
+    if (location.hash === "#pronunciation-samples" || location.hash === "#video-ae") {
+      pronunciationSamples.hidden = false;
+      requestAnimationFrame(() => {
+        const target = document.querySelector(location.hash) || pronunciationSamples;
+        target?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
   </script>
 </body>
 </html>
