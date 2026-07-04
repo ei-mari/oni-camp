@@ -338,6 +338,14 @@
       box-shadow: 0 10px 18px rgba(255, 75, 51, 0.18);
     }
 
+    .date-row .status-sub {
+      display: block;
+      margin-top: 2px;
+      font-size: 10px;
+      font-weight: 800;
+      opacity: 0.85;
+    }
+
     .sold-notice .note {
       margin: 12px 0 0;
       color: rgba(255, 248, 228, 0.78);
@@ -833,9 +841,9 @@
     }
 
     .review img {
+      display: block;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
     }
 
     .review:nth-child(even) {
@@ -1229,7 +1237,7 @@
 <body>
   <div class="page">
     <div class="urgency-bar">
-      <span class="full">満</span>7/26(日)満席｜7/25(土)残りわずか｜早割は <span class="countdown" id="top-early-countdown">あと少し</span>
+      <span class="full">満</span>添削付プラン 両日満席御礼｜見学プランは両日受付中｜早割は <span class="countdown" id="top-early-countdown">あと少し</span>
     </div>
     <div class="content">
       <section class="video-section" aria-label="紹介動画">
@@ -1247,28 +1255,28 @@
       </section>
 
       <header class="hero">
-        <div class="badge">7/26(日)満席 / 7/25(土)残りわずか</div>
+        <div class="badge">添削付プラン 両日満席御礼｜見学プラン受付中</div>
         <h1>1日で、発音の<br>土台を作り直す。</h1>
         <p class="hero-copy">母音・アクセント・リンキング・リズム・イントネーションをまとめて整える集中キャンプ、それが鬼キャン。</p>
         <div class="sold-notice" aria-label="開催日程・空席状況">
           <h2>開催日程・空席状況</h2>
           <div class="date-row open">
             <span>❶ 7/25（土）10:00 - 16:00</span>
-            <span class="status-open">残りわずか</span>
+            <span class="status-open">見学 受付中<span class="status-sub">添削 満席</span></span>
           </div>
-          <div class="date-row closed">
+          <div class="date-row open">
             <span>❷ 7/26（日）10:00 - 16:00</span>
-            <span class="status-full">満席御礼</span>
+            <span class="status-open">見学 受付中<span class="status-sub">添削 満席</span></span>
           </div>
-          <p class="note">※両日同じ内容です。日曜は定員に達したため、<strong>お申し込みいただけるのは土曜のみ</strong>となりました。土曜も定員に達し次第、募集を締め切ります。</p>
+          <p class="note">※両日同じ内容です。<strong>添削付プランは両日とも満席御礼</strong>となりました。現在お申し込みいただけるのは見学プラン（両日OK）のみです。</p>
         </div>
-        <a class="button button-primary" id="primary-cta" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
-          <span>7/25(土)の枠を確保する →<small>添削は8名限定 / 早割価格は7/5（日）まで</small></span>
+        <a class="button button-primary" id="primary-cta" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
+          <span>見学プランで参加する →<small>添削付は両日満席御礼 / 早割価格は7/5（日）まで</small></span>
         </a>
         <div class="stats" aria-label="講座情報">
           <div class="stat"><b>6時間</b><span>集中講座</span></div>
           <div class="stat"><b>1年間</b><span>アーカイブ</span></div>
-          <div class="stat"><b>8名</b><span>添削枠限定</span></div>
+          <div class="stat"><b>満席</b><span>添削枠 御礼</span></div>
         </div>
       </header>
 
@@ -1290,7 +1298,7 @@
               </li>
               <li><span class="check">✓</span>アーカイブあり（1年間視聴可能）</li>
               <li><span class="check">✓</span>スライド共有あり</li>
-              <li><span class="check">✓</span>添削付プランは8名限定</li>
+              <li><span class="check">✓</span>添削付プランは両日満席御礼（見学プランは受付中）</li>
             </ul>
             <a class="bonus-link" href="#bonus">さらに特別特典をご用意🎁</a>
           </div>
@@ -1319,7 +1327,7 @@
             <figure class="bonus-thumb">
               <img src="assets/pronunciation-diagnosis.png" alt="添削プラン限定 発音診断">
             </figure>
-            <p>添削付プランの方限定で、今の発音を客観的に見つめ直す発音診断をご用意します。</p>
+            <p>添削付プランの方限定で、今の発音を客観的に見つめ直す発音診断をご用意します。<br><strong>※添削付プランは両日満席御礼となりました。</strong></p>
             <ul class="bonus-list">
               <li>事前の提出音読課題</li>
               <li>提出課題に対するフィードバック</li>
@@ -1352,10 +1360,10 @@
 
       <section class="section">
         <div class="cta-panel">
-          <h2>今回は8名限定の添削付。</h2>
-          <p>できているかどうかの不安をなくす鍵は、客観的なフィードバック、すなわち添削。自分の発音を見つめ直し、成長のための大きなヒントが欲しい方はぜひ添削付プランへお越しください。</p>
-          <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
-            <span>7/25(土)の空き枠を確認する →<small>お得な早割価格は7/5（日）まで</small></span>
+          <h2>添削付プランは両日満席御礼。</h2>
+          <p>8名限定の添削枠は、両日とも満席となりました。ありがとうございます。講座内容・アーカイブ・ライブラリーをすべて受け取れる見学プランは、引き続き両日お申し込みいただけます（ビデオOFF参加OK）。</p>
+          <a class="button button-primary" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
+            <span>見学プランで参加する →<small>お得な早割価格は7/5（日）まで</small></span>
           </a>
         </div>
       </section>
@@ -1453,9 +1461,8 @@
         <h2 class="section-title">プランを選ぶ</h2>
         <p class="section-lead">今回は２つのプランをご用意しております。</p>
         <div class="plans">
-          <article class="plan featured">
-            <span class="plan-ribbon">🔥 8名限定・添削枠 残りわずか</span>
-            <span class="plan-label">一番おすすめ</span>
+          <article class="plan">
+            <span class="plan-ribbon">🈵 両日満席御礼・受付終了</span>
             <h3>添削付きプラン</h3>
             <figure class="plan-visual">
               <img src="assets/price-visual.png" alt="鬼の発音キャンプ 添削付きプラン 早割価格">
@@ -1467,11 +1474,12 @@
               <li>アーカイブ視聴 1年間</li>
               <li>鬼キャンライブラリー利用</li>
             </ul>
-            <a class="button button-primary" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
-              <span>添削付きプランに申し込む →<small>日曜満席につき、土曜が最後の添削枠です</small></span>
-            </a>
+            <span class="button button-soldout">
+              <span>満席御礼・受付終了<small>たくさんのお申し込みありがとうございました</small></span>
+            </span>
           </article>
-          <article class="plan" id="observer-plan">
+          <article class="plan featured" id="observer-plan">
+            <span class="plan-ribbon">✅ 両日申込OK・受付中</span>
             <span class="plan-label">顔出しなしで参加OK</span>
             <h3>見学プラン</h3>
             <div class="plan-price">
@@ -1486,12 +1494,12 @@
               <li>鬼キャンライブラリー利用</li>
               <li>添削なしで講座内容を受け取れるプラン</li>
             </ul>
-            <a class="button button-secondary" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
-              <span>見学プランに申し込む →<small>ビデオOFFで参加したい方はこちら</small></span>
+            <a class="button button-primary" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
+              <span>見学プランに申し込む →<small>両日OK / 早割価格は7/5（日）まで</small></span>
             </a>
           </article>
         </div>
-        <p class="plan-note">※7/26(日)は満席です。現在お申し込みいただけるのは7/25(土)枠です。早割価格は7/5（日）23:59までのお申し込みが対象です。</p>
+        <p class="plan-note">※添削付きプランは両日満席となりました。見学プランは7/25(土)・7/26(日)ともお申し込みいただけます。早割価格は7/5（日）23:59までのお申し込みが対象です。</p>
       </section>
 
       <section class="section">
@@ -1507,7 +1515,7 @@
           </details>
           <details>
             <summary>Q3. 「添削付プラン」では何が受けられますか？</summary>
-            <p>添削付プランでは、講座中に個別フィードバック（矯正）を受けていただけます。<br><br>実際にご自身の発音を確認しながら学べるため、「理解したつもり」で終わらず、改善ポイントをつかみやすいのが特長です。</p>
+            <p>添削付プランでは、講座中に個別フィードバック（矯正）を受けていただけます。<br><br>実際にご自身の発音を確認しながら学べるため、「理解したつもり」で終わらず、改善ポイントをつかみやすいのが特長です。<br><br>※今回の添削付プランは両日とも満席となりました。現在は見学プランのみお申し込みいただけます。</p>
           </details>
           <details>
             <summary>Q4. カメラONは必須ですか？</summary>
@@ -1588,8 +1596,8 @@
 
     <div class="fixed-cta" id="fixed-cta">
       <div class="fixed-cta-body">
-        <a class="fixed-main-cta" href="https://mosh.jp/services/7b9a9ce23610414b8fc6e314f5a63293?openExternalBrowser=1">
-          <span>7/25(土) 添削付プランに申し込む →<small>添削は8名限定 / 早割価格は7/5（日）まで</small></span>
+        <a class="fixed-main-cta" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
+          <span>見学プランに申し込む →<small>添削付は両日満席御礼 / 早割価格は7/5（日）まで</small></span>
         </a>
       </div>
     </div>
