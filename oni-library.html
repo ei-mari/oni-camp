@@ -34,6 +34,10 @@
       letter-spacing: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     a {
       color: inherit;
     }
@@ -180,20 +184,6 @@
       cursor: pointer;
     }
 
-    button.home-button::after {
-      content: "タップして見る  →";
-      position: absolute;
-      right: 14px;
-      bottom: 10px;
-      padding: 5px 9px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--teal-dark), var(--teal));
-      color: #fff;
-      font-size: 11px;
-      font-weight: 950;
-      box-shadow: 0 8px 18px rgba(8, 123, 120, 0.22);
-    }
-
     button.home-button {
       border-color: rgba(8, 123, 120, 0.44);
       background: linear-gradient(135deg, #f2fffb, #ffffff);
@@ -293,15 +283,6 @@
       font-weight: 950;
     }
 
-    .tag {
-      padding: 5px 9px;
-      border-radius: 999px;
-      background: #fff0bf;
-      color: #715215;
-      font-size: 12px;
-      font-weight: 950;
-    }
-
     .video-body {
       padding: 16px;
     }
@@ -313,35 +294,14 @@
       font-weight: 950;
     }
 
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 14px;
-    }
-
-    .chip {
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: #e8f8f4;
-      color: var(--teal-dark);
-      font-size: 12px;
-      font-weight: 950;
-    }
-
     .video-frame {
       position: relative;
       width: 100%;
-      padding-top: 56.25%;
+      padding-top: 177.78%;
       overflow: hidden;
       border-radius: 12px;
       background: #111;
     }
-
-    .video-frame-vertical {
-      padding-top: 177.78%;
-    }
-
 
     .video-frame iframe {
       position: absolute;
@@ -349,6 +309,66 @@
       width: 100%;
       height: 100%;
       border: 0;
+    }
+
+
+    .teaser-frame {
+      display: grid;
+      place-items: center;
+      gap: 8px;
+      padding: 24px;
+      background:
+        linear-gradient(135deg, rgba(8, 123, 120, 0.14), rgba(255, 247, 232, 0.92)),
+        repeating-linear-gradient(45deg, rgba(8, 123, 120, 0.08) 0 8px, transparent 8px 16px),
+        #fffdfa;
+      border: 1px dashed rgba(8, 123, 120, 0.36);
+      text-align: center;
+    }
+
+    .teaser-frame strong {
+      color: var(--teal-dark);
+      font-size: 17px;
+      line-height: 1.45;
+      font-weight: 950;
+    }
+
+    .teaser-frame small {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+      font-weight: 850;
+    }
+
+    .teaser-lock {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+      color: #fff;
+      font-size: 12px;
+      letter-spacing: 0;
+      font-weight: 950;
+    }
+
+    .video-toc a.is-locked {
+      position: relative;
+      opacity: 0.82;
+    }
+
+    .video-toc a.is-locked::after {
+      content: "参加後";
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: #f1ece5;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 950;
     }
 
     .locked-list {
@@ -405,6 +425,39 @@
       font-weight: 800;
     }
 
+    .video-toc {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 18px 0 18px;
+    }
+
+    .video-toc a {
+      display: grid;
+      gap: 3px;
+      min-height: 64px;
+      padding: 11px 12px;
+      border: 1px solid rgba(8, 123, 120, 0.18);
+      border-radius: 12px;
+      background: linear-gradient(135deg, #fffdfa, #f1fbf8);
+      color: var(--ink);
+      text-decoration: none;
+      box-shadow: 0 8px 18px rgba(35, 28, 20, 0.06);
+    }
+
+    .video-toc strong {
+      color: var(--teal-dark);
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 950;
+    }
+
+    .video-toc span {
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 950;
+    }
+
     .details {
       margin-top: 14px;
       padding: 14px;
@@ -432,6 +485,60 @@
       font-weight: 750;
     }
 
+
+    .locked-preview {
+      position: relative;
+      max-height: 156px;
+      overflow: hidden;
+    }
+
+    .locked-preview::after {
+      content: "続きは参加後に解放";
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      left: 12px;
+      display: grid;
+      place-items: center;
+      min-height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255, 253, 250, 0.2), #fffdfa 42%, #fff7df 100%);
+      color: var(--teal-dark);
+      font-size: 13px;
+      font-weight: 950;
+      box-shadow: 0 -18px 28px rgba(255, 253, 250, 0.92);
+    }
+
+    .video-note {
+      margin: 14px 0 0;
+      padding: 13px 14px;
+      border-left: 5px solid var(--gold);
+      border-radius: 10px;
+      background: #fff7df;
+      color: #58442a;
+      font-size: 13px;
+      line-height: 1.75;
+      font-weight: 800;
+    }
+
+    .top-button {
+      position: fixed;
+      right: max(16px, calc((100vw - 520px) / 2 + 16px));
+      bottom: 18px;
+      z-index: 20;
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+      color: #fff;
+      text-decoration: none;
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 950;
+      box-shadow: 0 14px 28px rgba(8, 123, 120, 0.28);
+    }
   </style>
 </head>
 <body>
@@ -441,7 +548,6 @@
         <span class="logo-mark">鬼</span>
         <span>ONI CAMP LIBRARY</span>
       </a>
-      <a class="back" href="index.html">戻る</a>
     </header>
 
     <main>
@@ -450,7 +556,7 @@
           <img src="assets/oni-library-thumbnail.png" alt="鬼キャンライブラリー">
         </figure>
         <h1>鬼キャンライブラリー</h1>
-        <p class="lead">サンプルとしてæの母音攻略動画をご確認いただけます。</p>
+        <p class="lead">æのサンプル動画を公開中。ほかの母音攻略動画は、鬼キャン参加後に解放されます。</p>
       </section>
 
       <section class="panel">
@@ -462,33 +568,54 @@
               <span class="home-button-note">母音の発音解説を確認しよう。</span>
             </span>
           </button>
+
+          <div class="home-button" aria-disabled="true">
+            <span class="home-button-icon">▦</span>
+            <span>
+              <span class="home-button-title">アーカイブ</span>
+              <span class="home-button-note">鬼キャンが終了後、追って解放されます。</span>
+            </span>
+          </div>
+
+          <div class="home-button" aria-disabled="true">
+            <span class="home-button-icon">✓</span>
+            <span>
+              <span class="home-button-title">課題</span>
+              <span class="home-button-note">鬼キャンが終了後、追って解放されます。</span>
+            </span>
+          </div>
         </div>
       </section>
 
       <section class="panel" id="pronunciation-samples" hidden>
         <div class="panel-head">
           <h2>発音動画一覧</h2>
-          <span class="count">1 ITEM</span>
+          <span class="count">1 SAMPLE + 7 LOCKED</span>
         </div>
 
         <p class="notice">
-          サンプルとしてæの母音攻略動画をご確認いただけます。
+          サンプルとしてæの動画だけ公開中です。ほかの母音は、どんな単語を扱うかだけ少し見られます。
         </p>
 
+        <nav class="video-toc" aria-label="発音動画の目次">
+          <a href="#vowel-ae"><strong>01</strong><span>æ｜母音解説</span></a>
+          <a class="is-locked" href="#vowel-aa"><strong>02</strong><span>ɑ｜母音解説</span></a>
+          <a class="is-locked" href="#vowel-uh"><strong>03</strong><span>ʌ｜母音解説</span></a>
+          <a class="is-locked" href="#vowel-aw"><strong>04</strong><span>ɔ｜母音解説</span></a>
+          <a class="is-locked" href="#vowel-er"><strong>05</strong><span>ɝ｜母音解説</span></a>
+          <a class="is-locked" href="#vowel-ar"><strong>06</strong><span>ar｜母音解説</span></a>
+          <a class="is-locked" href="#vowel-or"><strong>07</strong><span>ɔr｜母音解説</span></a>
+          <a class="is-locked" href="#vowel-ou"><strong>08</strong><span>oʊ｜母音解説</span></a>
+        </nav>
+
         <div class="video-grid">
-          <article class="video-card" id="video-ae">
+          <article class="video-card" id="vowel-ae">
             <div class="video-meta">
               <span class="number">01</span>
-              <span class="tag">母音</span>
             </div>
             <div class="video-body">
               <h3>æ｜母音解説</h3>
-              <div class="chips">
-                <span class="chip">発音記号</span>
-                <span class="chip">母音</span>
-                <span class="chip">æ</span>
-              </div>
-              <div class="video-frame video-frame-vertical">
+              <div class="video-frame">
                 <iframe title="æ_sample" src="https://player.vimeo.com/video/1205166779?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
               </div>
               <div class="details">
@@ -504,10 +631,217 @@
               </div>
             </div>
           </article>
+
+          <article class="video-card" id="vowel-aa">
+            <div class="video-meta">
+              <span class="number">02</span>
+            </div>
+            <div class="video-body">
+              <h3>ɑ｜母音解説</h3>
+              <div class="video-frame teaser-frame" aria-label="参加後に解放される動画">
+                <span class="teaser-lock">LOCKED</span>
+                <strong>参加後に動画が解放されます</strong>
+                <small>口の形・舌の位置・練習フレーズを動画で確認できます。</small>
+              </div>
+              <div class="details locked-preview">
+                <h4>登場する単語・フレーズ</h4>
+                <ul>
+                  <li>hot /hɑt/</li>
+                  <li>got /gɑt/</li>
+                  <li>job /dʒɑb/</li>
+                  <li>top /tɑp/</li>
+                  <li>stop /stɑp/</li>
+                  <li>bottom /ˈbɑtəm/</li>
+                  <li>office /ˈɑfɪs/</li>
+                  <li>olive /ˈɑlɪv/</li>
+                  <li>hospital /ˈhɑspɪtəl/</li>
+                  <li>Tom Cruise /tɑm kruz/</li>
+                  <li>It's not impossible. Not for Tom Cruise.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card" id="vowel-uh">
+            <div class="video-meta">
+              <span class="number">03</span>
+            </div>
+            <div class="video-body">
+              <h3>ʌ｜母音解説</h3>
+              <div class="video-frame teaser-frame" aria-label="参加後に解放される動画">
+                <span class="teaser-lock">LOCKED</span>
+                <strong>参加後に動画が解放されます</strong>
+                <small>口の形・舌の位置・練習フレーズを動画で確認できます。</small>
+              </div>
+              <div class="details locked-preview">
+                <h4>登場する単語・フレーズ</h4>
+                <ul>
+                  <li>But /bʌt/</li>
+                  <li>Some /sʌm/</li>
+                  <li>Was /wʌz/</li>
+                  <li>Of /ʌv/</li>
+                  <li>Run /rʌn/</li>
+                  <li>Love /lʌv/</li>
+                  <li>Mother /ˈmʌðɚ/</li>
+                  <li>Country /ˈkʌntri/</li>
+                  <li>Onion /ˈʌnjən/</li>
+                  <li>Blood /blʌd/</li>
+                  <li>London /ˈlʌndən/</li>
+                  <li>Above /əˈbʌv/</li>
+                  <li>Oven /ˈʌvən/</li>
+                  <li>Monday /ˈmʌndeɪ/</li>
+                  <li>The sun is up.</li>
+                  <li>Dark Lの後ろに続くʌ</li>
+                  <li>Result /rɪˈzʌlt/</li>
+                  <li>Culture /ˈkʌltʃɚ/</li>
+                  <li>Skull /skʌl/</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card" id="vowel-aw">
+            <div class="video-meta">
+              <span class="number">04</span>
+            </div>
+            <div class="video-body">
+              <h3>ɔ｜母音解説</h3>
+              <div class="video-frame teaser-frame" aria-label="参加後に解放される動画">
+                <span class="teaser-lock">LOCKED</span>
+                <strong>参加後に動画が解放されます</strong>
+                <small>口の形・舌の位置・練習フレーズを動画で確認できます。</small>
+              </div>
+              <div class="details locked-preview">
+                <h4>登場する単語・フレーズ</h4>
+                <ul>
+                  <li>Saw /sɔ/</li>
+                  <li>Law /lɔ/</li>
+                  <li>Dog /dɔɡ/</li>
+                  <li>August /ˈɔɡəst/</li>
+                  <li>Daughter /ˈdɔtɚ/</li>
+                  <li>Bought /bɔt/</li>
+                  <li>Thought /θɔt/</li>
+                  <li>Fought /fɔt/</li>
+                  <li>Caught /kɔt/</li>
+                  <li>Taught /tɔt/</li>
+                  <li>I saw my daughter in the audience.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card" id="vowel-er">
+            <div class="video-meta">
+              <span class="number">05</span>
+            </div>
+            <div class="video-body">
+              <h3>ɝ｜母音解説</h3>
+              <div class="video-frame teaser-frame" aria-label="参加後に解放される動画">
+                <span class="teaser-lock">LOCKED</span>
+                <strong>参加後に動画が解放されます</strong>
+                <small>口の形・舌の位置・練習フレーズを動画で確認できます。</small>
+              </div>
+              <div class="details locked-preview">
+                <h4>登場する単語・フレーズ</h4>
+                <ul>
+                  <li>Bird /bɝd/</li>
+                  <li>Heard /hɝd/</li>
+                  <li>Early /ˈɝli/</li>
+                  <li>First /ˈfɝst/</li>
+                  <li>Birthday /ˈbɝθ.deɪ/</li>
+                  <li>Circle /ˈsɝ.kəl/</li>
+                  <li>Earth /ɝθ/</li>
+                  <li>Better /ˈbɛt.ɚ/</li>
+                  <li>Dinner /ˈdɪn.ɚ/</li>
+                  <li>It's his first birthday.</li>
+                  <li>Her mother is a doctor, and father is a teacher.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card" id="vowel-ar">
+            <div class="video-meta">
+              <span class="number">06</span>
+            </div>
+            <div class="video-body">
+              <h3>ar｜母音解説</h3>
+              <div class="video-frame teaser-frame" aria-label="参加後に解放される動画">
+                <span class="teaser-lock">LOCKED</span>
+                <strong>参加後に動画が解放されます</strong>
+                <small>口の形・舌の位置・練習フレーズを動画で確認できます。</small>
+              </div>
+              <div class="details locked-preview">
+                <h4>登場する単語・フレーズ</h4>
+                <ul>
+                  <li>Star /stɑr/</li>
+                  <li>Car /kɑr/</li>
+                  <li>Heart /hɑrt/</li>
+                  <li>Dark /dɑrk/</li>
+                  <li>Department /dɪˈpɑrt.mənt/</li>
+                  <li>Hard /hɑrd/ - Heard /hɝd/</li>
+                  <li>Star /stɑr/ - Stir /stɝ/</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card" id="vowel-or">
+            <div class="video-meta">
+              <span class="number">07</span>
+            </div>
+            <div class="video-body">
+              <h3>ɔr｜母音解説</h3>
+              <div class="video-frame teaser-frame" aria-label="参加後に解放される動画">
+                <span class="teaser-lock">LOCKED</span>
+                <strong>参加後に動画が解放されます</strong>
+                <small>口の形・舌の位置・練習フレーズを動画で確認できます。</small>
+              </div>
+              <p class="video-note">/ɔr/ の開始点である/ɔ/と、単体の/ɔ/は同じ記号が使われていますが、音が異なります。ぜひ04の/ɔ/と07 /ɔr/の/ɔ/を注意して聴き比べて見てくださいね。</p>
+              <div class="details">
+                <h4>登場する単語・フレーズ</h4>
+                <ul>
+                  <li>Store /stɔr/</li>
+                  <li>Four /fɔr/</li>
+                  <li>Born /bɔrn/</li>
+                  <li>Report /rɪˈpɔrt/</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card" id="vowel-ou">
+            <div class="video-meta">
+              <span class="number">08</span>
+            </div>
+            <div class="video-body">
+              <h3>oʊ｜母音解説</h3>
+              <div class="video-frame teaser-frame" aria-label="参加後に解放される動画">
+                <span class="teaser-lock">LOCKED</span>
+                <strong>参加後に動画が解放されます</strong>
+                <small>口の形・舌の位置・練習フレーズを動画で確認できます。</small>
+              </div>
+              <div class="details locked-preview">
+                <h4>登場する単語・フレーズ</h4>
+                <ul>
+                  <li>No /noʊ/</li>
+                  <li>Home /hoʊm/</li>
+                  <li>Note /noʊt/</li>
+                  <li>Over /ˈoʊvɚ/</li>
+                  <li>Only /ˈoʊnli/</li>
+                  <li>She spoke too slow.</li>
+                  <li>Law /lɔ/ vs. Low /loʊ/</li>
+                  <li>Saw /sɔ/ vs. So /soʊ/</li>
+                  <li>Bought /bɔt/ vs. Boat /boʊt/</li>
+                </ul>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
     </main>
   </div>
+  <a class="top-button" href="#" aria-label="ページ上部へ戻る">↑</a>
   <script src="https://player.vimeo.com/api/player.js"></script>
   <script>
     const showVideosButton = document.getElementById("show-videos");
@@ -518,14 +852,6 @@
       pronunciationSamples.hidden = false;
       pronunciationSamples.scrollIntoView({ behavior: "smooth", block: "start" });
     });
-
-    if (location.hash === "#pronunciation-samples" || location.hash === "#video-ae") {
-      pronunciationSamples.hidden = false;
-      requestAnimationFrame(() => {
-        const target = document.querySelector(location.hash) || pronunciationSamples;
-        target?.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    }
   </script>
 </body>
 </html>
