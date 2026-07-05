@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>鬼の発音キャンプ - 2026 Summer</title>
+  <title>鬼の発音キャンプ - 2026 Summer【プレビュー】</title>
   <style>
     :root {
       color-scheme: dark;
@@ -62,7 +62,7 @@
       min-height: 100svh;
       overflow: hidden;
       background:
-        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.97)),
+        linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.98)),
         url("assets/thumbnail.png") top center / 148% auto no-repeat,
         var(--bg);
       box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
@@ -87,9 +87,10 @@
       top: 0;
       z-index: 12;
       padding: 10px 12px;
-      background: linear-gradient(90deg, #9f2017, #ef4a34);
-      color: #fff8e4;
+      background: linear-gradient(90deg, #7e150e, #b3271a);
+      color: #ffffff;
       text-align: center;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
       font-size: 13px;
       line-height: 1.45;
       font-weight: 950;
@@ -110,7 +111,7 @@
     }
 
     .urgency-bar .countdown {
-      color: #ffe58f;
+      color: #ffef9e;
       white-space: nowrap;
     }
 
@@ -295,6 +296,18 @@
       text-align: center;
     }
 
+    a.date-row {
+      text-decoration: none;
+      cursor: pointer;
+      -webkit-tap-highlight-color: rgba(255, 209, 93, 0.18);
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+
+    a.date-row:active {
+      background: rgba(255, 75, 51, 0.18);
+      transform: scale(0.985);
+    }
+
     .date-row {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -329,13 +342,14 @@
     }
 
     .date-row .status-open {
-      padding: 5px 10px;
-      border-radius: 8px;
-      background: linear-gradient(180deg, #d84c3a, #b93225);
+      padding: 7px 12px;
+      border-radius: 9px;
+      background: linear-gradient(180deg, #ff624c, #c8271a);
       color: #fff;
       font-size: 12px;
       white-space: nowrap;
-      box-shadow: 0 10px 18px rgba(255, 75, 51, 0.18);
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(255, 75, 51, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.22);
     }
 
     .date-row .status-sub {
@@ -1034,8 +1048,8 @@
 
     .plan-note {
       margin: 12px 0 0;
-      color: rgba(255, 248, 228, 0.68);
-      font-size: 11px;
+      color: rgba(255, 248, 228, 0.82);
+      font-size: 12px;
       line-height: 1.65;
       font-weight: 750;
       text-align: center;
@@ -1163,16 +1177,6 @@
       backdrop-filter: blur(16px);
       box-shadow: 0 -16px 48px rgba(0, 0, 0, 0.5);
       overflow: hidden;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(18px);
-      transition: opacity 0.24s ease, transform 0.24s ease;
-    }
-
-    .fixed-cta.is-visible {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
     }
 
     .fixed-cta .button {
@@ -1223,6 +1227,136 @@
       opacity: 0.94;
     }
 
+    /* ===== 見学プラン訴求強化（プレビュー追加分） ===== */
+    .hero-benefits {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
+      margin: 0 0 16px;
+    }
+
+    .hero-benefits span {
+      padding: 6px 11px;
+      border: 1px solid rgba(255, 209, 93, 0.42);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.62);
+      color: var(--gold-2);
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 900;
+    }
+
+    .hero-price {
+      display: block;
+      text-decoration: none;
+      -webkit-tap-highlight-color: rgba(255, 209, 93, 0.18);
+      transition: transform 0.15s ease;
+      margin: 0 0 14px;
+      padding: 16px 14px 13px;
+      border: 2px solid rgba(255, 209, 93, 0.62);
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, rgba(255, 209, 93, 0.14), rgba(255, 75, 51, 0.1)),
+        rgba(10, 3, 1, 0.88);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.34);
+      text-align: center;
+    }
+
+    .hero-price:active {
+      transform: scale(0.985);
+    }
+
+    .hero-price .plan-name {
+      display: inline-flex;
+      margin-bottom: 9px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: #1a0904;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 950;
+    }
+
+    .hero-price .old {
+      margin-right: 8px;
+      color: rgba(255, 248, 228, 0.55);
+      font-size: 14px;
+      font-weight: 850;
+      text-decoration: line-through;
+    }
+
+    .hero-price .now {
+      color: var(--gold);
+      font-size: 34px;
+      line-height: 1.1;
+      font-weight: 950;
+      text-shadow: 0 0 22px rgba(255, 209, 93, 0.3);
+    }
+
+    .hero-price .now small {
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .hero-price .deadline {
+      display: block;
+      margin-top: 9px;
+      padding-top: 9px;
+      border-top: 1px dashed rgba(255, 209, 93, 0.3);
+      color: #ffe58f;
+      font-size: 13px;
+      line-height: 1.5;
+      font-weight: 900;
+    }
+
+    .stats-paper {
+      margin: 18px 20px 0;
+    }
+
+    .stats-paper .stat {
+      border: 1px solid rgba(180, 24, 12, 0.22);
+      background: rgba(255, 75, 51, 0.06);
+    }
+
+    .stats-paper .stat b {
+      color: #b8200f;
+    }
+
+    .stats-paper .stat span {
+      color: #5c5045;
+    }
+
+    .cta-visual {
+      display: block;
+      overflow: hidden;
+      margin: 0 0 16px;
+      border: 1px solid rgba(255, 209, 93, 0.4);
+      border-radius: 14px;
+      background: #070302;
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.4);
+      transition: transform 0.15s ease;
+    }
+
+    .cta-visual:active {
+      transform: scale(0.985);
+    }
+
+    .plan.soldout {
+      padding: 15px 18px 16px;
+      opacity: 0.62;
+    }
+
+    .plan.soldout .plan-ribbon {
+      background: linear-gradient(180deg, #6a6560, #45403c);
+      box-shadow: none;
+    }
+
+    .plan.featured .plan-price .now {
+      font-size: 34px;
+    }
+
     @media (min-width: 431px) {
       body {
         padding: 20px 0;
@@ -1237,7 +1371,7 @@
 <body>
   <div class="page">
     <div class="urgency-bar">
-      <span class="full">満</span>添削付プラン 両日満席御礼｜見学プランは両日受付中｜早割は <span class="countdown" id="top-early-countdown">あと少し</span>
+      <span class="full">満</span>添削付は満席御礼｜見学プランは両日受付中｜早割終了まで <span class="countdown" id="top-early-countdown">あと少し</span>
     </div>
     <div class="content">
       <section class="video-section" aria-label="紹介動画">
@@ -1255,28 +1389,25 @@
       </section>
 
       <header class="hero">
-        <div class="badge">添削付プラン 両日満席御礼｜見学プラン受付中</div>
+        <div class="badge">見学プラン 両日受付中｜顔出し不要・ビデオOFF参加OK</div>
         <h1>1日で、発音の<br>土台を作り直す。</h1>
         <p class="hero-copy">母音・アクセント・リンキング・リズム・イントネーションをまとめて整える集中キャンプ、それが鬼キャン。</p>
+        <div class="hero-benefits" aria-label="見学プランのポイント">
+          <span>👤 顔出し不要</span>
+          <span>📷 ビデオOFFでOK</span>
+          <span>🎬 アーカイブ1年付き</span>
+        </div>
         <div class="sold-notice" aria-label="開催日程・空席状況">
           <h2>開催日程・空席状況</h2>
-          <div class="date-row open">
+          <a class="date-row open" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
             <span>❶ 7/25（土）10:00 - 16:00</span>
-            <span class="status-open">見学 受付中<span class="status-sub">添削 満席</span></span>
-          </div>
-          <div class="date-row open">
+            <span class="status-open">見学 受付中 →<span class="status-sub">添削 満席</span></span>
+          </a>
+          <a class="date-row open" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
             <span>❷ 7/26（日）10:00 - 16:00</span>
-            <span class="status-open">見学 受付中<span class="status-sub">添削 満席</span></span>
-          </div>
-          <p class="note">※両日同じ内容です。<strong>添削付プランは両日とも満席御礼</strong>となりました。現在お申し込みいただけるのは見学プラン（両日OK）のみです。</p>
-        </div>
-        <a class="button button-primary" id="primary-cta" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
-          <span>見学プランで参加する →<small>添削付は両日満席御礼 / 早割価格は7/5（日）まで</small></span>
-        </a>
-        <div class="stats" aria-label="講座情報">
-          <div class="stat"><b>6時間</b><span>集中講座</span></div>
-          <div class="stat"><b>1年間</b><span>アーカイブ</span></div>
-          <div class="stat"><b>満席</b><span>添削枠 御礼</span></div>
+            <span class="status-open">見学 受付中 →<span class="status-sub">添削 満席</span></span>
+          </a>
+          <p class="note">※両日同じ内容です。<strong>見学プランは両日ともお申し込みいただけます</strong>（添削付プランは満席御礼となりました）。</p>
         </div>
       </header>
 
@@ -1360,10 +1491,13 @@
 
       <section class="section">
         <div class="cta-panel">
-          <h2>添削付プランは両日満席御礼。</h2>
-          <p>8名限定の添削枠は、両日とも満席となりました。ありがとうございます。講座内容・アーカイブ・ライブラリーをすべて受け取れる見学プランは、引き続き両日お申し込みいただけます（ビデオOFF参加OK）。</p>
+          <h2>見学プランなら、<br>まだ間に合います。</h2>
+          <a class="cta-visual" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
+            <img src="assets/kengaku-lp.png" alt="鬼の発音キャンプ 見学プラン 顔出し不要・アーカイブ付き 早割¥19,800（税込）" loading="lazy">
+          </a>
+          <p>講座本編・アーカイブ1年・鬼キャンライブラリーをすべて受け取れる見学プランは、両日お申し込みOK。顔出し不要・ビデオOFFで、自分のペースで参加できます。</p>
           <a class="button button-primary" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
-            <span>見学プランで参加する →<small>お得な早割価格は7/5（日）まで</small></span>
+            <span>見学プランで参加する →<small>早割¥19,800（税込）は本日7/5（日）23:59まで</small></span>
           </a>
         </div>
       </section>
@@ -1461,12 +1595,29 @@
         <h2 class="section-title">プランを選ぶ</h2>
         <p class="section-lead">今回は２つのプランをご用意しております。</p>
         <div class="plans">
-          <article class="plan">
+          <article class="plan featured" id="observer-plan">
+            <span class="plan-ribbon">🔥 受付中・早割は本日まで</span>
+            <span class="plan-label">顔出しなし・ビデオOFFで参加OK</span>
+            <h3>見学プラン</h3>
+            <div class="plan-price">
+              <span class="old">通常 ¥25,000</span>
+              <span class="now">¥19,800<small>（税込）</small></span>
+              <span class="tag">早割 本日まで</span>
+            </div>
+            <ul class="plan-features">
+              <li>6時間の集中講座（7/25・7/26 どちらもOK）</li>
+              <li>顔出しなし・ビデオOFF参加OK</li>
+              <li>講座終了後のQ&Aタイムに参加可能</li>
+              <li>アーカイブ視聴 1年間（当日参加できなくてもOK）</li>
+              <li>鬼キャンライブラリー利用（復習動画・課題つき）</li>
+            </ul>
+            <a class="button button-primary" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
+              <span>見学プランに申し込む →<small>両日OK / 早割価格は本日23:59まで</small></span>
+            </a>
+          </article>
+          <article class="plan soldout">
             <span class="plan-ribbon">🈵 両日満席御礼・受付終了</span>
             <h3>添削付きプラン</h3>
-            <figure class="plan-visual">
-              <img src="assets/price-visual.png" alt="鬼の発音キャンプ 添削付きプラン 早割価格">
-            </figure>
             <ul class="plan-features">
               <li>6時間の集中講座（7/25 or 7/26）</li>
               <li>まりあ元帥による発音添削</li>
@@ -1477,26 +1628,6 @@
             <span class="button button-soldout">
               <span>満席御礼・受付終了<small>たくさんのお申し込みありがとうございました</small></span>
             </span>
-          </article>
-          <article class="plan featured" id="observer-plan">
-            <span class="plan-ribbon">✅ 両日申込OK・受付中</span>
-            <span class="plan-label">顔出しなしで参加OK</span>
-            <h3>見学プラン</h3>
-            <div class="plan-price">
-              <span class="old">通常 ¥25,000</span>
-              <span class="now">¥19,800<small>（税込）</small></span>
-              <span class="tag">早割 7/5まで</span>
-            </div>
-            <ul class="plan-features">
-              <li>6時間の集中講座（7/25 or 7/26）</li>
-              <li>顔出しなし・ビデオOFF参加OK</li>
-              <li>アーカイブ視聴 1年間</li>
-              <li>鬼キャンライブラリー利用</li>
-              <li>添削なしで講座内容を受け取れるプラン</li>
-            </ul>
-            <a class="button button-primary" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
-              <span>見学プランに申し込む →<small>両日OK / 早割価格は7/5（日）まで</small></span>
-            </a>
           </article>
         </div>
         <p class="plan-note">※添削付きプランは両日満席となりました。見学プランは7/25(土)・7/26(日)ともお申し込みいただけます。早割価格は7/5（日）23:59までのお申し込みが対象です。</p>
@@ -1597,7 +1728,7 @@
     <div class="fixed-cta" id="fixed-cta">
       <div class="fixed-cta-body">
         <a class="fixed-main-cta" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
-          <span>見学プランに申し込む →<small>添削付は両日満席御礼 / 早割価格は7/5（日）まで</small></span>
+          <span>見学プランに申し込む →<small>今回の早割¥19,800は本日23:59まで</small></span>
         </a>
       </div>
     </div>
@@ -1618,20 +1749,7 @@
       });
     });
 
-    const primaryCta = document.getElementById("primary-cta");
-    const fixedCta = document.getElementById("fixed-cta");
-    const countdownEls = document.querySelectorAll("#early-countdown, #top-early-countdown");
-
-    if (primaryCta && fixedCta) {
-      const toggleFixedCta = () => {
-        const rect = primaryCta.getBoundingClientRect();
-        fixedCta.classList.toggle("is-visible", rect.bottom < 0);
-      };
-
-      toggleFixedCta();
-      window.addEventListener("scroll", toggleFixedCta, { passive: true });
-      window.addEventListener("resize", toggleFixedCta);
-    }
+    const countdownEls = document.querySelectorAll("#early-countdown, #top-early-countdown, #hero-early-countdown");
 
     if (countdownEls.length) {
       const earlyDeadline = new Date("2026-07-05T23:59:59+09:00").getTime();
