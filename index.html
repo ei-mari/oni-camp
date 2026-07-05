@@ -110,11 +110,6 @@
       font-weight: 950;
     }
 
-    .urgency-bar .countdown {
-      color: #ffef9e;
-      white-space: nowrap;
-    }
-
     .video-section {
       padding: 22px 18px 0;
     }
@@ -1371,7 +1366,7 @@
 <body>
   <div class="page">
     <div class="urgency-bar">
-      <span class="full">満</span>添削付は満席御礼｜見学プランは両日受付中｜早割終了まで <span class="countdown" id="top-early-countdown">あと少し</span>
+      <span class="full">満</span>添削付は満席御礼｜見学プランは両日受付中
     </div>
     <div class="content">
       <section class="video-section" aria-label="紹介動画">
@@ -1490,19 +1485,6 @@
       </section>
 
       <section class="section">
-        <div class="cta-panel">
-          <h2>見学プランなら、<br>まだ間に合います。</h2>
-          <a class="cta-visual" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
-            <img src="assets/kengaku-lp.png" alt="鬼の発音キャンプ 見学プラン 顔出し不要・アーカイブ付き 早割¥19,800（税込）" loading="lazy">
-          </a>
-          <p>講座本編・アーカイブ1年・鬼キャンライブラリーをすべて受け取れる見学プランは、両日お申し込みOK。顔出し不要・ビデオOFFで、自分のペースで参加できます。</p>
-          <a class="button button-primary" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
-            <span>見学プランで参加する →<small>早割¥19,800（税込）は本日7/5（日）23:59まで</small></span>
-          </a>
-        </div>
-      </section>
-
-      <section class="section">
         <h2 class="section-title">この1日で整えること</h2>
         <div class="step-list">
           <div class="step">
@@ -1596,13 +1578,12 @@
         <p class="section-lead">今回は２つのプランをご用意しております。</p>
         <div class="plans">
           <article class="plan featured" id="observer-plan">
-            <span class="plan-ribbon">🔥 受付中・早割は本日まで</span>
+            <span class="plan-ribbon">受付中・お申し込みは前日まで</span>
             <span class="plan-label">顔出しなし・ビデオOFFで参加OK</span>
             <h3>見学プラン</h3>
             <div class="plan-price">
-              <span class="old">通常 ¥25,000</span>
-              <span class="now">¥19,800<small>（税込）</small></span>
-              <span class="tag">早割 本日まで</span>
+              <span class="now">¥25,000<small>（税込）</small></span>
+              <span class="tag">各開催日の前日まで受付</span>
             </div>
             <ul class="plan-features">
               <li>6時間の集中講座（7/25・7/26 どちらもOK）</li>
@@ -1612,7 +1593,7 @@
               <li>鬼キャンライブラリー利用（復習動画・課題つき）</li>
             </ul>
             <a class="button button-primary" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
-              <span>見学プランに申し込む →<small>両日OK / 早割価格は本日23:59まで</small></span>
+              <span>見学プランに申し込む →<small>両日OK / お申し込みは各開催日の前日まで</small></span>
             </a>
           </article>
           <article class="plan soldout">
@@ -1630,7 +1611,7 @@
             </span>
           </article>
         </div>
-        <p class="plan-note">※添削付きプランは両日満席となりました。見学プランは7/25(土)・7/26(日)ともお申し込みいただけます。早割価格は7/5（日）23:59までのお申し込みが対象です。</p>
+        <p class="plan-note">※添削付きプランは両日満席となりました。見学プランは7/25(土)・7/26(日)ともお申し込みいただけます。お申し込みは各開催日の前日まで可能です。</p>
       </section>
 
       <section class="section">
@@ -1728,7 +1709,7 @@
     <div class="fixed-cta" id="fixed-cta">
       <div class="fixed-cta-body">
         <a class="fixed-main-cta" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
-          <span>見学プランに申し込む →<small>今回の早割¥19,800は本日23:59まで</small></span>
+          <span>見学プランに申し込む →<small>お申し込みは各開催日の前日まで可能です</small></span>
         </a>
       </div>
     </div>
@@ -1749,37 +1730,6 @@
       });
     });
 
-    const countdownEls = document.querySelectorAll("#early-countdown, #top-early-countdown, #hero-early-countdown");
-
-    if (countdownEls.length) {
-      const earlyDeadline = new Date("2026-07-05T23:59:59+09:00").getTime();
-
-      const updateCountdown = () => {
-        const diff = earlyDeadline - Date.now();
-        if (diff <= 0) {
-          countdownEls.forEach((el) => {
-            el.textContent = "終了しました";
-          });
-          return;
-        }
-
-        const totalMinutes = Math.floor(diff / 60000);
-        const days = Math.floor(totalMinutes / 1440);
-        const hours = Math.floor((totalMinutes % 1440) / 60);
-        const minutes = totalMinutes % 60;
-
-        const text = days > 0
-          ? `あと${days}日${hours}時間${minutes}分`
-          : `あと${hours}時間${minutes}分`;
-
-        countdownEls.forEach((el) => {
-          el.textContent = text;
-        });
-      };
-
-      updateCountdown();
-      window.setInterval(updateCountdown, 60000);
-    }
   </script>
 </body>
 </html>
