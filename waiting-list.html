@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>鬼の発音キャンプ｜ウェイティングリスト優先案内</title>
+  <meta name="description" content="鬼の発音キャンプは満席となりました。キャンセル枠・追加開催・次回開催のご案内を優先的にお届けするウェイティングリストにご登録ください。">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #050505;
+      --paper: #fff7e8;
+      --paper-text: #201b16;
+      --paper-muted: #685b4d;
+      --text: #fff8e4;
+      --muted: rgba(255, 248, 228, 0.84);
+      --gold: #ffd15d;
+      --gold-2: #fff0b4;
+      --red: #ff4b33;
+      --red-dark: #c82112;
+      --line-green: #06c755;
+      --line-green-dark: #04a344;
+      --line: rgba(255, 209, 93, 0.24);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background:
+        radial-gradient(circle at 50% -10%, rgba(255, 75, 51, 0.28), transparent 30%),
+        linear-gradient(180deg, #111 0%, #000 30%, #070302 100%);
+      color: var(--text);
+      font-family: "Meiryo", "メイリオ", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", sans-serif;
+    }
+
+    body { display: flex; justify-content: center; }
+    a { color: inherit; }
+    img { display: block; width: 100%; height: auto; }
+
+    .page {
+      position: relative;
+      width: min(100%, 430px);
+      min-height: 100svh;
+      overflow: hidden;
+      background: var(--bg);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+
+    .content { position: relative; z-index: 1; padding-bottom: 150px; }
+
+    /* ================= embers ================= */
+    .embers { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+
+    .embers span {
+      position: absolute;
+      bottom: -12px;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #ffd15d 0%, #ff4b33 60%, transparent 75%);
+      opacity: 0;
+      filter: blur(0.4px);
+      animation: rise linear infinite;
+    }
+
+    .embers span:nth-child(1)  { left: 4%;  animation-duration: 9s;    animation-delay: 0s;   width: 5px; height: 5px; }
+    .embers span:nth-child(2)  { left: 13%; animation-duration: 12s;   animation-delay: 2.2s; width: 4px; height: 4px; }
+    .embers span:nth-child(3)  { left: 22%; animation-duration: 10s;   animation-delay: 4.4s; }
+    .embers span:nth-child(4)  { left: 31%; animation-duration: 13s;   animation-delay: 1.1s; width: 3px; height: 3px; }
+    .embers span:nth-child(5)  { left: 42%; animation-duration: 9.5s;  animation-delay: 3.6s; }
+    .embers span:nth-child(6)  { left: 52%; animation-duration: 11s;   animation-delay: 0.7s; width: 4px; height: 4px; }
+    .embers span:nth-child(7)  { left: 62%; animation-duration: 14s;   animation-delay: 5s;   width: 3px; height: 3px; }
+    .embers span:nth-child(8)  { left: 71%; animation-duration: 10.5s; animation-delay: 2.8s; }
+    .embers span:nth-child(9)  { left: 80%; animation-duration: 12.5s; animation-delay: 4s;   width: 5px; height: 5px; }
+    .embers span:nth-child(10) { left: 88%; animation-duration: 15s;   animation-delay: 6.5s; width: 3px; height: 3px; }
+    .embers span:nth-child(11) { left: 95%; animation-duration: 11.5s; animation-delay: 1.8s; width: 4px; height: 4px; }
+    .embers span:nth-child(12) { left: 36%; animation-duration: 13.5s; animation-delay: 7.2s; }
+
+    @keyframes rise {
+      0%   { transform: translateY(0) translateX(0); opacity: 0; }
+      8%   { opacity: 0.9; }
+      50%  { transform: translateY(-52vh) translateX(14px); opacity: 0.55; }
+      100% { transform: translateY(-104vh) translateX(-10px); opacity: 0; }
+    }
+
+    /* ================= top bar ================= */
+    .urgency-bar {
+      display: block;
+      text-decoration: none;
+      position: sticky;
+      top: 0;
+      z-index: 12;
+      padding: 10px 12px;
+      background: linear-gradient(90deg, #7e150e, #b3271a, #7e150e);
+      background-size: 200% 100%;
+      animation: barflow 6s linear infinite;
+      color: #fff;
+      text-align: center;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+      font-size: 13px;
+      line-height: 1.45;
+      font-weight: 950;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.42);
+    }
+
+    @keyframes barflow {
+      to { background-position: -200% 0; }
+    }
+
+    .urgency-bar u {
+      text-decoration-color: rgba(255, 248, 228, 0.55);
+      text-underline-offset: 3px;
+    }
+
+    .urgency-bar .full {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 5px;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background: #fff8e4;
+      color: #c22d22;
+      font-size: 12px;
+      font-weight: 950;
+      animation: blink 2.4s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255, 248, 228, 0.55); }
+      50% { box-shadow: 0 0 0 6px rgba(255, 248, 228, 0); }
+    }
+
+    /* ================= hero ================= */
+    .hero-img { position: relative; overflow: hidden; }
+
+    .hero-img img {
+      animation: kenburns 16s ease-in-out infinite alternate;
+      transform-origin: 50% 30%;
+    }
+
+    @keyframes kenburns {
+      from { transform: scale(1); }
+      to   { transform: scale(1.07); }
+    }
+
+    .hero-img::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 90px;
+      background: linear-gradient(180deg, transparent, var(--bg));
+    }
+
+    section { padding: 30px 22px 6px; }
+
+    /* ================= reveal ================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.in { opacity: 1; transform: none; }
+
+    .reveal-l { transform: translateX(-30px); }
+    .reveal-r { transform: translateX(30px); }
+    .reveal-l.in, .reveal-r.in { transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    /* ================= lead ================= */
+    .lead { text-align: center; padding-top: 26px; }
+
+    .lead .thanks {
+      margin: 0 0 6px;
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+    .lead h1 {
+      margin: 10px 0 6px;
+      font-size: 24px;
+      line-height: 1.5;
+      font-weight: 950;
+      background: linear-gradient(100deg, var(--gold-2) 20%, #fff 40%, var(--gold) 60%, var(--gold-2) 80%);
+      background-size: 220% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 5s linear infinite;
+    }
+
+    @keyframes shimmer {
+      to { background-position: -220% center; }
+    }
+
+    .lead .pivot {
+      margin: 14px 0 0;
+      font-size: 15.5px;
+      line-height: 1.9;
+      font-weight: 900;
+      color: var(--text);
+    }
+
+    .lead .pivot em {
+      font-style: normal;
+      color: var(--red);
+      text-shadow: 0 0 18px rgba(255, 75, 51, 0.55);
+    }
+
+    .divider {
+      width: 68px;
+      height: 3px;
+      margin: 22px auto 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    /* ================= waitlist panel (animated border) ================= */
+    .panel-wrap {
+      position: relative;
+      margin-top: 24px;
+      padding: 2px;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .panel-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -120%;
+      background: conic-gradient(from 0deg, transparent 0 40%, var(--gold) 47%, #fff0b4 50%, var(--gold) 53%, transparent 60% 100%);
+      animation: spin 5s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .panel {
+      position: relative;
+      padding: 26px 18px 20px;
+      border-radius: 16px;
+      background: rgba(16, 12, 8, 0.96);
+    }
+
+    .panel .ribbon {
+      display: table;
+      margin: 0 auto 14px;
+      padding: 5px 16px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--red), var(--red-dark));
+      color: #fff;
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      box-shadow: 0 8px 18px rgba(200, 33, 18, 0.45);
+    }
+
+    .panel h2 {
+      margin: 0 0 4px;
+      text-align: center;
+      font-size: 19px;
+      line-height: 1.5;
+      color: var(--gold);
+      font-weight: 950;
+    }
+
+    .panel .sub {
+      margin: 0 0 16px;
+      text-align: center;
+      font-size: 12.5px;
+      line-height: 1.8;
+      color: rgba(255, 248, 228, 0.7);
+    }
+
+    .b-card {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-top: 10px;
+      padding: 14px;
+      border: 1px solid rgba(255, 209, 93, 0.18);
+      border-radius: 12px;
+      background: rgba(255, 209, 93, 0.05);
+    }
+
+    .b-card .emoji {
+      flex: none;
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255, 75, 51, 0.25), rgba(200, 33, 18, 0.25));
+      border: 1px solid rgba(255, 75, 51, 0.35);
+      font-size: 20px;
+    }
+
+    .b-card h3 {
+      margin: 0 0 3px;
+      font-size: 14.5px;
+      color: var(--gold-2);
+      font-weight: 950;
+    }
+
+    .b-card p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .scarcity {
+      margin: 16px 0 0;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: rgba(200, 33, 18, 0.16);
+      border: 1px dashed rgba(255, 75, 51, 0.45);
+      text-align: center;
+      font-size: 12.5px;
+      line-height: 1.8;
+      font-weight: 900;
+      color: #ffb3a6;
+    }
+
+    .scarcity strong { color: #fff; }
+
+    /* ================= LINE CTA ================= */
+    .cta-block { position: relative; text-align: center; padding-top: 30px; }
+
+    .cta-glow {
+      position: absolute;
+      left: 50%;
+      top: 55%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(255, 75, 51, 0.22), transparent 65%);
+      pointer-events: none;
+      animation: flicker 3.2s ease-in-out infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.12); }
+    }
+
+    .cta-copy {
+      position: relative;
+      margin: 0 0 16px;
+      font-size: 16px;
+      line-height: 1.8;
+      font-weight: 950;
+      color: var(--gold-2);
+    }
+
+    .cta-copy .oni {
+      display: inline-block;
+      animation: bob 2.2s ease-in-out infinite;
+    }
+
+    @keyframes bob {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-4px) rotate(-6deg); }
+    }
+
+    .line-btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 18px 16px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--line-green), var(--line-green-dark));
+      color: #fff;
+      font-size: 17px;
+      font-weight: 950;
+      text-decoration: none;
+      overflow: hidden;
+      box-shadow: 0 14px 34px rgba(6, 199, 85, 0.35);
+      animation: heartbeat 2.6s ease-in-out infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); box-shadow: 0 14px 34px rgba(6, 199, 85, 0.35); }
+      50% { transform: scale(1.025); box-shadow: 0 16px 40px rgba(6, 199, 85, 0.5); }
+    }
+
+    .line-btn::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -80%;
+      width: 45%;
+      height: 100%;
+      background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transform: skewX(-20deg);
+      animation: shine 3.4s ease-in-out infinite;
+    }
+
+    @keyframes shine {
+      0%, 60% { left: -80%; }
+      100% { left: 130%; }
+    }
+
+    .line-btn:active { transform: scale(0.98); }
+
+    .line-btn .mark {
+      flex: none;
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: #fff;
+      color: var(--line-green);
+      font-size: 11px;
+      font-weight: 950;
+    }
+
+    .cta-sub {
+      position: relative;
+      margin: 12px 0 0;
+      font-size: 12.5px;
+      color: rgba(255, 248, 228, 0.7);
+      line-height: 1.7;
+    }
+
+    .mail-alt { position: relative; margin-top: 24px; }
+
+    .mail-alt-label {
+      margin: 0 0 12px;
+      font-size: 12.5px;
+      font-weight: 900;
+      color: rgba(255, 248, 228, 0.72);
+      letter-spacing: 0.04em;
+    }
+
+    .mail-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 15px 16px;
+      border: 1.5px solid rgba(255, 209, 93, 0.55);
+      border-radius: 999px;
+      background: rgba(255, 209, 93, 0.08);
+      color: var(--gold-2);
+      font-size: 15px;
+      font-weight: 950;
+      text-decoration: none;
+      transition: background 0.25s ease, transform 0.15s ease;
+    }
+
+    .mail-btn:active { transform: scale(0.98); background: rgba(255, 209, 93, 0.16); }
+
+    /* ================= steps ================= */
+    .steps-head {
+      margin: 34px 0 4px;
+      text-align: center;
+      font-size: 17px;
+      font-weight: 950;
+      color: var(--gold-2);
+    }
+
+    .steps {
+      list-style: none;
+      margin: 14px 0 0;
+      padding: 0;
+      counter-reset: step;
+    }
+
+    .steps li {
+      position: relative;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 13px 0 13px 6px;
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .in .steps li { opacity: 1; transform: none; }
+    .in .steps li:nth-child(1) { transition-delay: 0.1s; }
+    .in .steps li:nth-child(2) { transition-delay: 0.3s; }
+    .in .steps li:nth-child(3) { transition-delay: 0.5s; }
+
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      flex: none;
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--gold), #d9a63c);
+      color: #201302;
+      font-size: 15px;
+      font-weight: 950;
+    }
+
+    .steps li:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 46px;
+      bottom: -8px;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(255, 209, 93, 0.5), rgba(255, 209, 93, 0.1));
+    }
+
+    .steps h3 { margin: 3px 0 2px; font-size: 14.5px; font-weight: 950; color: var(--text); }
+    .steps p { margin: 0; font-size: 12.5px; line-height: 1.7; color: rgba(255, 248, 228, 0.68); }
+
+    /* ================= FAQ ================= */
+    .faq { margin-top: 30px; }
+
+    .faq-head {
+      margin: 0 0 10px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 950;
+      color: var(--gold-2);
+    }
+
+    details {
+      margin-top: 8px;
+      border: 1px solid rgba(255, 209, 93, 0.2);
+      border-radius: 12px;
+      background: rgba(16, 12, 8, 0.86);
+      overflow: hidden;
+    }
+
+    summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 14px;
+      font-size: 13.5px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::before {
+      content: "Q";
+      flex: none;
+      display: grid;
+      place-items: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--red), var(--red-dark));
+      color: #fff;
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    summary::after {
+      content: "+";
+      margin-left: auto;
+      color: var(--gold);
+      font-size: 18px;
+      font-weight: 900;
+      transition: transform 0.3s ease;
+    }
+
+    details[open] summary::after { transform: rotate(45deg); }
+
+    .faq-a {
+      padding: 0 14px 14px 44px;
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    /* ================= plans ================= */
+    .alt-head { text-align: center; margin-top: 38px; }
+
+    .alt-head .kicker {
+      display: inline-block;
+      padding: 6px 14px;
+      border: 1px solid rgba(255, 209, 93, 0.4);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.6);
+      color: var(--gold-2);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0.06em;
+    }
+
+    .alt-head h2 {
+      margin: 14px 0 8px;
+      font-size: 21px;
+      line-height: 1.55;
+      font-weight: 950;
+      color: var(--gold-2);
+    }
+
+    .alt-head h2 em {
+      font-style: normal;
+      color: var(--red);
+      text-shadow: 0 0 18px rgba(255, 75, 51, 0.55);
+    }
+
+    .alt-head p { margin: 0; font-size: 13.5px; line-height: 1.9; color: var(--muted); }
+
+    .plan-card {
+      position: relative;
+      margin-top: 26px;
+      padding: 24px 20px 22px;
+      border-radius: 16px;
+      background: var(--paper);
+      color: var(--paper-text);
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.5);
+    }
+
+    .plan-card .tag {
+      position: absolute;
+      top: -13px;
+      left: 18px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0.05em;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+    }
+
+    .plan-card.watch .tag { background: linear-gradient(180deg, #3d6bff, #2447c8); }
+    .plan-card.archive .tag { background: linear-gradient(180deg, var(--red), var(--red-dark)); }
+
+    .plan-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 4px 0 6px;
+      font-size: 18px;
+      font-weight: 950;
+    }
+
+    .plan-card h3 .emoji { font-size: 24px; }
+
+    .plan-card .for {
+      margin: 0 0 14px;
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--paper-muted);
+      font-weight: 700;
+    }
+
+    .plan-card ul { list-style: none; margin: 0; padding: 0; }
+
+    .plan-card li {
+      position: relative;
+      padding: 8px 0 8px 28px;
+      font-size: 14px;
+      line-height: 1.7;
+      font-weight: 700;
+    }
+
+    .plan-card li + li { border-top: 1px dashed rgba(104, 91, 77, 0.25); }
+
+    .plan-card li::before {
+      content: "✔";
+      position: absolute;
+      left: 2px;
+      top: 8px;
+      width: 19px;
+      height: 19px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--red), var(--red-dark));
+      color: #fff;
+      font-size: 11px;
+    }
+
+    .plan-card .voice {
+      margin: 14px 0 0;
+      padding: 12px 14px;
+      border-left: 4px solid var(--red);
+      background: rgba(200, 33, 18, 0.06);
+      border-radius: 0 10px 10px 0;
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--paper-muted);
+      font-weight: 700;
+    }
+
+    .mosh-btn {
+      position: relative;
+      display: block;
+      margin-top: 24px;
+      padding: 16px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--red), var(--red-dark));
+      color: #fff;
+      text-align: center;
+      font-size: 15.5px;
+      font-weight: 950;
+      text-decoration: none;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(200, 33, 18, 0.4);
+    }
+
+    .mosh-btn::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -80%;
+      width: 45%;
+      height: 100%;
+      background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+      transform: skewX(-20deg);
+      animation: shine 3.4s ease-in-out infinite;
+      animation-delay: 1.2s;
+    }
+
+    .mosh-btn small { display: block; margin-top: 2px; font-size: 11.5px; font-weight: 800; opacity: 0.9; }
+
+    /* ================= final cta ================= */
+    .final-cta {
+      margin-top: 40px;
+      padding: 30px 22px 10px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255, 75, 51, 0.18), transparent 60%);
+    }
+
+    .final-cta h2 {
+      margin: 0 0 6px;
+      font-size: 21px;
+      line-height: 1.6;
+      font-weight: 950;
+      background: linear-gradient(100deg, var(--gold-2) 20%, #fff 40%, var(--gold) 60%, var(--gold-2) 80%);
+      background-size: 220% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 5s linear infinite;
+    }
+
+    .final-cta p { margin: 0 0 18px; font-size: 13.5px; line-height: 1.9; color: var(--muted); }
+
+    .footer {
+      padding: 34px 22px 24px;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.8;
+      color: rgba(255, 248, 228, 0.55);
+    }
+
+    /* ================= fixed cta ================= */
+    .fixed-cta {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      width: min(100%, 430px);
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+      background: rgba(5, 5, 5, 0.92);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .fixed-cta .line-btn { padding: 15px 16px; font-size: 15.5px; animation: none; }
+    .fixed-cta small {
+      display: block;
+      margin-top: 6px;
+      text-align: center;
+      font-size: 11px;
+      color: rgba(255, 248, 228, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="embers" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="content">
+      <a class="urgency-bar" href="#register">
+        <span class="full">満席</span>キャンセル枠・次回開催は<br><u>ウェイティングリスト登録者に優先案内</u>👹
+      </a>
+
+      <div class="hero-img">
+        <img src="THUMBNAIL.png" alt="優先案内のWaiting listのご案内｜鬼の発音キャンプ">
+      </div>
+
+      <!-- 満席御礼 → ピボット -->
+      <section class="lead reveal">
+        <p class="thanks">おかげさまで7月開催の「鬼の発音キャンプ」は満席となりました。<br>お申し込みくださった皆さま、本当にありがとうございます🙏</p>
+        <h1>でも、まだ終わりじゃない。</h1>
+        <p class="pivot">キャンセル枠・追加開催・次回開催——<br>次のチャンスは<em>ウェイティングリスト登録者から</em>ご案内します。</p>
+        <div class="divider"></div>
+      </section>
+
+      <!-- ウェイティングリスト特典 -->
+      <section class="reveal">
+        <div class="panel-wrap">
+          <div class="panel">
+            <span class="ribbon">登録者だけの優先案内</span>
+            <h2>ウェイティングリストで<br>受け取れる3つの先行情報</h2>
+            <p class="sub">一般公開を待っていたら、間に合わないかもしれません。</p>
+
+            <div class="b-card reveal reveal-l">
+              <span class="emoji">⚡</span>
+              <div>
+                <h3>キャンセル枠の先着案内</h3>
+                <p>空きが出た瞬間、一般公開より先に通知。先着順でご案内します。</p>
+              </div>
+            </div>
+
+            <div class="b-card reveal reveal-r">
+              <span class="emoji">🔥</span>
+              <div>
+                <h3>追加開催の最速通知</h3>
+                <p>追加開催が決まったら、決定と同時にお知らせ。席の確保が最優先でできます。</p>
+              </div>
+            </div>
+
+            <div class="b-card reveal reveal-l">
+              <span class="emoji">📅</span>
+              <div>
+                <h3>次回・日曜開催の先行案内</h3>
+                <p>次回開催のスケジュールと募集開始を、誰よりも早くお届けします。</p>
+              </div>
+            </div>
+
+            <p class="scarcity">⚠️ ご案内はすべて先着順。<br>前回は募集開始から<strong>2日で日曜の会が満席に。</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta-block reveal" id="register">
+        <div class="cta-glow" aria-hidden="true"></div>
+        <p class="cta-copy">「次は逃したくない…！」という方は、<br>今のうちにご登録ください <span class="oni">👹</span></p>
+        <a class="line-btn" href="https://s.lmes.jp/landing-qr/2002147064-Ao2680Jr?uLand=FGVQ0g">
+          <span class="mark">LINE</span>
+          LINEでウェイティングリストに登録する
+        </a>
+        <p class="cta-sub">登録は無料・30秒で完了します。<br>ご案内が不要になったら、いつでもブロックで解除できます。</p>
+
+        <div class="mail-alt">
+          <p class="mail-alt-label">－ LINEをお使いでない方はこちら －</p>
+          <a class="mail-btn" href="https://mosh.jp/services/f4df7a26dbd74bdb929c5f40e7ffec13?openExternalBrowser=1">
+            ✉️ メールアドレスで登録する
+          </a>
+          <p class="cta-sub" style="margin-top:10px;">同じ優先案内をメールでお届けします。</p>
+        </div>
+      </section>
+
+      <!-- 登録ステップ -->
+      <section class="reveal">
+        <h2 class="steps-head">登録はかんたん、30秒で完了</h2>
+        <ol class="steps">
+          <li>
+            <div>
+              <h3>ボタンをタップしてLINE友だち追加</h3>
+              <p>メールの方はアカウントを作成するだけ。</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>その場でウェイティングリスト登録完了</h3>
+              <p>面倒な入力は一切ありません。費用もかかりません。</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>枠が出たら優先通知が届く</h3>
+              <p>あとは待つだけ。チャンスを逃しません🔔</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq reveal">
+        <h2 class="faq-head">よくあるご質問</h2>
+        <details>
+          <summary>登録にお金はかかりますか？</summary>
+          <p class="faq-a">かかりません。ウェイティングリストへの登録・ご案内の受け取りはすべて無料です。</p>
+        </details>
+        <details>
+          <summary>登録したら必ず参加しないといけませんか？</summary>
+          <p class="faq-a">いいえ。ご案内をお送りするだけで、参加の義務は一切ありません。内容を見てからゆっくりご判断ください。</p>
+        </details>
+        <details>
+          <summary>案内が不要になったら解除できますか？</summary>
+          <p class="faq-a">はい。LINEはブロックするだけで解除できます。メールも配信停止リンクからいつでも解除可能です。</p>
+        </details>
+      </section>
+
+      <!-- 見学・アーカイブ -->
+      <section>
+        <div class="alt-head reveal">
+          <span class="kicker">＼ 満席でも、まだ間に合う ／</span>
+          <h2>実は、<em>今からでも</em><br>参加できる方法があります</h2>
+          <p>「リアルタイムで発話するのは少し不安…」<br>「予定が合わないけれど内容は見たい…」<br>そんな方のためのプランは、引き続き受付中です。</p>
+        </div>
+
+        <div class="plan-card watch reveal reveal-l">
+          <span class="tag">申込受付中</span>
+          <h3><span class="emoji">👀</span>見学プラン</h3>
+          <p class="for">発話への一歩はまだ不安。でも本気の空気は感じたい方へ。</p>
+          <ul>
+            <li><strong>顔出しなし・発話なし</strong>でOK。カメラもマイクもオフのまま</li>
+            <li>参加者が変わっていく瞬間を<strong>リアルタイムで体感</strong>できる</li>
+            <li>トレーニングの流れが分かるから、<strong>次回の本参加が怖くなくなる</strong></li>
+          </ul>
+          <div class="voice">「見ているだけのつもりが、気づいたら画面の前で一緒に口を動かしていました」</div>
+        </div>
+
+        <div class="plan-card archive reveal reveal-r">
+          <span class="tag">申込受付中</span>
+          <h3><span class="emoji">🎥</span>アーカイブ視聴プラン</h3>
+          <p class="for">当日は予定が合わない。でも内容は逃したくない方へ。</p>
+          <ul>
+            <li><strong>好きな時間・好きな場所</strong>で、あとからじっくり視聴</li>
+            <li>気になる箇所は<strong>何度でも巻き戻して</strong>反復練習できる</li>
+            <li>ライブの緊張感なしで、<strong>自分のペース</strong>で発音を鍛えられる</li>
+          </ul>
+          <div class="voice">「移動時間に繰り返し見られるので、むしろ復習には最適でした」</div>
+        </div>
+
+        <div class="reveal">
+          <a class="mosh-btn" href="https://mosh.jp/services/f31edef1f2e74ec397d71210b1527a39?openExternalBrowser=1">
+            見学・アーカイブプランに申し込む
+            <small>▶ 空席状況・料金はこちらから</small>
+          </a>
+        </div>
+      </section>
+
+      <!-- 最終CTA -->
+      <div class="final-cta reveal">
+        <h2>次の募集で、会いましょう。</h2>
+        <p>英語の壁を、ぶち破る準備はいいですか？<br>優先案内を受け取って、次こそ席を確保してください👹</p>
+        <a class="line-btn" href="https://s.lmes.jp/landing-qr/2002147064-Ao2680Jr?uLand=FGVQ0g">
+          <span class="mark">LINE</span>
+          ウェイティングリストに登録する
+        </a>
+        <p class="cta-sub">無料・30秒 ／ <a href="https://mosh.jp/services/f4df7a26dbd74bdb929c5f40e7ffec13?openExternalBrowser=1" style="color:var(--gold); font-weight:900;">メールで登録する方はこちら</a></p>
+      </div>
+
+      <div class="footer reveal">
+        ご不明な点がございましたら、<br>いつでもお気軽にお問い合わせくださいね。
+      </div>
+    </div>
+
+    <div class="fixed-cta">
+      <a class="line-btn" href="https://s.lmes.jp/landing-qr/2002147064-Ao2680Jr?uLand=FGVQ0g">
+        <span class="mark">LINE</span>
+        LINEで優先案内を受け取る
+      </a>
+      <small>LINEが苦手な方は <a href="https://mosh.jp/services/f4df7a26dbd74bdb929c5f40e7ffec13?openExternalBrowser=1" style="color:var(--gold); font-weight:900;">メールで登録</a> もできます</small>
+    </div>
+  </div>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>
