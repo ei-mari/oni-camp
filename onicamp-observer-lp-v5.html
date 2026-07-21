@@ -430,7 +430,7 @@
   </style>
 </head>
 <body>
-  <div class="topbar"><span>満席御礼</span>添削席は両日満席｜観察席は受付中</div>
+  <div class="topbar"><span>今週末開催</span>添削席は両日満席｜観察席は受付中</div>
 
   <header class="hero">
     <div class="hero-visual">
@@ -688,7 +688,7 @@
     </section>
   </main>
 
-  <div class="fixed-cta hidden" id="fixedCta" aria-label="固定申込バー">
+  <div class="fixed-cta" id="fixedCta" aria-label="固定申込バー">
     <div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
     <div class="fixed-status">
       <span class="live">観察席 両日受付中</span>
@@ -710,7 +710,6 @@
     addEventListener('scroll', () => {
       const max = document.documentElement.scrollHeight - innerHeight;
       scrollBar.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + '%';
-      fixedCta.classList.toggle('hidden', scrollY < 420);
     }, { passive: true });
     (function () {
       const el = document.getElementById('countdown');
