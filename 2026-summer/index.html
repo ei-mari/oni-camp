@@ -1,17 +1,16 @@
 <!doctype html>
-<!-- Published at /2026-summer/ -->
 <html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="1日ぶっ通し6時間、8人の挑戦者の発音が目の前で変わる「鬼の発音キャンプ」。その全てを特等席から見届けて、自分の練習に変えるのが鬼キャン観察席。進化の図鑑・聞き分けクイズ・参加者だけの練習メニューつき、1年間見返せます。">
+  <meta name="description" content="2026年8月15日（土）開催。まりあ元帥があなたの発音をその場で直す8名限定の添削付プラン。1日ぶっ通し6時間の「お盆の発音キャンプ」。">
   <meta name="theme-color" content="#0b0806">
-  <meta property="og:title" content="鬼キャン観察席｜鬼の発音キャンプ 2026夏">
-  <meta property="og:description" content="あなたの発音の学び方が、変わる6時間。オンライン開催・顔出し不要・教材とアーカイブ1年間。">
-  <meta property="og:image" content="../assets/onicamp-observer-og-v3.png">
+  <meta property="og:title" content="鬼キャン｜アメリカ英語のお盆発音キャンプ 2026">
+  <meta property="og:description" content="8/15（土）10:00–16:00開催。アメリカ英語の発音を、母音からリズム・イントネーションまで整える6時間。">
+  <meta property="og:image" content="../assets/onicamp-obon-hero-clean.webp">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <title>鬼キャン観察席｜あなたの発音の学び方が、変わる6時間</title>
+  <title>アメリカ英語のお盆発音キャンプ「鬼キャン」｜8月15日（土）</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -72,7 +71,20 @@
     .topbar span { padding: 1px 8px; border-radius: 999px; background: #fff6dc; color: #9c2016; flex: 0 0 auto; }
 
     /* ヒーロー：スマホ＝画像が主役、テキストはその下 */
-    .hero { border-bottom: 1px solid var(--line); padding-bottom: 44px; }
+    .hero { position: relative; z-index: 2; overflow: visible; border-bottom: 1px solid var(--line); padding-bottom: 44px; }
+    .section-transition {
+      position: absolute; bottom: -19px; left: 50%; z-index: 4;
+      width: 44px; height: 26px; translate: -50% 0;
+      background: linear-gradient(180deg, #ffe7a3, #b77717);
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      filter: drop-shadow(0 7px 9px rgba(0,0,0,.55));
+    }
+    .section-transition::after {
+      content: ""; position: absolute; top: 3px; left: 6px;
+      width: 32px; height: 18px;
+      background: var(--bg);
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+    }
     .hero-visual { position: relative; }
     .hero-visual img { width: 100%; height: auto; }
     .hero-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, var(--bg) 98%); }
@@ -135,7 +147,15 @@
     }
     .hero-card .open { color: var(--green); font-size: 12px; font-weight: 900; }
     .hero-card h2 { margin: 5px 0 4px; font-family: var(--serif); font-size: 23px; line-height: 1.35; }
-    .date { margin-bottom: 13px; color: var(--muted); font-size: 12.5px; }
+    .date { margin-bottom: 8px; color: var(--muted); font-size: 12.5px; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+    .hero-pill {
+      display: inline-flex; align-items: center; min-height: 27px; padding: 4px 9px;
+      border: 1px solid rgba(247,200,95,.34); border-radius: 999px;
+      background: rgba(247,200,95,.08); color: var(--gold-soft);
+      font-size: 10.5px; font-weight: 800; line-height: 1.4;
+    }
+    .hero-pill.zoom { border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.045); color: #ddd0c0; }
     .price-label { color: var(--muted); font-size: 11px; font-weight: 800; }
     .price { display: flex; align-items: baseline; gap: 5px; margin: 2px 0 12px; }
     .price strong {
@@ -159,16 +179,13 @@
       transition: transform .18s ease, filter .18s ease;
     }
     .cta:hover { transform: translateY(-2px); filter: brightness(1.08); }
-    .cta.cta-disabled {
-      border-color: rgba(255,255,255,.16);
-      background: linear-gradient(180deg, #5a5048, #38312c);
-      box-shadow: none;
-      color: #d8cdc2;
-      cursor: not-allowed;
-      animation: none !important;
+    .cta-gold {
+      margin-top: 10px;
+      border-color: #ffe29b;
+      background: linear-gradient(180deg, #e0ad3f, #a86b12);
+      box-shadow: 0 12px 30px rgba(224,173,63,.24), inset 0 1px rgba(255,255,255,.4);
+      color: #fffdf3;
     }
-    .cta.cta-disabled:hover { transform: none; filter: none; }
-    .hero-card .open.closed, .offer-status.closed { color: #b7a58f; }
     .hero-card .cta, .offer-side .cta { animation: ctaglow 2.8s ease-in-out infinite; }
     @keyframes ctaglow {
       0%, 100% { box-shadow: 0 12px 30px rgba(240,68,46,.28), inset 0 1px rgba(255,255,255,.35); }
@@ -176,6 +193,11 @@
     }
     .cta:focus-visible, .sym:focus-visible, .quiz-option:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
     .cta-note { margin: 9px 0 0; color: #bcae9d; text-align: center; font-size: 10px; line-height: 1.55; }
+    .subtle-link {
+      display: block; width: fit-content; margin: 14px auto 0;
+      color: #aa9b8b; font-size: 11px; text-align: center; text-underline-offset: 3px;
+    }
+    .subtle-link:hover { color: var(--gold-soft); }
 
     section { padding: 58px 0; position: relative; }
     main > section:not(:first-child)::before {
@@ -271,9 +293,23 @@
     .route-pill { display: flex; justify-content: space-between; gap: 10px; margin-top: 13px; padding: 11px 13px; border-radius: 12px; background: #f2dfb6; font-size: 12px; font-weight: 900; }
     .sample-note { margin: 11px 0 0; color: #806e61; font-size: 10px; }
 
+    .library-card { overflow: hidden; border: 1px solid rgba(247,200,95,.35); border-radius: 20px; background: linear-gradient(160deg, #241711, #0d0907); box-shadow: var(--shadow); }
+    .library-card img { width: 100%; }
+    .library-body { padding: 19px 19px 21px; }
+    .library-body h3 { margin: 7px 0 8px; font-family: var(--serif); font-size: 19px; }
+    .library-body p { margin: 0; color: #efe3d1; font-size: 13px; }
+    .library-body b { color: var(--gold-soft); }
     .quiz-card { padding: 20px; border: 1px solid var(--line); border-radius: 20px; background: linear-gradient(160deg, #241711, #0d0907); }
     .quiz-card h3 { margin-bottom: 4px; font-family: var(--serif); font-size: 21px; }
     .quiz-sub { color: var(--muted); font-size: 12.5px; margin-bottom: 13px; }
+    .vertical-video-frame {
+      position: relative; width: min(100%, 250px); aspect-ratio: 9/16;
+      margin: 14px auto 0; overflow: hidden;
+      border: 1px solid rgba(247,200,95,.3); border-radius: 14px; background: #000;
+      box-shadow: 0 14px 34px rgba(0,0,0,.35);
+    }
+    .vertical-video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-sample-card .video-caption { margin-top: 10px; }
     .quiz-progress { display: flex; gap: 6px; margin-bottom: 14px; }
     .quiz-progress i { width: 32px; height: 5px; border-radius: 99px; background: rgba(255,255,255,.14); }
     .quiz-progress i.done { background: var(--gold); }
@@ -322,16 +358,74 @@
     .journey .section-kicker::before { background: #a92b1e; }
     .journey .section-intro { color: #716156; }
     .timeline { display: grid; grid-template-columns: 1fr; gap: 8px; }
-    .timeline article { padding: 18px 16px; border-left: 3px solid #d9b458; background: rgba(255,255,255,.55); }
+    .timeline article { position: relative; min-height: 88px; padding: 18px 16px 18px 64px; border-left: 3px solid #d9b458; background: rgba(255,255,255,.55); }
+    .timeline article.survey-gift { border-left-color: #a92b1e; background: rgba(255,239,195,.72); }
+    .timeline-icon {
+      position: absolute; top: 18px; left: 15px;
+      display: grid; width: 36px; height: 36px; place-items: center;
+      border: 1px solid rgba(169,43,30,.2); border-radius: 11px;
+      background: rgba(255,255,255,.58); font-size: 18px;
+      box-shadow: 0 5px 14px rgba(83,45,22,.08);
+    }
     .timeline b { display: block; margin-bottom: 6px; color: #a92b1e; font-size: 11px; }
     .timeline h3 { margin-bottom: 5px; font-family: var(--serif); font-size: 16px; }
     .timeline p { margin-bottom: 0; color: #75665b; font-size: 11.5px; }
 
     .voice-grid { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(230px, 290px); gap: 12px; overflow-x: auto; padding: 4px 2px 16px; scroll-snap-type: x mandatory; scrollbar-color: var(--gold) #211610; }
     .voice-grid figure { margin: 0; overflow: hidden; border: 1px solid var(--line-light); border-radius: 16px; background: #fff; scroll-snap-align: start; }
+    .text-voices { display: grid; gap: 12px; margin-bottom: 28px; }
+    .text-voice {
+      position: relative; overflow: hidden; padding: 20px 18px 18px;
+      border: 1px solid rgba(247,200,95,.24); border-radius: 18px;
+      background: linear-gradient(145deg, #20150f, #0e0a07);
+      box-shadow: 0 16px 38px rgba(0,0,0,.25);
+    }
+    .text-voice::after {
+      content: "“"; position: absolute; right: 11px; top: -22px;
+      color: rgba(247,200,95,.1); font-family: Georgia, serif;
+      font-size: 104px; line-height: 1; pointer-events: none;
+    }
+    .voice-head { position: relative; z-index: 1; display: flex; align-items: center; gap: 11px; margin-bottom: 14px; }
+    .voice-icon {
+      display: grid; place-items: center; flex: 0 0 auto; width: 42px; height: 42px;
+      border: 1px solid rgba(247,200,95,.45); border-radius: 50%;
+      background: rgba(247,200,95,.1); font-size: 20px;
+      box-shadow: inset 0 0 18px rgba(247,200,95,.06);
+    }
+    .text-voice.coached .voice-icon { border-color: rgba(255,104,78,.5); background: rgba(240,68,46,.13); }
+    .voice-meta b { display: block; color: var(--gold-soft); font-size: 12px; line-height: 1.35; }
+    .voice-meta span { display: block; margin-top: 2px; color: #a99886; font-size: 10px; }
+    .text-voice blockquote {
+      position: relative; z-index: 1; margin: 0; color: #f6ebdc;
+      font-family: var(--serif); font-size: 14px; font-weight: 700; line-height: 1.9;
+    }
+    .text-voice footer { margin-top: 12px; color: #a99886; font-size: 10px; }
+    .voice-note { margin: -10px 0 20px; color: #9d8e7f; font-size: 10px; line-height: 1.7; }
 
     .offer { padding-top: 34px; }
+    .ribbon {
+      position: absolute; top: -12px; left: 18px; z-index: 2;
+      padding: 4px 13px; border-radius: 999px;
+      background: linear-gradient(100deg, #f7c85f, #e0ad3f);
+      color: #2a1c07; font-size: 11px; font-weight: 900; letter-spacing: .06em;
+      box-shadow: 0 6px 18px rgba(224,173,63,.35);
+    }
+    .compare-shell { margin: 0 0 26px; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: linear-gradient(160deg, #1a120d, #0d0907); }
+    .compare { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .compare th, .compare td { padding: 11px 8px; border-top: 1px solid var(--line-light); text-align: center; }
+    .compare th { font-weight: 800; }
+    .compare thead th { border-top: 0; padding: 13px 8px; font-family: var(--serif); font-size: 13px; }
+    .compare thead th:nth-child(2) { color: var(--gold); background: rgba(247,200,95,.08); }
+    .compare tbody th { text-align: left; color: var(--muted); font-size: 11.5px; font-weight: 700; }
+    .compare td { color: #eee2d3; font-weight: 800; }
+    .compare td.yes { color: var(--gold); }
+    .compare td.no { color: #7d6f61; font-weight: 700; }
+    .compare tbody td:first-of-type { background: rgba(247,200,95,.06); }
+    .compare .price-row td { font-family: var(--serif); font-size: 15px; }
     .offer-card { position: relative; display: grid; grid-template-columns: 1fr; border-radius: 24px; background: linear-gradient(145deg, #20150f, #0b0806); box-shadow: var(--shadow); }
+    .offer-card + .offer-card { margin-top: 18px; }
+    .offer-card.coached { margin-top: 34px; background: linear-gradient(145deg, #321c10, #0b0806); }
+    .offer-card.coached .offer-status { color: var(--gold); }
     .offer-main { padding: 24px 20px; }
     .offer-side { padding: 24px 20px; border-top: 1px solid var(--line); background: rgba(247,200,95,.06); }
     .offer-status { color: var(--green); font-size: 12px; font-weight: 900; }
@@ -343,6 +437,14 @@
     .include-list li small { color: #b7a58f; }
     .soldout { margin-top: 15px; padding: 10px; border: 1px solid rgba(255,255,255,.1); border-radius: 12px; color: #d2c3b2; text-align: center; font-size: 11px; }
     .not-included { margin-top: 12px; color: #b7a798; font-size: 10.5px; }
+    .observer-option {
+      margin-top: 22px; padding: 16px 18px;
+      border: 1px solid rgba(255,255,255,.08); border-radius: 16px;
+      background: rgba(255,255,255,.025); color: #b7a798; text-align: center;
+    }
+    .observer-option p { margin: 0 0 8px; font-size: 11.5px; line-height: 1.75; }
+    .observer-option a { color: #d3c2af; font-size: 11.5px; text-underline-offset: 3px; }
+    .observer-option a:hover { color: var(--gold-soft); }
 
     .faq-list { display: grid; gap: 9px; }
     details { border: 1px solid var(--line-light); border-radius: 14px; background: #15100d; }
@@ -374,7 +476,6 @@
     .fixed-status { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 7px 14px 0; font-size: 10.5px; font-weight: 800; color: var(--gold-soft); }
     .fixed-status .live { display: inline-flex; align-items: center; gap: 6px; color: var(--green); }
     .fixed-status .live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: pulse 1.6s infinite; }
-    .fixed-status .ended { color: #d8c9b8; }
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
     .fixed-status .count { color: #ffd9d0; }
     .fixed-inner { display: flex; align-items: center; gap: 11px; padding: 7px 12px max(10px, env(safe-area-inset-bottom)); }
@@ -430,6 +531,7 @@
       }
       .hero,
       main { position: relative; background: var(--bg); }
+      .hero { z-index: 2; overflow: visible; }
       main { box-shadow: 0 0 80px rgba(0,0,0,.72); }
       .topbar { left: auto; right: auto; }
       .fixed-cta { box-shadow: 0 -12px 36px rgba(0,0,0,.38), 0 0 60px rgba(0,0,0,.6); }
@@ -442,43 +544,51 @@
   </style>
 </head>
 <body>
-  <div class="topbar"><span>開催終了</span>7/25・7/26の鬼キャンは終了しました</div>
+  <div class="topbar"><span>8/15開催</span>まりあ元帥の直接添削・8名限定 受付中</div>
 
   <header class="hero">
     <div class="hero-visual">
-      <img src="../assets/onicamp-observer-hero-v3.webp" alt="まりあ元帥が8人の挑戦者の稽古を見守る鬼キャンのイメージ">
-      <div class="brand"><span class="brand-mark">鬼</span>ONI PRONUNCIATION CAMP</div>
+      <img src="../assets/onicamp-obon-hero-clean.webp" alt="まりあ元帥が8人の挑戦者を見守る鬼キャンのイメージ">
+      <div class="brand"><span class="brand-mark">鬼</span>AMERICAN ENGLISH PRONUNCIATION</div>
     </div>
     <div class="wrap">
       <div class="hero-body">
         <div>
           <div class="date-badges">
-            <span class="date-badge"><b>7/25（土）・7/26（日）</b>10:00–16:00</span>
+            <span class="date-badge"><b>8/15（土）</b>10:00–16:00</span>
+            <span class="date-badge"><b>アメリカ英語発音</b>に特化</span>
             <span class="date-badge">オンライン開催（Zoom）</span>
-            <span class="date-badge full">添削席 両日満席御礼</span>
+            <span class="date-badge full">添削席 8名限定</span>
           </div>
-          <p class="camp-name">鬼の発音キャンプ 2026夏</p>
-          <h1>一日ぶっ通し、<span class="hero-accent">鬼の6時間</span>。<br>あなたの発音の<br>学び方が、変わる。</h1>
-          <p class="lead">鬼キャンは、まりあ元帥が8人の挑戦者の発音を、その場で次々と直していく1日集中のオンラインレッスンです。あなたはその全過程を、<b>カメラOFF・発言なしの観察席</b>から見学。8人それぞれの「直され方」を見比べるうちに、<b>自分は何を学べばいいのか</b>が見えてきます。講座後は録画と練習メニューで、自分のペースで練習——それが鬼キャン観察席です。</p>
+          <p class="camp-name">アメリカ英語のお盆発音キャンプ 2026</p>
+          <h1>一日ぶっ通し、<span class="hero-accent">鬼の6時間</span>。<br>あなたの発音を、<br>その場で直す。</h1>
+          <p class="lead">鬼キャンは、<b>アメリカ英語の発音</b>を母音・強勢・リンキング・リズム・イントネーションまで体系的に整える、1日集中のオンラインレッスンです。主役は、まりあ元帥の<b>直接添削を受ける8人の挑戦者</b>。あなたの発音のクセをその場で特定し、変わるまで直します。自分の番だけでなく、他の7人への添削もすべて学びに変える6時間です。</p>
           <div class="stat-row" aria-label="鬼キャンのポイント">
+            <div class="stat full-stat"><b>8席</b><span>まりあ元帥の直接添削</span></div>
+            <div class="stat"><b>8人分</b><span>公開添削から学ぶ</span></div>
             <div class="stat"><b>6時間</b><span>ぶっ通しの公開レッスン</span></div>
-            <div class="stat"><b>8人</b><span>挑戦者のリアルな変化</span></div>
-            <div class="stat full-stat"><b>満席</b><span>添削席は両日完売</span></div>
             <div class="stat"><b>1年間</b><span>録画と教材を利用</span></div>
           </div>
         </div>
 
         <aside class="hero-card" aria-label="開催情報">
-          <div class="open closed">● 開催終了</div>
-          <h2>鬼キャン観察席</h2>
-          <p class="date">7/25（土）・7/26（日）10:00–16:00<br>どちらか1日／内容は同一／Zoom開催</p>
-          <div class="price-label">参加費</div>
+          <div class="open">● 添削付プラン（8名限定）受付中</div>
+          <h2>鬼キャン添削付プラン</h2>
+          <p class="date">8/15（土）10:00–16:00</p>
+          <div class="hero-pills" aria-label="添削付プランの特徴">
+            <span class="hero-pill">まりあ元帥によるその場での直接添削</span>
+            <span class="hero-pill zoom">Zoom開催</span>
+          </div>
+          <div class="price-label">添削席 参加費（早割・8/8まで）</div>
           <div class="price"><strong>25,000</strong><span>円（税込）</span></div>
-          <span class="cta cta-disabled" aria-disabled="true">受付は終了しました</span>
-          <p class="cta-note">7/25・7/26の開催は終了しました</p>
+          <p class="line-price">8月9日以降のご参加は通常価格30,000円</p>
+          <a class="cta cta-gold" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1">添削付プランに申し込む →</a>
+          <a class="subtle-link" href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1">顔出しなしで学べる観察席はこちら</a>
+          <p class="cta-note">添削席は8名限定／受付は8/14（金）まで・早割は8/8（土）まで<br>申込直後から予習特典「鬼キャンライブラリー」が使えます</p>
         </aside>
       </div>
     </div>
+    <div class="section-transition" aria-hidden="true"></div>
   </header>
 
   <main>
@@ -486,10 +596,23 @@
       <div class="narrow">
         <div class="primer-card rv">
           <h2 class="primer-title">はじめての方へ——鬼キャンを3行で。</h2>
-          <div class="primer-row"><span class="primer-no">1</span><p><b>アメリカ発音講師の「まりあ元帥」による、1日集中のオンラインレッスンです。</b>Zoomで開催。世界中どこからでも参加できます。</p></div>
-          <div class="primer-row"><span class="primer-no">2</span><p><b>8人の挑戦者が、まりあ元帥の指導で実際に変わっていきます。</b>「どこを・どう変えると英語らしくなるのか」を、リアルな8人分見られます。</p></div>
-          <div class="primer-row"><span class="primer-no">3</span><p><b>あなたは観察席から、見て学びます。</b>顔出しなし・発言なしでOK。講座後は録画と教材で、自分のペースで練習できます。</p></div>
+          <div class="primer-row"><span class="primer-no">1</span><p><b>アメリカ英語発音講師の「まりあ元帥」による、1日集中のオンラインレッスンです。</b>イギリス英語ではなく、アメリカ英語の音・リズム・イントネーションを扱います。Zoom開催のため、世界中どこからでも参加できます。</p></div>
+          <div class="primer-row"><span class="primer-no">2</span><p><b>まりあ元帥が、8人の挑戦者の発音をその場で次々と直していきます。</b>あなたもその8席のひとつに座れます。自分の番で直され、残りの7人分の添削からも学べる——主役の席です。</p></div>
+          <div class="primer-row"><span class="primer-no">3</span><p><b>当日だけで終わらず、録画と教材を使って1年間復習できます。</b>申込直後から使える予習教材と、講座後の図鑑・クイズ・練習メニューまでご用意しています。</p></div>
           <p class="primer-note">英語レベル・発音記号の知識は問いません。初参加の方こそ歓迎です。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section" style="padding-top:0">
+      <div class="narrow">
+        <p class="section-kicker"><em>90秒</em>でわかる鬼キャン</p>
+        <h2 class="section-title rv">まずは、こちらの動画を。</h2>
+        <div class="video-shell rv">
+          <div class="video-frame">
+            <iframe src="https://player.vimeo.com/video/1205147159?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="鬼キャン紹介動画" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <p class="video-caption">音声をONにしてご覧ください</p>
         </div>
       </div>
     </section>
@@ -517,13 +640,13 @@
       <div class="wrap">
         <p class="section-kicker"><em>其の弐</em>あなたの6時間</p>
         <h2 class="section-title rv">あなたの6時間は、こう進む。</h2>
-        <p class="section-intro rv">観察席は、レッスンをぼんやり眺める席ではありません。<b>あなたの手が動き、耳が変わっていく6時間</b>です。当日は観察シートに書き込みながら8人を見比べ、講座のあとは当日の内容がそのままあなたの復習教材と練習メニューになります。</p>
+        <p class="section-intro rv">添削席は、順番を待つ席ではありません。<b>自分の番で直され、残りの時間は7人分の添削から学ぶ</b>——8人分の変化をまるごと持ち帰る6時間です。</p>
         <div class="loop rv">
-          <article class="step-card"><div class="step-no">一</div><h3>見る＆記録する</h3><p>8人の発音が、目の前で変わっていく。自分の発音にも活かせそうなポイントをメモしながら参加しよう。</p></article>
+          <article class="step-card"><div class="step-no">一</div><h3>直される</h3><p>あなたの発音のクセを、まりあ元帥がその場で特定して直します。「変わる瞬間」を自分の口で体験する時間です。</p></article>
           <div class="loop-arrow">→</div>
-          <article class="step-card"><div class="step-no">二</div><h3>分かる</h3><p>講座後は「進化の図鑑」と聞き分けクイズで復習。変わる前と後の違いが、自分の耳で分かるようになるまで、練習を重ねましょう。</p></article>
+          <article class="step-card"><div class="step-no">二</div><h3>7人から学ぶ</h3><p>他の挑戦者への添削は、あなたの鏡。同じ悩みが違う角度から直っていくのを、当事者の耳で聞けます。</p></article>
           <div class="loop-arrow">→</div>
-          <article class="step-card"><div class="step-no">三</div><h3>できる</h3><p>当日扱った単語と文章を、参加者だけの練習メニューとして後日ご用意。自分の口に落とし込むまで好きなところを選んで学習できます。</p></article>
+          <article class="step-card"><div class="step-no">三</div><h3>持ち帰る</h3><p>当日の録画と「進化の図鑑」で、直されたポイントをいつでも確認。クイズと練習メニューを含む教材は1年間使えます。</p></article>
         </div>
       </div>
     </section>
@@ -532,7 +655,7 @@
       <div class="wrap">
         <p class="section-kicker"><em>其の参</em>あなたの舞台、鬼キャン</p>
         <h2 class="section-title rv">1日で、発音の土台をつくり直す。</h2>
-        <p class="section-intro rv">鬼の発音キャンプ——通称「鬼キャン」は、口の形から文の抑揚まで、発音の土台を<b>6時間ぶっ通し</b>で鍛える集中キャンプです。教科書を読む日ではありません。まりあ元帥が8人の挑戦者と本気で向き合い続ける、実戦の6時間です。</p>
+        <p class="section-intro rv">鬼の発音キャンプ——通称「鬼キャン」は、<b>アメリカ英語の発音</b>を、口の形から文の抑揚まで<b>6時間ぶっ通し</b>で鍛える集中キャンプです。教科書を読む日ではありません。アメリカ英語らしい母音・音のつながり・強弱・抑揚を、実践の中で身につけます。</p>
         <div class="curriculum rv" aria-label="鬼キャンで扱う6科目">
           <article class="subject"><h3>母音（発音記号）</h3><p>日本語の「アイウエオ」から、英語の音へ。すべての土台。</p><span class="term-tag">発音記号（母音）</span></article>
           <article class="subject"><h3>音の目立たせ方</h3><p>単語のどこを強く言うか。棒読みでなく、英語らしい読み方に。</p><span class="term-tag">強勢（アクセント）</span></article>
@@ -543,37 +666,39 @@
         </div>
 
         <div class="fullband rv">
-          <div class="seal">両日<br>満席</div>
+          <div class="seal">8席<br>限定</div>
           <div>
-            <h3>添削を受けられる8席は、両日満席になりました。</h3>
-            <p>それでも「鬼キャンで学びたい」というあなたのための席が、観察席です。<b>8人が変わっていく全過程を特等席から見届け</b>、講座後は図鑑と練習メニューで、あなたの発音に持ち帰ってください。</p>
+            <h3>主役の席は、8つだけ。</h3>
+            <p>まりあ元帥からその場で発音を直してもらえるのは、<b>添削付プランの8名だけ</b>です。前回7月開催の添削席は満席でした。</p>
           </div>
         </div>
       </div>
     </section>
-
-    <section class="video-section" style="padding-top:0">
-      <div class="narrow">
-        <p class="section-kicker"><em>90秒</em>でわかる鬼キャン</p>
-        <h2 class="section-title rv">まずは、こちらの動画を。</h2>
-        <div class="video-shell rv">
-          <div class="video-frame">
-            <iframe src="https://player.vimeo.com/video/1205147159?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="鬼キャン紹介動画" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" loading="lazy" allowfullscreen></iframe>
-          </div>
-          <p class="video-caption">音声をONにしてご覧ください</p>
-        </div>
-      </div>
-    </section>
-
-
 
     <section class="experience" id="sample">
       <div class="wrap">
-        <p class="section-kicker"><em>其の四</em>おためし</p>
-        <h2 class="section-title rv">参加する前に、1つだけ体験してください。</h2>
-        <p class="section-intro rv">鬼キャンに参加するとすぐに、母音の発音攻略動画と発音クイズを受けることができます。ぜひクイズを体験してください。</p>
+        <p class="section-kicker"><em>其の四</em>予習とおためし</p>
+        <h2 class="section-title rv">当日を待たずに、予習が始まる。</h2>
+        <p class="section-intro rv">鬼キャンは申し込んだ瞬間から始まります。お申込み直後に、予習特典<b>「鬼キャンライブラリー」</b>をお渡しします。まずは母音の解説動画とクイズで、実際の学び方を体験してください。</p>
 
         <div class="experience-grid">
+          <article class="library-card rv">
+            <img src="../assets/onicamp-obon-hero-clean.webp" alt="鬼キャンライブラリー（発音記号動画・母音クイズ）" loading="lazy">
+            <div class="library-body">
+              <span class="demo-label">申込直後から使える予習特典</span>
+              <h3>鬼キャンライブラリー</h3>
+              <p>発音記号の解説動画と母音クイズをまとめた、参加者専用の予習ページです。当日までの予習課題はここから出ます。<b>早くお申込みいただくほど予習期間が長くなるので、遅くとも1週間前（8/8）までのご参加がお得です</b>——ちょうど早割の締切日でもあります。</p>
+            </div>
+          </article>
+          <article class="quiz-card video-sample-card rv" aria-labelledby="video-sample-title">
+            <p class="section-kicker">鬼キャンライブラリー｜母音動画</p>
+            <h3 id="video-sample-title">母音の解説を一部体験</h3>
+            <p class="quiz-sub">まりあ元帥が発音をどう分解し、口の使い方を伝えるのか。実際の教材でお確かめください。</p>
+            <div class="vertical-video-frame">
+              <iframe src="https://player.vimeo.com/video/1205166779?h=56f681027e" title="鬼キャンライブラリー 母音解説動画サンプル" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <p class="video-caption">音声をONにしてご覧ください</p>
+          </article>
           <article class="quiz-card rv" aria-labelledby="quiz-title">
             <p class="section-kicker">鬼キャンライブラリー｜母音クイズ</p>
             <h3 id="quiz-title">画像クイズを2問だけ体験</h3>
@@ -594,7 +719,7 @@
       <div class="wrap">
         <p class="section-kicker"><em>其の五</em>8人の挑戦者</p>
         <h2 class="section-title rv">8人の中に、きっとあなたがいる。</h2>
-        <p class="section-intro rv">挑戦者は、あなたの鏡です。同じ「カタカナっぽい」でも、伸びしろは人によって違う。口の形の人もいれば、リズムの人もいる。<b>8人を見比べて、自分にいちばん近いパターンを見つけてください。</b></p>
+        <p class="section-intro rv">この8人のひとりが、あなたかもしれません。同じ「カタカナっぽい」でも、伸びしろは人によって違う。口の形の人もいれば、リズムの人もいる。だからまりあ元帥は、<b>一人ひとり違う場所を直します</b>。自分にいちばん近いパターンを見つけてください。</p>
         <div class="case-map rv">
           <article><h3>カタカナ英語っぽいと言われる</h3><p>英語の口に切り替わる瞬間を観察しましょう。</p><span class="term-tag">母音・口の形</span></article>
           <article><h3>お手本を真似しているのになぜか日本語っぽい</h3><p>「目立たせる場所（強勢音節）」を理解し、発音に劇的な変化を。</p><span class="term-tag">強勢（アクセント）</span></article>
@@ -625,11 +750,12 @@
         <h2 class="section-title rv">参加は1日。あなたの教材は1年。</h2>
         <p class="section-intro rv">今回のメンバーには、録画と教材を1年間提供します。長い録画をポンと渡すのではなく、見たい場面・やりたい練習へすぐ戻れる形でお渡しします。</p>
         <div class="timeline rv">
-          <article><b>申し込み直後</b><h3>予習</h3><p>短い予習動画と当日の案内が届きます。</p></article>
-          <article><b>当日</b><h3>8人と一緒に発音の練習</h3><p>6時間のレッスン、そしてQ&amp;Aに参加しましょう。</p></article>
-          <article><b>アーカイブ編集完了後から</b><h3>進化の図鑑</h3><p>鬼キャンで見つけた「進化」のポイントをわかりやすく、特別ページ（進化の図鑑）で確認。</p></article>
-          <article><b>参加者限定</b><h3>クイズと練習</h3><p>当日の内容をそのまま反復。</p></article>
-          <article><b>1年間</b><h3>何度でも</h3><p>忘れた頃に、必要な場面だけ見返す。</p></article>
+          <article><span class="timeline-icon" aria-hidden="true">📚</span><b>申し込み直後</b><h3>予習が始まる</h3><p>予習特典「鬼キャンライブラリー」（発音記号動画・母音クイズ）と当日の案内が届きます。早く申し込むほど、予習期間が長くなります。</p></article>
+          <article><span class="timeline-icon" aria-hidden="true">🎙️</span><b>当日</b><h3>8人と一緒に発音の練習</h3><p>6時間のレッスン、そしてQ&amp;Aに参加しましょう。</p></article>
+          <article class="survey-gift"><span class="timeline-icon" aria-hidden="true">🎁</span><b>アンケート回答特典</b><h3>発音記号動画ボックス</h3><p>終了後のアンケートにご回答いただいた方へ、子音動画と未公開の母音動画をプレゼント。公開期間は1週間限定です。</p></article>
+          <article><span class="timeline-icon" aria-hidden="true">🗺️</span><b>アーカイブ編集完了後から</b><h3>進化の図鑑</h3><p>鬼キャンで見つけた「進化」のポイントをわかりやすく、特別ページ（進化の図鑑）で確認。</p></article>
+          <article><span class="timeline-icon" aria-hidden="true">🧠</span><b>参加者限定</b><h3>クイズと練習</h3><p>当日の内容をそのまま反復。</p></article>
+          <article><span class="timeline-icon" aria-hidden="true">🔁</span><b>1年間</b><h3>何度でも</h3><p>忘れた頃に、必要な場面だけ見返す。</p></article>
         </div>
       </div>
     </section>
@@ -638,7 +764,48 @@
       <div class="wrap">
         <p class="section-kicker">参加者の声</p>
         <h2 class="section-title rv">過去の鬼キャン参加者から。</h2>
-        <p class="section-intro rv">横にスワイプしてご覧いただけます。</p>
+        <p class="section-intro rv">実際に参加された方から届いた、匿名掲載許可済みのご感想です。</p>
+
+        <div class="text-voices">
+          <article class="text-voice coached rv">
+            <div class="voice-head">
+              <span class="voice-icon" aria-hidden="true">🔥</span>
+              <div class="voice-meta"><b>マンツーマン級の添削</b><span>添削席で参加</span></div>
+            </div>
+            <blockquote>「グループ参加とは思えないほど徹底的な指摘とアドバイス。マンツーマンで習っているような緊張感があり、他の人へのコメントもとても勉強になりました。」</blockquote>
+            <footer>2026年夏 参加者アンケートより</footer>
+          </article>
+
+          <article class="text-voice coached rv">
+            <div class="voice-head">
+              <span class="voice-icon" aria-hidden="true">🌱</span>
+              <div class="voice-meta"><b>初心者でもポイントをつかめた</b><span>添削席で参加</span></div>
+            </div>
+            <blockquote>「初心者で参加してよいか不安でしたが、一人ひとりに合わせて対応してくださり、重要なポイントをつかめました。他の方の添削を聞けたことも勉強になりました。」</blockquote>
+            <footer>2026年夏 参加者アンケートより</footer>
+          </article>
+
+          <article class="text-voice rv">
+            <div class="voice-head">
+              <span class="voice-icon" aria-hidden="true">👀</span>
+              <div class="voice-meta"><b>短期間でも変化を実感</b><span>観察席で参加</span></div>
+            </div>
+            <blockquote>「この短期間の練習でも、発音が良くなったと感じました。すごく分かりやすく、次回は添削ありプランで参加したいと思いました。」</blockquote>
+            <footer>2026年夏 参加者アンケートより</footer>
+          </article>
+
+          <article class="text-voice rv">
+            <div class="voice-head">
+              <span class="voice-icon" aria-hidden="true">💡</span>
+              <div class="voice-meta"><b>目から鱗の学び</b><span>観察席で参加</span></div>
+            </div>
+            <blockquote>「本や聞きマネで何となく学んだつもりでしたが、説明がとても分かりやすく、目から鱗の連続でした。母音・子音・リズム・イントネーションへの意識が変わりました。」</blockquote>
+            <footer>2026年夏 参加者アンケートより</footer>
+          </article>
+        </div>
+        <p class="voice-note">※掲載許可をいただいた回答を、意味を変えない範囲で一部抜粋・読みやすく整えています。</p>
+
+        <p class="section-intro rv">画像のご感想は、横にスワイプしてご覧いただけます。</p>
         <div class="voice-grid rv" aria-label="参加者の声">
           <figure><img src="../assets/review-1.png" alt="参加者の声 1" loading="lazy"></figure>
           <figure><img src="../assets/review-2.png" alt="参加者の声 2" loading="lazy"></figure>
@@ -650,27 +817,37 @@
 
     <section class="offer" id="offer">
       <div class="wrap">
-        <div class="offer-card rv">
+        <p class="section-kicker"><em>8名限定</em>募集プラン</p>
+        <h2 class="section-title rv">直接直してもらう、<br>主役の席へ。</h2>
+
+        <div class="offer-card coached rv">
+          <span class="ribbon">主役の席</span>
           <div class="offer-main">
-            <div class="offer-status closed">● 開催終了</div>
-            <h2>鬼キャン観察席</h2>
-            <p class="offer-date">7/25（土）または7/26（日）10:00–16:00｜オンライン開催（Zoom）</p>
+            <div class="offer-status">● 8名限定・受付中</div>
+            <h2>鬼キャン添削付プラン</h2>
+            <p class="offer-date">8/15（土）10:00–16:00｜オンライン開催（Zoom）</p>
             <ul class="include-list">
-              <li>鬼の6時間をライブ観察 <small>― 8人の公開添削を特等席から</small></li>
-              <li>顔出しなし・声を出さずに参加OK</li>
+              <li>まりあ元帥による、その場での発音添削 <small>― あなたのクセを特定し、変わるまで直します</small></li>
+              <li>予習特典「鬼キャンライブラリー」 <small>― 申込直後から発音記号動画・母音クイズで予習</small></li>
+              <li>アメリカ英語発音に特化した6時間にフル参加</li>
+              <li>7人分の添削からも学べる <small>― 8人分の変化を持ち帰る</small></li>
               <li>講座終了後のQ&amp;Aに参加</li>
-              <li>進化の図鑑 <small>― 8人の変わり方を、あとから見返せる</small></li>
-              <li>聞き分けクイズ・参加者だけの練習メニュー</li>
+              <li>進化の図鑑・聞き分けクイズ・練習メニュー</li>
               <li>録画・教材を1年間利用</li>
             </ul>
           </div>
           <div class="offer-side">
-            <div class="price-label">参加費</div>
+            <div class="price-label">参加費（早割・8/8（土）まで）</div>
             <div class="price"><strong>25,000</strong><span>円（税込）</span></div>
-            <span class="cta cta-disabled" aria-disabled="true">受付は終了しました</span>
-            <div class="soldout">コーチつきプラン（添削席）は両日満席です</div>
-            <p class="not-included">※観察席には、あなた自身への個別コーチング・個別診断は含まれません。8人のレッスンを観察し、共通の教材で練習するプランです。</p>
+            <p class="line-price">8/9（日）以降は通常価格 <b>30,000円</b></p>
+            <a class="cta cta-gold" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1">添削付プランに申し込む →</a>
+            <p class="not-included">※添削付プランは、発音時の口の動きと音声を確認するため、カメラ・マイクの使用が必須です。</p>
           </div>
+        </div>
+
+        <div class="observer-option rv">
+          <p>顔出し・発言なしで8人の添削から学びたい方には、観察席もご用意しています。</p>
+          <a href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1">観察席の詳細を見る（早割19,800円）</a>
         </div>
       </div>
     </section>
@@ -680,11 +857,14 @@
         <p class="section-kicker">よくある質問</p>
         <h2 class="section-title rv">気になるところ、先にお答えします。</h2>
         <div class="faq-list rv">
-          <details open><summary>観察席は、ただZoomを見ているだけですか？</summary><p>いいえ。講座中は8人のレッスンを観察シートに書き込みながら見て、終わったあとは進化の図鑑・聞き分けクイズ・当日の内容に連動した練習メニューで復習します。録画も1年間見られます。</p></details>
-          <details><summary>自分の発音も見てもらえますか？</summary><p>観察席に個別のコーチングは含まれません（コーチつきの添削席は両日満席です）。そのかわり、8人の変わり方から自分に近いパターンを見つけて、共通の練習メニューで練習します。「自分と同じ悩みの人が変わる瞬間」は、想像以上に参考になります。</p></details>
+          <details open><summary>添削席では、どんなことをしますか？</summary><p>まりあ元帥があなたの発音をその場で聞き、直すべき場所を特定してフィードバックします。あなたの番以外の時間も、他の7人への添削がそのまま教材になります。講座後は録画・進化の図鑑・クイズ・練習メニューを使って1年間復習できます。</p></details>
+          <details><summary>人前で直されるのは緊張しそうです。</summary><p>緊張はあって大丈夫です。過去の添削席参加者からは「マンツーマンで習っているような緊張感が良かった」という声をいただいています。指摘は具体的で、できるまで一緒に練習する形なので、初心者の方も一人ひとりのレベルに合わせて対応します。</p></details>
+          <details><summary>観察席は、ただZoomを見ているだけですか？</summary><p>いいえ。講座中は8人のレッスンを観察シートに書き込みながら見て、終わったあとは進化の図鑑・聞き分けクイズ・当日の内容に連動した練習メニューで復習します。録画も1年間見られます。ただし、ご自身への直接添削は添削付プランのみです。</p></details>
           <details><summary>当日、参加できなくなったら？</summary><p>大丈夫です。録画を1年間見られるので、あとから同じ内容を確認できます。進化の図鑑から見たい場面へすぐ戻れます。</p></details>
-          <details><summary>初心者ですが、ついていけますか？</summary><p>参加できます。口の形・音の目立たせ方・音のつながり・リズム・抑揚を、土台から順番に扱います。発音記号が読めなくても問題ありません。</p></details>
-          <details><summary>顔出しや発言は必要ですか？</summary><p>不要です。カメラOFF・マイクOFFのまま参加できます。質問はチャットからどうぞ（匿名OK）。</p></details>
+          <details><summary>初心者ですが、ついていけますか？</summary><p>参加できます。口の形・音の目立たせ方・音のつながり・リズム・抑揚を、土台から順番に扱います。発音記号が読めなくても問題ありません。申込直後に届く鬼キャンライブラリーで予習しておくと、当日がさらに濃くなります。</p></details>
+          <details><summary>予習は必要ですか？いつから始められますか？</summary><p>お申込みが確認でき次第、予習特典「鬼キャンライブラリー」（発音記号動画・母音クイズ）をお送りします。当日までの予習課題はここから出ます。早くお申込みいただくほど予習期間が長く使えるので、遅くとも開催1週間前（8/8）までのご参加がおすすめです。</p></details>
+          <details><summary>どの地域の英語発音を学びますか？</summary><p>アメリカ英語の発音を扱います。母音、強勢（アクセント）、リンキング、リズム、イントネーションを、アメリカ英語の音と話し方を基準に学びます。</p></details>
+          <details><summary>カメラやマイクは必要ですか？</summary><p>プランによって異なります。添削付プランでは、発音時の口の動きや音声を確認するため、カメラ・マイクともに必須です。観察席では、レッスンの進行上、カメラ・マイクともにOFFでご参加ください。質問は、どちらのプランでご参加の場合も、最後にQ&amp;Aで回答いたします。</p></details>
           <details><summary>図鑑や練習メニューはいつ届きますか？</summary><p>鬼キャン終了後、録画と内容を確認してから順次お届けします。今回のメンバーは、届いたときから1年間利用できます。</p></details>
         </div>
       </div>
@@ -692,26 +872,27 @@
 
     <section class="final">
       <div class="wrap">
-        <p class="section-kicker">OBSERVE. UNDERSTAND. PRACTICE.</p>
-        <h2 class="section-title rv">鬼は、受ける者だけでなく、<br>見る者も鍛える。</h2>
-        <p class="rv">8人の変化を見て、理由が分かって、練習まで持ち帰る。次に学び方が変わるのは、あなたの番です。夏の陣、特等席でお待ちしています。</p>
-        <span class="cta cta-disabled rv" aria-disabled="true">受付は終了しました</span>
+        <p class="section-kicker">GET CORRECTED. UNDERSTAND. PRACTICE.</p>
+        <h2 class="section-title rv">主役の席は、8つ。<br>その１席を手に入れて。</h2>
+        <p class="rv">その場で直され、理由が分かって、直されたポイントを教材と一緒に持ち帰る。次に変わるのは、あなたの番です。お盆の特別開催、8席のうちのひとつでお待ちしています。</p>
+        <a class="cta cta-gold rv" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1" style="margin-bottom:10px;">添削付プランに申し込む →</a>
+        <a class="subtle-link rv" href="#offer">添削内容をもう一度確認する</a>
       </div>
     </section>
   </main>
 
-  <div class="fixed-cta" id="fixedCta" aria-label="固定申込バー">
+  <div class="fixed-cta hidden" id="fixedCta" aria-label="固定申込バー">
     <div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
     <div class="fixed-status">
-      <span class="ended">開催終了</span>
-      <span class="count" id="countdown">7/25（土）・7/26（日）開催</span>
+      <span class="live">添削席（8名限定）受付中</span>
+      <span class="count" id="countdown">8/15（土）開催</span>
     </div>
     <div class="fixed-inner">
       <div class="fixed-price">
-        <span>鬼キャン観察席</span><b>25,000円</b>
-        <small>税込・各開催日の前日まで</small>
+        <span>添削席 早割</span><b>25,000円</b>
+        <small>税込・早割は8/8（土）まで</small>
       </div>
-      <span class="cta cta-disabled" aria-disabled="true">受付は終了しました<small>7/25・7/26 開催終了</small></span>
+      <a class="cta" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1">添削付プランに申し込む →</a>
     </div>
   </div>
 
@@ -722,18 +903,16 @@
     addEventListener('scroll', () => {
       const max = document.documentElement.scrollHeight - innerHeight;
       scrollBar.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + '%';
+      fixedCta.classList.toggle('hidden', scrollY < 420);
     }, { passive: true });
     (function () {
       const el = document.getElementById('countdown');
       const now = new Date();
-      const day25 = new Date(2026, 6, 25);
-      const d25 = new Date(2026, 6, 25, 23, 59, 59);
-      const d26 = new Date(2026, 6, 26, 23, 59, 59);
-      if (now <= d25) {
-        const left = Math.ceil((day25 - now) / 86400000);
-        el.textContent = left <= 0 ? '7/25（土）本日開催' : '7/25（土）開催まであと' + left + '日';
-      } else if (now <= d26) {
-        el.textContent = '7/26（日）が最終開催です';
+      const eventDay = new Date(2026, 7, 15);
+      const eventEnd = new Date(2026, 7, 15, 23, 59, 59);
+      if (now <= eventEnd) {
+        const left = Math.ceil((eventDay - now) / 86400000);
+        el.textContent = left <= 0 ? '8/15（土）本日開催' : '8/15（土）開催まであと' + left + '日';
       } else {
         el.textContent = '今回の開催は終了しました';
       }
@@ -755,8 +934,8 @@
       b.classList.toggle('on');
       const n = syms.filter(x => x.classList.contains('on')).length;
       if (n === 0) echo.textContent = '気になるものをタップしてみてください。';
-      else if (n <= 2) echo.innerHTML = 'その悩みからスタートした挑戦者が、当日の8人の中にいます。<b>どう変わっていくのか</b>、見届けに来てください。';
-      else echo.innerHTML = '複数当てはまる方こそ、観察席向きです。伸びしろは一人ひとり違うので、<b>8人の変化の中から自分に近い順</b>に見つけていきましょう。';
+      else if (n <= 2) echo.innerHTML = 'その悩み、当日その場で直せます。<b>添削席で、まりあ元帥に見てもらってください。</b>';
+      else echo.innerHTML = '複数当てはまる方こそ、直接添削向きです。<b>どこから直すべきかを特定するところ</b>から、まりあ元帥が引き受けます。';
     }));
 
     const QUIZ = [
@@ -818,7 +997,7 @@
         optBox.innerHTML = '';
         quizPrompt.textContent = 'クイズ終了';
         nextBtn.style.display = 'none';
-        result.innerHTML = `<strong>2問クリア。</strong>鬼キャンライブラリーには、口の形・発音記号・音声から母音を確認できるクイズを用意しています。当日はこの「見抜く目」で、8人のレッスンを観察しましょう。`;
+        result.innerHTML = `<strong>2問クリア。</strong>鬼キャンライブラリーには、口の形・発音記号・音声から母音を確認できるクイズを用意しています。当日はこの「見抜く目」ごと、まりあ元帥に鍛えてもらいましょう。`;
       }
     });
     loadQ();
