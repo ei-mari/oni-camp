@@ -159,6 +159,16 @@
       transition: transform .18s ease, filter .18s ease;
     }
     .cta:hover { transform: translateY(-2px); filter: brightness(1.08); }
+    .cta.cta-disabled {
+      border-color: rgba(255,255,255,.16);
+      background: linear-gradient(180deg, #5a5048, #38312c);
+      box-shadow: none;
+      color: #d8cdc2;
+      cursor: not-allowed;
+      animation: none !important;
+    }
+    .cta.cta-disabled:hover { transform: none; filter: none; }
+    .hero-card .open.closed, .offer-status.closed { color: #b7a58f; }
     .hero-card .cta, .offer-side .cta { animation: ctaglow 2.8s ease-in-out infinite; }
     @keyframes ctaglow {
       0%, 100% { box-shadow: 0 12px 30px rgba(240,68,46,.28), inset 0 1px rgba(255,255,255,.35); }
@@ -364,6 +374,7 @@
     .fixed-status { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 7px 14px 0; font-size: 10.5px; font-weight: 800; color: var(--gold-soft); }
     .fixed-status .live { display: inline-flex; align-items: center; gap: 6px; color: var(--green); }
     .fixed-status .live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: pulse 1.6s infinite; }
+    .fixed-status .ended { color: #d8c9b8; }
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
     .fixed-status .count { color: #ffd9d0; }
     .fixed-inner { display: flex; align-items: center; gap: 11px; padding: 7px 12px max(10px, env(safe-area-inset-bottom)); }
@@ -431,7 +442,7 @@
   </style>
 </head>
 <body>
-  <div class="topbar"><span>今週末開催</span>観察席は前日まで受付中｜添削席は満員御礼</div>
+  <div class="topbar"><span>開催終了</span>7/25・7/26の鬼キャンは終了しました</div>
 
   <header class="hero">
     <div class="hero-visual">
@@ -458,13 +469,13 @@
         </div>
 
         <aside class="hero-card" aria-label="開催情報">
-          <div class="open">● 観察席 両日受付中</div>
+          <div class="open closed">● 開催終了</div>
           <h2>鬼キャン観察席</h2>
           <p class="date">7/25（土）・7/26（日）10:00–16:00<br>どちらか1日／内容は同一／Zoom開催</p>
           <div class="price-label">参加費</div>
           <div class="price"><strong>25,000</strong><span>円（税込）</span></div>
-          <a class="cta" href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1">観察席に申し込む →</a>
-          <p class="cta-note">各開催日の前日まで受付／添削席は満席です</p>
+          <span class="cta cta-disabled" aria-disabled="true">受付は終了しました</span>
+          <p class="cta-note">7/25・7/26の開催は終了しました</p>
         </aside>
       </div>
     </div>
@@ -641,7 +652,7 @@
       <div class="wrap">
         <div class="offer-card rv">
           <div class="offer-main">
-            <div class="offer-status">● 両日受付中</div>
+            <div class="offer-status closed">● 開催終了</div>
             <h2>鬼キャン観察席</h2>
             <p class="offer-date">7/25（土）または7/26（日）10:00–16:00｜オンライン開催（Zoom）</p>
             <ul class="include-list">
@@ -656,7 +667,7 @@
           <div class="offer-side">
             <div class="price-label">参加費</div>
             <div class="price"><strong>25,000</strong><span>円（税込）</span></div>
-            <a class="cta" href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1">観察席に申し込む →</a>
+            <span class="cta cta-disabled" aria-disabled="true">受付は終了しました</span>
             <div class="soldout">コーチつきプラン（添削席）は両日満席です</div>
             <p class="not-included">※観察席には、あなた自身への個別コーチング・個別診断は含まれません。8人のレッスンを観察し、共通の教材で練習するプランです。</p>
           </div>
@@ -684,7 +695,7 @@
         <p class="section-kicker">OBSERVE. UNDERSTAND. PRACTICE.</p>
         <h2 class="section-title rv">鬼は、受ける者だけでなく、<br>見る者も鍛える。</h2>
         <p class="rv">8人の変化を見て、理由が分かって、練習まで持ち帰る。次に学び方が変わるのは、あなたの番です。夏の陣、特等席でお待ちしています。</p>
-        <a class="cta rv" href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1">鬼キャン観察席に申し込む →</a>
+        <span class="cta cta-disabled rv" aria-disabled="true">受付は終了しました</span>
       </div>
     </section>
   </main>
@@ -692,7 +703,7 @@
   <div class="fixed-cta" id="fixedCta" aria-label="固定申込バー">
     <div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
     <div class="fixed-status">
-      <span class="live">観察席 両日受付中</span>
+      <span class="ended">開催終了</span>
       <span class="count" id="countdown">7/25（土）・7/26（日）開催</span>
     </div>
     <div class="fixed-inner">
@@ -700,7 +711,7 @@
         <span>鬼キャン観察席</span><b>25,000円</b>
         <small>税込・各開催日の前日まで</small>
       </div>
-      <a class="cta" href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1">観察席に申し込む →<small>7/25・7/26 どちらか1日</small></a>
+      <span class="cta cta-disabled" aria-disabled="true">受付は終了しました<small>7/25・7/26 開催終了</small></span>
     </div>
   </div>
 
