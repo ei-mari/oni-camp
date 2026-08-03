@@ -34,6 +34,7 @@
     .card:before{content:"";position:absolute;z-index:1;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),#fff3b0,var(--gold),transparent);box-shadow:0 0 16px rgba(242,191,74,.35)}
     .card:after{content:"◆";position:absolute;z-index:2;top:10px;right:12px;color:rgba(255,224,134,.72);font-size:11px;text-shadow:0 0 10px rgba(242,191,74,.55)}
     .plan-thumb{display:block;width:calc(100% + 38px);height:auto;aspect-ratio:1;object-fit:cover;margin:-25px -19px 19px;border-bottom:1px solid rgba(242,191,74,.28)}
+    .card-head{display:flex;align-items:center;flex-wrap:wrap;gap:7px 10px}
     .kicker{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(216,64,34,.15);border:1px solid rgba(216,64,34,.5);color:#ff9a78;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;font-size:11px;font-weight:800;letter-spacing:.06em}
     .card h2{font-size:25px;line-height:1.4;margin:13px 0 2px;color:#fff8e8;text-shadow:0 4px 20px rgba(0,0,0,.55)}
     .title-note{display:block;margin-top:3px;color:#d7bd83;font:700 11px/1.4 -apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;letter-spacing:.03em;text-shadow:none}
@@ -96,9 +97,11 @@
       <section class="plans" aria-label="リピート受講プラン">
         <article class="card primary">
           <img class="plan-thumb" src="../assets/onicamp-repeat-coaching.webp" alt="鬼の発音キャンプ 添削付きプラン" width="1254" height="1254" loading="lazy">
-          <span class="kicker">直接添削を受ける</span>
+          <div class="card-head">
+            <span class="kicker">直接添削を受ける</span>
+            <p class="mode">ビデオON ／ マイクON</p>
+          </div>
           <h2>添削席へのアップグレード<small class="title-note">（各回最大4名）</small></h2>
-          <p class="mode">ビデオON ／ マイクON</p>
           <div class="price">
             <span class="regular">通常 30,000円（税込）</span>
             <span class="special">15,000<small>円（税込）</small></span>
@@ -123,9 +126,11 @@
 
         <article class="card secondary">
           <img class="plan-thumb" src="../assets/onicamp-repeat-observer.webp" alt="鬼キャン 観察席" width="1000" height="1000" loading="lazy">
-          <span class="kicker">見て、学ぶ</span>
+          <div class="card-head">
+            <span class="kicker">見て、学ぶ</span>
+            <p class="mode">ビデオOFF ／ マイクOFF</p>
+          </div>
           <h2>観察席<small class="title-note">（回数無制限）</small></h2>
-          <p class="mode">ビデオOFF ／ マイクOFF</p>
           <div class="price">
             <span class="regular">通常 19,800円（税込）</span>
             <span class="special">3,000<small>円（税込）</small></span>
