@@ -38,19 +38,18 @@
     .kicker{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(216,64,34,.15);border:1px solid rgba(216,64,34,.5);color:#ff9a78;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;font-size:11px;font-weight:800;letter-spacing:.06em}
     .card h2{font-size:25px;line-height:1.4;margin:13px 0 2px;color:#fff8e8;text-shadow:0 4px 20px rgba(0,0,0,.55)}
     .title-note{display:block;margin-top:3px;color:#d7bd83;font:700 11px/1.4 -apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;letter-spacing:.03em;text-shadow:none}
-    .plan-pitch{margin:13px 0 4px;padding:12px 13px;border-left:2px solid rgba(242,191,74,.72);background:linear-gradient(90deg,rgba(242,191,74,.08),transparent);color:#cfc2ad;font-size:12px;line-height:1.85}
+    .plan-pitch{margin:13px 0 4px;padding:12px 13px;border-left:2px solid rgba(242,191,74,.72);background:linear-gradient(90deg,rgba(242,191,74,.08),transparent);color:#d8ccba;font-size:13px;line-height:1.9}
     .plan-pitch strong{color:#fff0b0;font-size:13px}
     .mode{margin:0;color:var(--gold2);font-size:13px;font-weight:700}
-    .price{display:flex;align-items:baseline;justify-content:center;gap:11px;margin:17px 0 16px;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif}
-    .regular{color:#8e8375;font-size:13px;text-decoration:line-through}
-    .special{background:linear-gradient(#fff6c9,#e5aa35);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:34px;line-height:1;font-weight:900;letter-spacing:-.04em;filter:drop-shadow(0 4px 10px rgba(229,154,38,.2))}
-    .special small{font-size:14px;letter-spacing:0}
+    .price{display:grid;justify-items:center;gap:8px;margin:18px 0 16px;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;text-align:center}
+    .regular{color:#9c9183;font-size:12px;line-height:1.4;text-decoration:line-through;white-space:nowrap}
+    .special{background:linear-gradient(#fff6c9,#e5aa35);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:38px;line-height:1;font-weight:900;letter-spacing:-.04em;filter:drop-shadow(0 4px 10px rgba(229,154,38,.2));white-space:nowrap}
+    .special small{font-size:12px;letter-spacing:0;white-space:nowrap}
     .repeat-label{text-align:center;margin:-7px 0 17px;color:#e8d6b5;font-size:12px}
     .limit{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin:-5px 0 17px;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif}
     .limit span{padding:4px 9px;border:1px solid rgba(242,191,74,.42);border-radius:999px;background:rgba(242,191,74,.08);color:#f5d37d;font-size:11px;font-weight:800}
     .schedule{margin:-4px 0 17px;padding:12px 13px;border-left:2px solid var(--gold);background:rgba(242,191,74,.055);color:#ddd0ba;font-size:12px;line-height:1.8}
     .schedule strong{color:var(--gold2)}
-    .secondary .coupon + .schedule{margin:18px 0 17px}
     .coupon-label{display:block;margin-bottom:6px;color:var(--muted);font:700 11px/1.4 -apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;letter-spacing:.08em}
     .coupon{display:grid;grid-template-columns:1fr auto;gap:8px;padding:7px;background:linear-gradient(100deg,#050403,#160d06);border:1px dashed rgba(242,191,74,.6);border-radius:10px;box-shadow:inset 0 0 18px rgba(242,191,74,.04)}
     .code{display:flex;align-items:center;padding-left:10px;color:#fff2bd;font:800 19px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em}
@@ -76,6 +75,7 @@
     .quick-copy{min-height:34px;padding:0 9px;background:linear-gradient(#3b2912,#1a1108);border:1px solid rgba(242,191,74,.52);color:#ffe58c;font-size:11px}
     .quick-link{display:flex;align-items:center;justify-content:center;min-height:34px;padding:0 10px;border-radius:7px;background:linear-gradient(100deg,#ad2b18,#dc4a29);color:#fff;text-decoration:none;font:800 11px/1 -apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;white-space:nowrap}
     .quick-action.observer .quick-link{background:linear-gradient(100deg,#715019,#b98629)}
+    @media (max-width:380px){.sticky-actions{padding-inline:7px}.quick-action{gap:5px}.quick-name{font-size:10px}.quick-code{font-size:11px}.quick-copy{padding-inline:7px}.quick-link{padding-inline:8px}}
     @media (min-width:700px){body{padding:34px 0}.page{border:1px solid rgba(242,191,74,.16);border-radius:3px;overflow:hidden}main{padding-inline:25px}}
     @media (hover:hover){.card{transition:transform .25s ease,border-color .25s ease}.card:hover{transform:translateY(-3px);border-color:rgba(242,191,74,.7)}.cta{transition:filter .2s ease,transform .2s ease}.cta:hover{filter:brightness(1.13);transform:translateY(-1px)}}
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.cta{transition:none}}
@@ -121,7 +121,7 @@
           <span class="coupon-label">クーポンコード</span>
           <div class="coupon">
             <span class="code">ONICHECK06</span>
-            <button class="copy" type="button" data-code="ONICHECK06">コピー</button>
+            <button class="copy" type="button" data-code="ONICHECK06" aria-label="ONICHECK06をコピー">コピー</button>
           </div>
           <a class="cta" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1">添削席へのアップグレードを申し込む</a>
           <p class="cta-note">※ 前回と同じ内容を取り扱います。</p>
@@ -140,14 +140,14 @@
             <span class="special">3,000<small>円（税込）</small></span>
           </div>
           <p class="repeat-label">見学参加者限定・リピート受講価格</p>
-          <span class="coupon-label">クーポンコード</span>
-          <div class="coupon">
-            <span class="code">WATCH06</span>
-            <button class="copy" type="button" data-code="WATCH06">コピー</button>
-          </div>
           <div class="schedule">
             <div><strong>今回開催日：</strong>8/22（土）10:00〜16:00</div>
             <div><strong>次回開催日：</strong>9月または10月に開催予定</div>
+          </div>
+          <span class="coupon-label">クーポンコード</span>
+          <div class="coupon">
+            <span class="code">WATCH06</span>
+            <button class="copy" type="button" data-code="WATCH06" aria-label="WATCH06をコピー">コピー</button>
           </div>
           <a class="cta" href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1">観察席に申し込む</a>
           <p class="cta-note">※ 前回と同じ内容を取り扱います。</p>
@@ -163,14 +163,14 @@
     <div class="quick-action">
       <span class="quick-name">添削席へのアップグレード</span>
       <span class="quick-code">ONICHECK06</span>
-      <button class="quick-copy copy" type="button" data-code="ONICHECK06">コピー</button>
-      <a class="quick-link" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1">申込</a>
+      <button class="quick-copy copy" type="button" data-code="ONICHECK06" aria-label="ONICHECK06をコピー">コピー</button>
+      <a class="quick-link" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1" aria-label="添削席へのアップグレードを申し込む">申込</a>
     </div>
     <div class="quick-action observer">
       <span class="quick-name">観察席（見学参加）</span>
       <span class="quick-code">WATCH06</span>
-      <button class="quick-copy copy" type="button" data-code="WATCH06">コピー</button>
-      <a class="quick-link" href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1">申込</a>
+      <button class="quick-copy copy" type="button" data-code="WATCH06" aria-label="WATCH06をコピー">コピー</button>
+      <a class="quick-link" href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1" aria-label="観察席に申し込む">申込</a>
     </div>
   </nav>
   <script>
