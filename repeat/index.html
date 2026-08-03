@@ -28,6 +28,7 @@
     .card{position:relative;padding:25px 19px 21px;background:linear-gradient(155deg,rgba(43,23,12,.96),rgba(10,7,5,.98));border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 16px 38px rgba(0,0,0,.34)}
     .card.primary{border-color:rgba(242,191,74,.68);box-shadow:0 0 0 1px rgba(242,191,74,.12),0 18px 46px rgba(0,0,0,.42)}
     .card:before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+    .plan-thumb{display:block;width:calc(100% + 38px);height:auto;aspect-ratio:1;object-fit:cover;margin:-25px -19px 19px;border-bottom:1px solid rgba(242,191,74,.28)}
     .kicker{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(216,64,34,.15);border:1px solid rgba(216,64,34,.5);color:#ff9a78;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;font-size:11px;font-weight:800;letter-spacing:.06em}
     .card h2{font-size:25px;line-height:1.4;margin:13px 0 2px}
     .mode{margin:0;color:var(--gold2);font-size:13px;font-weight:700}
@@ -38,6 +39,8 @@
     .repeat-label{text-align:center;margin:-7px 0 17px;color:#e8d6b5;font-size:12px}
     .limit{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin:-5px 0 17px;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif}
     .limit span{padding:4px 9px;border:1px solid rgba(242,191,74,.42);border-radius:999px;background:rgba(242,191,74,.08);color:#f5d37d;font-size:11px;font-weight:800}
+    .schedule{margin:-4px 0 17px;padding:12px 13px;border-left:2px solid var(--gold);background:rgba(242,191,74,.055);color:#ddd0ba;font-size:12px;line-height:1.8}
+    .schedule strong{color:var(--gold2)}
     .coupon-label{display:block;margin-bottom:6px;color:var(--muted);font:700 11px/1.4 -apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;letter-spacing:.08em}
     .coupon{display:grid;grid-template-columns:1fr auto;gap:8px;padding:7px;background:#050403;border:1px dashed rgba(242,191,74,.5);border-radius:10px}
     .code{display:flex;align-items:center;padding-left:10px;color:#fff2bd;font:800 19px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em}
@@ -70,6 +73,7 @@
 
       <section class="plans" aria-label="リピート受講プラン">
         <article class="card primary">
+          <img class="plan-thumb" src="../assets/onicamp-repeat-coaching.webp" alt="鬼の発音キャンプ 添削付きプラン" width="1254" height="1254" loading="lazy">
           <span class="kicker">直接添削を受ける</span>
           <h2>添削席</h2>
           <p class="mode">ビデオON ／ マイクON</p>
@@ -82,6 +86,10 @@
             <span>先着4名</span>
             <span>今回・次回の2開催まで有効</span>
           </div>
+          <div class="schedule">
+            <div><strong>今回開催日：</strong>8/22（土）10:00〜16:00</div>
+            <div><strong>次回開催日：</strong>9月または10月に開催予定</div>
+          </div>
           <span class="coupon-label">クーポンコード</span>
           <div class="coupon">
             <span class="code">ONICHECK06</span>
@@ -91,6 +99,7 @@
         </article>
 
         <article class="card secondary">
+          <img class="plan-thumb" src="../assets/onicamp-repeat-observer.webp" alt="鬼キャン 観察席" width="1000" height="1000" loading="lazy">
           <span class="kicker">見て、学ぶ</span>
           <h2>観察席</h2>
           <p class="mode">ビデオOFF ／ マイクOFF</p>
