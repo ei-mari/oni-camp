@@ -28,6 +28,11 @@
     .lead{margin:13px auto 0;max-width:390px;color:var(--muted);font-size:14px;line-height:1.9}
     .guide{position:relative;margin:0 0 24px;padding:16px 15px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(242,191,74,.09),rgba(57,21,9,.24));font-size:13px;text-align:center;color:#eadfc9;border-radius:12px;box-shadow:inset 0 0 22px rgba(242,191,74,.035),0 12px 30px rgba(0,0,0,.2)}
     .guide:before{content:"COUPON GUIDE";position:absolute;top:-8px;left:50%;transform:translateX(-50%);padding:0 10px;background:#0b0704;color:#d9a642;font:800 9px/16px -apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;letter-spacing:.16em;white-space:nowrap}
+    .survey-gift{margin:0 0 25px;padding:16px;background:linear-gradient(145deg,rgba(67,21,10,.72),rgba(10,7,5,.96));border:1px solid rgba(242,191,74,.45);border-radius:15px;box-shadow:inset 0 0 30px rgba(216,64,34,.05),0 16px 38px rgba(0,0,0,.3);text-align:center}
+    .gift-badge{display:inline-block;margin-bottom:7px;color:#e9b849;font:800 9px/1.4 -apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;letter-spacing:.18em}
+    .survey-gift h2{margin:0;color:#fff1c0;font-size:20px;line-height:1.55}
+    .survey-gift p{margin:9px 0 13px;color:#d5c6af;font-size:13px;line-height:1.9}
+    .survey-gift img{display:block;width:100%;height:auto;border:1px solid rgba(242,191,74,.4);border-radius:10px;box-shadow:0 10px 26px rgba(0,0,0,.36)}
     .plans{display:grid;gap:25px}
     .card{position:relative;padding:25px 19px 21px;background:radial-gradient(circle at 90% 0,rgba(216,64,34,.1),transparent 28%),linear-gradient(155deg,rgba(43,23,12,.97),rgba(10,7,5,.99));border:1px solid var(--line);border-radius:17px;overflow:hidden;box-shadow:inset 0 0 0 4px rgba(242,191,74,.025),0 18px 42px rgba(0,0,0,.4)}
     .card.primary{border-color:rgba(242,191,74,.68);box-shadow:0 0 0 1px rgba(242,191,74,.12),0 18px 46px rgba(0,0,0,.42)}
@@ -95,6 +100,13 @@
       </section>
 
       <p class="guide">クーポンコードをコピーして、<br>申込ページのクーポン入力欄に貼り付けてください。</p>
+
+      <section class="survey-gift" aria-labelledby="survey-gift-title">
+        <span class="gift-badge">SURVEY GIFT</span>
+        <h2 id="survey-gift-title">今回も、アンケート回答者限定。</h2>
+        <p>「発音記号動画ボックス」も、今回のアンケートにお答えくださった皆様へ、期間限定で公開いたします。</p>
+        <img src="../assets/onicamp-survey-pronunciation-box.webp" alt="アンケート回答特典 発音記号動画ボックス" width="1200" height="676" loading="lazy">
+      </section>
 
       <section class="plans" aria-label="リピート受講プラン">
         <article class="card primary">
