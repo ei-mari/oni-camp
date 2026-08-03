@@ -18,7 +18,7 @@
     .hero{position:relative}
     .hero img{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:cover}
     .hero:after{content:"";position:absolute;inset:auto 0 0;height:34%;background:linear-gradient(transparent,#080604)}
-    main{padding:0 18px 54px}
+    main{padding:0 18px 134px}
     .intro{text-align:center;margin:-8px 0 30px;position:relative;z-index:1}
     .eyebrow{margin:0 0 7px;color:var(--gold);font-size:12px;letter-spacing:.18em;font-weight:800}
     h1{font-size:clamp(25px,7.2vw,34px);line-height:1.45;margin:0;text-shadow:0 0 20px rgba(238,157,39,.28)}
@@ -52,6 +52,14 @@
     .note{margin:16px 0 0;color:#a99d8c;font-size:11px;text-align:center}
     footer{margin-top:31px;padding-top:21px;border-top:1px solid rgba(242,191,74,.18);text-align:center;color:#887d70;font-size:11px;line-height:1.9}
     button:focus-visible,.cta:focus-visible{outline:3px solid #fff1a4;outline-offset:3px}
+    .sticky-actions{position:fixed;z-index:10;left:50%;bottom:0;width:min(100%,480px);transform:translateX(-50%);padding:8px 10px max(8px,env(safe-area-inset-bottom));background:rgba(8,6,4,.96);border-top:1px solid rgba(242,191,74,.42);box-shadow:0 -10px 28px rgba(0,0,0,.48);backdrop-filter:blur(10px)}
+    .quick-action{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;align-items:center;gap:7px;padding:5px 0}
+    .quick-action + .quick-action{border-top:1px solid rgba(242,191,74,.14)}
+    .quick-name{min-width:0;color:#f7e6bd;font:700 11px/1.25 -apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .quick-code{color:var(--gold2);font:800 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.03em}
+    .quick-copy{min-height:34px;padding:0 9px;background:rgba(242,191,74,.15);border:1px solid rgba(242,191,74,.48);color:#ffe58c;font-size:11px}
+    .quick-link{display:flex;align-items:center;justify-content:center;min-height:34px;padding:0 10px;border-radius:7px;background:linear-gradient(100deg,#ad2b18,#dc4a29);color:#fff;text-decoration:none;font:800 11px/1 -apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;white-space:nowrap}
+    .quick-action.observer .quick-link{background:linear-gradient(100deg,#715019,#b98629)}
     @media (min-width:700px){body{padding:34px 0}.page{border:1px solid rgba(242,191,74,.16);border-radius:3px;overflow:hidden}main{padding-inline:25px}}
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
@@ -75,7 +83,7 @@
         <article class="card primary">
           <img class="plan-thumb" src="../assets/onicamp-repeat-coaching.webp" alt="鬼の発音キャンプ 添削付きプラン" width="1254" height="1254" loading="lazy">
           <span class="kicker">直接添削を受ける</span>
-          <h2>添削席</h2>
+          <h2>添削席へのアップグレード</h2>
           <p class="mode">ビデオON ／ マイクON</p>
           <div class="price">
             <span class="regular">通常 30,000円（税込）</span>
@@ -95,7 +103,7 @@
             <span class="code">ONICHECK06</span>
             <button class="copy" type="button" data-code="ONICHECK06">コピー</button>
           </div>
-          <a class="cta" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1">添削席に申し込む</a>
+          <a class="cta" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1">添削席へのアップグレードを申し込む</a>
         </article>
 
         <article class="card secondary">
@@ -107,7 +115,7 @@
             <span class="regular">通常 19,800円（税込）</span>
             <span class="special">3,000<small>円（税込）</small></span>
           </div>
-          <p class="repeat-label">参加者限定・リピート受講価格</p>
+          <p class="repeat-label">見学参加者限定・リピート受講価格</p>
           <span class="coupon-label">クーポンコード</span>
           <div class="coupon">
             <span class="code">WATCH06</span>
@@ -121,6 +129,20 @@
       <footer>このページは鬼キャン参加者限定です。<br>第三者への共有はお控えください。</footer>
     </main>
   </div>
+  <nav class="sticky-actions" aria-label="クーポンと申込リンク">
+    <div class="quick-action">
+      <span class="quick-name">添削席へのアップグレード</span>
+      <span class="quick-code">ONICHECK06</span>
+      <button class="quick-copy copy" type="button" data-code="ONICHECK06">コピー</button>
+      <a class="quick-link" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1">申込</a>
+    </div>
+    <div class="quick-action observer">
+      <span class="quick-name">観察席（見学参加者）</span>
+      <span class="quick-code">WATCH06</span>
+      <button class="quick-copy copy" type="button" data-code="WATCH06">コピー</button>
+      <a class="quick-link" href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1">申込</a>
+    </div>
+  </nav>
   <script>
     const status = document.getElementById('copy-status');
     async function copyCode(code) {
