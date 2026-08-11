@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="2026年8月22日（土）開催。まりあ元帥があなたの発音をその場で直す8名限定の添削付プラン。1日ぶっ通し6時間のアメリカ英語発音キャンプ。">
+  <meta name="description" content="2026年8月22日（土）開催。まりあ元帥があなたの発音をその場で直す少人数制の添削付プラン。1日ぶっ通し6時間のアメリカ英語発音キャンプ。">
   <meta name="theme-color" content="#0b0806">
   <meta property="og:title" content="鬼キャン｜アメリカ英語の発音キャンプ 2026">
   <meta property="og:description" content="8/22（土）10:00-16:00開催。アメリカ英語の発音を、母音からリズム・イントネーションまで整える6時間。">
-  <meta property="og:image" content="../assets/onicamp-obon-hero-clean.webp">
+  <meta property="og:image" content="../assets/thumbnail.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <title>アメリカ英語の発音キャンプ「鬼キャン」｜8月22日（土）</title>
@@ -45,7 +45,7 @@
         linear-gradient(180deg, #0f0a07 0%, var(--bg-deep) 62%, #090503 100%);
       color: var(--text);
       font-family: "Noto Sans JP", -apple-system, "Hiragino Sans", sans-serif;
-      line-height: 1.8;
+      line-height: 1.9;
       font-size: 15px;
       -webkit-font-smoothing: antialiased;
     }
@@ -54,10 +54,10 @@
     button { font: inherit; -webkit-tap-highlight-color: transparent; }
     h1, h2, h3, p { margin-top: 0; }
 
-    .wrap { width: min(calc(100% - 26px), var(--max)); margin: 0 auto; }
-    .narrow { width: min(calc(100% - 26px), 820px); margin: 0 auto; }
+    .wrap { width: min(calc(100% - 36px), var(--max)); margin: 0 auto; }
+    .narrow { width: min(calc(100% - 36px), 820px); margin: 0 auto; }
 
-    .rv { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .rv { opacity: 0; transform: translateY(16px); transition: opacity .75s ease, transform .75s ease; }
     .rv.in { opacity: 1; transform: none; }
 
     .topbar {
@@ -68,10 +68,27 @@
       color: #fff; text-align: center; font-size: 10.5px; font-weight: 900;
       box-shadow: 0 8px 28px rgba(0, 0, 0, .28);
     }
-    .topbar span { padding: 1px 8px; border-radius: 999px; background: #fff6dc; color: #9c2016; flex: 0 0 auto; }
+    .topbar span { padding: 1px 8px; border-radius: 999px; background: #fff6dc; color: #9c2016; flex: 0 0 auto; animation: topbarPulse 4s ease-in-out infinite; }
+    @keyframes topbarPulse { 0%,100% { box-shadow: 0 0 0 rgba(255,241,199,0); } 50% { box-shadow: 0 0 16px rgba(255,241,199,.5); } }
+
+    .ambient-embers {
+      position: fixed; inset: 0; z-index: 3; width: min(100%, 480px); margin-inline: auto;
+      pointer-events: none; overflow: hidden; opacity: .32;
+    }
+    .ambient-embers i {
+      position: absolute; left: var(--x); bottom: -18px; width: var(--s); height: var(--s); border-radius: 50%;
+      background: radial-gradient(circle, #fff0a6 0 18%, #ff7b2d 35%, rgba(240,68,46,.12) 70%);
+      box-shadow: 0 0 10px rgba(255,103,38,.72); animation: emberRise var(--d) linear var(--delay) infinite;
+    }
+    @keyframes emberRise {
+      0% { translate: 0 0; scale: .6; opacity: 0; }
+      12% { opacity: .9; }
+      65% { translate: var(--drift) -62vh; opacity: .55; }
+      100% { translate: calc(var(--drift) * -1) -108vh; scale: 1.15; opacity: 0; }
+    }
 
     /* ヒーロー：スマホ＝画像が主役、テキストはその下 */
-    .hero { position: relative; z-index: 2; overflow: visible; border-bottom: 1px solid var(--line); padding-bottom: 44px; }
+    .hero { position: relative; z-index: 2; overflow: visible; border-bottom: 1px solid var(--line); padding-bottom: 36px; }
     .section-transition {
       position: absolute; bottom: -19px; left: 50%; z-index: 4;
       width: 44px; height: 26px; translate: -50% 0;
@@ -85,20 +102,12 @@
       background: var(--bg);
       clip-path: polygon(0 0, 100% 0, 50% 100%);
     }
-    .hero-visual { position: relative; }
-    .hero-visual img { width: 100%; height: auto; }
-    .hero-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, var(--bg) 98%); }
-    .hero-visual::before {
-      content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: .8;
-      background-image:
-        radial-gradient(2px 2px at 20% 80%, rgba(247,200,95,.9), transparent 60%),
-        radial-gradient(1.5px 1.5px at 65% 70%, rgba(255,138,118,.8), transparent 60%),
-        radial-gradient(2.5px 2.5px at 85% 85%, rgba(247,200,95,.7), transparent 60%),
-        radial-gradient(1.5px 1.5px at 40% 90%, rgba(255,220,150,.8), transparent 60%),
-        radial-gradient(2px 2px at 75% 95%, rgba(240,68,46,.7), transparent 60%);
-      background-repeat: no-repeat; background-size: 100% 100%;
-      animation: embers 7s linear infinite;
-    }
+    .section-transition { animation: transitionBounce 1.7s ease-in-out infinite; }
+    @keyframes transitionBounce { 0%,100% { translate: -50% -2px; } 50% { translate: -50% 5px; } }
+    .hero-visual { position: relative; overflow: hidden; border-bottom: 1px solid rgba(247,200,95,.3); background: #050403; }
+    .hero-visual img { width: 100%; height: auto; aspect-ratio: 1672 / 941; object-fit: cover; animation: heroBreath 14s ease-in-out infinite alternate; }
+    @keyframes heroBreath { from { scale: 1; filter: saturate(1); } to { scale: 1.035; filter: saturate(1.12) brightness(1.04); } }
+    .hero-visual::after { content: ""; position: absolute; inset: auto 0 0; height: 18%; background: linear-gradient(transparent, rgba(5,4,3,.78)); pointer-events: none; }
     @keyframes embers { 0% { transform: translateY(0); opacity: 0; } 12% { opacity: .85; } 85% { opacity: .5; } 100% { transform: translateY(-46vh); opacity: 0; } }
     .hero-visual .brand {
       position: absolute; top: 14px; left: 13px; z-index: 2;
@@ -107,7 +116,17 @@
       text-shadow: 0 2px 10px rgba(0,0,0,.9);
     }
     .brand-mark { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid rgba(247,200,95,.55); border-radius: 10px; background: rgba(0,0,0,.6); color: var(--gold); font-size: 19px; font-family: var(--serif); }
-    .hero-body { margin-top: -34px; position: relative; z-index: 2; }
+    .hero-body {
+      position: relative; z-index: 2; padding-top: 25px;
+      background:
+        radial-gradient(circle at 88% 5%, rgba(247,200,95,.09), transparent 30%),
+        linear-gradient(180deg, rgba(24,15,10,.98), rgba(11,8,6,.99));
+    }
+    .hero-body::before {
+      content: ""; position: absolute; top: 0; left: 18px; right: 18px; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(247,200,95,.9), transparent);
+      box-shadow: 0 0 18px rgba(247,200,95,.28);
+    }
     .date-badges { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
     .date-badge {
       display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px;
@@ -191,7 +210,7 @@
       0%, 100% { box-shadow: 0 12px 30px rgba(240,68,46,.28), inset 0 1px rgba(255,255,255,.35); }
       50% { box-shadow: 0 12px 40px rgba(240,68,46,.55), 0 0 22px rgba(240,68,46,.28), inset 0 1px rgba(255,255,255,.35); }
     }
-    .cta:focus-visible, .sym:focus-visible, .quiz-option:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .cta:focus-visible, .quiz-option:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
     .cta-note { margin: 9px 0 0; color: #bcae9d; text-align: center; font-size: 10px; line-height: 1.55; }
     .subtle-link {
       display: block; width: fit-content; margin: 14px auto 0;
@@ -199,7 +218,28 @@
     }
     .subtle-link:hover { color: var(--gold-soft); }
 
-    section { padding: 58px 0; position: relative; }
+    .hero-kicker {
+      display: flex; align-items: center; gap: 8px; margin: 0 0 8px;
+      color: var(--gold); font-size: 10.5px; font-weight: 900; letter-spacing: .15em;
+    }
+    .hero-kicker::before { content: ""; width: 24px; height: 1px; background: var(--gold); }
+    .hero-trust { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; margin: 0 0 18px; }
+    .hero-trust span { padding: 8px 4px; border: 1px solid var(--line-light); border-radius: 10px; background: rgba(255,255,255,.035); color: #e7dac9; text-align: center; font-size: 9.5px; font-weight: 800; line-height: 1.45; }
+
+    main { display: flex; flex-direction: column; }
+    section { width: 100%; padding: 74px 0; position: relative; overflow: hidden; }
+    main > section:nth-of-type(4n + 2) {
+      background:
+        radial-gradient(circle at 105% 10%, rgba(240,68,46,.09), transparent 36%),
+        linear-gradient(180deg, rgba(255,255,255,.014), transparent 26%, rgba(0,0,0,.08));
+    }
+    main > section:nth-of-type(4n) {
+      background:
+        radial-gradient(circle at -5% 15%, rgba(247,200,95,.075), transparent 34%),
+        linear-gradient(180deg, rgba(247,200,95,.018), transparent 36%);
+    }
+    .video-section { order: -2; padding-top: 34px !important; padding-bottom: 80px; }
+    .primer { order: -1; }
     main > section:not(:first-child)::before {
       content: "◆"; position: absolute; top: -9px; left: 50%; translate: -50% 0;
       color: rgba(247,200,95,.55); font-size: 11px;
@@ -209,13 +249,21 @@
     .section-kicker { display: flex; align-items: center; gap: 9px; margin-bottom: 12px; color: var(--red); font-size: 12px; font-weight: 900; letter-spacing: .16em; }
     .section-kicker::before { content: ""; width: 22px; height: 1px; background: var(--red); }
     .section-kicker em { font-style: normal; font-family: var(--serif); color: var(--gold); }
-    .section-title { margin-bottom: 16px; font-family: var(--serif); font-weight: 800; font-size: clamp(21px, 5.7vw, 27px); line-height: 1.5; text-wrap: balance; }
-    .section-intro { margin-bottom: 28px; color: var(--muted); font-size: 14px; }
+    .kicker-icon { display: inline-grid; width: 28px; height: 28px; place-items: center; border: 1px solid rgba(247,200,95,.28); border-radius: 9px; background: rgba(247,200,95,.08); font-size: 14px; line-height: 1; letter-spacing: 0; box-shadow: inset 0 1px rgba(255,255,255,.07); }
+    .section-title { margin-bottom: 21px; font-family: var(--serif); font-weight: 800; font-size: clamp(23px, 6.1vw, 29px); line-height: 1.55; text-wrap: balance; }
+    .section-title::after {
+      content: ""; display: block; width: 54px; height: 2px; margin-top: 13px;
+      background: linear-gradient(90deg, var(--red), var(--gold), transparent);
+      box-shadow: 0 0 12px rgba(247,200,95,.25);
+    }
+    .section-intro { margin-bottom: 38px; color: var(--muted); font-size: 14.5px; line-height: 2.05; }
     .section-intro b { color: var(--gold-soft); }
 
     /* 3行でわかる鬼キャン */
-    .primer { padding-top: 50px; }
-    .primer-card { padding: 22px 18px; border: 1px solid var(--line); border-radius: 20px; background: linear-gradient(160deg, #1a120d, #0d0907); }
+    .primer { padding-top: 62px; padding-bottom: 72px; }
+    .primer-card { position: relative; padding: 25px 20px; border: 1px solid rgba(247,200,95,.32); border-radius: 22px; background: linear-gradient(155deg, #21160f, #0d0907); box-shadow: 0 22px 55px rgba(0,0,0,.3); overflow: hidden; }
+    .primer-card::after { content: "鬼"; position: absolute; right: -15px; bottom: -47px; color: rgba(247,200,95,.045); font-family: var(--serif); font-size: 145px; font-weight: 800; line-height: 1; pointer-events: none; }
+    .primer-card > * { position: relative; z-index: 1; }
     .primer-title { margin-bottom: 16px; font-family: var(--serif); font-size: 20px; }
     .primer-row { display: flex; gap: 13px; padding: 13px 0; border-top: 1px dashed var(--line-light); font-size: 14px; }
     .primer-row:last-of-type { padding-bottom: 2px; }
@@ -224,24 +272,11 @@
     .primer-row b { color: var(--gold-soft); }
     .primer-note { margin: 14px 0 0; color: var(--muted); font-size: 12px; }
 
-    /* 悩みチェック */
-    .sym-grid { display: grid; grid-template-columns: 1fr; gap: 9px; }
-    .sym {
-      display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; padding: 12px 15px;
-      border: 1px solid var(--line-light); border-radius: 14px; background: rgba(255,255,255,.04);
-      color: #fff; text-align: left; cursor: pointer; font-size: 13.5px; font-weight: 700;
-      transition: border-color .18s ease, background .18s ease;
-    }
-    .sym::before { content: ""; flex: 0 0 auto; width: 20px; height: 20px; border: 2px solid rgba(255,255,255,.35); border-radius: 6px; transition: all .15s ease; }
-    .sym.on { border-color: var(--gold); background: rgba(247,200,95,.1); }
-    .sym.on::before { content: "✓"; display: grid; place-items: center; border-color: var(--gold); background: var(--gold); color: #2a1c07; font-size: 13px; font-weight: 900; }
-    .sym-echo { margin-top: 16px; padding: 15px 17px; border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 12px; background: rgba(247,200,95,.06); color: #f3e8d5; font-size: 13.5px; }
-    .sym-echo b { color: var(--gold-soft); }
-
     /* 6科目 */
-    .curriculum { display: grid; grid-template-columns: 1fr; gap: 10px; counter-reset: subj; }
+    .curriculum { display: grid; grid-template-columns: 1fr; gap: 14px; counter-reset: subj; }
     .subject { position: relative; padding: 18px 18px 16px; border: 1px solid var(--line-light); border-radius: 16px; background: linear-gradient(150deg, #1c130e, #0f0b08); overflow: hidden; }
     .subject::before { counter-increment: subj; content: counter(subj, cjk-ideographic); position: absolute; right: 8px; top: -16px; color: rgba(240,68,46,.16); font-family: var(--serif); font-size: 68px; font-weight: 800; line-height: 1; }
+    .subject-icon { display: grid; width: 36px; height: 36px; place-items: center; margin-bottom: 10px; border: 1px solid rgba(247,200,95,.26); border-radius: 11px; background: linear-gradient(145deg, rgba(247,200,95,.16), rgba(240,68,46,.08)); font-size: 18px; box-shadow: inset 0 1px rgba(255,255,255,.07); }
     .subject h3 { position: relative; margin-bottom: 5px; font-family: var(--serif); font-size: 17px; }
     .subject p { position: relative; margin-bottom: 9px; color: var(--muted); font-size: 12.5px; }
     .term-tag { display: inline-block; padding: 2px 9px; border: 1px solid rgba(247,200,95,.35); border-radius: 999px; color: var(--gold-soft); font-size: 10px; font-weight: 800; }
@@ -264,23 +299,68 @@
     .fullband b { color: var(--gold); }
 
     /* 動画 */
-    .video-shell { padding: 8px; border: 1px solid var(--line); border-radius: 20px; background: #0d0a08; box-shadow: var(--shadow); }
+    .video-invite {
+      display: grid; grid-template-columns: 46px 1fr 22px; align-items: center; gap: 12px;
+      margin: 0 7px 13px; color: #fff; cursor: default;
+    }
+    .video-invite-play {
+      display: grid; width: 46px; height: 46px; place-items: center; border: 1px solid rgba(255,217,117,.72); border-radius: 50%;
+      background: linear-gradient(145deg, #f0442e, #981d13); color: #fff; font-size: 17px; padding-left: 2px;
+      box-shadow: 0 0 0 5px rgba(240,68,46,.1), 0 0 24px rgba(240,68,46,.42);
+      animation: videoPlayPulse 1.65s ease-in-out infinite;
+    }
+    .video-invite p { margin: 0; }
+    .video-invite strong { display: block; color: var(--gold-soft); font-family: var(--serif); font-size: 17px; line-height: 1.45; }
+    .video-invite small { display: block; margin-top: 2px; color: #d6c7b6; font-size: 10.5px; font-weight: 800; letter-spacing: .02em; }
+    .video-invite-arrow { color: var(--gold); font-size: 22px; animation: videoArrow 1.2s ease-in-out infinite; }
+    @keyframes videoPlayPulse { 0%,100% { scale: 1; box-shadow: 0 0 0 5px rgba(240,68,46,.1), 0 0 24px rgba(240,68,46,.34); } 50% { scale: 1.07; box-shadow: 0 0 0 9px rgba(240,68,46,.04), 0 0 34px rgba(240,68,46,.58); } }
+    @keyframes videoArrow { 0%,100% { translate: 0 -3px; opacity: .48; } 50% { translate: 0 4px; opacity: 1; } }
+    .video-shell { position: relative; padding: 8px; border: 1px solid rgba(247,200,95,.52); border-radius: 20px; background: #0d0a08; box-shadow: 0 24px 70px rgba(0,0,0,.48), 0 0 30px rgba(240,68,46,.1); overflow: hidden; }
     .video-frame { position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 13px; background: #000; }
     .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
     .video-caption { margin: 11px 8px 2px; color: var(--muted); font-size: 11.5px; text-align: center; }
+    .video-next {
+      margin-top: 30px; padding: 22px 18px; border: 1px solid rgba(247,200,95,.28); border-radius: 19px;
+      background:
+        radial-gradient(circle at 90% 0, rgba(240,68,46,.12), transparent 42%),
+        linear-gradient(155deg, #21150e, #0e0906);
+      box-shadow: 0 18px 48px rgba(0,0,0,.27);
+    }
+    .video-next-label { margin: 0 0 5px; color: var(--gold); font-size: 10px; font-weight: 900; letter-spacing: .16em; }
+    .video-next h3 { margin: 0 0 3px; font-family: var(--serif); font-size: 18px; line-height: 1.6; white-space: nowrap; }
+    .video-next-help { margin: 0 0 15px; color: var(--muted); font-size: 10.5px; line-height: 1.7; }
+    .video-next-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .video-next-actions a {
+      position: relative; display: grid; grid-template-columns: 28px 1fr 12px; align-items: center; gap: 8px; min-height: 58px; padding: 9px 10px;
+      border: 1px solid rgba(247,200,95,.38); border-radius: 12px; background: rgba(247,200,95,.065);
+      color: var(--gold-soft); text-align: left; text-decoration: none; font-size: 11px; font-weight: 900; line-height: 1.4;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .video-next-actions a::after { content: "›"; color: var(--gold); font-size: 18px; line-height: 1; }
+    .video-next-actions a:active { transform: scale(.97); background: rgba(247,200,95,.12); }
+    .video-next-actions a span { display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid rgba(247,200,95,.22); border-radius: 9px; background: rgba(247,200,95,.08); font-size: 14px; }
+    .video-next-actions a.primary { border-color: rgba(255,111,91,.45); background: rgba(240,68,46,.1); color: #ffd9d1; }
 
     /* 3ステップ */
-    .loop { display: grid; grid-template-columns: 1fr; gap: 8px; }
-    .loop-arrow { display: grid; place-items: center; color: var(--gold); font-size: 20px; opacity: .8; rotate: 90deg; min-height: 26px; }
-    .step-card { padding: 22px 20px; border: 1px solid var(--line-light); border-radius: 18px; background: linear-gradient(145deg, #1d1510, #100c09); }
+    .loop { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .loop-arrow { display: grid; place-items: center; color: var(--gold); font-size: 20px; opacity: .8; rotate: 90deg; min-height: 26px; animation: arrowTravel 1.35s ease-in-out infinite; }
+    @keyframes arrowTravel { 0%,100% { translate: -4px 0; opacity: .45; } 50% { translate: 4px 0; opacity: 1; } }
+    .step-card { position: relative; padding: 24px 21px; border: 1px solid rgba(247,200,95,.2); border-radius: 19px; background: linear-gradient(145deg, #21170f, #0e0a07); box-shadow: 0 18px 44px rgba(0,0,0,.22); overflow: hidden; }
+    .step-card::after { content: ""; position: absolute; top: 0; left: 0; width: 42%; height: 2px; background: linear-gradient(90deg, var(--red), var(--gold), transparent); }
     .step-no { display: inline-grid; width: 34px; height: 34px; place-items: center; margin-bottom: 13px; border-radius: 10px; background: rgba(240,68,46,.14); color: #ff806f; font-family: var(--serif); font-size: 16px; font-weight: 800; }
+    .step-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .step-heading .step-no { margin-bottom: 0; }
+    .step-icon { display: grid; width: 40px; height: 40px; place-items: center; border: 1px solid rgba(247,200,95,.28); border-radius: 13px; background: rgba(247,200,95,.08); font-size: 20px; animation: iconFloat 3.2s ease-in-out infinite; }
+    .step-card:nth-of-type(2) .step-icon { animation-delay: -.8s; }
+    .step-card:nth-of-type(3) .step-icon { animation-delay: -1.6s; }
+    @keyframes iconFloat { 0%,100% { translate: 0 0; } 50% { translate: 0 -4px; } }
     .step-card h3 { margin-bottom: 7px; font-family: var(--serif); font-size: 19px; }
     .step-card p { margin-bottom: 0; color: var(--muted); font-size: 13px; }
 
     /* おためし */
     .experience { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: linear-gradient(180deg, rgba(72,31,20,.2), rgba(8,5,4,.3)); }
     .atlas-img { margin-bottom: 22px; border: 1px solid rgba(247,200,95,.3); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
-    .experience-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    .experience-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
     .demo-card { overflow: hidden; border: 1px solid rgba(247,200,95,.22); border-radius: 20px; background: var(--paper); color: var(--ink); box-shadow: var(--shadow); }
     .demo-head { padding: 17px 19px; background: #24160f; color: #fff; }
     .demo-label { display: inline-flex; margin-bottom: 7px; padding: 3px 9px; border-radius: 999px; background: var(--red); color: #fff; font-size: 10px; font-weight: 900; }
@@ -293,13 +373,26 @@
     .route-pill { display: flex; justify-content: space-between; gap: 10px; margin-top: 13px; padding: 11px 13px; border-radius: 12px; background: #f2dfb6; font-size: 12px; font-weight: 900; }
     .sample-note { margin: 11px 0 0; color: #806e61; font-size: 10px; }
 
-    .library-card { overflow: hidden; border: 1px solid rgba(247,200,95,.35); border-radius: 20px; background: linear-gradient(160deg, #241711, #0d0907); box-shadow: var(--shadow); }
-    .library-card img { width: 100%; }
+    .library-card { overflow: hidden; border: 1px solid rgba(247,200,95,.45); border-radius: 22px; background: linear-gradient(160deg, #241711, #0d0907); box-shadow: 0 26px 70px rgba(0,0,0,.42); }
+    .library-cover { position: relative; display: block; overflow: hidden; }
+    .library-cover img { width: 100%; }
+    .library-cover::after {
+      content: ""; position: absolute; inset: 42% 0 0; pointer-events: none;
+      background: linear-gradient(transparent, rgba(4,3,2,.93));
+    }
+    .library-cover-badge {
+      position: absolute; right: 14px; bottom: 13px; z-index: 2; padding: 6px 11px;
+      border: 1px solid rgba(247,200,95,.5); border-radius: 999px; background: rgba(12,7,4,.88);
+      color: var(--gold-soft); font-size: 10px; font-weight: 900; letter-spacing: .04em;
+    }
     .library-body { padding: 19px 19px 21px; }
     .library-body h3 { margin: 7px 0 8px; font-family: var(--serif); font-size: 19px; }
     .library-body p { margin: 0; color: #efe3d1; font-size: 13px; }
     .library-body b { color: var(--gold-soft); }
-    .quiz-card { padding: 20px; border: 1px solid var(--line); border-radius: 20px; background: linear-gradient(160deg, #241711, #0d0907); }
+    .library-features { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 15px; }
+    .library-features span { padding: 5px 9px; border: 1px solid rgba(247,200,95,.28); border-radius: 999px; background: rgba(247,200,95,.07); color: var(--gold-soft); font-size: 10px; font-weight: 800; }
+    .quiz-card { position: relative; padding: 22px; border: 1px solid rgba(247,200,95,.24); border-radius: 22px; background: linear-gradient(160deg, #281911, #0d0907); box-shadow: 0 22px 55px rgba(0,0,0,.32); overflow: hidden; }
+    .quiz-card::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; box-shadow: inset 0 1px rgba(255,255,255,.055); }
     .quiz-card h3 { margin-bottom: 4px; font-family: var(--serif); font-size: 21px; }
     .quiz-sub { color: var(--muted); font-size: 12.5px; margin-bottom: 13px; }
     .vertical-video-frame {
@@ -329,9 +422,10 @@
     .quiz-result strong { color: var(--gold-soft); }
     .quiz-next { margin-top: 10px; width: 100%; min-height: 46px; border: 1px solid rgba(247,200,95,.5); border-radius: 12px; background: rgba(247,200,95,.1); color: var(--gold-soft); font-weight: 900; cursor: pointer; display: none; }
 
-    /* 8人の挑戦者 */
-    .case-map { display: grid; grid-template-columns: 1fr; gap: 10px; }
-    .case-map article { padding: 18px; border: 1px solid var(--line-light); border-radius: 16px; background: #15100c; }
+    /* 参加者それぞれの伸びしろ */
+    .case-map { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    .case-map article { position: relative; padding: 19px 18px 18px; border: 1px solid rgba(247,200,95,.16); border-radius: 17px; background: linear-gradient(145deg, #1c140f, #100b08); box-shadow: 0 14px 36px rgba(0,0,0,.18); overflow: hidden; }
+    .case-map article::before { content: ""; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--gold), var(--red)); }
     .case-map h3 { margin-bottom: 7px; font-size: 14.5px; line-height: 1.55; font-weight: 700; }
     .case-map h3::before { content: "「"; color: var(--gold); }
     .case-map h3::after { content: "」"; color: var(--gold); }
@@ -354,26 +448,75 @@
       background-size: 80px 40px;
       color: var(--ink);
     }
-    .journey .section-kicker { color: #a92b1e; }
-    .journey .section-kicker::before { background: #a92b1e; }
-    .journey .section-intro { color: #716156; }
-    .timeline { display: grid; grid-template-columns: 1fr; gap: 8px; }
-    .timeline article { position: relative; min-height: 88px; padding: 18px 16px 18px 64px; border-left: 3px solid #d9b458; background: rgba(255,255,255,.55); }
-    .timeline article.survey-gift { border-left-color: #a92b1e; background: rgba(255,239,195,.72); }
-    .timeline-icon {
-      position: absolute; top: 18px; left: 15px;
-      display: grid; width: 36px; height: 36px; place-items: center;
-      border: 1px solid rgba(169,43,30,.2); border-radius: 11px;
-      background: rgba(255,255,255,.58); font-size: 18px;
-      box-shadow: 0 5px 14px rgba(83,45,22,.08);
+    .journey .section-kicker, .journey .section-kicker em { color: #f1be52; }
+    .journey .section-kicker::before { background: #d94a36; }
+    .journey .section-title { color: #fff3dc; text-shadow: 0 4px 20px rgba(0,0,0,.55); }
+    .journey .section-title::after { background: linear-gradient(90deg, #e24c37, #e9b84a, transparent); }
+    .journey .section-intro { color: #d6c6b5; }
+    .year-access {
+      position: relative; margin: 0 0 30px; padding: 26px 20px 24px;
+      border: 1px solid rgba(247,200,95,.58); border-radius: 24px;
+      background:
+        radial-gradient(circle at 90% 0%, rgba(240,68,46,.28), transparent 42%),
+        radial-gradient(circle at 10% 100%, rgba(247,200,95,.16), transparent 40%),
+        linear-gradient(145deg, #29150d, #0b0705 72%);
+      box-shadow: 0 24px 60px rgba(0,0,0,.48), inset 0 1px rgba(255,255,255,.08); overflow: hidden;
     }
-    .timeline b { display: block; margin-bottom: 6px; color: #a92b1e; font-size: 11px; }
-    .timeline h3 { margin-bottom: 5px; font-family: var(--serif); font-size: 16px; }
-    .timeline p { margin-bottom: 0; color: #75665b; font-size: 11.5px; }
+    .year-access::before {
+      content: ""; position: absolute; inset: 7px; border: 1px solid rgba(247,200,95,.15); border-radius: 18px; pointer-events: none;
+    }
+    .year-access::after {
+      content: "鬼"; position: absolute; right: -11px; bottom: -45px; color: rgba(247,200,95,.045);
+      font-family: var(--serif); font-size: 150px; font-weight: 900; line-height: 1; pointer-events: none;
+    }
+    .access-kicker { position: relative; z-index: 1; display: block; margin-bottom: 12px; color: #e9bd5e; text-align: center; font-size: 8.5px; font-weight: 900; letter-spacing: .18em; }
+    .access-span { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 14px; font-family: var(--serif); font-weight: 900; }
+    .access-span strong { color: #fff3d6; font-size: 36px; line-height: 1; text-shadow: 0 0 20px rgba(247,200,95,.2); }
+    .access-span strong:last-child { color: #f7c85f; text-shadow: 0 0 24px rgba(247,200,95,.35); }
+    .access-span i { color: #e14c37; font-size: 24px; font-style: normal; filter: drop-shadow(0 0 7px rgba(240,68,46,.65)); animation: accessArrow 1.8s ease-in-out infinite; }
+    @keyframes accessArrow { 0%,100% { translate: -3px 0; opacity: .55; } 50% { translate: 3px 0; opacity: 1; } }
+    .year-access > p { position: relative; z-index: 1; margin: 0; color: #cdb9a2; text-align: center; font-size: 12px; line-height: 1.85; }
+    .access-items { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; margin-top: 17px; }
+    .access-items span { padding: 7px 12px; border: 1px solid rgba(247,200,95,.3); border-radius: 999px; background: rgba(247,200,95,.08); color: #ffe5a2; font-size: 10px; font-weight: 900; box-shadow: inset 0 1px rgba(255,255,255,.05); }
+    .timeline { position: relative; display: grid; grid-template-columns: 1fr; gap: 28px; }
+    .timeline::before {
+      content: ""; position: absolute; top: 66px; bottom: 66px; left: 43px; z-index: 0; width: 3px;
+      border-radius: 999px; background: linear-gradient(180deg, #d84531 0%, #d58725 50%, #f3c452 100%);
+      box-shadow: 0 0 12px rgba(232,174,69,.48);
+    }
+    .timeline article {
+      --accent: #d84531; position: relative; z-index: 1; min-height: 142px; padding: 24px 22px 22px 78px;
+      border: 1px solid color-mix(in srgb, var(--accent) 58%, #f7c85f 42%); border-radius: 22px;
+      background:
+        radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--accent) 28%, transparent), transparent 42%),
+        linear-gradient(145deg, #21120c, #090604 76%);
+      box-shadow: 0 22px 54px rgba(0,0,0,.42), inset 0 1px rgba(255,255,255,.06); overflow: hidden;
+    }
+    .timeline article:nth-of-type(2) { --accent: #d58725; }
+    .timeline article:nth-of-type(3) { --accent: #f3c452; }
+    .timeline article::before {
+      content: ""; position: absolute; top: 0; right: 22px; left: 22px; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent); box-shadow: 0 0 18px var(--accent);
+    }
+    .timeline article::after {
+      content: "0" attr(data-step); position: absolute; top: 11px; right: 14px;
+      color: color-mix(in srgb, var(--accent) 15%, transparent); font-family: var(--serif); font-size: 68px; font-weight: 900; line-height: 1;
+    }
+    .timeline-icon {
+      position: absolute; top: 27px; left: 20px; z-index: 2;
+      display: grid; width: 46px; height: 46px; place-items: center;
+      border: 1px solid rgba(255,236,181,.7); clip-path: polygon(25% 4%, 75% 4%, 100% 50%, 75% 96%, 25% 96%, 0 50%);
+      background: linear-gradient(145deg, color-mix(in srgb, var(--accent) 80%, #1b0e08), #3e210e);
+      color: #fff; font-size: 20px; box-shadow: 0 0 0 4px rgba(247,200,95,.06), 0 0 24px color-mix(in srgb, var(--accent) 35%, transparent);
+    }
+    .timeline b { position: relative; z-index: 2; display: block; margin-bottom: 5px; color: var(--accent); font-size: 9.5px; letter-spacing: .12em; }
+    .timeline h3 { position: relative; z-index: 2; margin-bottom: 8px; color: #fff1d6; font-family: var(--serif); font-size: 19px; }
+    .timeline p { position: relative; z-index: 2; margin-bottom: 0; color: #c8b7a5; font-size: 11.5px; line-height: 1.8; }
+    .timeline .gift-note { margin-top: 13px; padding: 10px 11px; border: 1px solid rgba(247,200,95,.24); border-radius: 11px; background: rgba(247,200,95,.08); color: #f0d38a; font-size: 10.5px; font-weight: 700; }
 
     .voice-grid { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(230px, 290px); gap: 12px; overflow-x: auto; padding: 4px 2px 16px; scroll-snap-type: x mandatory; scrollbar-color: var(--gold) #211610; }
     .voice-grid figure { margin: 0; overflow: hidden; border: 1px solid var(--line-light); border-radius: 16px; background: #fff; scroll-snap-align: start; }
-    .text-voices { display: grid; gap: 12px; margin-bottom: 28px; }
+    .text-voices { display: grid; gap: 17px; margin-bottom: 36px; }
     .text-voice {
       position: relative; overflow: hidden; padding: 20px 18px 18px;
       border: 1px solid rgba(247,200,95,.24); border-radius: 18px;
@@ -401,6 +544,16 @@
     }
     .text-voice footer { margin-top: 12px; color: #a99886; font-size: 10px; }
     .voice-note { margin: -10px 0 20px; color: #9d8e7f; font-size: 10px; line-height: 1.7; }
+    .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0 0 28px; }
+    .stats-strip > div {
+      position: relative; overflow: hidden; padding: 15px 7px 13px; border: 1px solid rgba(247,200,95,.25);
+      border-radius: 15px; background: linear-gradient(150deg, rgba(247,200,95,.1), rgba(255,255,255,.025)); text-align: center;
+    }
+    .stats-strip > div::after { content: ""; position: absolute; inset: auto -30% 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .stats-strip strong { display: block; color: var(--gold); font-family: var(--serif); font-size: 27px; line-height: 1.1; }
+    .stats-strip strong span { margin-left: 1px; font-size: 12px; }
+    .stats-strip em { font-style: normal; }
+    .stats-strip small { display: block; margin-top: 5px; color: #c4b4a2; font-size: 9.5px; line-height: 1.55; }
 
     .offer { padding-top: 34px; }
     .ribbon {
@@ -422,10 +575,40 @@
     .compare td.no { color: #7d6f61; font-weight: 700; }
     .compare tbody td:first-of-type { background: rgba(247,200,95,.06); }
     .compare .price-row td { font-family: var(--serif); font-size: 15px; }
-    .offer-card { position: relative; display: grid; grid-template-columns: 1fr; border-radius: 24px; background: linear-gradient(145deg, #20150f, #0b0806); box-shadow: var(--shadow); }
+    .offer-visual {
+      margin: 6px 0 0; overflow: hidden; border: 1px solid rgba(247,200,95,.42);
+      border-radius: 22px 22px 0 0; background: #050403; box-shadow: 0 24px 64px rgba(0,0,0,.4);
+    }
+    .offer-visual img { width: 100%; aspect-ratio: 16/9; object-fit: cover; animation: offerBreath 10s ease-in-out infinite alternate; }
+    @keyframes offerBreath { from { scale: 1; } to { scale: 1.025; } }
+    .offer-prompt {
+      margin: 0 0 24px; padding: 19px 20px 21px; border: 1px solid rgba(247,200,95,.34); border-top: 0;
+      border-radius: 0 0 22px 22px; background: linear-gradient(180deg, #28170f, #130c08);
+      color: #f8ecdb; font-family: var(--serif); font-size: 18px; font-weight: 800; line-height: 1.65;
+      text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,.28);
+    }
+    .offer-prompt em { color: var(--gold); font-style: normal; }
+    .offer-prompt small { display: block; margin-top: 8px; color: #c9b9a7; font-family: "Noto Sans JP", sans-serif; font-size: 10.5px; font-weight: 500; line-height: 1.7; }
+    .offer-choice { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 17px; }
+    .offer-choice button {
+      min-height: 52px; padding: 10px 8px; border: 1px solid rgba(247,200,95,.45); border-radius: 13px;
+      background: rgba(247,200,95,.08); color: var(--gold-soft); font: 900 13px/1.4 "Noto Sans JP", sans-serif;
+      cursor: pointer; transition: transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .offer-choice button:active { transform: scale(.96); }
+    .offer-choice button.active { border-color: #ffe49d; background: linear-gradient(180deg, #e2ae40, #9e6410); color: #fff; }
+    .offer-card { position: relative; display: grid; grid-template-columns: 1fr; border-radius: 24px; background: linear-gradient(145deg, #20150f, #0b0806); box-shadow: 0 30px 80px rgba(0,0,0,.5); }
     .offer-card + .offer-card { margin-top: 18px; }
     .offer-card.coached { margin-top: 34px; background: linear-gradient(145deg, #321c10, #0b0806); }
     .offer-card.coached .offer-status { color: var(--gold); }
+    .offer-card.observer { margin-top: 20px; overflow: hidden; }
+    .offer-card.recommended { border: 1px solid rgba(247,200,95,.78); box-shadow: 0 0 0 2px rgba(247,200,95,.22), 0 26px 80px rgba(247,200,95,.12); }
+    .plan-reco { display: inline-block; margin: 0 0 10px; padding: 4px 11px; border-radius: 999px; background: linear-gradient(90deg, #f4c65e, #ffe9ae); color: #3b2208; font-size: 10.5px; font-weight: 900; }
+    .plan-reco[hidden] { display: none; }
+    .observer-plan-thumb { margin: 0; border-bottom: 1px solid rgba(247,200,95,.22); background: #050403; }
+    .observer-plan-thumb img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+    .offer-card { scroll-margin-top: 64px; }
+    .waiting-cta { display: block; margin-top: 13px; color: #9bd9af; text-align: center; font-size: 11px; text-underline-offset: 3px; }
     .offer-main { padding: 24px 20px; }
     .offer-side { padding: 24px 20px; border-top: 1px solid var(--line); background: rgba(247,200,95,.06); }
     .offer-status { color: var(--green); font-size: 12px; font-weight: 900; }
@@ -446,7 +629,7 @@
     .observer-option a { color: #d3c2af; font-size: 11.5px; text-underline-offset: 3px; }
     .observer-option a:hover { color: var(--gold-soft); }
 
-    .faq-list { display: grid; gap: 9px; }
+    .faq-list { display: grid; gap: 13px; }
     details { border: 1px solid var(--line-light); border-radius: 14px; background: #15100d; }
     summary { position: relative; padding: 16px 46px 16px 16px; cursor: pointer; list-style: none; font-weight: 700; font-size: 14px; }
     summary::-webkit-details-marker { display: none; }
@@ -462,7 +645,7 @@
 
     .fixed-cta {
       position: fixed; bottom: 0; left: 50%; translate: -50% 0; z-index: 35;
-      width: min(100%, 430px);
+      width: min(100%, 480px);
       border: 1px solid rgba(247,200,95,.3); border-bottom: 0;
       border-radius: 18px 18px 0 0;
       background: linear-gradient(180deg, rgba(26,17,11,.97), rgba(9,6,4,.98));
@@ -478,15 +661,47 @@
     .fixed-status .live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: pulse 1.6s infinite; }
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
     .fixed-status .count { color: #ffd9d0; }
-    .fixed-inner { display: flex; align-items: center; gap: 11px; padding: 7px 12px max(10px, env(safe-area-inset-bottom)); }
-    .fixed-price { min-width: 100px; line-height: 1.3; }
-    .fixed-price span { display: block; color: var(--muted); font-size: 9px; }
-    .fixed-price b { color: var(--gold); font-family: var(--serif); font-size: 19px; line-height: 1.1; }
-    .fixed-price small { display: block; color: #e9dccb; font-size: 9px; }
-    .fixed-inner .cta { position: relative; overflow: hidden; min-height: 52px; flex: 1; flex-direction: column; gap: 1px; padding-block: 8px; font-size: 14.5px; }
+    .fixed-inner { display: grid; grid-template-columns: 1fr 88px; align-items: stretch; gap: 8px; padding: 7px 10px max(10px, env(safe-area-inset-bottom)); }
+    .fixed-inner .cta { position: relative; overflow: hidden; min-height: 52px; flex-direction: column; gap: 1px; padding-block: 8px; font-size: 14px; }
     .fixed-inner .cta small { font-size: 9px; font-weight: 700; opacity: .85; }
     .fixed-inner .cta::after { content: ""; position: absolute; top: 0; left: -60%; width: 40%; height: 100%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.35), transparent); animation: shine 3.2s infinite; }
     @keyframes shine { 0% { left: -60%; } 55%, 100% { left: 120%; } }
+
+    .toc-button {
+      min-height: 52px; padding: 7px; border: 1px solid rgba(247,200,95,.38); border-radius: 14px;
+      background: linear-gradient(180deg, #2b1d13, #110b08); color: var(--gold-soft);
+      font-size: 12px; font-weight: 900; line-height: 1.35; cursor: pointer;
+      box-shadow: inset 0 1px rgba(255,255,255,.07);
+    }
+    .toc-button small { display: block; color: #cdbda8; font-size: 8.5px; letter-spacing: .08em; }
+    .toc-backdrop {
+      position: fixed; inset: 0; z-index: 33; background: rgba(0,0,0,.62);
+      opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .25s ease, visibility .25s ease;
+    }
+    .toc-backdrop.open { opacity: 1; visibility: visible; pointer-events: auto; }
+    .toc-sheet {
+      position: fixed; bottom: calc(88px + env(safe-area-inset-bottom)); left: 50%; z-index: 40;
+      width: min(calc(100% - 20px), 460px); padding: 18px 16px 15px;
+      border: 1px solid rgba(247,200,95,.45); border-radius: 22px;
+      background:
+        radial-gradient(circle at 90% 0, rgba(240,68,46,.13), transparent 38%),
+        linear-gradient(155deg, rgba(31,20,13,.99), rgba(8,5,3,.995));
+      box-shadow: 0 -24px 70px rgba(0,0,0,.68), inset 0 1px rgba(255,255,255,.055);
+      transform: translate(-50%, 34px); opacity: 0; visibility: hidden; pointer-events: none;
+      transition: transform .25s ease, opacity .25s ease, visibility .25s ease;
+    }
+    .toc-sheet.open { transform: translate(-50%, 0); opacity: 1; visibility: visible; pointer-events: auto; }
+    .toc-title { display: flex; align-items: center; gap: 9px; margin: 0 0 12px; color: var(--gold); font-family: var(--serif); font-size: 17px; font-weight: 800; }
+    .toc-title::before { content: "鬼"; display: grid; width: 30px; height: 30px; place-items: center; border: 1px solid rgba(247,200,95,.45); border-radius: 9px; background: rgba(247,200,95,.08); }
+    .toc-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .toc-item { display: flex; align-items: center; gap: 8px; min-height: 49px; padding: 9px 10px; border: 1px solid var(--line-light); border-radius: 12px; background: rgba(255,255,255,.035); color: #f3e6d4; text-decoration: none; font-size: 11px; font-weight: 800; line-height: 1.45; }
+    .toc-item span { display: grid; flex: 0 0 auto; width: 24px; height: 24px; place-items: center; border-radius: 8px; background: rgba(247,200,95,.1); }
+    section[id] { scroll-margin-top: 46px; }
+
+    @media (hover: hover) {
+      .step-card, .subject, .case-map article, .text-voice, .quiz-card { transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease; }
+      .step-card:hover, .subject:hover, .case-map article:hover, .text-voice:hover, .quiz-card:hover { transform: translateY(-3px); border-color: rgba(247,200,95,.38); box-shadow: 0 22px 50px rgba(0,0,0,.32); }
+    }
 
     /* ============ PCでもスマホ幅を維持／左右だけを演出 ============ */
     @keyframes sideEmbers {
@@ -502,7 +717,7 @@
         top: 0;
         bottom: 0;
         z-index: 0;
-        width: calc((100vw - 430px) / 2);
+        width: calc((100vw - 480px) / 2);
         pointer-events: none;
         background:
           radial-gradient(circle, rgba(255,210,105,.9) 0 1px, transparent 2.5px) 0 0 / 74px 96px,
@@ -525,7 +740,7 @@
       .hero,
       main {
         z-index: 1;
-        width: 430px;
+        width: 480px;
         max-width: 100%;
         margin-inline: auto;
       }
@@ -536,6 +751,108 @@
       .topbar { left: auto; right: auto; }
       .fixed-cta { box-shadow: 0 -12px 36px rgba(0,0,0,.38), 0 0 60px rgba(0,0,0,.6); }
     }
+
+    /* ============ 特別案内ページのUIを踏襲した読みやすい紙面 ============ */
+    body {
+      width: min(100%, 480px);
+      margin-inline: auto;
+      box-shadow: 0 0 80px rgba(0,0,0,.72);
+    }
+    .wrap, .narrow { width: min(calc(100% - 28px), 100%); }
+    section { padding: 60px 0; }
+    .hero { padding-bottom: 32px; }
+    .hero-body { padding-top: 27px; background: transparent; }
+    .hero-kicker {
+      display: inline-flex; margin-bottom: 13px; padding: 5px 10px;
+      border: 1px solid rgba(247,200,95,.38); border-radius: 999px;
+      background: rgba(7,4,2,.7); font-size: 9px; letter-spacing: .1em;
+    }
+    .hero-kicker::before { display: none; }
+    h1 { font-size: clamp(25px, 7vw, 34px); line-height: 1.48; }
+    .lead { margin-bottom: 0; font-size: 14px; line-height: 1.9; }
+
+    main > section.guide-light {
+      background:
+        linear-gradient(rgba(255,248,232,.975), rgba(255,248,232,.975)),
+        radial-gradient(circle at 18% 8%, #f7c85f, transparent 20rem) !important;
+      border-top-color: rgba(137,88,35,.16);
+      color: #251810;
+    }
+    main > section.guide-light::before { color: rgba(143,32,24,.42); text-shadow: 26px 0 rgba(198,147,46,.24), -26px 0 rgba(198,147,46,.24); }
+    .guide-light .section-kicker { color: #a9271d; }
+    .guide-light .section-kicker::before { background: #a9271d; }
+    .guide-light .section-kicker em { color: #8f2018; }
+    .guide-light .section-title { margin-bottom: 14px; }
+    .guide-light .section-title::after { background: linear-gradient(90deg, #a9271d, #c6932e, transparent); }
+    .guide-light .section-intro { margin-bottom: 30px; color: #6f5b4d; font-size: 14px; line-height: 1.9; }
+    .guide-light .section-intro b { color: #8f2018; }
+
+    .video-section { padding: 38px 0 54px !important; }
+    .video-invite { color: #251810; }
+    .video-invite strong { color: #762019; }
+    .video-invite small { color: #756152; }
+    .video-invite-arrow { color: #a9271d; }
+    .video-shell { border: 2px solid #c6932e; box-shadow: 0 18px 38px rgba(78,46,20,.2); }
+    .video-caption { color: #8a7565; }
+    .video-next {
+      padding: 21px 17px; border-color: rgba(169,39,29,.18);
+      background: rgba(255,255,255,.72); box-shadow: 0 10px 28px rgba(78,46,20,.08);
+    }
+    .video-next-label { color: #a9271d; }
+    .video-next h3 { color: #251810; }
+    .video-next-help { color: #78685c; }
+    .video-next-actions a {
+      border-color: rgba(169,39,29,.16); background: #fffaf0; color: #5c271f;
+      box-shadow: 0 5px 14px rgba(78,46,20,.05);
+    }
+    .video-next-actions a span { border-color: rgba(169,39,29,.14); background: rgba(169,39,29,.06); }
+    .video-next-actions a::after { color: #a9271d; }
+    .video-next-actions a.primary { border-color: #b73527; background: #a9271d; color: #fff; }
+    .video-next-actions a.primary::after { color: #ffe6a0; }
+
+    .primer { padding: 42px 0 54px; }
+    .primer-card {
+      padding: 23px 18px; border-color: rgba(169,39,29,.17);
+      background: rgba(255,255,255,.72); color: #251810;
+      box-shadow: 0 10px 28px rgba(78,46,20,.08);
+    }
+    .primer-card::after { color: rgba(169,39,29,.04); }
+    .primer-title { color: #762019; }
+    .primer-row { border-top-color: rgba(169,39,29,.14); }
+    .primer-row p { color: #5f4d41; }
+    .primer-row b { color: #762019; }
+    .primer-no { background: #a9271d; color: #fff; }
+    .primer-note { color: #78685c; }
+
+    .guide-light .step-card {
+      padding: 19px 17px; border-color: rgba(169,39,29,.14); border-left: 3px solid #c6932e;
+      border-radius: 4px; background: rgba(255,255,255,.72); color: #251810;
+      box-shadow: 0 8px 24px rgba(78,46,20,.07);
+    }
+    .guide-light .step-card::after { display: none; }
+    .guide-light .step-no { background: #a9271d; color: #fff; }
+    .guide-light .step-icon { border-color: rgba(169,39,29,.16); background: #fff8e8; }
+    .guide-light .step-card p { color: #78685c; }
+    .guide-light .loop-arrow { color: #a9271d; }
+
+    .guide-light .subject {
+      padding: 16px 14px; border-color: rgba(169,39,29,.14);
+      background: rgba(255,255,255,.72); color: #251810;
+      box-shadow: 0 7px 20px rgba(78,46,20,.06);
+    }
+    .guide-light .subject::before { color: rgba(169,39,29,.08); }
+    .guide-light .subject-icon { border-color: rgba(169,39,29,.16); background: #fff8e8; }
+    .guide-light .subject p { color: #78685c; }
+    .guide-light .term-tag { border-color: rgba(169,39,29,.24); color: #8f2018; }
+    .guide-light .fullband { border-color: rgba(198,147,46,.52); background: linear-gradient(135deg, #3b1711, #180d08); }
+    .guide-light .fullband h3, .guide-light .fullband p { color: #fff8e8; }
+
+    .experience, .offer { background: linear-gradient(180deg, #120a06, #070403) !important; }
+    .library-card, .quiz-card, .text-voice, .offer-card, .marshal-card {
+      box-shadow: 0 22px 60px rgba(0,0,0,.38);
+    }
+    .offer-visual { margin-inline: 0; border-radius: 20px; }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .rv { opacity: 1; transform: none; transition: none; }
@@ -544,132 +861,107 @@
   </style>
 </head>
 <body>
-  <div class="topbar"><span>8/22開催</span>まりあ元帥の直接添削・8名限定 受付中</div>
+  <div class="topbar"><span>8/22開催</span>まりあ元帥の直接添削・少人数制 受付中</div>
+  <div class="ambient-embers" aria-hidden="true">
+    <i style="--x:8%;--s:4px;--d:10s;--delay:-2s;--drift:22px"></i>
+    <i style="--x:21%;--s:3px;--d:13s;--delay:-7s;--drift:-16px"></i>
+    <i style="--x:36%;--s:5px;--d:15s;--delay:-5s;--drift:26px"></i>
+    <i style="--x:51%;--s:3px;--d:11s;--delay:-9s;--drift:-20px"></i>
+    <i style="--x:66%;--s:4px;--d:14s;--delay:-3s;--drift:18px"></i>
+    <i style="--x:79%;--s:3px;--d:12s;--delay:-8s;--drift:-24px"></i>
+    <i style="--x:91%;--s:5px;--d:16s;--delay:-6s;--drift:14px"></i>
+  </div>
 
   <header class="hero">
     <div class="hero-visual">
-      <img src="../assets/onicamp-obon-hero-clean.webp" alt="まりあ元帥が8人の挑戦者を見守る鬼キャンのイメージ">
-      <div class="brand"><span class="brand-mark">鬼</span>AMERICAN ENGLISH PRONUNCIATION</div>
+      <img src="../assets/thumbnail.png" alt="1日で発音の土台をぶち抜く、鬼の発音キャンプ">
     </div>
     <div class="wrap">
       <div class="hero-body">
-        <div>
-          <div class="date-badges">
-            <span class="date-badge"><b>8/22（土）</b>10:00-16:00</span>
-            <span class="date-badge"><b>アメリカ英語発音</b>に特化</span>
-            <span class="date-badge">オンライン開催（Zoom）</span>
-            <span class="date-badge full">添削席 8名限定</span>
-          </div>
-          <p class="camp-name">アメリカ英語の発音キャンプ 2026</p>
-          <h1>一日ぶっ通し、<span class="hero-accent">鬼の6時間</span>。<br>あなたの発音を、<br>その場で直す。</h1>
-          <p class="lead">鬼キャンは、<b>アメリカ英語の発音</b>を母音・強勢・リンキング・リズム・イントネーションまで体系的に整える、1日集中のオンラインレッスンです。主役は、まりあ元帥の<b>直接添削を受ける8人の挑戦者</b>。あなたの発音のクセをその場で特定し、変わるまで直します。自分の番だけでなく、他の7人への添削もすべて学びに変える6時間です。</p>
-          <div class="stat-row" aria-label="鬼キャンのポイント">
-            <div class="stat full-stat"><b>8席</b><span>まりあ元帥の直接添削</span></div>
-            <div class="stat"><b>8人分</b><span>公開添削から学ぶ</span></div>
-            <div class="stat"><b>6時間</b><span>ぶっ通しの公開レッスン</span></div>
-            <div class="stat"><b>1年間</b><span>録画と教材を利用</span></div>
-          </div>
-        </div>
-
-        <aside class="hero-card" aria-label="開催情報">
-          <div class="open">● 添削付プラン（8名限定）受付中</div>
-          <h2>鬼キャン添削付プラン</h2>
-          <p class="date">8/22（土）10:00-16:00</p>
-          <div class="hero-pills" aria-label="添削付プランの特徴">
-            <span class="hero-pill">まりあ元帥によるその場での直接添削</span>
-            <span class="hero-pill zoom">Zoom開催</span>
-          </div>
-          <div class="price-label">添削席 参加費（早割・8/15まで）</div>
-          <div class="price"><strong>25,000</strong><span>円（税込）</span></div>
-          <p class="line-price">8月16日以降のご参加は通常価格30,000円</p>
-          <a class="cta cta-gold" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1">添削付プランに申し込む →</a>
-          <a class="subtle-link" href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1">顔出しなしで学べる観察席はこちら</a>
-          <p class="cta-note">添削席は8名限定／受付は8/21（金）まで・早割は8/15（土）まで<br>申込直後から予習特典「鬼キャンライブラリー」が使えます</p>
-        </aside>
+        <p class="hero-kicker">AMERICAN ENGLISH PRONUNCIATION</p>
+        <h1>一日ぶっ通し、<span class="hero-accent">鬼の6時間</span>。<br>「何を学ぶべきか」を、<br>見つけて持ち帰る。</h1>
+        <p class="lead">発音講師・まりあ元帥が、あなたの音と本気で向き合う1日集中レッスン。<b>アメリカ発音の土台を手に入れ、発音の学び方を進化させよう。</b></p>
       </div>
     </div>
     <div class="section-transition" aria-hidden="true"></div>
   </header>
 
   <main>
-    <section class="primer">
+    <section class="video-section guide-light" id="intro-video">
       <div class="narrow">
-        <div class="primer-card rv">
-          <h2 class="primer-title">はじめての方へ——鬼キャンを3行で。</h2>
-          <div class="primer-row"><span class="primer-no">1</span><p><b>アメリカ英語発音講師の「まりあ元帥」による、1日集中のオンラインレッスンです。</b>イギリス英語ではなく、アメリカ英語の音・リズム・イントネーションを扱います。Zoom開催のため、世界中どこからでも参加できます。</p></div>
-          <div class="primer-row"><span class="primer-no">2</span><p><b>まりあ元帥が、8人の挑戦者の発音をその場で次々と直していきます。</b>あなたもその8席のひとつに座れます。自分の番で直され、残りの7人分の添削からも学べる——主役の席です。</p></div>
-          <div class="primer-row"><span class="primer-no">3</span><p><b>当日だけで終わらず、録画と教材を使って1年間復習できます。</b>申込直後から使える予習教材と、講座後の図鑑・クイズ・練習メニューまでご用意しています。</p></div>
-          <p class="primer-note">英語レベル・発音記号の知識は問いません。初参加の方こそ歓迎です。</p>
+        <div class="video-invite rv" aria-hidden="true">
+          <span class="video-invite-play">▶</span>
+          <p><strong>まず、90秒だけ。</strong><small>▶︎をタップして鬼キャンを確認する</small></p>
+          <span class="video-invite-arrow">↓</span>
         </div>
-      </div>
-    </section>
-
-    <section class="video-section" style="padding-top:0">
-      <div class="narrow">
-        <p class="section-kicker"><em>90秒</em>でわかる鬼キャン</p>
-        <h2 class="section-title rv">まずは、こちらの動画を。</h2>
         <div class="video-shell rv">
           <div class="video-frame">
             <iframe src="https://player.vimeo.com/video/1205147159?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="鬼キャン紹介動画" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" loading="lazy" allowfullscreen></iframe>
           </div>
           <p class="video-caption">音声をONにしてご覧ください</p>
         </div>
+        <nav class="video-next rv" aria-label="ページの目次">
+          <p class="video-next-label">CONTENTS</p>
+          <h3>もっと知る、鬼キャン</h3>
+          <p class="video-next-help">気になるところから、ご覧ください。</p>
+          <div class="video-next-actions">
+            <a href="#flow"><span aria-hidden="true">🔥</span>6時間の流れ</a>
+            <a href="#curriculum"><span aria-hidden="true">⚔️</span>学ぶ6テーマ</a>
+            <a href="#sample"><span aria-hidden="true">📚</span>予習・教材</a>
+            <a href="#voices"><span aria-hidden="true">💬</span>参加者の声</a>
+            <a class="primary" href="#offer"><span aria-hidden="true">🎟️</span>料金・申込</a>
+            <a href="#faq"><span aria-hidden="true">❓</span>よくある質問</a>
+          </div>
+        </nav>
       </div>
     </section>
 
-    <section class="symptoms" style="padding-top:0">
-      <div class="wrap">
-        <p class="section-kicker"><em>其の壱</em>まず、あなたは？</p>
-        <h2 class="section-title rv">当てはまるもの、ありますか？</h2>
-        <p class="section-intro rv">タップしてみてください。どれも、多くの英語学習者が通る道です。</p>
-        <div class="sym-grid rv" id="symGrid">
-          <button class="sym" type="button">カタカナ英語っぽい、と言われたことがある</button>
-          <button class="sym" type="button">単語は合っているのに、なぜか棒読みになる</button>
-          <button class="sym" type="button">知っている単語なのに、聞き取れない</button>
-          <button class="sym" type="button">長い文になると、途端に崩れる</button>
-          <button class="sym" type="button">口や舌をどう動かせばいいか分からない</button>
-          <button class="sym" type="button">ネイティブとの違いが、自分では分からない</button>
-          <button class="sym" type="button">練習しているのに、変わっている気がしない</button>
-          <button class="sym" type="button">何から直せばいいのか、分からない</button>
+    <section class="primer guide-light">
+      <div class="narrow">
+        <div class="primer-card rv">
+          <h2 class="primer-title">はじめての方へ——鬼キャンを3行で。</h2>
+          <div class="primer-row"><span class="primer-no">1</span><p><b>アメリカ英語発音講師の「まりあ元帥」による、1日集中のオンラインレッスンです。</b>イギリス英語ではなく、アメリカ英語の音・リズム・イントネーションを扱います。Zoom開催のため、世界中どこからでも参加できます。</p></div>
+          <div class="primer-row"><span class="primer-no">2</span><p><b>まりあ元帥が、添削席の参加者一人ひとりの発音をその場で直していきます。</b>自分の番で直接直され、それ以外の時間はほかの参加者への添削からも学べる——主役の席です。</p></div>
+          <div class="primer-row"><span class="primer-no">3</span><p><b>当日だけで終わらず、録画と教材を使って1年間復習できます。</b>申込直後から使える予習教材と、講座後のクイズ・練習メニューまでご用意しています。</p></div>
+          <p class="primer-note">英語レベル・発音記号の知識は問いません。初参加の方こそ歓迎です。</p>
         </div>
-        <div class="sym-echo rv" id="symEcho">気になるものをタップしてみてください。</div>
       </div>
     </section>
 
-    <section>
+    <section class="guide-light" id="flow">
       <div class="wrap">
-        <p class="section-kicker"><em>其の弐</em>あなたの6時間</p>
+        <p class="section-kicker"><span class="kicker-icon" aria-hidden="true">🔥</span><em>其の壱</em>あなたの6時間</p>
         <h2 class="section-title rv">あなたの6時間は、こう進む。</h2>
-        <p class="section-intro rv">添削席は、順番を待つ席ではありません。<b>自分の番で直され、残りの時間は7人分の添削から学ぶ</b>——8人分の変化をまるごと持ち帰る6時間です。</p>
+        <p class="section-intro rv">このプランの主役は、あなたです。<b>まりあ元帥から直接添削を受け、自分では気づけなかった発音のクセと直し方を、その場でつかむ。</b>さらに、ほかの参加者への添削も自分の音と照らし合わせながら、その日に生まれる複数の変化をまるごと持ち帰る6時間です。</p>
         <div class="loop rv">
-          <article class="step-card"><div class="step-no">一</div><h3>直される</h3><p>あなたの発音のクセを、まりあ元帥がその場で特定して直します。「変わる瞬間」を自分の口で体験する時間です。</p></article>
+          <article class="step-card"><div class="step-heading"><div class="step-no">一</div><span class="step-icon" aria-hidden="true">🎙️</span></div><h3>直される</h3><p>あなたの発音のクセを、まりあ元帥がその場で特定して直します。「変わる瞬間」を自分の口で体験する時間です。</p></article>
           <div class="loop-arrow">→</div>
-          <article class="step-card"><div class="step-no">二</div><h3>7人から学ぶ</h3><p>他の挑戦者への添削は、あなたの鏡。同じ悩みが違う角度から直っていくのを、当事者の耳で聞けます。</p></article>
+          <article class="step-card"><div class="step-heading"><div class="step-no">二</div><span class="step-icon" aria-hidden="true">👂</span></div><h3>ほかの人から学ぶ</h3><p>ほかの参加者への添削は、あなたの鏡。同じ悩みが違う角度から直っていくのを、当事者の耳で聞けます。</p></article>
           <div class="loop-arrow">→</div>
-          <article class="step-card"><div class="step-no">三</div><h3>持ち帰る</h3><p>当日の録画と「進化の図鑑」で、直されたポイントをいつでも確認。クイズと練習メニューを含む教材は1年間使えます。</p></article>
+          <article class="step-card"><div class="step-heading"><div class="step-no">三</div><span class="step-icon" aria-hidden="true">🗺️</span></div><h3>持ち帰る</h3><p>当日の録画で、直されたポイントをいつでも確認。クイズと練習メニューを含む教材は1年間使えます。</p></article>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="guide-light" id="curriculum">
       <div class="wrap">
-        <p class="section-kicker"><em>其の参</em>あなたの舞台、鬼キャン</p>
+        <p class="section-kicker"><span class="kicker-icon" aria-hidden="true">⚔️</span><em>其の弐</em>あなたの舞台、鬼キャン</p>
         <h2 class="section-title rv">1日で、発音の土台をつくり直す。</h2>
         <p class="section-intro rv">鬼の発音キャンプ——通称「鬼キャン」は、<b>アメリカ英語の発音</b>を、口の形から文の抑揚まで<b>6時間ぶっ通し</b>で鍛える集中キャンプです。教科書を読む日ではありません。アメリカ英語らしい母音・音のつながり・強弱・抑揚を、実践の中で身につけます。</p>
         <div class="curriculum rv" aria-label="鬼キャンで扱う6科目">
-          <article class="subject"><h3>母音（発音記号）</h3><p>日本語の「アイウエオ」から、英語の音へ。すべての土台。</p><span class="term-tag">発音記号（母音）</span></article>
-          <article class="subject"><h3>音の目立たせ方</h3><p>単語のどこを強く言うか。棒読みでなく、英語らしい読み方に。</p><span class="term-tag">強勢（アクセント）</span></article>
-          <article class="subject"><h3>音のつながり</h3><p>単語と単語がつながると、音は変わる。聞き取りの鍵。</p><span class="term-tag">リンキング</span></article>
-          <article class="subject"><h3>文の強弱</h3><p>強く読む音と、弱くサッと読む音。長い文が崩れない秘密を伝授。</p><span class="term-tag">リズム</span></article>
-          <article class="subject"><h3>文の抑揚</h3><p>上げるのか、下げるのか。気持ちが乗るのはここ。</p><span class="term-tag">イントネーション</span></article>
-          <article class="subject"><h3>総合練習</h3><p>学んだ全部を、実際の文章で。鬼キャンの締めくくり。</p><span class="term-tag">総合演習</span></article>
+          <article class="subject"><span class="subject-icon" aria-hidden="true">👄</span><h3>母音（発音記号）</h3><p>日本語の「アイウエオ」から、英語の音へ。すべての土台。</p><span class="term-tag">発音記号（母音）</span></article>
+          <article class="subject"><span class="subject-icon" aria-hidden="true">⚡</span><h3>音の目立たせ方</h3><p>単語のどこを強く言うか。棒読みでなく、英語らしい読み方に。</p><span class="term-tag">強勢（アクセント）</span></article>
+          <article class="subject"><span class="subject-icon" aria-hidden="true">🔗</span><h3>音のつながり</h3><p>単語と単語がつながると、音は変わる。聞き取りの鍵。</p><span class="term-tag">リンキング</span></article>
+          <article class="subject"><span class="subject-icon" aria-hidden="true">〰️</span><h3>文の強弱</h3><p>強く読む音と、弱くサッと読む音。長い文が崩れない秘密を伝授。</p><span class="term-tag">リズム</span></article>
+          <article class="subject"><span class="subject-icon" aria-hidden="true">↗️</span><h3>文の抑揚</h3><p>上げるのか、下げるのか。気持ちが乗るのはここ。</p><span class="term-tag">イントネーション</span></article>
+          <article class="subject"><span class="subject-icon" aria-hidden="true">🔥</span><h3>総合練習</h3><p>学んだ全部を、実際の文章で。鬼キャンの締めくくり。</p><span class="term-tag">総合演習</span></article>
         </div>
 
         <div class="fullband rv">
-          <div class="seal">8席<br>限定</div>
+          <div class="seal">少人数<br>限定</div>
           <div>
-            <h3>主役の席は、8つだけ。</h3>
-            <p>まりあ元帥からその場で発音を直してもらえるのは、<b>添削付プランの8名だけ</b>です。前回7月開催の添削席は満席でした。</p>
+            <h3>直接添削は、少人数だけ。</h3>
+            <p>まりあ元帥が一人ひとりの音としっかり向き合えるよう、<b>添削付プランは少人数制</b>です。前回7月開催の添削席は満席でした。</p>
           </div>
         </div>
       </div>
@@ -677,17 +969,23 @@
 
     <section class="experience" id="sample">
       <div class="wrap">
-        <p class="section-kicker"><em>其の四</em>予習とおためし</p>
-        <h2 class="section-title rv">当日を待たずに、予習が始まる。</h2>
-        <p class="section-intro rv">鬼キャンは申し込んだ瞬間から始まります。お申込み直後に、予習特典<b>「鬼キャンライブラリー」</b>をお渡しします。まずは母音の解説動画とクイズで、実際の学び方を体験してください。</p>
+        <p class="section-kicker"><span class="kicker-icon" aria-hidden="true">📚</span><em>其の参</em>予習とおためし</p>
+        <h2 class="section-title rv">申し込んだ瞬間、<br>秘密の予習部屋がひらく。</h2>
+        <p class="section-intro rv">鬼キャンは、開催日だけのイベントではありません。お申込み直後から、参加者専用の<b>「鬼キャンライブラリー」</b>が解放されます。動画とクイズが並ぶ学びの入口をご用意しています。</p>
 
         <div class="experience-grid">
           <article class="library-card rv">
-            <img src="../assets/onicamp-obon-hero-clean.webp" alt="鬼キャンライブラリー（発音記号動画・母音クイズ）" loading="lazy">
+            <div class="library-cover">
+              <img src="../assets/oni-library-thumbnail.webp" alt="鬼キャンライブラリー（発音記号動画・母音クイズ）" loading="lazy">
+              <span class="library-cover-badge">参加者専用ページ</span>
+            </div>
             <div class="library-body">
-              <span class="demo-label">申込直後から使える予習特典</span>
+              <span class="demo-label">申込直後に解放</span>
               <h3>鬼キャンライブラリー</h3>
               <p>発音記号の解説動画と母音クイズをまとめた、参加者専用の予習ページです。当日までの予習課題はここから出ます。<b>早くお申込みいただくほど予習期間が長くなるので、遅くとも1週間前（8/15）までのご参加がお得です</b>——ちょうど早割の締切日でもあります。</p>
+              <div class="library-features" aria-label="ライブラリーに含まれるもの">
+                <span>▶ 解説動画</span><span>✓ 母音クイズ</span><span>🔥 予習課題</span>
+              </div>
             </div>
           </article>
           <article class="quiz-card video-sample-card rv" aria-labelledby="video-sample-title">
@@ -717,9 +1015,9 @@
 
     <section>
       <div class="wrap">
-        <p class="section-kicker"><em>其の五</em>8人の挑戦者</p>
-        <h2 class="section-title rv">8人の中に、きっとあなたがいる。</h2>
-        <p class="section-intro rv">この8人のひとりが、あなたかもしれません。同じ「カタカナっぽい」でも、伸びしろは人によって違う。口の形の人もいれば、リズムの人もいる。だからまりあ元帥は、<b>一人ひとり違う場所を直します</b>。自分にいちばん近いパターンを見つけてください。</p>
+        <p class="section-kicker"><em>其の四</em>参加者それぞれの伸びしろ</p>
+        <h2 class="section-title rv">誰かの変化が、<br>あなたのヒントになる。</h2>
+        <p class="section-intro rv">同じ「カタカナっぽい」という悩みでも、原因は人によって違います。口の形の人もいれば、リズムの人もいる。だからまりあ元帥は、<b>一人ひとり違う場所を直します</b>。複数の実例を見比べながら、自分にいちばん近いパターンを見つけてください。</p>
         <div class="case-map rv">
           <article><h3>カタカナ英語っぽいと言われる</h3><p>英語の口に切り替わる瞬間を観察しましょう。</p><span class="term-tag">母音・口の形</span></article>
           <article><h3>お手本を真似しているのになぜか日本語っぽい</h3><p>「目立たせる場所（強勢音節）」を理解し、発音に劇的な変化を。</p><span class="term-tag">強勢（アクセント）</span></article>
@@ -735,36 +1033,49 @@
 
     <section class="marshal">
       <div class="wrap">
-        <p class="section-kicker"><em>其の六</em>鬼の指揮官</p>
+        <p class="section-kicker"><em>其の五</em>鬼の指揮官</p>
         <div class="marshal-card rv">
           <p class="marshal-quote">発音は、才能じゃない。<br><em>変える場所</em>が分かれば、誰でも変わる。</p>
           <p class="marshal-name">まりあ元帥｜鬼の発音キャンプ 主宰</p>
-          <p class="marshal-bio">Instagramフォロワー7.3万人の鬼の英語発音講師。「なんとなく練習」ではなく、口の形・音の強弱・つながりを一つずつ特定して伸ばす添削が人気で、鬼キャンの添削席は毎回満席。当日は8人の挑戦者と、6時間ノンストップで向き合います。</p>
+          <p class="marshal-bio">Instagramフォロワー7.3万人の鬼の英語発音講師。「なんとなく練習」ではなく、口の形・音の強弱・つながりを一つずつ特定して伸ばす添削が人気で、鬼キャンの添削席は毎回満席。当日は添削席の参加者一人ひとりと、6時間本気で向き合います。</p>
         </div>
       </div>
     </section>
 
     <section class="journey">
       <div class="wrap">
-        <p class="section-kicker"><em>其の七</em>1年間つかえる</p>
+        <p class="section-kicker"><em>其の六</em>1年間つかえる</p>
         <h2 class="section-title rv">参加は1日。あなたの教材は1年。</h2>
-        <p class="section-intro rv">今回のメンバーには、録画と教材を1年間提供します。長い録画をポンと渡すのではなく、見たい場面・やりたい練習へすぐ戻れる形でお渡しします。</p>
-        <div class="timeline rv">
-          <article><span class="timeline-icon" aria-hidden="true">📚</span><b>申し込み直後</b><h3>予習が始まる</h3><p>予習特典「鬼キャンライブラリー」（発音記号動画・母音クイズ）と当日の案内が届きます。早く申し込むほど、予習期間が長くなります。</p></article>
-          <article><span class="timeline-icon" aria-hidden="true">🎙️</span><b>当日</b><h3>8人と一緒に発音の練習</h3><p>6時間のレッスン、そしてQ&amp;Aに参加しましょう。</p></article>
-          <article class="survey-gift"><span class="timeline-icon" aria-hidden="true">🎁</span><b>アンケート回答特典</b><h3>発音記号動画ボックス</h3><p>終了後のアンケートにご回答いただいた方へ、子音動画と未公開の母音動画をプレゼント。公開期間は1週間限定です。</p></article>
-          <article><span class="timeline-icon" aria-hidden="true">🗺️</span><b>アーカイブ編集完了後から</b><h3>進化の図鑑</h3><p>鬼キャンで見つけた「進化」のポイントをわかりやすく、特別ページ（進化の図鑑）で確認。</p></article>
-          <article><span class="timeline-icon" aria-hidden="true">🧠</span><b>参加者限定</b><h3>クイズと練習</h3><p>当日の内容をそのまま反復。</p></article>
-          <article><span class="timeline-icon" aria-hidden="true">🔁</span><b>1年間</b><h3>何度でも</h3><p>忘れた頃に、必要な場面だけ見返す。</p></article>
+        <p class="section-intro rv">鬼キャンは、当日だけで終わりません。予習から始まり、講座後も録画と教材で繰り返し学べます。</p>
+        <div class="year-access rv" id="yearAccess">
+          <span class="access-kicker">ONI CAMP LEARNING ROUTE</span>
+          <div class="access-span" aria-label="1日の参加から1年間の復習へ">
+            <strong>1日</strong><i aria-hidden="true">→</i><strong>1年間</strong>
+          </div>
+          <p>必要なタイミングで、何度でも。</p>
+          <div class="access-items" aria-label="1年間利用できる内容">
+            <span>録画</span><span>クイズ</span><span>練習メニュー</span>
+          </div>
+        </div>
+        <div class="timeline">
+          <article class="rv" data-step="1"><span class="timeline-icon" aria-hidden="true">📚</span><b>申し込み直後</b><h3>予習を始める</h3><p>鬼キャンライブラリーの発音記号動画と母音クイズで、当日の準備を始めます。</p></article>
+          <article class="rv" data-step="2"><span class="timeline-icon" aria-hidden="true">🎙️</span><b>鬼キャン当日</b><h3>6時間で実践する</h3><p>まりあ元帥のレッスンとQ&amp;Aで、発音の変化を体験します。</p></article>
+          <article class="rv" data-step="3"><span class="timeline-icon" aria-hidden="true">🔁</span><b>講座後〜1年間</b><h3>録画と教材で定着させる</h3><p>録画・クイズ・練習メニューを、必要なときに何度でも見返せます。</p><p class="gift-note">🎁 アンケート回答者には「発音記号動画ボックス」を1週間限定で公開します。</p></article>
         </div>
       </div>
     </section>
 
-    <section class="voices">
+    <section class="voices" id="voices">
       <div class="wrap">
-        <p class="section-kicker">参加者の声</p>
+        <p class="section-kicker"><span class="kicker-icon" aria-hidden="true">💬</span>参加者の声</p>
         <h2 class="section-title rv">過去の鬼キャン参加者から。</h2>
         <p class="section-intro rv">実際に参加された方から届いた、匿名掲載許可済みのご感想です。</p>
+
+        <div class="stats-strip" aria-label="参加者アンケート結果">
+          <div class="rv"><strong><em class="num" data-target="8.7" data-dec="1">0</em><span>/10</span></strong><small>「友人にすすめたい」<br>平均スコア</small></div>
+          <div class="rv"><strong><em class="num" data-target="57">0</em><span>%</span></strong><small>10点満点を<br>つけた人</small></div>
+          <div class="rv"><strong><em class="num" data-target="42">0</em><span>名</span></strong><small>アンケート<br>回答数</small></div>
+        </div>
 
         <div class="text-voices">
           <article class="text-voice coached rv">
@@ -817,22 +1128,35 @@
 
     <section class="offer" id="offer">
       <div class="wrap">
-        <p class="section-kicker"><em>8名限定</em>募集プラン</p>
+        <p class="section-kicker"><span class="kicker-icon" aria-hidden="true">🎟️</span><em>少人数制</em>募集プラン</p>
         <h2 class="section-title rv">直接直してもらう、<br>主役の席へ。</h2>
 
-        <div class="offer-card coached rv">
+        <figure class="offer-visual rv">
+          <img src="../assets/vowel-busters-special-date.webp" alt="鬼の発音キャンプ 8月22日土曜日 10時から16時 Zoom開催" loading="lazy">
+        </figure>
+        <div class="offer-prompt rv">
+          こちらの日程に<br><em>参加できそうですか？</em>
+          <small>タップすると、あなたに合うプランをご案内します。</small>
+          <div class="offer-choice" aria-label="8月22日の参加可否">
+            <button type="button" data-plan="coaching-plan">参加できる</button>
+            <button type="button" data-plan="observer-plan">当日は難しい</button>
+          </div>
+        </div>
+
+        <div class="offer-card coached rv" id="coaching-plan">
           <span class="ribbon">主役の席</span>
           <div class="offer-main">
-            <div class="offer-status">● 8名限定・受付中</div>
+            <p class="plan-reco" hidden>あなたにおすすめのプラン</p>
+            <div class="offer-status">● 少人数制・受付中</div>
             <h2>鬼キャン添削付プラン</h2>
             <p class="offer-date">8/22（土）10:00-16:00｜オンライン開催（Zoom）</p>
             <ul class="include-list">
               <li>まりあ元帥による、その場での発音添削 <small>― あなたのクセを特定し、変わるまで直します</small></li>
               <li>予習特典「鬼キャンライブラリー」 <small>― 申込直後から発音記号動画・母音クイズで予習</small></li>
               <li>アメリカ英語発音に特化した6時間にフル参加</li>
-              <li>7人分の添削からも学べる <small>― 8人分の変化を持ち帰る</small></li>
+              <li>ほかの参加者への添削からも学べる <small>― 複数の変化を自分のヒントにする</small></li>
               <li>講座終了後のQ&amp;Aに参加</li>
-              <li>進化の図鑑・聞き分けクイズ・練習メニュー</li>
+              <li>聞き分けクイズ・練習メニュー</li>
               <li>録画・教材を1年間利用</li>
             </ul>
           </div>
@@ -845,27 +1169,49 @@
           </div>
         </div>
 
-        <div class="observer-option rv">
-          <p>顔出し・発言なしで8人の添削から学びたい方には、観察席もご用意しています。</p>
-          <a href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1">観察席の詳細を見る（早割19,800円）</a>
+        <div class="offer-card observer rv" id="observer-plan">
+          <figure class="observer-plan-thumb">
+            <img src="../assets/observer-seat.webp" alt="鬼キャン観察席 顔出し・発言不要 アーカイブ・教材1年間" loading="lazy">
+          </figure>
+          <div class="offer-main">
+            <p class="plan-reco" hidden>あなたにおすすめのプラン</p>
+            <div class="offer-status">● 当日の参加が難しい方へ</div>
+            <h2>鬼キャン観察席</h2>
+            <p class="offer-date">顔出し・発言なし。途中入退場も可能です。</p>
+            <ul class="include-list">
+              <li>カメラOFF・マイクOFFで参加</li>
+              <li>参加者への公開添削から学ぶ</li>
+              <li>講座終了後のQ&amp;A</li>
+              <li>聞き分けクイズ・練習メニュー</li>
+              <li>録画・教材を1年間利用</li>
+            </ul>
+            <p class="not-included">※まりあ元帥による、ご自身への直接添削は含まれません。</p>
+          </div>
+          <div class="offer-side">
+            <div class="price-label">参加費（早割・8/15（土）まで）</div>
+            <div class="price"><strong>19,800</strong><span>円（税込）</span></div>
+            <a class="cta cta-gold" href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1">観察席に申し込む →</a>
+            <a class="waiting-cta" href="https://s.lmes.jp/landing-qr/2002147064-Ao2680Jr?uLand=eiTh2z">次回案内をLINEで受け取る</a>
+          </div>
         </div>
+
       </div>
     </section>
 
-    <section>
+    <section id="faq">
       <div class="narrow">
-        <p class="section-kicker">よくある質問</p>
+        <p class="section-kicker"><span class="kicker-icon" aria-hidden="true">?</span>よくある質問</p>
         <h2 class="section-title rv">気になるところ、先にお答えします。</h2>
         <div class="faq-list rv">
-          <details open><summary>添削席では、どんなことをしますか？</summary><p>まりあ元帥があなたの発音をその場で聞き、直すべき場所を特定してフィードバックします。あなたの番以外の時間も、他の7人への添削がそのまま教材になります。講座後は録画・進化の図鑑・クイズ・練習メニューを使って1年間復習できます。</p></details>
+          <details open><summary>添削席では、どんなことをしますか？</summary><p>まりあ元帥があなたの発音をその場で聞き、直すべき場所を特定してフィードバックします。あなたの番以外の時間も、ほかの参加者への添削がそのまま教材になります。講座後は録画・クイズ・練習メニューを使って1年間復習できます。</p></details>
           <details><summary>人前で直されるのは緊張しそうです。</summary><p>緊張はあって大丈夫です。過去の添削席参加者からは「マンツーマンで習っているような緊張感が良かった」という声をいただいています。指摘は具体的で、できるまで一緒に練習する形なので、初心者の方も一人ひとりのレベルに合わせて対応します。</p></details>
-          <details><summary>観察席は、ただZoomを見ているだけですか？</summary><p>いいえ。講座中は8人のレッスンを観察シートに書き込みながら見て、終わったあとは進化の図鑑・聞き分けクイズ・当日の内容に連動した練習メニューで復習します。録画も1年間見られます。ただし、ご自身への直接添削は添削付プランのみです。</p></details>
-          <details><summary>当日、参加できなくなったら？</summary><p>大丈夫です。録画を1年間見られるので、あとから同じ内容を確認できます。進化の図鑑から見たい場面へすぐ戻れます。</p></details>
+          <details><summary>観察席は、ただZoomを見ているだけですか？</summary><p>いいえ。講座中は参加者それぞれのレッスンを観察シートに書き込みながら見て、終わったあとは聞き分けクイズ・当日の内容に連動した練習メニューで復習します。録画も1年間見られます。ただし、ご自身への直接添削は添削付プランのみです。</p></details>
+          <details><summary>当日、参加できなくなったら？</summary><p>大丈夫です。録画を1年間見られるので、あとから同じ内容を確認できます。</p></details>
           <details><summary>初心者ですが、ついていけますか？</summary><p>参加できます。口の形・音の目立たせ方・音のつながり・リズム・抑揚を、土台から順番に扱います。発音記号が読めなくても問題ありません。申込直後に届く鬼キャンライブラリーで予習しておくと、当日がさらに濃くなります。</p></details>
           <details><summary>予習は必要ですか？いつから始められますか？</summary><p>お申込みが確認でき次第、予習特典「鬼キャンライブラリー」（発音記号動画・母音クイズ）をお送りします。当日までの予習課題はここから出ます。早くお申込みいただくほど予習期間が長く使えるので、遅くとも開催1週間前（8/15）までのご参加がおすすめです。</p></details>
           <details><summary>どの地域の英語発音を学びますか？</summary><p>アメリカ英語の発音を扱います。母音、強勢（アクセント）、リンキング、リズム、イントネーションを、アメリカ英語の音と話し方を基準に学びます。</p></details>
           <details><summary>カメラやマイクは必要ですか？</summary><p>プランによって異なります。添削付プランでは、発音時の口の動きや音声を確認するため、カメラ・マイクともに必須です。観察席では、レッスンの進行上、カメラ・マイクともにOFFでご参加ください。質問は、どちらのプランでご参加の場合も、最後にQ&amp;Aで回答いたします。</p></details>
-          <details><summary>図鑑や練習メニューはいつ届きますか？</summary><p>鬼キャン終了後、録画と内容を確認してから順次お届けします。今回のメンバーは、届いたときから1年間利用できます。</p></details>
+          <details><summary>録画や練習メニューはいつ届きますか？</summary><p>鬼キャン終了後、録画と内容を確認してから順次お届けします。今回のメンバーは、届いたときから1年間利用できます。</p></details>
         </div>
       </div>
     </section>
@@ -873,38 +1219,53 @@
     <section class="final">
       <div class="wrap">
         <p class="section-kicker">GET CORRECTED. UNDERSTAND. PRACTICE.</p>
-        <h2 class="section-title rv">主役の席は、8つ。<br>その１席を手に入れて。</h2>
-        <p class="rv">その場で直され、理由が分かって、直されたポイントを教材と一緒に持ち帰る。次に変わるのは、あなたの番です。8名限定の特別開催、8席のうちのひとつでお待ちしています。</p>
+        <h2 class="section-title rv">次に変わるのは、<br>あなたの番。</h2>
+        <p class="rv">その場で直され、理由が分かって、直されたポイントを教材と一緒に持ち帰る。少人数制の主役の席で、あなたをお待ちしています。</p>
         <a class="cta cta-gold rv" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1" style="margin-bottom:10px;">添削付プランに申し込む →</a>
-        <a class="subtle-link rv" href="#offer">添削内容をもう一度確認する</a>
+        <a class="subtle-link rv" href="#offer">プランをもう一度確認する</a>
       </div>
     </section>
   </main>
 
+  <div class="toc-backdrop" id="tocBackdrop"></div>
+  <nav class="toc-sheet" id="tocSheet" aria-label="ページ内目次">
+    <p class="toc-title">読みたいところへ</p>
+    <ul class="toc-list">
+      <li><a class="toc-item" href="#intro-video"><span aria-hidden="true">▶</span>90秒動画</a></li>
+      <li><a class="toc-item" href="#flow"><span aria-hidden="true">🔥</span>6時間の流れ</a></li>
+      <li><a class="toc-item" href="#curriculum"><span aria-hidden="true">✦</span>学ぶ6テーマ</a></li>
+      <li><a class="toc-item" href="#sample"><span aria-hidden="true">📚</span>予習・教材</a></li>
+      <li><a class="toc-item" href="#voices"><span aria-hidden="true">💬</span>参加者の声</a></li>
+      <li><a class="toc-item" href="#offer"><span aria-hidden="true">🎟</span>料金・申込</a></li>
+      <li><a class="toc-item" href="#faq"><span aria-hidden="true">?</span>よくある質問</a></li>
+    </ul>
+  </nav>
+
   <div class="fixed-cta hidden" id="fixedCta" aria-label="固定申込バー">
     <div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
     <div class="fixed-status">
-      <span class="live">添削席（8名限定）受付中</span>
-      <span class="count" id="countdown">8/22（土）開催</span>
+      <span class="live">PLANS｜添削席 受付中</span>
+      <span class="count" id="countdown">早割 25,000円（税込）</span>
     </div>
     <div class="fixed-inner">
-      <div class="fixed-price">
-        <span>添削席 早割</span><b>25,000円</b>
-        <small>税込・早割は8/15（土）まで</small>
-      </div>
-      <a class="cta" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1">添削付プランに申し込む →</a>
+      <a class="cta" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1">添削付プランに申し込む<small>少人数制・8/22開催</small></a>
+      <button class="toc-button" id="tocButton" type="button" aria-expanded="false" aria-controls="tocSheet">☰ 目次<small>MENU</small></button>
     </div>
   </div>
 
   <script>
-    // 固定フッター：進捗バー＋ヒーロー通過後に出現＋開催カウントダウン
+    // 固定フッター：「CONTENTS」が画面に入るタイミングで表示する
     const fixedCta = document.getElementById('fixedCta');
     const scrollBar = document.getElementById('scrollBar');
-    addEventListener('scroll', () => {
+    const contentsGate = document.querySelector('.video-next');
+    function updateFixedCta() {
       const max = document.documentElement.scrollHeight - innerHeight;
       scrollBar.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + '%';
-      fixedCta.classList.toggle('hidden', scrollY < 420);
-    }, { passive: true });
+      fixedCta.classList.toggle('hidden', contentsGate.getBoundingClientRect().top > innerHeight);
+    }
+    addEventListener('scroll', updateFixedCta, { passive: true });
+    addEventListener('resize', updateFixedCta, { passive: true });
+    updateFixedCta();
     (function () {
       const el = document.getElementById('countdown');
       const now = new Date();
@@ -928,15 +1289,60 @@
     }), { threshold: .12 });
     document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
-    const echo = document.getElementById('symEcho');
-    const syms = Array.from(document.querySelectorAll('.sym'));
-    syms.forEach(b => b.addEventListener('click', () => {
-      b.classList.toggle('on');
-      const n = syms.filter(x => x.classList.contains('on')).length;
-      if (n === 0) echo.textContent = '気になるものをタップしてみてください。';
-      else if (n <= 2) echo.innerHTML = 'その悩み、当日その場で直せます。<b>添削席で、まりあ元帥に見てもらってください。</b>';
-      else echo.innerHTML = '複数当てはまる方こそ、直接添削向きです。<b>どこから直すべきかを特定するところ</b>から、まりあ元帥が引き受けます。';
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const counterObserver = new IntersectionObserver((entries) => entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = Number(el.dataset.target);
+      const decimals = Number(el.dataset.dec || 0);
+      if (reduceMotion) {
+        el.textContent = target.toFixed(decimals);
+      } else {
+        const start = performance.now();
+        const tick = now => {
+          const progress = Math.min((now - start) / 900, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = (target * eased).toFixed(decimals);
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }
+      counterObserver.unobserve(el);
+    }), { threshold: .55 });
+    document.querySelectorAll('.stats-strip .num').forEach(el => counterObserver.observe(el));
+
+    const dateButtons = document.querySelectorAll('.offer-choice button[data-plan]');
+    dateButtons.forEach(btn => btn.addEventListener('click', () => {
+      const planId = btn.dataset.plan;
+      dateButtons.forEach(item => {
+        const active = item === btn;
+        item.classList.toggle('active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+      document.querySelectorAll('.offer-card').forEach(plan => {
+        const recommended = plan.id === planId;
+        plan.classList.toggle('recommended', recommended);
+        const tag = plan.querySelector('.plan-reco');
+        if (tag) tag.hidden = !recommended;
+      });
+      document.getElementById(planId).scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
     }));
+
+    // 母音バスターズ特別案内で好評だった「いつでも開ける目次」を移植
+    const tocButton = document.getElementById('tocButton');
+    const tocSheet = document.getElementById('tocSheet');
+    const tocBackdrop = document.getElementById('tocBackdrop');
+    function setToc(open) {
+      tocSheet.classList.toggle('open', open);
+      tocBackdrop.classList.toggle('open', open);
+      tocButton.setAttribute('aria-expanded', String(open));
+    }
+    tocButton.addEventListener('click', () => setToc(!tocSheet.classList.contains('open')));
+    tocBackdrop.addEventListener('click', () => setToc(false));
+    tocSheet.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setToc(false)));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') setToc(false);
+    });
 
     const QUIZ = [
       { image: '../assets/vowel-quiz-ae.png', alt: '母音 /æ/ の口の形',
