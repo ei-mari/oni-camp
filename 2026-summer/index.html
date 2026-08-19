@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="2026年8月22日（土）開催。まりあ元帥があなたの発音をその場で直す少人数制の添削付プラン。1日ぶっ通し6時間のアメリカ英語発音キャンプ。">
+  <meta name="description" content="2026年8月22日（土）開催。まりあ元帥があなたの発音をその場で直す少人数制の添削付プラン。観察席も選べる、アメリカ英語発音の6時間集中キャンプ。">
   <meta name="theme-color" content="#0b0806">
   <meta property="og:title" content="鬼キャン｜アメリカ英語の発音キャンプ 2026">
-  <meta property="og:description" content="8/22（土）10:00-16:00開催。アメリカ英語の発音を、母音からリズム・イントネーションまで整える6時間。">
+  <meta property="og:description" content="8/22（土）10:00-16:00開催。まりあ元帥の直接添削で、アメリカ英語の発音を母音からリズム・イントネーションまで整える6時間。">
   <meta property="og:image" content="../assets/thumbnail.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <title>アメリカ英語の発音キャンプ「鬼キャン」｜8月22日（土）</title>
+  <title>鬼の発音キャンプ｜まりあ元帥の直接添削・アメリカ英語</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -166,6 +166,9 @@
     }
     .hero-card .open { color: var(--green); font-size: 12px; font-weight: 900; }
     .hero-card h2 { margin: 5px 0 4px; font-family: var(--serif); font-size: 23px; line-height: 1.35; }
+    .primary-hero-card { margin-top: 22px; }
+    .primary-hero-card .primary-promise { margin: 0 0 12px; color: #f4e6d2; font-size: 12px; line-height: 1.75; }
+    .primary-hero-card .primary-promise b { color: var(--gold-soft); }
     .date { margin-bottom: 8px; color: var(--muted); font-size: 12.5px; }
     .hero-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
     .hero-pill {
@@ -204,6 +207,13 @@
       background: linear-gradient(180deg, #e0ad3f, #a86b12);
       box-shadow: 0 12px 30px rgba(224,173,63,.24), inset 0 1px rgba(255,255,255,.4);
       color: #fffdf3;
+    }
+    .cta-secondary {
+      margin-top: 10px;
+      border-color: rgba(247,200,95,.58);
+      background: linear-gradient(180deg, rgba(247,200,95,.13), rgba(247,200,95,.055));
+      box-shadow: 0 10px 26px rgba(0,0,0,.28), inset 0 1px rgba(255,255,255,.08);
+      color: var(--gold-soft);
     }
     .hero-card .cta, .offer-side .cta { animation: ctaglow 2.8s ease-in-out infinite; }
     @keyframes ctaglow {
@@ -515,7 +525,8 @@
     .timeline .gift-note { margin-top: 13px; padding: 10px 11px; border: 1px solid rgba(247,200,95,.24); border-radius: 11px; background: rgba(247,200,95,.08); color: #f0d38a; font-size: 10.5px; font-weight: 700; }
 
     .voice-grid { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(230px, 290px); gap: 12px; overflow-x: auto; padding: 4px 2px 16px; scroll-snap-type: x mandatory; scrollbar-color: var(--gold) #211610; }
-    .voice-grid figure { margin: 0; overflow: hidden; border: 1px solid var(--line-light); border-radius: 16px; background: #fff; scroll-snap-align: start; }
+    .voice-grid figure { aspect-ratio: 9 / 16; margin: 0; overflow: hidden; border: 1px solid var(--line-light); border-radius: 16px; background: #fff; scroll-snap-align: start; }
+    .voice-grid figure img { width: 100%; height: 100%; object-fit: cover; }
     .text-voices { display: grid; gap: 17px; margin-bottom: 36px; }
     .text-voice {
       position: relative; overflow: hidden; padding: 20px 18px 18px;
@@ -555,7 +566,7 @@
     .stats-strip em { font-style: normal; }
     .stats-strip small { display: block; margin-top: 5px; color: #c4b4a2; font-size: 9.5px; line-height: 1.55; }
 
-    .offer { padding-top: 34px; }
+    .offer { padding-top: 34px; scroll-margin-top: 48px; }
     .ribbon {
       position: absolute; top: -12px; left: 18px; z-index: 2;
       padding: 4px 13px; border-radius: 999px;
@@ -563,6 +574,7 @@
       color: #2a1c07; font-size: 11px; font-weight: 900; letter-spacing: .06em;
       box-shadow: 0 6px 18px rgba(224,173,63,.35);
     }
+    .offer .section-kicker { scroll-margin-top: 50px; }
     .compare-shell { margin: 0 0 26px; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: linear-gradient(160deg, #1a120d, #0d0907); }
     .compare { width: 100%; border-collapse: collapse; font-size: 12px; }
     .compare th, .compare td { padding: 11px 8px; border-top: 1px solid var(--line-light); text-align: center; }
@@ -575,11 +587,17 @@
     .compare td.no { color: #7d6f61; font-weight: 700; }
     .compare tbody td:first-of-type { background: rgba(247,200,95,.06); }
     .compare .price-row td { font-family: var(--serif); font-size: 15px; }
+    .plan-detail-heading { margin: 42px 0 18px; text-align: center; }
+    .plan-detail-heading span { display: block; color: var(--gold); font-size: 10px; font-weight: 900; letter-spacing: .2em; }
+    .plan-detail-heading h3 { margin: 7px 0 5px; color: #fff2d8; font-family: var(--serif); font-size: 20px; }
+    .plan-detail-heading p { margin: 0; color: #bcae9d; font-size: 11px; }
     .offer-visual {
       margin: 6px 0 0; overflow: hidden; border: 1px solid rgba(247,200,95,.42);
-      border-radius: 22px 22px 0 0; background: #050403; box-shadow: 0 24px 64px rgba(0,0,0,.4);
+      border-radius: 22px; background: #050403; box-shadow: 0 24px 64px rgba(0,0,0,.4);
     }
     .offer-visual img { width: 100%; aspect-ratio: 16/9; object-fit: cover; animation: offerBreath 10s ease-in-out infinite alternate; }
+    .offer-visual.observer-visual { border-radius: 22px; }
+    .offer-visual.observer-visual img { aspect-ratio: 1; object-fit: contain; }
     @keyframes offerBreath { from { scale: 1; } to { scale: 1.025; } }
     .offer-prompt {
       margin: 0 0 24px; padding: 19px 20px 21px; border: 1px solid rgba(247,200,95,.34); border-top: 0;
@@ -602,6 +620,9 @@
     .offer-card.coached { margin-top: 34px; background: linear-gradient(145deg, #321c10, #0b0806); }
     .offer-card.coached .offer-status { color: var(--gold); }
     .offer-card.observer { margin-top: 20px; overflow: hidden; }
+    .offer-card.coached.primary-plan { margin-top: 46px; overflow: visible; background: linear-gradient(145deg, #321c10, #0b0806); box-shadow: 0 0 0 1px rgba(247,200,95,.55), 0 30px 90px rgba(0,0,0,.55); }
+    .offer-card.coached.primary-plan .offer-side { border-radius: 0 0 24px 24px; }
+    .offer-card.observer.secondary-plan { margin-top: 22px; background: linear-gradient(145deg, #18110d, #090604); opacity: .94; }
     .offer-card.recommended { border: 1px solid rgba(247,200,95,.78); box-shadow: 0 0 0 2px rgba(247,200,95,.22), 0 26px 80px rgba(247,200,95,.12); }
     .plan-reco { display: inline-block; margin: 0 0 10px; padding: 4px 11px; border-radius: 999px; background: linear-gradient(90deg, #f4c65e, #ffe9ae); color: #3b2208; font-size: 10.5px; font-weight: 900; }
     .plan-reco[hidden] { display: none; }
@@ -768,8 +789,8 @@
       background: rgba(7,4,2,.7); font-size: 9px; letter-spacing: .1em;
     }
     .hero-kicker::before { display: none; }
-    h1 { font-size: clamp(25px, 7vw, 34px); line-height: 1.48; }
-    .lead { margin-bottom: 0; font-size: 14px; line-height: 1.9; }
+    h1 { font-size: clamp(21px, 6.1vw, 30px); line-height: 1.5; }
+    .lead { margin-bottom: 18px; font-size: 13.5px; line-height: 1.9; }
 
     main > section.guide-light {
       background:
@@ -879,8 +900,9 @@
     <div class="wrap">
       <div class="hero-body">
         <p class="hero-kicker">AMERICAN ENGLISH PRONUNCIATION</p>
-        <h1>一日ぶっ通し、<span class="hero-accent">鬼の6時間</span>。<br>「何を学ぶべきか」を、<br>見つけて持ち帰る。</h1>
-        <p class="lead">発音講師・まりあ元帥が、あなたの音と本気で向き合う1日集中レッスン。<b>アメリカ発音の土台を手に入れ、発音の学び方を進化させよう。</b></p>
+        <h1>一日ぶっ通し、<span class="hero-accent">鬼の6時間</span>。<br>自分では見えない<br>発音の癖を、その場で変える。</h1>
+        <p class="lead">発音講師・まりあ元帥が、あなたの音と本気で向き合う1日集中レッスン。<b>アメリカ発音の土台を手に入れ、これからの発音の学び方を進化させよう。</b></p>
+        <a class="cta" href="#plans">2つのプランと料金を確認する ↓</a>
       </div>
     </div>
     <div class="section-transition" aria-hidden="true"></div>
@@ -909,7 +931,7 @@
             <a href="#curriculum"><span aria-hidden="true">⚔️</span>学ぶ6テーマ</a>
             <a href="#sample"><span aria-hidden="true">📚</span>予習・教材</a>
             <a href="#voices"><span aria-hidden="true">💬</span>参加者の声</a>
-            <a class="primary" href="#offer"><span aria-hidden="true">🎟️</span>料金・申込</a>
+            <a class="primary" href="#plans"><span aria-hidden="true">🎟️</span>料金・申込</a>
             <a href="#faq"><span aria-hidden="true">❓</span>よくある質問</a>
           </div>
         </nav>
@@ -921,7 +943,7 @@
         <div class="primer-card rv">
           <h2 class="primer-title">はじめての方へ——鬼キャンを3行で。</h2>
           <div class="primer-row"><span class="primer-no">1</span><p><b>アメリカ英語発音講師の「まりあ元帥」による、1日集中のオンラインレッスンです。</b>イギリス英語ではなく、アメリカ英語の音・リズム・イントネーションを扱います。Zoom開催のため、世界中どこからでも参加できます。</p></div>
-          <div class="primer-row"><span class="primer-no">2</span><p><b>まりあ元帥が、添削席の参加者一人ひとりの発音をその場で直していきます。</b>自分の番で直接直され、それ以外の時間はほかの参加者への添削からも学べる——主役の席です。</p></div>
+          <div class="primer-row"><span class="primer-no">2</span><p><b>まりあ元帥が、添削付プランの参加者一人ひとりの発音をその場で直します。</b>自分の番で直接直され、それ以外の時間はほかの参加者への添削からも学べます。</p></div>
           <div class="primer-row"><span class="primer-no">3</span><p><b>当日だけで終わらず、録画と教材を使って1年間復習できます。</b>お申し込み後にご案内する予習教材と、講座後のクイズ・練習メニューまでご用意しています。</p></div>
           <p class="primer-note">英語レベル・発音記号の知識は問いません。初参加の方こそ歓迎です。</p>
         </div>
@@ -931,14 +953,14 @@
     <section class="guide-light" id="flow">
       <div class="wrap">
         <p class="section-kicker"><span class="kicker-icon" aria-hidden="true">🔥</span><em>其の壱</em>あなたの6時間</p>
-        <h2 class="section-title rv">あなたの6時間は、こう進む。</h2>
-        <p class="section-intro rv">このプランの主役は、あなたです。<b>まりあ元帥から直接添削を受け、自分では気づけなかった発音のクセと直し方を、その場でつかむ。</b>さらに、ほかの参加者への添削も自分の音と照らし合わせながら、その日に生まれる複数の変化をまるごと持ち帰る6時間です。</p>
+        <h2 class="section-title rv">直される。分かる。<br>自分の音に定着させる。</h2>
+        <p class="section-intro rv">添削付プランでは、<b>まりあ元帥から直接添削を受け、自分では気づけなかった発音の癖と直し方を、その場でつかみます。</b>さらに、ほかの参加者への添削も自分の音と照らし合わせながら、その日に生まれる複数の変化を持ち帰ります。</p>
         <div class="loop rv">
-          <article class="step-card"><div class="step-heading"><div class="step-no">一</div><span class="step-icon" aria-hidden="true">🎙️</span></div><h3>直される</h3><p>あなたの発音のクセを、まりあ元帥がその場で特定して直します。「変わる瞬間」を自分の口で体験する時間です。</p></article>
+          <article class="step-card"><div class="step-heading"><div class="step-no">一</div><span class="step-icon" aria-hidden="true">🎙️</span></div><h3>直接直される</h3><p>あなたの発音の癖を、まりあ元帥がその場で特定。音が変わるまで一緒に練習します。</p></article>
           <div class="loop-arrow">→</div>
-          <article class="step-card"><div class="step-heading"><div class="step-no">二</div><span class="step-icon" aria-hidden="true">👂</span></div><h3>ほかの人から学ぶ</h3><p>ほかの参加者への添削は、あなたの鏡。同じ悩みが違う角度から直っていくのを、当事者の耳で聞けます。</p></article>
+          <article class="step-card"><div class="step-heading"><div class="step-no">二</div><span class="step-icon" aria-hidden="true">👂</span></div><h3>ほかの変化から学ぶ</h3><p>ほかの参加者への添削も、自分の音を見直すための具体的なヒントになります。</p></article>
           <div class="loop-arrow">→</div>
-          <article class="step-card"><div class="step-heading"><div class="step-no">三</div><span class="step-icon" aria-hidden="true">🗺️</span></div><h3>持ち帰る</h3><p>当日の録画で、直されたポイントをいつでも確認。クイズと練習メニューを含む教材は1年間使えます。</p></article>
+          <article class="step-card"><div class="step-heading"><div class="step-no">三</div><span class="step-icon" aria-hidden="true">🔁</span></div><h3>1年間磨き続ける</h3><p>録画で直された場面へ戻り、クイズと練習メニューで自分の課題を反復します。</p></article>
         </div>
       </div>
     </section>
@@ -947,12 +969,11 @@
       <div class="wrap">
         <p class="section-kicker"><span class="kicker-icon" aria-hidden="true">⚔️</span><em>其の弐</em>あなたの舞台、鬼キャン</p>
         <h2 class="section-title rv">1日で、発音の土台をつくり直す。</h2>
-        <p class="section-intro rv">鬼の発音キャンプ——通称「鬼キャン」は、<b>アメリカ英語の発音</b>を、口の形から文の抑揚まで<b>6時間ぶっ通し</b>で鍛える集中キャンプです。教科書を読む日ではありません。アメリカ英語らしい母音・音のつながり・強弱・抑揚を、実践の中で身につけます。</p>
+        <p class="section-intro rv">鬼の発音キャンプ——通称「鬼キャン」は、<b>アメリカ英語の発音</b>を、口の形から文の抑揚まで<b>6時間ぶっ通し</b>で鍛える集中キャンプです。教科書を読む日ではありません。実際に発音し、その場で直されながら身につけます。</p>
         <div class="curriculum rv" aria-label="鬼キャンで扱う6科目">
           <article class="subject"><span class="subject-icon" aria-hidden="true">👄</span><h3>母音（発音記号）</h3><p>日本語の「アイウエオ」から、英語の音へ。すべての土台。</p><span class="term-tag">発音記号（母音）</span></article>
           <article class="subject"><span class="subject-icon" aria-hidden="true">⚡</span><h3>音の目立たせ方</h3><p>単語のどこを強く言うか。棒読みでなく、英語らしい読み方に。</p><span class="term-tag">強勢（アクセント）</span></article>
           <article class="subject"><span class="subject-icon" aria-hidden="true">🔗</span><h3>音のつながり</h3><p>単語と単語がつながると、音は変わる。聞き取りの鍵。</p><span class="term-tag">リンキング</span></article>
-          <article class="subject"><span class="subject-icon" aria-hidden="true">〰️</span><h3>文の強弱</h3><p>強く読む音と、弱くサッと読む音。長い文が崩れない秘密を伝授。</p><span class="term-tag">リズム</span></article>
           <article class="subject"><span class="subject-icon" aria-hidden="true">↗️</span><h3>文の抑揚</h3><p>上げるのか、下げるのか。気持ちが乗るのはここ。</p><span class="term-tag">イントネーション</span></article>
           <article class="subject"><span class="subject-icon" aria-hidden="true">🔥</span><h3>総合練習</h3><p>学んだ全部を、実際の文章で。鬼キャンの締めくくり。</p><span class="term-tag">総合演習</span></article>
         </div>
@@ -961,7 +982,7 @@
           <div class="seal">少人数<br>限定</div>
           <div>
             <h3>直接添削は、少人数だけ。</h3>
-            <p>まりあ元帥が一人ひとりの音としっかり向き合えるよう、<b>添削付プランは少人数制</b>です。前回7月開催の添削席は満席でした。</p>
+            <p>まりあ元帥が一人ひとりの音としっかり向き合えるよう、<b>添削付プランは少人数制</b>です。発音時はカメラ・マイクをONにしてご参加ください。</p>
           </div>
         </div>
       </div>
@@ -1038,7 +1059,7 @@
         <div class="marshal-card rv">
           <p class="marshal-quote">発音は、才能じゃない。<br><em>変える場所</em>が分かれば、誰でも変わる。</p>
           <p class="marshal-name">まりあ元帥｜鬼の発音キャンプ 主宰</p>
-          <p class="marshal-bio">Instagramフォロワー7.3万人の鬼の英語発音講師。「なんとなく練習」ではなく、口の形・音の強弱・つながりを一つずつ特定して伸ばす添削が人気で、鬼キャンの添削席は毎回満席。当日は添削席の参加者一人ひとりと、6時間本気で向き合います。</p>
+          <p class="marshal-bio">Instagramフォロワー7.3万人の鬼の英語発音講師。「なんとなく練習」ではなく、口の形・音の強弱・つながりを一つずつ特定して伸ばす添削が人気。当日は添削付プランの参加者一人ひとりの音と、6時間本気で向き合います。</p>
         </div>
       </div>
     </section>
@@ -1060,7 +1081,7 @@
         </div>
         <div class="timeline">
           <article class="rv" data-step="1"><span class="timeline-icon" aria-hidden="true">📚</span><b>お申し込み後</b><h3>予習を始める</h3><p>鬼キャンライブラリーの発音記号動画と母音クイズで、当日の準備を始めます。</p></article>
-          <article class="rv" data-step="2"><span class="timeline-icon" aria-hidden="true">🎙️</span><b>鬼キャン当日</b><h3>6時間で実践する</h3><p>まりあ元帥のレッスンとQ&amp;Aで、発音の変化を体験します。</p></article>
+          <article class="rv" data-step="2"><span class="timeline-icon" aria-hidden="true">🎙️</span><b>鬼キャン当日</b><h3>直接添削を受ける</h3><p>まりあ元帥からその場でフィードバックを受け、発音の変化を自分の口で体験します。</p></article>
           <article class="rv" data-step="3"><span class="timeline-icon" aria-hidden="true">🔁</span><b>講座後〜1年間</b><h3>録画と教材で定着させる</h3><p>録画・クイズ・練習メニューを、必要なときに何度でも見返せます。</p><p class="gift-note">🎁 アンケート回答者には「発音記号動画ボックス」を1週間限定で公開します。</p></article>
         </div>
       </div>
@@ -1079,24 +1100,6 @@
         </div>
 
         <div class="text-voices">
-          <article class="text-voice coached rv">
-            <div class="voice-head">
-              <span class="voice-icon" aria-hidden="true">🔥</span>
-              <div class="voice-meta"><b>マンツーマン級の添削</b><span>添削席で参加</span></div>
-            </div>
-            <blockquote>「グループ参加とは思えないほど徹底的な指摘とアドバイス。マンツーマンで習っているような緊張感があり、他の人へのコメントもとても勉強になりました。」</blockquote>
-            <footer>2026年夏 参加者アンケートより</footer>
-          </article>
-
-          <article class="text-voice coached rv">
-            <div class="voice-head">
-              <span class="voice-icon" aria-hidden="true">🌱</span>
-              <div class="voice-meta"><b>初心者でもポイントをつかめた</b><span>添削席で参加</span></div>
-            </div>
-            <blockquote>「初心者で参加してよいか不安でしたが、一人ひとりに合わせて対応してくださり、重要なポイントをつかめました。他の方の添削を聞けたことも勉強になりました。」</blockquote>
-            <footer>2026年夏 参加者アンケートより</footer>
-          </article>
-
           <article class="text-voice rv">
             <div class="voice-head">
               <span class="voice-icon" aria-hidden="true">👀</span>
@@ -1114,6 +1117,24 @@
             <blockquote>「本や聞きマネで何となく学んだつもりでしたが、説明がとても分かりやすく、目から鱗の連続でした。母音・子音・リズム・イントネーションへの意識が変わりました。」</blockquote>
             <footer>2026年夏 参加者アンケートより</footer>
           </article>
+
+          <article class="text-voice coached rv">
+            <div class="voice-head">
+              <span class="voice-icon" aria-hidden="true">🔥</span>
+              <div class="voice-meta"><b>マンツーマン級の添削</b><span>添削席で参加</span></div>
+            </div>
+            <blockquote>「グループ参加とは思えないほど徹底的な指摘とアドバイス。マンツーマンで習っているような緊張感があり、他の人へのコメントもとても勉強になりました。」</blockquote>
+            <footer>2026年夏 参加者アンケートより</footer>
+          </article>
+
+          <article class="text-voice coached rv">
+            <div class="voice-head">
+              <span class="voice-icon" aria-hidden="true">🌱</span>
+              <div class="voice-meta"><b>初心者でもポイントをつかめた</b><span>添削席で参加</span></div>
+            </div>
+            <blockquote>「初心者で参加してよいか不安でしたが、一人ひとりに合わせて対応してくださり、重要なポイントをつかめました。他の方の添削を聞けたことも勉強になりました。」</blockquote>
+            <footer>2026年夏 参加者アンケートより</footer>
+          </article>
         </div>
         <p class="voice-note">※掲載許可をいただいた回答を、意味を変えない範囲で一部抜粋・読みやすく整えています。</p>
 
@@ -1129,61 +1150,71 @@
 
     <section class="offer" id="offer">
       <div class="wrap">
-        <p class="section-kicker"><span class="kicker-icon" aria-hidden="true">🎟️</span><em>少人数制</em>募集プラン</p>
-        <h2 class="section-title rv">直接直してもらう、<br>主役の席へ。</h2>
+        <p class="section-kicker" id="plans"><span class="kicker-icon" aria-hidden="true">🎟️</span><em>PLANS</em>プランと料金</p>
+        <h2 class="section-title rv">あなたに合う学び方を、<br>2つから。</h2>
+        <p class="section-intro rv">まずは違いと料金を一覧でご確認ください。<b>その場で直接直される添削付プラン</b>と、顔出し・発言なしで<b>見て学ぶ観察席</b>をご用意しています。</p>
+
+        <div class="compare-shell rv">
+          <table class="compare" aria-label="鬼キャン2プランの比較">
+            <thead>
+              <tr><th>比較</th><th>添削付</th><th>観察席</th></tr>
+            </thead>
+            <tbody>
+              <tr><th>学び方</th><td class="yes">直接直される</td><td>見て学ぶ</td></tr>
+              <tr><th>カメラ・マイク</th><td class="yes">ON</td><td>OFF</td></tr>
+              <tr><th>ご自身への添削</th><td class="yes">あり</td><td class="no">なし</td></tr>
+              <tr><th>途中入退場</th><td>原則フル参加</td><td class="yes">OK</td></tr>
+              <tr><th>録画・教材1年間</th><td class="yes">含む</td><td class="yes">含む</td></tr>
+              <tr class="price-row"><th>参加費（税込）</th><td class="yes">30,000円</td><td>19,800円</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="plan-detail-heading rv">
+          <span>PLAN DETAILS</span>
+          <h3>ここから、各プランの詳細です。</h3>
+          <p>内容をご確認のうえ、ご希望のプランをお選びください。</p>
+        </div>
 
         <figure class="offer-visual rv">
           <img src="../assets/vowel-busters-special-date.webp" alt="鬼の発音キャンプ 8月22日土曜日 10時から16時 Zoom開催" loading="lazy">
         </figure>
-        <div class="offer-prompt rv">
-          こちらの日程に<br><em>参加できそうですか？</em>
-          <small>タップすると、あなたに合うプランをご案内します。</small>
-          <div class="offer-choice" aria-label="8月22日の参加可否">
-            <button type="button" data-plan="coaching-plan">参加できる</button>
-            <button type="button" data-plan="observer-plan">当日は難しい</button>
-          </div>
-        </div>
 
-        <div class="offer-card coached rv" id="coaching-plan">
-          <span class="ribbon">主役の席</span>
+        <div class="offer-card coached primary-plan rv" id="coaching-plan">
+          <span class="ribbon">少人数制・直接添削</span>
           <div class="offer-main">
-            <p class="plan-reco" hidden>あなたにおすすめのプラン</p>
-            <div class="offer-status">● 少人数制・受付中</div>
+            <div class="offer-status">● 添削付プラン・受付中</div>
             <h2>鬼キャン添削付プラン</h2>
             <p class="offer-date">8/22（土）10:00-16:00｜オンライン開催（Zoom）</p>
             <ul class="include-list">
-              <li>まりあ元帥による、その場での発音添削 <small>― あなたのクセを特定し、変わるまで直します</small></li>
+              <li>まりあ元帥による、その場での発音添削 <small>― あなたの癖を特定し、変わるまで直します</small></li>
               <li>予習特典「鬼キャンライブラリー」 <small>― お申し込み後にご案内</small></li>
               <li>アメリカ英語発音に特化した6時間にフル参加</li>
-              <li>ほかの参加者への添削からも学べる <small>― 複数の変化を自分のヒントにする</small></li>
-              <li>講座終了後のQ&amp;Aに参加</li>
-              <li>聞き分けクイズ・練習メニュー</li>
-              <li>録画・教材を1年間利用</li>
+              <li>ほかの参加者への添削からも学べる</li>
+              <li>講座終了後のQ&amp;A、聞き分けクイズ・練習メニュー</li>
+              <li>本編録画・教材を1年間利用</li>
             </ul>
           </div>
           <div class="offer-side">
             <div class="price-label">参加費</div>
             <div class="price"><strong>30,000</strong><span>円（税込）</span></div>
             <a class="cta cta-gold" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1">添削付プランに申し込む →</a>
-            <p class="not-included">※添削付プランは、発音時の口の動きと音声を確認するため、カメラ・マイクの使用が必須です。</p>
+            <p class="not-included">※発音時の口の動きと音声を確認するため、カメラ・マイクの使用が必須です。</p>
           </div>
         </div>
 
-        <div class="offer-card observer rv" id="observer-plan">
+        <div class="offer-card observer secondary-plan rv" id="observer-plan">
           <figure class="observer-plan-thumb">
             <img src="../assets/observer-seat.webp" alt="鬼キャン観察席 顔出し・発言不要 アーカイブ・教材1年間" loading="lazy">
           </figure>
           <div class="offer-main">
-            <p class="plan-reco" hidden>あなたにおすすめのプラン</p>
-            <div class="offer-status">● 当日の参加が難しい方へ</div>
+            <div class="offer-status">顔出し・発言なしで学びたい方へ</div>
             <h2>鬼キャン観察席</h2>
-            <p class="offer-date">顔出し・発言なし。途中入退場も可能です。</p>
+            <p class="offer-date">途中入退場OK｜カメラOFF・マイクOFF</p>
             <ul class="include-list">
-              <li>カメラOFF・マイクOFFで参加</li>
-              <li>参加者への公開添削から学ぶ</li>
-              <li>講座終了後のQ&amp;A</li>
-              <li>聞き分けクイズ・練習メニュー</li>
-              <li>録画・教材を1年間利用</li>
+              <li>参加者への公開添削をライブで観察</li>
+              <li>予習教材・Q&amp;A・クイズ・練習メニュー</li>
+              <li>本編録画・教材を1年間利用</li>
             </ul>
             <p class="not-included">※まりあ元帥による、ご自身への直接添削は含まれません。</p>
           </div>
@@ -1191,7 +1222,6 @@
             <div class="price-label">参加費</div>
             <div class="price"><strong>19,800</strong><span>円（税込）</span></div>
             <a class="cta cta-gold" href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1">観察席に申し込む →</a>
-            <a class="waiting-cta" href="https://s.lmes.jp/landing-qr/2002147064-Ao2680Jr?uLand=eiTh2z">次回案内をLINEで受け取る</a>
           </div>
         </div>
 
@@ -1203,10 +1233,10 @@
         <p class="section-kicker"><span class="kicker-icon" aria-hidden="true">?</span>よくある質問</p>
         <h2 class="section-title rv">気になるところ、先にお答えします。</h2>
         <div class="faq-list rv">
-          <details open><summary>添削席では、どんなことをしますか？</summary><p>まりあ元帥があなたの発音をその場で聞き、直すべき場所を特定してフィードバックします。あなたの番以外の時間も、ほかの参加者への添削がそのまま教材になります。講座後は録画・クイズ・練習メニューを使って1年間復習できます。</p></details>
-          <details><summary>人前で直されるのは緊張しそうです。</summary><p>緊張はあって大丈夫です。過去の添削席参加者からは「マンツーマンで習っているような緊張感が良かった」という声をいただいています。指摘は具体的で、できるまで一緒に練習する形なので、初心者の方も一人ひとりのレベルに合わせて対応します。</p></details>
-          <details><summary>観察席は、ただZoomを見ているだけですか？</summary><p>いいえ。講座中は参加者それぞれのレッスンを観察シートに書き込みながら見て、終わったあとは聞き分けクイズ・当日の内容に連動した練習メニューで復習します。録画も1年間見られます。ただし、ご自身への直接添削は添削付プランのみです。</p></details>
-          <details><summary>当日、参加できなくなったら？</summary><p>大丈夫です。録画を1年間見られるので、あとから同じ内容を確認できます。</p></details>
+          <details open><summary>添削付プランでは、どんなことをしますか？</summary><p>まりあ元帥があなたの発音をその場で聞き、直すべき場所を特定してフィードバックします。あなたの番以外の時間も、ほかの参加者への添削がそのまま教材になります。</p></details>
+          <details><summary>人前で直されるのは緊張しそうです。</summary><p>緊張はあって大丈夫です。指摘は具体的で、できるまで一緒に練習します。初心者の方にも、一人ひとりのレベルに合わせて対応します。</p></details>
+          <details><summary>観察席は、ただZoomを見ているだけですか？</summary><p>いいえ。参加者への公開添削を見比べながら、まりあ元帥がどこに注目し、何を変えようとしているのかを学びます。講座後は録画・聞き分けクイズ・練習メニューで、自分の課題へつなげます。ただし、ご自身への直接添削・診断・評価は含まれません。</p></details>
+          <details><summary>6時間すべて参加する必要がありますか？</summary><p>添削付プランは原則フル参加です。途中入退場を希望する方や、当日の参加が難しい方は観察席をお選びください。本編録画はどちらのプランも1年間利用できます。</p></details>
           <details><summary>初心者ですが、ついていけますか？</summary><p>参加できます。口の形・音の目立たせ方・音のつながり・リズム・抑揚を、土台から順番に扱います。発音記号が読めなくても問題ありません。お申し込み後にご案内する鬼キャンライブラリーで予習しておくと、当日がさらに濃くなります。</p></details>
           <details><summary>予習は必要ですか？いつから始められますか？</summary><p>お申し込み後、予習特典「鬼キャンライブラリー」（発音記号動画・母音クイズ）をご案内します。当日までの予習課題はここから出ます。早くお申し込みいただくほど予習期間を長く使えます。<small>※通常、お申し込み確認後5分〜12時間を目安にご案内します。深夜・早朝のお申し込みは、お時間をいただく場合があります。</small></p></details>
           <details><summary>どの地域の英語発音を学びますか？</summary><p>アメリカ英語の発音を扱います。母音、強勢（アクセント）、リンキング、リズム、イントネーションを、アメリカ英語の音と話し方を基準に学びます。</p></details>
@@ -1220,9 +1250,10 @@
       <div class="wrap">
         <p class="section-kicker">GET CORRECTED. UNDERSTAND. PRACTICE.</p>
         <h2 class="section-title rv">次に変わるのは、<br>あなたの番。</h2>
-        <p class="rv">その場で直され、理由が分かって、直されたポイントを教材と一緒に持ち帰る。少人数制の主役の席で、あなたをお待ちしています。</p>
+        <p class="rv">その場で直接直されたい方には添削付プラン。当日の参加方法や顔出しが難しい方には観察席。あなたに合う席で、鬼キャンの6時間を持ち帰ってください。</p>
         <a class="cta cta-gold rv" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1" style="margin-bottom:10px;">添削付プランに申し込む →</a>
-        <a class="subtle-link rv" href="#offer">プランをもう一度確認する</a>
+        <a class="cta cta-secondary rv" href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1">観察席を選ぶ →</a>
+        <a class="subtle-link rv" href="#plans">プランをもう一度確認する</a>
       </div>
     </section>
   </main>
@@ -1236,7 +1267,7 @@
       <li><a class="toc-item" href="#curriculum"><span aria-hidden="true">✦</span>学ぶ6テーマ</a></li>
       <li><a class="toc-item" href="#sample"><span aria-hidden="true">📚</span>予習・教材</a></li>
       <li><a class="toc-item" href="#voices"><span aria-hidden="true">💬</span>参加者の声</a></li>
-      <li><a class="toc-item" href="#offer"><span aria-hidden="true">🎟</span>料金・申込</a></li>
+      <li><a class="toc-item" href="#plans"><span aria-hidden="true">🎟</span>料金・申込</a></li>
       <li><a class="toc-item" href="#faq"><span aria-hidden="true">?</span>よくある質問</a></li>
     </ul>
   </nav>
@@ -1244,11 +1275,11 @@
   <div class="fixed-cta hidden" id="fixedCta" aria-label="固定申込バー">
     <div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
     <div class="fixed-status">
-      <span class="live">PLANS｜添削席 受付中</span>
+      <span class="live">PLANS｜2つから選べます</span>
       <span class="count" id="countdown">8/22（土）10:00–16:00</span>
     </div>
     <div class="fixed-inner">
-      <a class="cta" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1">添削付プランに申し込む<small>少人数制・8/22開催</small></a>
+      <a class="cta" href="#plans">プランと料金を確認する<small>添削付プラン・観察席</small></a>
       <button class="toc-button" id="tocButton" type="button" aria-expanded="false" aria-controls="tocSheet">☰ 目次<small>MENU</small></button>
     </div>
   </div>
@@ -1290,6 +1321,25 @@
     document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
     const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const plansTarget = document.getElementById('plans');
+    function alignPlans(behavior = 'auto') {
+      const top = scrollY + plansTarget.getBoundingClientRect().top - 50;
+      scrollTo({ top, behavior });
+    }
+    document.querySelectorAll('a[href="#plans"]').forEach(link => link.addEventListener('click', event => {
+      event.preventDefault();
+      if (location.hash !== '#plans') history.pushState(null, '', '#plans');
+      alignPlans('auto');
+      requestAnimationFrame(() => alignPlans('auto'));
+    }));
+    if (location.hash === '#plans') {
+      requestAnimationFrame(() => alignPlans('auto'));
+      addEventListener('load', () => alignPlans('auto'), { once: true });
+    }
+    addEventListener('hashchange', () => {
+      if (location.hash === '#plans') alignPlans('auto');
+    });
+
     const counterObserver = new IntersectionObserver((entries) => entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       const el = entry.target;
@@ -1310,23 +1360,6 @@
       counterObserver.unobserve(el);
     }), { threshold: .55 });
     document.querySelectorAll('.stats-strip .num').forEach(el => counterObserver.observe(el));
-
-    const dateButtons = document.querySelectorAll('.offer-choice button[data-plan]');
-    dateButtons.forEach(btn => btn.addEventListener('click', () => {
-      const planId = btn.dataset.plan;
-      dateButtons.forEach(item => {
-        const active = item === btn;
-        item.classList.toggle('active', active);
-        item.setAttribute('aria-pressed', String(active));
-      });
-      document.querySelectorAll('.offer-card').forEach(plan => {
-        const recommended = plan.id === planId;
-        plan.classList.toggle('recommended', recommended);
-        const tag = plan.querySelector('.plan-reco');
-        if (tag) tag.hidden = !recommended;
-      });
-      document.getElementById(planId).scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-    }));
 
     // 母音バスターズ特別案内で好評だった「いつでも開ける目次」を移植
     const tocButton = document.getElementById('tocButton');
