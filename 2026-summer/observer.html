@@ -1,0 +1,1468 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2026年8月22日（土）開催。顔出し・発言なしで、公開発音添削から学ぶ鬼キャン観察席。途中入退場OK、録画と教材は1年間利用できます。">
+  <meta name="theme-color" content="#0b0806">
+  <meta property="og:title" content="鬼キャン観察席｜顔出し・発言なしで見て学ぶ6時間">
+  <meta property="og:description" content="8/22（土）10:00-16:00開催。まりあ元帥の公開添削をカメラOFF・マイクOFFで観察。途中入退場OK、録画と教材は1年間。">
+  <meta property="og:image" content="../assets/onicamp-observer-og-v3.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>鬼キャン観察席｜顔出し・発言なしで見て学ぶアメリカ英語発音</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ============ モバイルファースト：基本＝スマホ1カラム ============ */
+    :root {
+      color-scheme: dark;
+      --bg: #0b0806;
+      --bg-deep: #050403;
+      --paper: #fff8e8;
+      --ink: #211711;
+      --text: #fffaf0;
+      --muted: #d5c7b6;
+      --red: #f0442e;
+      --gold: #f7c85f;
+      --gold-soft: #ffe7a3;
+      --green: #4fc38a;
+      --line: rgba(247, 200, 95, .2);
+      --line-light: rgba(255, 255, 255, .11);
+      --shadow: 0 24px 70px rgba(0, 0, 0, .42);
+      --max: 1120px;
+      --serif: "Shippori Mincho B1", serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100%;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 50% -4%, rgba(240, 68, 46, .16), transparent 30rem),
+        linear-gradient(180deg, #0f0a07 0%, var(--bg-deep) 62%, #090503 100%);
+      color: var(--text);
+      font-family: "Noto Sans JP", -apple-system, "Hiragino Sans", sans-serif;
+      line-height: 1.9;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    button { font: inherit; -webkit-tap-highlight-color: transparent; }
+    h1, h2, h3, p { margin-top: 0; }
+
+    .wrap { width: min(calc(100% - 36px), var(--max)); margin: 0 auto; }
+    .narrow { width: min(calc(100% - 36px), 820px); margin: 0 auto; }
+
+    .rv { opacity: 0; transform: translateY(16px); transition: opacity .75s ease, transform .75s ease; }
+    .rv.in { opacity: 1; transform: none; }
+
+    .topbar {
+      position: sticky; top: 0; z-index: 30;
+      display: flex; justify-content: center; align-items: center; gap: 8px;
+      padding: 9px 12px;
+      background: linear-gradient(90deg, #8b1b12, #c52e20 48%, #8b1b12);
+      color: #fff; text-align: center; font-size: 10.5px; font-weight: 900;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, .28);
+    }
+    .topbar span { padding: 1px 8px; border-radius: 999px; background: #fff6dc; color: #9c2016; flex: 0 0 auto; animation: topbarPulse 4s ease-in-out infinite; }
+    @keyframes topbarPulse { 0%,100% { box-shadow: 0 0 0 rgba(255,241,199,0); } 50% { box-shadow: 0 0 16px rgba(255,241,199,.5); } }
+
+    .ambient-embers {
+      position: fixed; inset: 0; z-index: 3; width: min(100%, 480px); margin-inline: auto;
+      pointer-events: none; overflow: hidden; opacity: .32;
+    }
+    .ambient-embers i {
+      position: absolute; left: var(--x); bottom: -18px; width: var(--s); height: var(--s); border-radius: 50%;
+      background: radial-gradient(circle, #fff0a6 0 18%, #ff7b2d 35%, rgba(240,68,46,.12) 70%);
+      box-shadow: 0 0 10px rgba(255,103,38,.72); animation: emberRise var(--d) linear var(--delay) infinite;
+    }
+    @keyframes emberRise {
+      0% { translate: 0 0; scale: .6; opacity: 0; }
+      12% { opacity: .9; }
+      65% { translate: var(--drift) -62vh; opacity: .55; }
+      100% { translate: calc(var(--drift) * -1) -108vh; scale: 1.15; opacity: 0; }
+    }
+
+    /* ヒーロー：スマホ＝画像が主役、テキストはその下 */
+    .hero { position: relative; z-index: 2; overflow: visible; border-bottom: 1px solid var(--line); padding-bottom: 36px; }
+    .section-transition {
+      position: absolute; bottom: -19px; left: 50%; z-index: 4;
+      width: 44px; height: 26px; translate: -50% 0;
+      background: linear-gradient(180deg, #ffe7a3, #b77717);
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      filter: drop-shadow(0 7px 9px rgba(0,0,0,.55));
+    }
+    .section-transition::after {
+      content: ""; position: absolute; top: 3px; left: 6px;
+      width: 32px; height: 18px;
+      background: var(--bg);
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+    }
+    .section-transition { animation: transitionBounce 1.7s ease-in-out infinite; }
+    @keyframes transitionBounce { 0%,100% { translate: -50% -2px; } 50% { translate: -50% 5px; } }
+    .hero-visual { position: relative; overflow: hidden; border-bottom: 1px solid rgba(247,200,95,.3); background: #050403; }
+    .hero-visual img { width: 100%; height: auto; aspect-ratio: 1672 / 941; object-fit: cover; animation: heroBreath 14s ease-in-out infinite alternate; }
+    @keyframes heroBreath { from { scale: 1; filter: saturate(1); } to { scale: 1.035; filter: saturate(1.12) brightness(1.04); } }
+    .hero-visual::after { content: ""; position: absolute; inset: auto 0 0; height: 18%; background: linear-gradient(transparent, rgba(5,4,3,.78)); pointer-events: none; }
+    @keyframes embers { 0% { transform: translateY(0); opacity: 0; } 12% { opacity: .85; } 85% { opacity: .5; } 100% { transform: translateY(-46vh); opacity: 0; } }
+    .hero-visual .brand {
+      position: absolute; top: 14px; left: 13px; z-index: 2;
+      display: flex; align-items: center; gap: 9px;
+      color: var(--gold-soft); font-size: 11px; font-weight: 900; letter-spacing: .14em;
+      text-shadow: 0 2px 10px rgba(0,0,0,.9);
+    }
+    .brand-mark { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid rgba(247,200,95,.55); border-radius: 10px; background: rgba(0,0,0,.6); color: var(--gold); font-size: 19px; font-family: var(--serif); }
+    .hero-body {
+      position: relative; z-index: 2; padding-top: 25px;
+      background:
+        radial-gradient(circle at 88% 5%, rgba(247,200,95,.09), transparent 30%),
+        linear-gradient(180deg, rgba(24,15,10,.98), rgba(11,8,6,.99));
+    }
+    .hero-body::before {
+      content: ""; position: absolute; top: 0; left: 18px; right: 18px; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(247,200,95,.9), transparent);
+      box-shadow: 0 0 18px rgba(247,200,95,.28);
+    }
+    .date-badges { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+    .date-badge {
+      display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px;
+      border: 1px solid rgba(247,200,95,.45); border-radius: 999px; background: rgba(8,5,3,.8);
+      color: var(--gold-soft); font-size: 11.5px; font-weight: 900;
+    }
+    .date-badge.full { border-color: rgba(255,255,255,.22); color: #d8c9b8; }
+    .date-badge b { color: #fff; }
+    .camp-name { margin: 0 0 6px; color: var(--gold); font-family: var(--serif); font-weight: 800; font-size: 15px; letter-spacing: .28em; }
+    h1 {
+      margin-bottom: 16px;
+      font-family: var(--serif); font-weight: 800;
+      font-size: clamp(26px, 7.4vw, 34px); line-height: 1.38; letter-spacing: .01em;
+      text-wrap: balance;
+      text-shadow: 0 3px 0 rgba(108,21,14,.72), 0 16px 50px rgba(0,0,0,.72);
+    }
+    .hero-accent { color: var(--gold); }
+    .lead { margin-bottom: 20px; color: #f5e9d7; font-size: 14.5px; line-height: 2; font-weight: 500; }
+    .lead b { color: var(--gold-soft); }
+    .stat-row { display: flex; gap: 8px; margin-bottom: 22px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+    .stat-row::-webkit-scrollbar { display: none; }
+    .stat { flex: 0 0 auto; min-width: 104px; padding: 10px 14px; border: 1px solid var(--line); border-top: 2px solid rgba(247,200,95,.55); border-radius: 13px; background: linear-gradient(180deg, rgba(20,13,8,.85), rgba(8,5,3,.75)); }
+    .stat b { display: block; color: var(--gold); font-family: var(--serif); font-size: 20px; line-height: 1.3; }
+    .stat span { color: var(--muted); font-size: 10.5px; font-weight: 700; white-space: nowrap; }
+    .stat.full-stat b { color: #ff8a76; }
+
+    .hero-card {
+      position: relative; padding: 20px; border-radius: 22px;
+      background: linear-gradient(180deg, rgba(31,21,14,.95), rgba(9,6,4,.97));
+      box-shadow: var(--shadow);
+    }
+    .hero-card::before, .offer-card::before {
+      content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px;
+      background: linear-gradient(140deg, rgba(247,200,95,.85), rgba(247,200,95,.12) 38%, rgba(240,68,46,.55) 72%, rgba(247,200,95,.6));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+    }
+    .hero-card .open { color: var(--green); font-size: 12px; font-weight: 900; }
+    .hero-card h2 { margin: 5px 0 4px; font-family: var(--serif); font-size: 23px; line-height: 1.35; }
+    .primary-hero-card { margin-top: 22px; }
+    .primary-hero-card .primary-promise { margin: 0 0 12px; color: #f4e6d2; font-size: 12px; line-height: 1.75; }
+    .primary-hero-card .primary-promise b { color: var(--gold-soft); }
+    .date { margin-bottom: 8px; color: var(--muted); font-size: 12.5px; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+    .hero-pill {
+      display: inline-flex; align-items: center; min-height: 27px; padding: 4px 9px;
+      border: 1px solid rgba(247,200,95,.34); border-radius: 999px;
+      background: rgba(247,200,95,.08); color: var(--gold-soft);
+      font-size: 10.5px; font-weight: 800; line-height: 1.4;
+    }
+    .hero-pill.zoom { border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.045); color: #ddd0c0; }
+    .price-label { color: var(--muted); font-size: 11px; font-weight: 800; }
+    .price { display: flex; align-items: baseline; gap: 5px; margin: 2px 0 12px; }
+    .price strong {
+      font-family: var(--serif); font-size: 40px; line-height: 1;
+      background: linear-gradient(100deg, #b8860b 0%, #f7c85f 30%, #fff3cf 50%, #f7c85f 68%, #b8860b 100%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      animation: foil 5s ease-in-out infinite;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,.5));
+    }
+    @keyframes foil { 0%,100% { background-position: 0% 0; } 50% { background-position: 100% 0; } }
+    .price span { font-size: 12px; font-weight: 800; padding: 2px 7px; border: 1px solid rgba(247,200,95,.35); border-radius: 6px; color: var(--gold-soft); }
+    .line-price { margin: -2px 0 14px; color: #e9dccb; font-size: 12px; }
+    .line-price b { color: var(--gold-soft); }
+    .cta {
+      display: flex; align-items: center; justify-content: center; min-height: 56px; padding: 14px 18px;
+      border: 1px solid #ff6d59; border-radius: 14px;
+      background: linear-gradient(180deg, #ff5a43, #cf2b1d);
+      box-shadow: 0 12px 30px rgba(240,68,46,.28), inset 0 1px rgba(255,255,255,.35);
+      color: #fff; text-align: center; text-decoration: none; font-size: 15.5px; font-weight: 900;
+      transition: transform .18s ease, filter .18s ease;
+    }
+    .cta:hover { transform: translateY(-2px); filter: brightness(1.08); }
+    .cta-gold {
+      margin-top: 10px;
+      border-color: #ffe29b;
+      background: linear-gradient(180deg, #e0ad3f, #a86b12);
+      box-shadow: 0 12px 30px rgba(224,173,63,.24), inset 0 1px rgba(255,255,255,.4);
+      color: #fffdf3;
+    }
+    .cta-secondary {
+      margin-top: 10px;
+      border-color: rgba(247,200,95,.58);
+      background: linear-gradient(180deg, rgba(247,200,95,.13), rgba(247,200,95,.055));
+      box-shadow: 0 10px 26px rgba(0,0,0,.28), inset 0 1px rgba(255,255,255,.08);
+      color: var(--gold-soft);
+    }
+    .hero-card .cta, .offer-side .cta { animation: ctaglow 2.8s ease-in-out infinite; }
+    @keyframes ctaglow {
+      0%, 100% { box-shadow: 0 12px 30px rgba(240,68,46,.28), inset 0 1px rgba(255,255,255,.35); }
+      50% { box-shadow: 0 12px 40px rgba(240,68,46,.55), 0 0 22px rgba(240,68,46,.28), inset 0 1px rgba(255,255,255,.35); }
+    }
+    .cta:focus-visible, .quiz-option:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .cta-note { margin: 9px 0 0; color: #bcae9d; text-align: center; font-size: 10px; line-height: 1.55; }
+    .subtle-link {
+      display: block; width: fit-content; margin: 14px auto 0;
+      color: #aa9b8b; font-size: 11px; text-align: center; text-underline-offset: 3px;
+    }
+    .subtle-link:hover { color: var(--gold-soft); }
+
+    .hero-kicker {
+      display: flex; align-items: center; gap: 8px; margin: 0 0 8px;
+      color: var(--gold); font-size: 10.5px; font-weight: 900; letter-spacing: .15em;
+    }
+    .hero-kicker::before { content: ""; width: 24px; height: 1px; background: var(--gold); }
+    .hero-trust { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; margin: 0 0 18px; }
+    .hero-trust span { padding: 8px 4px; border: 1px solid var(--line-light); border-radius: 10px; background: rgba(255,255,255,.035); color: #e7dac9; text-align: center; font-size: 9.5px; font-weight: 800; line-height: 1.45; }
+
+    main { display: flex; flex-direction: column; }
+    section { width: 100%; padding: 74px 0; position: relative; overflow: hidden; }
+    main > section:nth-of-type(4n + 2) {
+      background:
+        radial-gradient(circle at 105% 10%, rgba(240,68,46,.09), transparent 36%),
+        linear-gradient(180deg, rgba(255,255,255,.014), transparent 26%, rgba(0,0,0,.08));
+    }
+    main > section:nth-of-type(4n) {
+      background:
+        radial-gradient(circle at -5% 15%, rgba(247,200,95,.075), transparent 34%),
+        linear-gradient(180deg, rgba(247,200,95,.018), transparent 36%);
+    }
+    .video-section { order: -2; padding-top: 34px !important; padding-bottom: 80px; }
+    .primer { order: -1; }
+    main > section:not(:first-child)::before {
+      content: "◆"; position: absolute; top: -9px; left: 50%; translate: -50% 0;
+      color: rgba(247,200,95,.55); font-size: 11px;
+      text-shadow: 26px 0 rgba(247,200,95,.22), -26px 0 rgba(247,200,95,.22);
+    }
+    main > section:not(:first-child) { border-top: 1px solid rgba(247,200,95,.14); }
+    .section-kicker { display: flex; align-items: center; gap: 9px; margin-bottom: 12px; color: var(--red); font-size: 12px; font-weight: 900; letter-spacing: .16em; }
+    .section-kicker::before { content: ""; width: 22px; height: 1px; background: var(--red); }
+    .section-kicker em { font-style: normal; font-family: var(--serif); color: var(--gold); }
+    .kicker-icon { display: inline-grid; width: 28px; height: 28px; place-items: center; border: 1px solid rgba(247,200,95,.28); border-radius: 9px; background: rgba(247,200,95,.08); font-size: 14px; line-height: 1; letter-spacing: 0; box-shadow: inset 0 1px rgba(255,255,255,.07); }
+    .section-title { margin-bottom: 21px; font-family: var(--serif); font-weight: 800; font-size: clamp(23px, 6.1vw, 29px); line-height: 1.55; text-wrap: balance; }
+    .section-title::after {
+      content: ""; display: block; width: 54px; height: 2px; margin-top: 13px;
+      background: linear-gradient(90deg, var(--red), var(--gold), transparent);
+      box-shadow: 0 0 12px rgba(247,200,95,.25);
+    }
+    .section-intro { margin-bottom: 38px; color: var(--muted); font-size: 14.5px; line-height: 2.05; }
+    .section-intro b { color: var(--gold-soft); }
+
+    /* 3行でわかる鬼キャン */
+    .primer { padding-top: 62px; padding-bottom: 72px; }
+    .primer-card { position: relative; padding: 25px 20px; border: 1px solid rgba(247,200,95,.32); border-radius: 22px; background: linear-gradient(155deg, #21160f, #0d0907); box-shadow: 0 22px 55px rgba(0,0,0,.3); overflow: hidden; }
+    .primer-card::after { content: "鬼"; position: absolute; right: -15px; bottom: -47px; color: rgba(247,200,95,.045); font-family: var(--serif); font-size: 145px; font-weight: 800; line-height: 1; pointer-events: none; }
+    .primer-card > * { position: relative; z-index: 1; }
+    .primer-title { margin-bottom: 16px; font-family: var(--serif); font-size: 20px; }
+    .primer-row { display: flex; gap: 13px; padding: 13px 0; border-top: 1px dashed var(--line-light); font-size: 14px; }
+    .primer-row:last-of-type { padding-bottom: 2px; }
+    .primer-no { flex: 0 0 auto; display: grid; width: 30px; height: 30px; place-items: center; border-radius: 50%; background: rgba(240,68,46,.16); color: #ff8a76; font-family: var(--serif); font-weight: 800; font-size: 14px; }
+    .primer-row p { margin: 0; color: #efe3d1; }
+    .primer-row b { color: var(--gold-soft); }
+    .primer-note { margin: 14px 0 0; color: var(--muted); font-size: 12px; }
+
+    /* 6科目 */
+    .curriculum { display: grid; grid-template-columns: 1fr; gap: 14px; counter-reset: subj; }
+    .subject { position: relative; padding: 18px 18px 16px; border: 1px solid var(--line-light); border-radius: 16px; background: linear-gradient(150deg, #1c130e, #0f0b08); overflow: hidden; }
+    .subject::before { counter-increment: subj; content: counter(subj, cjk-ideographic); position: absolute; right: 8px; top: -16px; color: rgba(240,68,46,.16); font-family: var(--serif); font-size: 68px; font-weight: 800; line-height: 1; }
+    .subject-icon { display: grid; width: 36px; height: 36px; place-items: center; margin-bottom: 10px; border: 1px solid rgba(247,200,95,.26); border-radius: 11px; background: linear-gradient(145deg, rgba(247,200,95,.16), rgba(240,68,46,.08)); font-size: 18px; box-shadow: inset 0 1px rgba(255,255,255,.07); }
+    .subject h3 { position: relative; margin-bottom: 5px; font-family: var(--serif); font-size: 17px; }
+    .subject p { position: relative; margin-bottom: 9px; color: var(--muted); font-size: 12.5px; }
+    .term-tag { display: inline-block; padding: 2px 9px; border: 1px solid rgba(247,200,95,.35); border-radius: 999px; color: var(--gold-soft); font-size: 10px; font-weight: 800; }
+
+    /* 満席帯 */
+    .fullband {
+      margin-top: 34px; padding: 24px 20px;
+      border: 1px solid rgba(247,200,95,.35); border-radius: 20px;
+      background: linear-gradient(120deg, rgba(169,35,23,.35), rgba(20,10,7,.6));
+      display: grid; gap: 16px;
+    }
+    .fullband .seal {
+      display: grid; place-items: center; width: 84px; height: 84px; border-radius: 50%;
+      border: 2px solid var(--red); color: #ff8a76; rotate: -8deg;
+      font-family: var(--serif); font-size: 15px; font-weight: 800; line-height: 1.4; text-align: center;
+      box-shadow: 0 0 0 3px rgba(240,68,46,.15);
+    }
+    .fullband h3 { margin-bottom: 6px; font-family: var(--serif); font-size: 20px; }
+    .fullband p { margin: 0; color: #f0e2cf; font-size: 13.5px; }
+    .fullband b { color: var(--gold); }
+
+    /* 動画 */
+    .video-invite {
+      display: grid; grid-template-columns: 46px 1fr 22px; align-items: center; gap: 12px;
+      margin: 0 7px 13px; color: #fff; cursor: default;
+    }
+    .video-invite-play {
+      display: grid; width: 46px; height: 46px; place-items: center; border: 1px solid rgba(255,217,117,.72); border-radius: 50%;
+      background: linear-gradient(145deg, #f0442e, #981d13); color: #fff; font-size: 17px; padding-left: 2px;
+      box-shadow: 0 0 0 5px rgba(240,68,46,.1), 0 0 24px rgba(240,68,46,.42);
+      animation: videoPlayPulse 1.65s ease-in-out infinite;
+    }
+    .video-invite p { margin: 0; }
+    .video-invite strong { display: block; color: var(--gold-soft); font-family: var(--serif); font-size: 17px; line-height: 1.45; }
+    .video-invite small { display: block; margin-top: 2px; color: #d6c7b6; font-size: 10.5px; font-weight: 800; letter-spacing: .02em; }
+    .video-invite-arrow { color: var(--gold); font-size: 22px; animation: videoArrow 1.2s ease-in-out infinite; }
+    @keyframes videoPlayPulse { 0%,100% { scale: 1; box-shadow: 0 0 0 5px rgba(240,68,46,.1), 0 0 24px rgba(240,68,46,.34); } 50% { scale: 1.07; box-shadow: 0 0 0 9px rgba(240,68,46,.04), 0 0 34px rgba(240,68,46,.58); } }
+    @keyframes videoArrow { 0%,100% { translate: 0 -3px; opacity: .48; } 50% { translate: 0 4px; opacity: 1; } }
+    .video-shell { position: relative; padding: 8px; border: 1px solid rgba(247,200,95,.52); border-radius: 20px; background: #0d0a08; box-shadow: 0 24px 70px rgba(0,0,0,.48), 0 0 30px rgba(240,68,46,.1); overflow: hidden; }
+    .video-frame { position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 13px; background: #000; }
+    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-caption { margin: 11px 8px 2px; color: var(--muted); font-size: 11.5px; text-align: center; }
+    .video-next {
+      margin-top: 30px; padding: 22px 18px; border: 1px solid rgba(247,200,95,.28); border-radius: 19px;
+      background:
+        radial-gradient(circle at 90% 0, rgba(240,68,46,.12), transparent 42%),
+        linear-gradient(155deg, #21150e, #0e0906);
+      box-shadow: 0 18px 48px rgba(0,0,0,.27);
+    }
+    .video-next-label { margin: 0 0 5px; color: var(--gold); font-size: 10px; font-weight: 900; letter-spacing: .16em; }
+    .video-next h3 { margin: 0 0 3px; font-family: var(--serif); font-size: 18px; line-height: 1.6; white-space: nowrap; }
+    .video-next-help { margin: 0 0 15px; color: var(--muted); font-size: 10.5px; line-height: 1.7; }
+    .video-next-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .video-next-actions a {
+      position: relative; display: grid; grid-template-columns: 28px 1fr 12px; align-items: center; gap: 8px; min-height: 58px; padding: 9px 10px;
+      border: 1px solid rgba(247,200,95,.38); border-radius: 12px; background: rgba(247,200,95,.065);
+      color: var(--gold-soft); text-align: left; text-decoration: none; font-size: 11px; font-weight: 900; line-height: 1.4;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .video-next-actions a::after { content: "›"; color: var(--gold); font-size: 18px; line-height: 1; }
+    .video-next-actions a:active { transform: scale(.97); background: rgba(247,200,95,.12); }
+    .video-next-actions a span { display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid rgba(247,200,95,.22); border-radius: 9px; background: rgba(247,200,95,.08); font-size: 14px; }
+    .video-next-actions a.primary { border-color: rgba(255,111,91,.45); background: rgba(240,68,46,.1); color: #ffd9d1; }
+
+    /* 3ステップ */
+    .loop { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .loop-arrow { display: grid; place-items: center; color: var(--gold); font-size: 20px; opacity: .8; rotate: 90deg; min-height: 26px; animation: arrowTravel 1.35s ease-in-out infinite; }
+    @keyframes arrowTravel { 0%,100% { translate: -4px 0; opacity: .45; } 50% { translate: 4px 0; opacity: 1; } }
+    .step-card { position: relative; padding: 24px 21px; border: 1px solid rgba(247,200,95,.2); border-radius: 19px; background: linear-gradient(145deg, #21170f, #0e0a07); box-shadow: 0 18px 44px rgba(0,0,0,.22); overflow: hidden; }
+    .step-card::after { content: ""; position: absolute; top: 0; left: 0; width: 42%; height: 2px; background: linear-gradient(90deg, var(--red), var(--gold), transparent); }
+    .step-no { display: inline-grid; width: 34px; height: 34px; place-items: center; margin-bottom: 13px; border-radius: 10px; background: rgba(240,68,46,.14); color: #ff806f; font-family: var(--serif); font-size: 16px; font-weight: 800; }
+    .step-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .step-heading .step-no { margin-bottom: 0; }
+    .step-icon { display: grid; width: 40px; height: 40px; place-items: center; border: 1px solid rgba(247,200,95,.28); border-radius: 13px; background: rgba(247,200,95,.08); font-size: 20px; animation: iconFloat 3.2s ease-in-out infinite; }
+    .step-card:nth-of-type(2) .step-icon { animation-delay: -.8s; }
+    .step-card:nth-of-type(3) .step-icon { animation-delay: -1.6s; }
+    @keyframes iconFloat { 0%,100% { translate: 0 0; } 50% { translate: 0 -4px; } }
+    .step-card h3 { margin-bottom: 7px; font-family: var(--serif); font-size: 19px; }
+    .step-card p { margin-bottom: 0; color: var(--muted); font-size: 13px; }
+
+    /* おためし */
+    .experience { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: linear-gradient(180deg, rgba(72,31,20,.2), rgba(8,5,4,.3)); }
+    .atlas-img { margin-bottom: 22px; border: 1px solid rgba(247,200,95,.3); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
+    .experience-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+    .demo-card { overflow: hidden; border: 1px solid rgba(247,200,95,.22); border-radius: 20px; background: var(--paper); color: var(--ink); box-shadow: var(--shadow); }
+    .demo-head { padding: 17px 19px; background: #24160f; color: #fff; }
+    .demo-label { display: inline-flex; margin-bottom: 7px; padding: 3px 9px; border-radius: 999px; background: var(--red); color: #fff; font-size: 10px; font-weight: 900; }
+    .demo-head h3 { margin-bottom: 3px; font-family: var(--serif); font-size: 19px; }
+    .demo-head small { color: #d9c6b2; font-size: 11px; }
+    .demo-body { padding: 19px; }
+    .case-row { padding: 12px 0; border-bottom: 1px solid rgba(33,23,17,.11); font-size: 13px; }
+    .case-row:last-of-type { border-bottom: 0; }
+    .case-row b { display: block; margin-bottom: 2px; color: #6f261d; font-size: 11px; }
+    .route-pill { display: flex; justify-content: space-between; gap: 10px; margin-top: 13px; padding: 11px 13px; border-radius: 12px; background: #f2dfb6; font-size: 12px; font-weight: 900; }
+    .sample-note { margin: 11px 0 0; color: #806e61; font-size: 10px; }
+
+    .library-card { overflow: hidden; border: 1px solid rgba(247,200,95,.45); border-radius: 22px; background: linear-gradient(160deg, #241711, #0d0907); box-shadow: 0 26px 70px rgba(0,0,0,.42); }
+    .library-cover { position: relative; display: block; overflow: hidden; }
+    .library-cover img { width: 100%; }
+    .library-cover::after {
+      content: ""; position: absolute; inset: 42% 0 0; pointer-events: none;
+      background: linear-gradient(transparent, rgba(4,3,2,.93));
+    }
+    .library-cover-badge {
+      position: absolute; right: 14px; bottom: 13px; z-index: 2; padding: 6px 11px;
+      border: 1px solid rgba(247,200,95,.5); border-radius: 999px; background: rgba(12,7,4,.88);
+      color: var(--gold-soft); font-size: 10px; font-weight: 900; letter-spacing: .04em;
+    }
+    .library-body { padding: 19px 19px 21px; }
+    .library-body h3 { margin: 7px 0 8px; font-family: var(--serif); font-size: 19px; }
+    .library-body p { margin: 0; color: #efe3d1; font-size: 13px; }
+    .library-body b { color: var(--gold-soft); }
+    .library-features { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 15px; }
+    .library-features span { padding: 5px 9px; border: 1px solid rgba(247,200,95,.28); border-radius: 999px; background: rgba(247,200,95,.07); color: var(--gold-soft); font-size: 10px; font-weight: 800; }
+    .quiz-card { position: relative; padding: 22px; border: 1px solid rgba(247,200,95,.24); border-radius: 22px; background: linear-gradient(160deg, #281911, #0d0907); box-shadow: 0 22px 55px rgba(0,0,0,.32); overflow: hidden; }
+    .quiz-card::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; box-shadow: inset 0 1px rgba(255,255,255,.055); }
+    .quiz-card h3 { margin-bottom: 4px; font-family: var(--serif); font-size: 21px; }
+    .quiz-sub { color: var(--muted); font-size: 12.5px; margin-bottom: 13px; }
+    .vertical-video-frame {
+      position: relative; width: min(100%, 250px); aspect-ratio: 9/16;
+      margin: 14px auto 0; overflow: hidden;
+      border: 1px solid rgba(247,200,95,.3); border-radius: 14px; background: #000;
+      box-shadow: 0 14px 34px rgba(0,0,0,.35);
+    }
+    .vertical-video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-sample-card .video-caption { margin-top: 10px; }
+    .quiz-progress { display: flex; gap: 6px; margin-bottom: 14px; }
+    .quiz-progress i { width: 32px; height: 5px; border-radius: 99px; background: rgba(255,255,255,.14); }
+    .quiz-progress i.done { background: var(--gold); }
+    .quiz-question-image { margin: 0 0 13px; overflow: hidden; border: 1px solid rgba(247,200,95,.3); border-radius: 14px; background: #fff; }
+    .quiz-question-image img { width: 100%; aspect-ratio: 1.1 / 1; object-fit: cover; }
+    .quiz-question-prompt { margin: 0 0 12px; color: #f6ead9; font-size: 13px; font-weight: 800; }
+    .audio-box { display: flex; align-items: center; gap: 13px; margin: 6px 0 14px; padding: 13px; border: 1px solid var(--line-light); border-radius: 14px; background: rgba(255,255,255,.04); }
+    .audio-box button { width: 52px; height: 52px; flex: 0 0 auto; border: 1px solid rgba(247,200,95,.5); border-radius: 50%; background: rgba(247,200,95,.1); color: var(--gold); cursor: pointer; font-size: 19px; }
+    .audio-box b { display: block; font-size: 13px; }
+    .audio-box span { color: var(--muted); font-size: 11px; }
+    .quiz-options { display: grid; gap: 8px; }
+    .quiz-option { position: relative; width: 100%; min-height: 52px; padding: 12px 66px 12px 14px; border: 1px solid var(--line-light); border-radius: 12px; background: rgba(255,255,255,.04); color: #fff; text-align: left; cursor: pointer; font-weight: 700; font-size: 13.5px; transition: border-color .18s ease, background .18s ease; }
+    .quiz-option small { position: absolute; right: 12px; top: 50%; translate: 0 -50%; color: var(--muted); font-size: 11px; }
+    .quiz-option.correct { border-color: var(--green); background: rgba(79,195,138,.13); }
+    .quiz-option.wrong { border-color: #ff7461; background: rgba(240,68,46,.13); }
+    .quiz-result { min-height: 60px; margin-top: 12px; padding: 12px 14px; border-radius: 12px; background: rgba(255,255,255,.04); color: var(--muted); font-size: 12.5px; }
+    .quiz-result strong { color: var(--gold-soft); }
+    .quiz-next { margin-top: 10px; width: 100%; min-height: 46px; border: 1px solid rgba(247,200,95,.5); border-radius: 12px; background: rgba(247,200,95,.1); color: var(--gold-soft); font-weight: 900; cursor: pointer; display: none; }
+
+    /* 参加者それぞれの伸びしろ */
+    .case-map { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    .case-map article { position: relative; padding: 19px 18px 18px; border: 1px solid rgba(247,200,95,.16); border-radius: 17px; background: linear-gradient(145deg, #1c140f, #100b08); box-shadow: 0 14px 36px rgba(0,0,0,.18); overflow: hidden; }
+    .case-map article::before { content: ""; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--gold), var(--red)); }
+    .case-map h3 { margin-bottom: 7px; font-size: 14.5px; line-height: 1.55; font-weight: 700; }
+    .case-map h3::before { content: "「"; color: var(--gold); }
+    .case-map h3::after { content: "」"; color: var(--gold); }
+    .case-map p { margin-bottom: 9px; color: var(--muted); font-size: 12px; }
+
+    /* 元帥 */
+    .marshal { border-top: 1px solid var(--line); background: radial-gradient(circle at 80% 20%, rgba(240,68,46,.12), transparent 26rem); }
+    .marshal-card { position: relative; padding: 28px 22px; border: 1px solid rgba(247,200,95,.3); border-radius: 22px; background: linear-gradient(150deg, #1a110c, #0a0705); box-shadow: var(--shadow); overflow: hidden; }
+    .marshal-card::before { content: "鬼"; position: absolute; right: -18px; bottom: -46px; color: rgba(240,68,46,.08); font-family: var(--serif); font-size: 190px; font-weight: 800; line-height: 1; pointer-events: none; }
+    .marshal-quote { margin-bottom: 18px; font-family: var(--serif); font-weight: 800; font-size: clamp(22px, 6vw, 30px); line-height: 1.6; }
+    .marshal-quote em { font-style: normal; color: var(--gold); }
+    .marshal-name { display: flex; align-items: center; gap: 11px; color: var(--gold-soft); font-weight: 900; font-size: 13px; }
+    .marshal-name::before { content: ""; width: 30px; height: 1px; background: var(--gold); }
+    .marshal-bio { margin: 13px 0 0; color: var(--muted); font-size: 13px; }
+
+    /* 1年 */
+    .journey {
+      background-color: var(--paper);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cg fill='none' stroke='%23a92b1e' stroke-opacity='.07' stroke-width='1.6'%3E%3Cpath d='M0 40a40 40 0 0 1 80 0M8 40a32 32 0 0 1 64 0M16 40a24 24 0 0 1 48 0M24 40a16 16 0 0 1 32 0M32 40a8 8 0 0 1 16 0'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 40px;
+      color: var(--ink);
+    }
+    .journey .section-kicker, .journey .section-kicker em { color: #f1be52; }
+    .journey .section-kicker::before { background: #d94a36; }
+    .journey .section-title { color: #fff3dc; text-shadow: 0 4px 20px rgba(0,0,0,.55); }
+    .journey .section-title::after { background: linear-gradient(90deg, #e24c37, #e9b84a, transparent); }
+    .journey .section-intro { color: #d6c6b5; }
+    .year-access {
+      position: relative; margin: 0 0 30px; padding: 26px 20px 24px;
+      border: 1px solid rgba(247,200,95,.58); border-radius: 24px;
+      background:
+        radial-gradient(circle at 90% 0%, rgba(240,68,46,.28), transparent 42%),
+        radial-gradient(circle at 10% 100%, rgba(247,200,95,.16), transparent 40%),
+        linear-gradient(145deg, #29150d, #0b0705 72%);
+      box-shadow: 0 24px 60px rgba(0,0,0,.48), inset 0 1px rgba(255,255,255,.08); overflow: hidden;
+    }
+    .year-access::before {
+      content: ""; position: absolute; inset: 7px; border: 1px solid rgba(247,200,95,.15); border-radius: 18px; pointer-events: none;
+    }
+    .year-access::after {
+      content: "鬼"; position: absolute; right: -11px; bottom: -45px; color: rgba(247,200,95,.045);
+      font-family: var(--serif); font-size: 150px; font-weight: 900; line-height: 1; pointer-events: none;
+    }
+    .access-kicker { position: relative; z-index: 1; display: block; margin-bottom: 12px; color: #e9bd5e; text-align: center; font-size: 8.5px; font-weight: 900; letter-spacing: .18em; }
+    .access-span { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 14px; font-family: var(--serif); font-weight: 900; }
+    .access-span strong { color: #fff3d6; font-size: 36px; line-height: 1; text-shadow: 0 0 20px rgba(247,200,95,.2); }
+    .access-span strong:last-child { color: #f7c85f; text-shadow: 0 0 24px rgba(247,200,95,.35); }
+    .access-span i { color: #e14c37; font-size: 24px; font-style: normal; filter: drop-shadow(0 0 7px rgba(240,68,46,.65)); animation: accessArrow 1.8s ease-in-out infinite; }
+    @keyframes accessArrow { 0%,100% { translate: -3px 0; opacity: .55; } 50% { translate: 3px 0; opacity: 1; } }
+    .year-access > p { position: relative; z-index: 1; margin: 0; color: #cdb9a2; text-align: center; font-size: 12px; line-height: 1.85; }
+    .access-items { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; margin-top: 17px; }
+    .access-items span { padding: 7px 12px; border: 1px solid rgba(247,200,95,.3); border-radius: 999px; background: rgba(247,200,95,.08); color: #ffe5a2; font-size: 10px; font-weight: 900; box-shadow: inset 0 1px rgba(255,255,255,.05); }
+    .timeline { position: relative; display: grid; grid-template-columns: 1fr; gap: 28px; }
+    .timeline::before {
+      content: ""; position: absolute; top: 66px; bottom: 66px; left: 43px; z-index: 0; width: 3px;
+      border-radius: 999px; background: linear-gradient(180deg, #d84531 0%, #d58725 50%, #f3c452 100%);
+      box-shadow: 0 0 12px rgba(232,174,69,.48);
+    }
+    .timeline article {
+      --accent: #d84531; position: relative; z-index: 1; min-height: 142px; padding: 24px 22px 22px 78px;
+      border: 1px solid color-mix(in srgb, var(--accent) 58%, #f7c85f 42%); border-radius: 22px;
+      background:
+        radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--accent) 28%, transparent), transparent 42%),
+        linear-gradient(145deg, #21120c, #090604 76%);
+      box-shadow: 0 22px 54px rgba(0,0,0,.42), inset 0 1px rgba(255,255,255,.06); overflow: hidden;
+    }
+    .timeline article:nth-of-type(2) { --accent: #d58725; }
+    .timeline article:nth-of-type(3) { --accent: #f3c452; }
+    .timeline article::before {
+      content: ""; position: absolute; top: 0; right: 22px; left: 22px; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent); box-shadow: 0 0 18px var(--accent);
+    }
+    .timeline article::after {
+      content: "0" attr(data-step); position: absolute; top: 11px; right: 14px;
+      color: color-mix(in srgb, var(--accent) 15%, transparent); font-family: var(--serif); font-size: 68px; font-weight: 900; line-height: 1;
+    }
+    .timeline-icon {
+      position: absolute; top: 27px; left: 20px; z-index: 2;
+      display: grid; width: 46px; height: 46px; place-items: center;
+      border: 1px solid rgba(255,236,181,.7); clip-path: polygon(25% 4%, 75% 4%, 100% 50%, 75% 96%, 25% 96%, 0 50%);
+      background: linear-gradient(145deg, color-mix(in srgb, var(--accent) 80%, #1b0e08), #3e210e);
+      color: #fff; font-size: 20px; box-shadow: 0 0 0 4px rgba(247,200,95,.06), 0 0 24px color-mix(in srgb, var(--accent) 35%, transparent);
+    }
+    .timeline b { position: relative; z-index: 2; display: block; margin-bottom: 5px; color: var(--accent); font-size: 9.5px; letter-spacing: .12em; }
+    .timeline h3 { position: relative; z-index: 2; margin-bottom: 8px; color: #fff1d6; font-family: var(--serif); font-size: 19px; }
+    .timeline p { position: relative; z-index: 2; margin-bottom: 0; color: #c8b7a5; font-size: 11.5px; line-height: 1.8; }
+    .timeline .gift-note { margin-top: 13px; padding: 10px 11px; border: 1px solid rgba(247,200,95,.24); border-radius: 11px; background: rgba(247,200,95,.08); color: #f0d38a; font-size: 10.5px; font-weight: 700; }
+
+    .voice-grid { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(230px, 290px); gap: 12px; overflow-x: auto; padding: 4px 2px 16px; scroll-snap-type: x mandatory; scrollbar-color: var(--gold) #211610; }
+    .voice-grid figure { aspect-ratio: 9 / 16; margin: 0; overflow: hidden; border: 1px solid var(--line-light); border-radius: 16px; background: #fff; scroll-snap-align: start; }
+    .voice-grid figure img { width: 100%; height: 100%; object-fit: cover; }
+    .text-voices { display: grid; gap: 17px; margin-bottom: 36px; }
+    .text-voice {
+      position: relative; overflow: hidden; padding: 20px 18px 18px;
+      border: 1px solid rgba(247,200,95,.24); border-radius: 18px;
+      background: linear-gradient(145deg, #20150f, #0e0a07);
+      box-shadow: 0 16px 38px rgba(0,0,0,.25);
+    }
+    .text-voice::after {
+      content: "“"; position: absolute; right: 11px; top: -22px;
+      color: rgba(247,200,95,.1); font-family: Georgia, serif;
+      font-size: 104px; line-height: 1; pointer-events: none;
+    }
+    .voice-head { position: relative; z-index: 1; display: flex; align-items: center; gap: 11px; margin-bottom: 14px; }
+    .voice-icon {
+      display: grid; place-items: center; flex: 0 0 auto; width: 42px; height: 42px;
+      border: 1px solid rgba(247,200,95,.45); border-radius: 50%;
+      background: rgba(247,200,95,.1); font-size: 20px;
+      box-shadow: inset 0 0 18px rgba(247,200,95,.06);
+    }
+    .text-voice.coached .voice-icon { border-color: rgba(255,104,78,.5); background: rgba(240,68,46,.13); }
+    .voice-meta b { display: block; color: var(--gold-soft); font-size: 12px; line-height: 1.35; }
+    .voice-meta span { display: block; margin-top: 2px; color: #a99886; font-size: 10px; }
+    .text-voice blockquote {
+      position: relative; z-index: 1; margin: 0; color: #f6ebdc;
+      font-family: var(--serif); font-size: 14px; font-weight: 700; line-height: 1.9;
+    }
+    .text-voice footer { margin-top: 12px; color: #a99886; font-size: 10px; }
+    .voice-note { margin: -10px 0 20px; color: #9d8e7f; font-size: 10px; line-height: 1.7; }
+    .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0 0 28px; }
+    .stats-strip > div {
+      position: relative; overflow: hidden; padding: 15px 7px 13px; border: 1px solid rgba(247,200,95,.25);
+      border-radius: 15px; background: linear-gradient(150deg, rgba(247,200,95,.1), rgba(255,255,255,.025)); text-align: center;
+    }
+    .stats-strip > div::after { content: ""; position: absolute; inset: auto -30% 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .stats-strip strong { display: block; color: var(--gold); font-family: var(--serif); font-size: 27px; line-height: 1.1; }
+    .stats-strip strong span { margin-left: 1px; font-size: 12px; }
+    .stats-strip em { font-style: normal; }
+    .stats-strip small { display: block; margin-top: 5px; color: #c4b4a2; font-size: 9.5px; line-height: 1.55; }
+
+    .offer { padding-top: 34px; scroll-margin-top: 48px; }
+    .ribbon {
+      position: absolute; top: -12px; left: 18px; z-index: 2;
+      padding: 4px 13px; border-radius: 999px;
+      background: linear-gradient(100deg, #f7c85f, #e0ad3f);
+      color: #2a1c07; font-size: 11px; font-weight: 900; letter-spacing: .06em;
+      box-shadow: 0 6px 18px rgba(224,173,63,.35);
+    }
+    .offer .section-kicker { scroll-margin-top: 50px; }
+    .compare-shell { margin: 0 0 26px; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: linear-gradient(160deg, #1a120d, #0d0907); }
+    .compare { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .compare th, .compare td { padding: 11px 8px; border-top: 1px solid var(--line-light); text-align: center; }
+    .compare th { font-weight: 800; }
+    .compare thead th { border-top: 0; padding: 13px 8px; font-family: var(--serif); font-size: 13px; }
+    .compare thead th:nth-child(2) { color: var(--gold); background: rgba(247,200,95,.08); }
+    .compare tbody th { text-align: left; color: var(--muted); font-size: 11.5px; font-weight: 700; }
+    .compare td { color: #eee2d3; font-weight: 800; }
+    .compare td.yes { color: var(--gold); }
+    .compare td.no { color: #7d6f61; font-weight: 700; }
+    .compare tbody td:first-of-type { background: rgba(247,200,95,.06); }
+    .compare .price-row td { font-family: var(--serif); font-size: 15px; }
+    .plan-detail-heading { margin: 42px 0 18px; text-align: center; }
+    .plan-detail-heading span { display: block; color: var(--gold); font-size: 10px; font-weight: 900; letter-spacing: .2em; }
+    .plan-detail-heading h3 { margin: 7px 0 5px; color: #fff2d8; font-family: var(--serif); font-size: 20px; }
+    .plan-detail-heading p { margin: 0; color: #bcae9d; font-size: 11px; }
+    .offer-visual {
+      margin: 6px 0 0; overflow: hidden; border: 1px solid rgba(247,200,95,.42);
+      border-radius: 22px; background: #050403; box-shadow: 0 24px 64px rgba(0,0,0,.4);
+    }
+    .offer-visual img { width: 100%; aspect-ratio: 16/9; object-fit: cover; animation: offerBreath 10s ease-in-out infinite alternate; }
+    .offer-visual.observer-visual { border-radius: 22px; }
+    .offer-visual.observer-visual img { aspect-ratio: 1; object-fit: contain; }
+    @keyframes offerBreath { from { scale: 1; } to { scale: 1.025; } }
+    .offer-prompt {
+      margin: 0 0 24px; padding: 19px 20px 21px; border: 1px solid rgba(247,200,95,.34); border-top: 0;
+      border-radius: 0 0 22px 22px; background: linear-gradient(180deg, #28170f, #130c08);
+      color: #f8ecdb; font-family: var(--serif); font-size: 18px; font-weight: 800; line-height: 1.65;
+      text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,.28);
+    }
+    .offer-prompt em { color: var(--gold); font-style: normal; }
+    .offer-prompt small { display: block; margin-top: 8px; color: #c9b9a7; font-family: "Noto Sans JP", sans-serif; font-size: 10.5px; font-weight: 500; line-height: 1.7; }
+    .offer-choice { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 17px; }
+    .offer-choice button {
+      min-height: 52px; padding: 10px 8px; border: 1px solid rgba(247,200,95,.45); border-radius: 13px;
+      background: rgba(247,200,95,.08); color: var(--gold-soft); font: 900 13px/1.4 "Noto Sans JP", sans-serif;
+      cursor: pointer; transition: transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .offer-choice button:active { transform: scale(.96); }
+    .offer-choice button.active { border-color: #ffe49d; background: linear-gradient(180deg, #e2ae40, #9e6410); color: #fff; }
+    .offer-card { position: relative; display: grid; grid-template-columns: 1fr; border-radius: 24px; background: linear-gradient(145deg, #20150f, #0b0806); box-shadow: 0 30px 80px rgba(0,0,0,.5); }
+    .offer-card + .offer-card { margin-top: 18px; }
+    .offer-card.coached { margin-top: 34px; background: linear-gradient(145deg, #321c10, #0b0806); }
+    .offer-card.coached .offer-status { color: var(--gold); }
+    .offer-card.observer { margin-top: 20px; overflow: hidden; }
+    .offer-card.coached.primary-plan { margin-top: 46px; overflow: visible; background: linear-gradient(145deg, #321c10, #0b0806); box-shadow: 0 0 0 1px rgba(247,200,95,.55), 0 30px 90px rgba(0,0,0,.55); }
+    .offer-card.coached.primary-plan .offer-side { border-radius: 0 0 24px 24px; }
+    .offer-card.observer.secondary-plan { margin-top: 22px; background: linear-gradient(145deg, #18110d, #090604); opacity: .94; }
+    .offer-card.recommended { border: 1px solid rgba(247,200,95,.78); box-shadow: 0 0 0 2px rgba(247,200,95,.22), 0 26px 80px rgba(247,200,95,.12); }
+    .plan-reco { display: inline-block; margin: 0 0 10px; padding: 4px 11px; border-radius: 999px; background: linear-gradient(90deg, #f4c65e, #ffe9ae); color: #3b2208; font-size: 10.5px; font-weight: 900; }
+    .plan-reco[hidden] { display: none; }
+    .observer-plan-thumb { margin: 0; border-bottom: 1px solid rgba(247,200,95,.22); background: #050403; }
+    .observer-plan-thumb img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+    .offer-card { scroll-margin-top: 64px; }
+    .waiting-cta { display: block; margin-top: 13px; color: #9bd9af; text-align: center; font-size: 11px; text-underline-offset: 3px; }
+    .offer-main { padding: 24px 20px; }
+    .offer-side { padding: 24px 20px; border-top: 1px solid var(--line); background: rgba(247,200,95,.06); }
+    .offer-status { color: var(--green); font-size: 12px; font-weight: 900; }
+    .offer h2 { margin: 7px 0 6px; font-family: var(--serif); font-size: 27px; }
+    .offer-date { color: var(--muted); font-size: 12.5px; }
+    .include-list { display: grid; gap: 9px; margin: 20px 0 0; padding: 0; list-style: none; }
+    .include-list li { position: relative; padding-left: 25px; color: #eee2d3; font-size: 13px; }
+    .include-list li::before { content: "✓"; position: absolute; left: 0; color: var(--gold); font-weight: 900; }
+    .include-list li small { color: #b7a58f; }
+    .soldout { margin-top: 15px; padding: 10px; border: 1px solid rgba(255,255,255,.1); border-radius: 12px; color: #d2c3b2; text-align: center; font-size: 11px; }
+    .not-included { margin-top: 12px; color: #b7a798; font-size: 10.5px; }
+    .observer-option {
+      margin-top: 22px; padding: 16px 18px;
+      border: 1px solid rgba(255,255,255,.08); border-radius: 16px;
+      background: rgba(255,255,255,.025); color: #b7a798; text-align: center;
+    }
+    .observer-option p { margin: 0 0 8px; font-size: 11.5px; line-height: 1.75; }
+    .observer-option a { color: #d3c2af; font-size: 11.5px; text-underline-offset: 3px; }
+    .observer-option a:hover { color: var(--gold-soft); }
+
+    .faq-list { display: grid; gap: 13px; }
+    details { border: 1px solid var(--line-light); border-radius: 14px; background: #15100d; }
+    summary { position: relative; padding: 16px 46px 16px 16px; cursor: pointer; list-style: none; font-weight: 700; font-size: 14px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; top: 50%; right: 16px; translate: 0 -50%; color: var(--gold); font-size: 21px; }
+    details[open] summary::after { content: "−"; }
+    details p { margin: 0; padding: 0 16px 16px; color: var(--muted); font-size: 13px; }
+
+    .final { padding-bottom: 175px; text-align: center; }
+    .final .section-kicker { justify-content: center; }
+    .final .section-kicker::before { display: none; }
+    .final p { margin: 0 auto 24px; color: var(--muted); }
+    .final .cta { width: 100%; margin: 0 auto; }
+
+    .fixed-cta {
+      position: fixed; bottom: 0; left: 50%; translate: -50% 0; z-index: 35;
+      width: min(100%, 480px);
+      border: 1px solid rgba(247,200,95,.3); border-bottom: 0;
+      border-radius: 18px 18px 0 0;
+      background: linear-gradient(180deg, rgba(26,17,11,.97), rgba(9,6,4,.98));
+      backdrop-filter: blur(18px);
+      box-shadow: 0 -14px 44px rgba(0,0,0,.55);
+      transition: opacity .35s ease, visibility .35s ease;
+    }
+    .fixed-cta.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .scroll-progress { height: 3px; width: 100%; border-radius: 18px 18px 0 0; background: rgba(255,255,255,.08); overflow: hidden; }
+    .scroll-progress i { display: block; height: 100%; width: 0%; background: linear-gradient(90deg, var(--red), var(--gold)); transition: width .15s linear; }
+    .fixed-status { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 7px 14px 0; font-size: 10.5px; font-weight: 800; color: var(--gold-soft); }
+    .fixed-status .live { display: inline-flex; align-items: center; gap: 6px; color: var(--green); }
+    .fixed-status .live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: pulse 1.6s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+    .fixed-status .count { color: #ffd9d0; }
+    .fixed-inner { display: grid; grid-template-columns: 1fr 88px; align-items: stretch; gap: 8px; padding: 7px 10px max(10px, env(safe-area-inset-bottom)); }
+    .fixed-inner .cta { position: relative; overflow: hidden; min-height: 52px; flex-direction: column; gap: 1px; padding-block: 8px; font-size: 14px; }
+    .fixed-inner .cta small { font-size: 9px; font-weight: 700; opacity: .85; }
+    .fixed-inner .cta::after { content: ""; position: absolute; top: 0; left: -60%; width: 40%; height: 100%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.35), transparent); animation: shine 3.2s infinite; }
+    @keyframes shine { 0% { left: -60%; } 55%, 100% { left: 120%; } }
+
+    .toc-button {
+      min-height: 52px; padding: 7px; border: 1px solid rgba(247,200,95,.38); border-radius: 14px;
+      background: linear-gradient(180deg, #2b1d13, #110b08); color: var(--gold-soft);
+      font-size: 12px; font-weight: 900; line-height: 1.35; cursor: pointer;
+      box-shadow: inset 0 1px rgba(255,255,255,.07);
+    }
+    .toc-button small { display: block; color: #cdbda8; font-size: 8.5px; letter-spacing: .08em; }
+    .toc-backdrop {
+      position: fixed; inset: 0; z-index: 33; background: rgba(0,0,0,.62);
+      opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .25s ease, visibility .25s ease;
+    }
+    .toc-backdrop.open { opacity: 1; visibility: visible; pointer-events: auto; }
+    .toc-sheet {
+      position: fixed; bottom: calc(88px + env(safe-area-inset-bottom)); left: 50%; z-index: 40;
+      width: min(calc(100% - 20px), 460px); padding: 18px 16px 15px;
+      border: 1px solid rgba(247,200,95,.45); border-radius: 22px;
+      background:
+        radial-gradient(circle at 90% 0, rgba(240,68,46,.13), transparent 38%),
+        linear-gradient(155deg, rgba(31,20,13,.99), rgba(8,5,3,.995));
+      box-shadow: 0 -24px 70px rgba(0,0,0,.68), inset 0 1px rgba(255,255,255,.055);
+      transform: translate(-50%, 34px); opacity: 0; visibility: hidden; pointer-events: none;
+      transition: transform .25s ease, opacity .25s ease, visibility .25s ease;
+    }
+    .toc-sheet.open { transform: translate(-50%, 0); opacity: 1; visibility: visible; pointer-events: auto; }
+    .toc-title { display: flex; align-items: center; gap: 9px; margin: 0 0 12px; color: var(--gold); font-family: var(--serif); font-size: 17px; font-weight: 800; }
+    .toc-title::before { content: "鬼"; display: grid; width: 30px; height: 30px; place-items: center; border: 1px solid rgba(247,200,95,.45); border-radius: 9px; background: rgba(247,200,95,.08); }
+    .toc-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .toc-item { display: flex; align-items: center; gap: 8px; min-height: 49px; padding: 9px 10px; border: 1px solid var(--line-light); border-radius: 12px; background: rgba(255,255,255,.035); color: #f3e6d4; text-decoration: none; font-size: 11px; font-weight: 800; line-height: 1.45; }
+    .toc-item span { display: grid; flex: 0 0 auto; width: 24px; height: 24px; place-items: center; border-radius: 8px; background: rgba(247,200,95,.1); }
+    section[id] { scroll-margin-top: 46px; }
+
+    @media (hover: hover) {
+      .step-card, .subject, .case-map article, .text-voice, .quiz-card { transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease; }
+      .step-card:hover, .subject:hover, .case-map article:hover, .text-voice:hover, .quiz-card:hover { transform: translateY(-3px); border-color: rgba(247,200,95,.38); box-shadow: 0 22px 50px rgba(0,0,0,.32); }
+    }
+
+    /* ============ PCでもスマホ幅を維持／左右だけを演出 ============ */
+    @keyframes sideEmbers {
+      0% { background-position: 0 0, 18px 36px, 0 0, 0 0; filter: brightness(.88); }
+      50% { filter: brightness(1.18); }
+      100% { background-position: 16px -120px, -10px -72px, 0 42px, 0 0; filter: brightness(.92); }
+    }
+    @media (min-width: 700px) {
+      body::before,
+      body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        z-index: 0;
+        width: calc((100vw - 480px) / 2);
+        pointer-events: none;
+        background:
+          radial-gradient(circle, rgba(255,210,105,.9) 0 1px, transparent 2.5px) 0 0 / 74px 96px,
+          radial-gradient(circle, rgba(240,68,46,.72) 0 1.5px, transparent 3px) 18px 36px / 112px 138px,
+          repeating-radial-gradient(circle at 100% 50%, transparent 0 22px, rgba(247,200,95,.055) 23px 24px, transparent 25px 43px),
+          radial-gradient(ellipse at 100% 48%, rgba(171,39,24,.27), transparent 60%),
+          linear-gradient(180deg, #080503, #110806 48%, #050302);
+        opacity: .86;
+        animation: sideEmbers 13s linear infinite alternate;
+      }
+      body::before { left: 0; border-right: 1px solid rgba(247,200,95,.16); }
+      body::after {
+        right: 0;
+        border-left: 1px solid rgba(247,200,95,.16);
+        transform: scaleX(-1);
+        animation-duration: 17s;
+        animation-delay: -7s;
+      }
+      .topbar,
+      .hero,
+      main {
+        z-index: 1;
+        width: 480px;
+        max-width: 100%;
+        margin-inline: auto;
+      }
+      .hero,
+      main { position: relative; background: var(--bg); }
+      .hero { z-index: 2; overflow: visible; }
+      main { box-shadow: 0 0 80px rgba(0,0,0,.72); }
+      .topbar { left: auto; right: auto; }
+      .fixed-cta { box-shadow: 0 -12px 36px rgba(0,0,0,.38), 0 0 60px rgba(0,0,0,.6); }
+    }
+
+    /* ============ 特別案内ページのUIを踏襲した読みやすい紙面 ============ */
+    body {
+      width: min(100%, 480px);
+      margin-inline: auto;
+      box-shadow: 0 0 80px rgba(0,0,0,.72);
+    }
+    .wrap, .narrow { width: min(calc(100% - 28px), 100%); }
+    section { padding: 60px 0; }
+    .hero { padding-bottom: 32px; }
+    .hero-body { padding-top: 27px; background: transparent; }
+    .hero-kicker {
+      display: inline-flex; margin-bottom: 13px; padding: 5px 10px;
+      border: 1px solid rgba(247,200,95,.38); border-radius: 999px;
+      background: rgba(7,4,2,.7); font-size: 9px; letter-spacing: .1em;
+    }
+    .hero-kicker::before { display: none; }
+    h1 { font-size: clamp(21px, 6.1vw, 30px); line-height: 1.5; }
+    .lead { margin-bottom: 18px; font-size: 13.5px; line-height: 1.9; }
+
+    main > section.guide-light {
+      background:
+        linear-gradient(rgba(255,248,232,.975), rgba(255,248,232,.975)),
+        radial-gradient(circle at 18% 8%, #f7c85f, transparent 20rem) !important;
+      border-top-color: rgba(137,88,35,.16);
+      color: #251810;
+    }
+    main > section.guide-light::before { color: rgba(143,32,24,.42); text-shadow: 26px 0 rgba(198,147,46,.24), -26px 0 rgba(198,147,46,.24); }
+    .guide-light .section-kicker { color: #a9271d; }
+    .guide-light .section-kicker::before { background: #a9271d; }
+    .guide-light .section-kicker em { color: #8f2018; }
+    .guide-light .section-title { margin-bottom: 14px; }
+    .guide-light .section-title::after { background: linear-gradient(90deg, #a9271d, #c6932e, transparent); }
+    .guide-light .section-intro { margin-bottom: 30px; color: #6f5b4d; font-size: 14px; line-height: 1.9; }
+    .guide-light .section-intro b { color: #8f2018; }
+
+    .video-section { padding: 38px 0 54px !important; }
+    .video-invite { color: #251810; }
+    .video-invite strong { color: #762019; }
+    .video-invite small { color: #756152; }
+    .video-invite-arrow { color: #a9271d; }
+    .video-shell { border: 2px solid #c6932e; box-shadow: 0 18px 38px rgba(78,46,20,.2); }
+    .video-caption { color: #8a7565; }
+    .video-next {
+      padding: 21px 17px; border-color: rgba(169,39,29,.18);
+      background: rgba(255,255,255,.72); box-shadow: 0 10px 28px rgba(78,46,20,.08);
+    }
+    .video-next-label { color: #a9271d; }
+    .video-next h3 { color: #251810; }
+    .video-next-help { color: #78685c; }
+    .video-next-actions a {
+      border-color: rgba(169,39,29,.16); background: #fffaf0; color: #5c271f;
+      box-shadow: 0 5px 14px rgba(78,46,20,.05);
+    }
+    .video-next-actions a span { border-color: rgba(169,39,29,.14); background: rgba(169,39,29,.06); }
+    .video-next-actions a::after { color: #a9271d; }
+    .video-next-actions a.primary { border-color: #b73527; background: #a9271d; color: #fff; }
+    .video-next-actions a.primary::after { color: #ffe6a0; }
+
+    .primer { padding: 42px 0 54px; }
+    .primer-card {
+      padding: 23px 18px; border-color: rgba(169,39,29,.17);
+      background: rgba(255,255,255,.72); color: #251810;
+      box-shadow: 0 10px 28px rgba(78,46,20,.08);
+    }
+    .primer-card::after { color: rgba(169,39,29,.04); }
+    .primer-title { color: #762019; }
+    .primer-row { border-top-color: rgba(169,39,29,.14); }
+    .primer-row p { color: #5f4d41; }
+    .primer-row b { color: #762019; }
+    .primer-no { background: #a9271d; color: #fff; }
+    .primer-note { color: #78685c; }
+
+    .guide-light .step-card {
+      padding: 19px 17px; border-color: rgba(169,39,29,.14); border-left: 3px solid #c6932e;
+      border-radius: 4px; background: rgba(255,255,255,.72); color: #251810;
+      box-shadow: 0 8px 24px rgba(78,46,20,.07);
+    }
+    .guide-light .step-card::after { display: none; }
+    .guide-light .step-no { background: #a9271d; color: #fff; }
+    .guide-light .step-icon { border-color: rgba(169,39,29,.16); background: #fff8e8; }
+    .guide-light .step-card p { color: #78685c; }
+    .guide-light .loop-arrow { color: #a9271d; }
+
+    .guide-light .subject {
+      padding: 16px 14px; border-color: rgba(169,39,29,.14);
+      background: rgba(255,255,255,.72); color: #251810;
+      box-shadow: 0 7px 20px rgba(78,46,20,.06);
+    }
+    .guide-light .subject::before { color: rgba(169,39,29,.08); }
+    .guide-light .subject-icon { border-color: rgba(169,39,29,.16); background: #fff8e8; }
+    .guide-light .subject p { color: #78685c; }
+    .guide-light .term-tag { border-color: rgba(169,39,29,.24); color: #8f2018; }
+    .guide-light .fullband { border-color: rgba(198,147,46,.52); background: linear-gradient(135deg, #3b1711, #180d08); }
+    .guide-light .fullband h3, .guide-light .fullband p { color: #fff8e8; }
+
+    .experience, .offer { background: linear-gradient(180deg, #120a06, #070403) !important; }
+    .library-card, .quiz-card, .text-voice, .offer-card, .marshal-card {
+      box-shadow: 0 22px 60px rgba(0,0,0,.38);
+    }
+    .offer-visual { margin-inline: 0; border-radius: 20px; }
+
+    /* 観察席専用ページ */
+    .observer-page { --observer: #55d39a; --observer-deep: #14724e; }
+    .observer-page .topbar { background: linear-gradient(90deg, #123c2d, #1f7654 48%, #123c2d); }
+    .observer-page .topbar span { color: #174d38; }
+    .observer-page .hero-visual::after { height: 34%; background: linear-gradient(transparent, rgba(4,10,7,.92)); }
+    .observer-page .hero-kicker { border-color: rgba(85,211,154,.45); color: #a9f0d1; }
+    .observer-page .hero-accent { color: var(--observer); }
+    .observer-page .hero-body::before { background: linear-gradient(90deg, transparent, var(--observer), transparent); }
+    .observer-page .cta:not(.cta-secondary) {
+      border-color: #7ce7b8; background: linear-gradient(180deg, #31b77c, #14724e);
+      box-shadow: 0 12px 30px rgba(31,183,124,.25), inset 0 1px rgba(255,255,255,.35);
+    }
+    .observer-page .guide-light .section-kicker,
+    .observer-page .guide-light .section-kicker em,
+    .observer-page .video-next-label { color: #176a4b; }
+    .observer-page .guide-light .section-kicker::before { background: #176a4b; }
+    .observer-page .guide-light .section-intro b,
+    .observer-page .primer-title,
+    .observer-page .primer-row b { color: #125f43; }
+    .observer-page .primer-no,
+    .observer-page .guide-light .step-no { background: #176a4b; }
+    .observer-page .video-next-actions a.primary { border-color: #176a4b; background: #176a4b; }
+    .observer-page .observer.primary-plan {
+      margin-top: 30px; overflow: visible; border: 1px solid rgba(85,211,154,.58);
+      background: linear-gradient(145deg, #173428, #090d0a);
+      box-shadow: 0 0 0 2px rgba(85,211,154,.08), 0 30px 90px rgba(0,0,0,.55);
+    }
+    .observer-page .observer.primary-plan .ribbon { background: linear-gradient(100deg, #8cf0c4, #45c18b); color: #082418; }
+    .observer-page .observer.primary-plan .offer-status { color: var(--observer); }
+    .observer-page .observer.primary-plan .offer-side { border-radius: 0 0 24px 24px; background: rgba(85,211,154,.065); }
+    .observer-page .observer-benefits { display: grid; gap: 10px; margin: 22px 0 8px; }
+    .observer-page .observer-benefits span {
+      display: flex; align-items: center; gap: 10px; padding: 12px 13px;
+      border: 1px solid rgba(85,211,154,.2); border-radius: 12px;
+      background: rgba(85,211,154,.055); color: #e9fff5; font-size: 12px; font-weight: 800;
+    }
+    .observer-page .library-cover { aspect-ratio: 16 / 9; }
+    .observer-page .library-cover img { height: 100%; object-fit: cover; }
+    .observer-page .observer-benefits b { color: var(--observer); font-size: 18px; }
+    .observer-page .coached.secondary-plan { margin-top: 24px; opacity: .9; }
+    .observer-page .final .cta-secondary { margin-top: 10px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .rv { opacity: 1; transform: none; transition: none; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body class="observer-page">
+  <div class="topbar"><span>8/22開催</span>顔出し・発言なし｜アーカイブ・教材1年間</div>
+  <div class="ambient-embers" aria-hidden="true">
+    <i style="--x:8%;--s:4px;--d:10s;--delay:-2s;--drift:22px"></i>
+    <i style="--x:21%;--s:3px;--d:13s;--delay:-7s;--drift:-16px"></i>
+    <i style="--x:36%;--s:5px;--d:15s;--delay:-5s;--drift:26px"></i>
+    <i style="--x:51%;--s:3px;--d:11s;--delay:-9s;--drift:-20px"></i>
+    <i style="--x:66%;--s:4px;--d:14s;--delay:-3s;--drift:18px"></i>
+    <i style="--x:79%;--s:3px;--d:12s;--delay:-8s;--drift:-24px"></i>
+    <i style="--x:91%;--s:5px;--d:16s;--delay:-6s;--drift:14px"></i>
+  </div>
+
+  <header class="hero">
+    <div class="hero-visual">
+      <img src="../assets/onicamp-observer-hero-v3.webp" alt="鬼キャン観察席。公開発音添削を特等席から見て学ぶ">
+    </div>
+    <div class="wrap">
+      <div class="hero-body">
+        <p class="hero-kicker">ONI CAMP｜OBSERVER SEAT</p>
+        <h1>顔出しなし。<br>発言なし。<br><span class="hero-accent">見て学ぶ、鬼キャン。</span></h1>
+        <p class="lead">発音講師・まりあ元帥が参加者の音を、その場で変えていく6時間。観察席は、<b>カメラOFF・マイクOFFのまま、添削の全過程からアメリカ発音の学び方を持ち帰るプラン</b>です。</p>
+        <a class="cta" href="#plans">観察席の内容と料金を見る ↓</a>
+      </div>
+    </div>
+    <div class="section-transition" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="video-section guide-light" id="intro-video">
+      <div class="narrow">
+        <div class="video-invite rv" aria-hidden="true">
+          <span class="video-invite-play">▶</span>
+          <p><strong>まず、90秒だけ。</strong><small>▶︎をタップして鬼キャンを確認する</small></p>
+          <span class="video-invite-arrow">↓</span>
+        </div>
+        <div class="video-shell rv">
+          <div class="video-frame">
+            <iframe src="https://player.vimeo.com/video/1205147159?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="鬼キャン紹介動画" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <p class="video-caption">音声をONにしてご覧ください</p>
+        </div>
+        <nav class="video-next rv" aria-label="ページの目次">
+          <p class="video-next-label">CONTENTS</p>
+          <h3>もっと知る、鬼キャン</h3>
+          <p class="video-next-help">気になるところから、ご覧ください。</p>
+          <div class="video-next-actions">
+            <a href="#flow"><span aria-hidden="true">🔥</span>6時間の流れ</a>
+            <a href="#curriculum"><span aria-hidden="true">⚔️</span>学ぶ6テーマ</a>
+            <a href="#sample"><span aria-hidden="true">📚</span>予習・教材</a>
+            <a href="#voices"><span aria-hidden="true">💬</span>参加者の声</a>
+            <a class="primary" href="#plans"><span aria-hidden="true">🎟️</span>観察席・申込</a>
+            <a href="#faq"><span aria-hidden="true">❓</span>よくある質問</a>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <section class="primer guide-light">
+      <div class="narrow">
+        <div class="primer-card rv">
+          <h2 class="primer-title">はじめての方へ——鬼キャンを3行で。</h2>
+          <div class="primer-row"><span class="primer-no">1</span><p><b>アメリカ英語発音講師の「まりあ元帥」による、1日集中のオンラインレッスンです。</b>イギリス英語ではなく、アメリカ英語の音・リズム・イントネーションを扱います。Zoom開催のため、世界中どこからでも参加できます。</p></div>
+          <div class="primer-row"><span class="primer-no">2</span><p><b>まりあ元帥による公開発音添削を、カメラOFF・マイクOFFで観察します。</b>口の形、音の強弱、リズムなど、どこに注目して音を変えるのかを実例から学びます。</p></div>
+          <div class="primer-row"><span class="primer-no">3</span><p><b>途中入退場OK。録画と教材は1年間利用できます。</b>当日すべて見られない方も、あとから自分のペースで復習できます。</p></div>
+          <p class="primer-note">英語レベル・発音記号の知識は問いません。初参加の方こそ歓迎です。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-light" id="flow">
+      <div class="wrap">
+        <p class="section-kicker"><span class="kicker-icon" aria-hidden="true">🔥</span><em>其の壱</em>あなたの6時間</p>
+        <h2 class="section-title rv">見る。気づく。<br>自分の練習に変える。</h2>
+        <p class="section-intro rv">観察席では、<b>参加者の音が変わるまでの過程を見比べながら、まりあ元帥がどこに注目し、何を変えようとしているのかを学びます。</b>正解だけでなく「なぜその練習をするのか」まで持ち帰れる6時間です。</p>
+        <div class="loop rv">
+          <article class="step-card"><div class="step-heading"><div class="step-no">一</div><span class="step-icon" aria-hidden="true">👀</span></div><h3>変化を観察する</h3><p>公開添削をライブで観察。音が変わる前と後、その間の指導まで見届けます。</p></article>
+          <div class="loop-arrow">→</div>
+          <article class="step-card"><div class="step-heading"><div class="step-no">二</div><span class="step-icon" aria-hidden="true">💡</span></div><h3>自分との共通点に気づく</h3><p>複数の添削を見比べるから、自分にも当てはまりそうな課題と練習法が見えてきます。</p></article>
+          <div class="loop-arrow">→</div>
+          <article class="step-card"><div class="step-heading"><div class="step-no">三</div><span class="step-icon" aria-hidden="true">🔁</span></div><h3>自分の口で練習する</h3><p>録画・クイズ・練習メニューを使い、気づいたポイントを1年間繰り返し練習できます。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-light" id="curriculum">
+      <div class="wrap">
+        <p class="section-kicker"><span class="kicker-icon" aria-hidden="true">⚔️</span><em>其の弐</em>あなたの舞台、鬼キャン</p>
+        <h2 class="section-title rv">1日で、発音の土台をつくり直す。</h2>
+        <p class="section-intro rv">鬼の発音キャンプ——通称「鬼キャン」は、<b>アメリカ英語の発音</b>を、口の形から文の抑揚まで扱う6時間の集中キャンプです。観察席では、公開添削を通して<b>音の見抜き方と、直すための練習法</b>を学びます。</p>
+        <div class="curriculum rv" aria-label="鬼キャンで扱う6科目">
+          <article class="subject"><span class="subject-icon" aria-hidden="true">👄</span><h3>母音（発音記号）</h3><p>日本語の「アイウエオ」から、英語の音へ。すべての土台。</p><span class="term-tag">発音記号（母音）</span></article>
+          <article class="subject"><span class="subject-icon" aria-hidden="true">⚡</span><h3>音の目立たせ方</h3><p>単語のどこを強く言うか。棒読みでなく、英語らしい読み方に。</p><span class="term-tag">強勢（アクセント）</span></article>
+          <article class="subject"><span class="subject-icon" aria-hidden="true">🔗</span><h3>音のつながり</h3><p>単語と単語がつながると、音は変わる。聞き取りの鍵。</p><span class="term-tag">リンキング</span></article>
+          <article class="subject"><span class="subject-icon" aria-hidden="true">↗️</span><h3>文の抑揚</h3><p>上げるのか、下げるのか。気持ちが乗るのはここ。</p><span class="term-tag">イントネーション</span></article>
+          <article class="subject"><span class="subject-icon" aria-hidden="true">🔥</span><h3>総合練習</h3><p>学んだ全部を、実際の文章で。鬼キャンの締めくくり。</p><span class="term-tag">総合演習</span></article>
+        </div>
+
+        <div class="fullband rv">
+          <div class="seal">顔出し<br>不要</div>
+          <div>
+            <h3>見ることに、集中できる席。</h3>
+            <p>観察席は<b>カメラOFF・マイクOFF</b>でご参加ください。人前で発音する必要はありません。質問は最後のQ&amp;Aで回答します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="sample">
+      <div class="wrap">
+        <p class="section-kicker"><span class="kicker-icon" aria-hidden="true">📚</span><em>其の参</em>予習とおためし</p>
+        <h2 class="section-title rv">お申し込み後、<br>秘密の予習部屋へ。</h2>
+        <p class="section-intro rv">鬼キャンは、開催日だけのイベントではありません。お申し込み後、参加者専用の<b>「鬼キャンライブラリー」</b>をご案内します。ご案内が届き次第、動画とクイズで予習を始められます。</p>
+
+        <div class="experience-grid">
+          <article class="library-card rv">
+            <div class="library-cover">
+              <img src="../assets/oni-library-thumbnail.webp" alt="鬼キャンライブラリー（発音記号動画・母音クイズ）" loading="lazy">
+              <span class="library-cover-badge">参加者専用ページ</span>
+            </div>
+            <div class="library-body">
+              <span class="demo-label">お申し込み後にご案内</span>
+              <h3>鬼キャンライブラリー</h3>
+              <p>発音記号の解説動画と母音クイズをまとめた、参加者専用の予習ページです。当日までの予習課題はここから出ます。<b>早くお申込みいただくほど、予習に使える時間も長くなります。</b></p>
+              <p><small>※通常、お申し込み確認後5分〜12時間を目安にご案内します。深夜・早朝のお申し込みは、お時間をいただく場合があります。</small></p>
+              <div class="library-features" aria-label="ライブラリーに含まれるもの">
+                <span>▶ 解説動画</span><span>✓ 母音クイズ</span><span>🔥 予習課題</span>
+              </div>
+            </div>
+          </article>
+          <article class="quiz-card video-sample-card rv" aria-labelledby="video-sample-title">
+            <p class="section-kicker">鬼キャンライブラリー｜母音動画</p>
+            <h3 id="video-sample-title">母音の解説を一部体験</h3>
+            <p class="quiz-sub">まりあ元帥が発音をどう分解し、口の使い方を伝えるのか。実際の教材でお確かめください。</p>
+            <div class="vertical-video-frame">
+              <iframe src="https://player.vimeo.com/video/1205166779?h=56f681027e" title="鬼キャンライブラリー 母音解説動画サンプル" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <p class="video-caption">音声をONにしてご覧ください</p>
+          </article>
+          <article class="quiz-card rv" aria-labelledby="quiz-title">
+            <p class="section-kicker">鬼キャンライブラリー｜母音クイズ</p>
+            <h3 id="quiz-title">画像クイズを2問だけ体験</h3>
+            <p class="quiz-sub">鬼キャンライブラリーの「口の形 ▶︎ 発音記号チェック」から2問を抜粋しました。</p>
+            <div class="quiz-progress" aria-hidden="true"><i></i><i></i></div>
+            <figure class="quiz-question-image"><img id="quiz-image" src="../assets/vowel-quiz-ae.png" alt="母音 /æ/ の口の形"></figure>
+            <p class="quiz-question-prompt" id="quiz-question-prompt">この口の形はどの母音？</p>
+            <div class="quiz-options" id="quiz-options" aria-label="回答の選択肢"></div>
+            <div class="quiz-result" id="quiz-result" aria-live="polite">画像を見て、いちばん近い発音記号を選んでください。</div>
+            <button class="quiz-next" id="quiz-next" type="button">次の問題へ →</button>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <p class="section-kicker"><em>其の四</em>参加者それぞれの伸びしろ</p>
+        <h2 class="section-title rv">誰かの変化が、<br>あなたのヒントになる。</h2>
+        <p class="section-intro rv">同じ「カタカナっぽい」という悩みでも、原因は人によって違います。口の形の人もいれば、リズムの人もいる。だからまりあ元帥は、<b>一人ひとり違う場所を直します</b>。複数の実例を見比べながら、自分にいちばん近いパターンを見つけてください。</p>
+        <div class="case-map rv">
+          <article><h3>カタカナ英語っぽいと言われる</h3><p>英語の口に切り替わる瞬間を観察しましょう。</p><span class="term-tag">母音・口の形</span></article>
+          <article><h3>お手本を真似しているのになぜか日本語っぽい</h3><p>「目立たせる場所（強勢音節）」を理解し、発音に劇的な変化を。</p><span class="term-tag">強勢（アクセント）</span></article>
+          <article><h3>見たら分かるのにうまく聞き取れない</h3><p>音がつながる仕組みを理解し、発音だけでなく耳も変えましょう。</p><span class="term-tag">リンキング</span></article>
+          <article><h3>長い文になると崩れる</h3><p>強弱の時間配分で、長い文がすらすら流れる瞬間を。</p><span class="term-tag">リズム</span></article>
+          <article><h3>気持ちがうまく乗らない</h3><p>抑揚ひとつで、伝わり方が変わる瞬間を。</p><span class="term-tag">イントネーション</span></article>
+          <article><h3>口をどう動かすか分からない</h3><p>「顎を下げて」の一言で音が変わる瞬間を目撃しましょう。</p><span class="term-tag">口・顎の使い方</span></article>
+          <article><h3>違いが自分で分からない</h3><p>変わる前と後を聞き比べて、耳を育てます。</p><span class="term-tag">聞き分け</span></article>
+          <article><h3>会話になると英語っぽく言えない</h3><p>単語の練習が、実際の文章につながる瞬間を。</p><span class="term-tag">総合</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="marshal">
+      <div class="wrap">
+        <p class="section-kicker"><em>其の五</em>鬼の指揮官</p>
+        <div class="marshal-card rv">
+          <p class="marshal-quote">発音は、才能じゃない。<br><em>変える場所</em>が分かれば、誰でも変わる。</p>
+          <p class="marshal-name">まりあ元帥｜鬼の発音キャンプ 主宰</p>
+          <p class="marshal-bio">Instagramフォロワー7.3万人の鬼の英語発音講師。「なんとなく練習」ではなく、口の形・音の強弱・つながりを一つずつ特定して伸ばす添削が人気。観察席では、その判断と指導の全過程を特等席から学べます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="journey">
+      <div class="wrap">
+        <p class="section-kicker"><em>其の六</em>1年間つかえる</p>
+        <h2 class="section-title rv">参加は1日。あなたの教材は1年。</h2>
+        <p class="section-intro rv">鬼キャンは、当日だけで終わりません。予習から始まり、講座後も録画と教材で繰り返し学べます。</p>
+        <div class="year-access rv" id="yearAccess">
+          <span class="access-kicker">ONI CAMP LEARNING ROUTE</span>
+          <div class="access-span" aria-label="1日の参加から1年間の復習へ">
+            <strong>1日</strong><i aria-hidden="true">→</i><strong>1年間</strong>
+          </div>
+          <p>必要なタイミングで、何度でも。</p>
+          <div class="access-items" aria-label="1年間利用できる内容">
+            <span>録画</span><span>クイズ</span><span>練習メニュー</span>
+          </div>
+        </div>
+        <div class="timeline">
+          <article class="rv" data-step="1"><span class="timeline-icon" aria-hidden="true">📚</span><b>お申し込み後</b><h3>予習を始める</h3><p>鬼キャンライブラリーの発音記号動画と母音クイズで、当日の準備を始めます。</p></article>
+          <article class="rv" data-step="2"><span class="timeline-icon" aria-hidden="true">👀</span><b>鬼キャン当日</b><h3>公開添削から学ぶ</h3><p>カメラOFF・マイクOFFで、参加者の音が変わる過程と、まりあ元帥の着眼点を観察します。</p></article>
+          <article class="rv" data-step="3"><span class="timeline-icon" aria-hidden="true">🔁</span><b>講座後〜1年間</b><h3>録画と教材で定着させる</h3><p>録画・クイズ・練習メニューを、必要なときに何度でも見返せます。</p><p class="gift-note">🎁 アンケート回答者には「発音記号動画ボックス」を1週間限定で公開します。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="voices" id="voices">
+      <div class="wrap">
+        <p class="section-kicker"><span class="kicker-icon" aria-hidden="true">💬</span>参加者の声</p>
+        <h2 class="section-title rv">過去の鬼キャン参加者から。</h2>
+        <p class="section-intro rv">実際に参加された方から届いた、匿名掲載許可済みのご感想です。</p>
+
+        <div class="stats-strip" aria-label="参加者アンケート結果">
+          <div class="rv"><strong><em class="num" data-target="8.7" data-dec="1">0</em><span>/10</span></strong><small>「友人にすすめたい」<br>平均スコア</small></div>
+          <div class="rv"><strong><em class="num" data-target="57">0</em><span>%</span></strong><small>10点満点を<br>つけた人</small></div>
+          <div class="rv"><strong><em class="num" data-target="42">0</em><span>名</span></strong><small>アンケート<br>回答数</small></div>
+        </div>
+
+        <div class="text-voices">
+          <article class="text-voice rv">
+            <div class="voice-head">
+              <span class="voice-icon" aria-hidden="true">👀</span>
+              <div class="voice-meta"><b>短期間でも変化を実感</b><span>観察席で参加</span></div>
+            </div>
+            <blockquote>「この短期間の練習でも、発音が良くなったと感じました。すごく分かりやすく、次回は添削ありプランで参加したいと思いました。」</blockquote>
+            <footer>2026年夏 参加者アンケートより</footer>
+          </article>
+
+          <article class="text-voice rv">
+            <div class="voice-head">
+              <span class="voice-icon" aria-hidden="true">💡</span>
+              <div class="voice-meta"><b>目から鱗の学び</b><span>観察席で参加</span></div>
+            </div>
+            <blockquote>「本や聞きマネで何となく学んだつもりでしたが、説明がとても分かりやすく、目から鱗の連続でした。母音・子音・リズム・イントネーションへの意識が変わりました。」</blockquote>
+            <footer>2026年夏 参加者アンケートより</footer>
+          </article>
+
+          <article class="text-voice coached rv">
+            <div class="voice-head">
+              <span class="voice-icon" aria-hidden="true">🔥</span>
+              <div class="voice-meta"><b>マンツーマン級の添削</b><span>添削席で参加</span></div>
+            </div>
+            <blockquote>「グループ参加とは思えないほど徹底的な指摘とアドバイス。マンツーマンで習っているような緊張感があり、他の人へのコメントもとても勉強になりました。」</blockquote>
+            <footer>2026年夏 参加者アンケートより</footer>
+          </article>
+
+          <article class="text-voice coached rv">
+            <div class="voice-head">
+              <span class="voice-icon" aria-hidden="true">🌱</span>
+              <div class="voice-meta"><b>初心者でもポイントをつかめた</b><span>添削席で参加</span></div>
+            </div>
+            <blockquote>「初心者で参加してよいか不安でしたが、一人ひとりに合わせて対応してくださり、重要なポイントをつかめました。他の方の添削を聞けたことも勉強になりました。」</blockquote>
+            <footer>2026年夏 参加者アンケートより</footer>
+          </article>
+        </div>
+        <p class="voice-note">※掲載許可をいただいた回答を、意味を変えない範囲で一部抜粋・読みやすく整えています。</p>
+
+        <p class="section-intro rv">画像のご感想は、横にスワイプしてご覧いただけます。</p>
+        <div class="voice-grid rv" aria-label="参加者の声">
+          <figure><img src="../assets/review-1.png" alt="参加者の声 1" loading="lazy"></figure>
+          <figure><img src="../assets/review-2.png" alt="参加者の声 2" loading="lazy"></figure>
+          <figure><img src="../assets/review-3.png" alt="参加者の声 3" loading="lazy"></figure>
+          <figure><img src="../assets/review-4.png" alt="参加者の声 4" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer" id="offer">
+      <div class="wrap">
+        <p class="section-kicker" id="plans"><span class="kicker-icon" aria-hidden="true">🎟️</span><em>OBSERVER SEAT</em>観察席のご案内</p>
+        <h2 class="section-title rv">顔出しなしでも、<br>学びは止めない。</h2>
+        <p class="section-intro rv">人前で発音するのは不安。当日6時間ずっと参加するのは難しい。それでも鬼キャンで学びたい方のために、<b>公開添削を見て学ぶ「観察席」</b>をご用意しました。</p>
+
+        <div class="observer-benefits rv" aria-label="観察席の特徴">
+          <span><b>OFF</b> カメラ・マイクはOFF</span>
+          <span><b>OK</b> 途中入退場・アーカイブ受講</span>
+          <span><b>1年</b> 録画・クイズ・練習メニュー</span>
+        </div>
+
+        <figure class="offer-visual rv">
+          <img src="../assets/vowel-busters-special-date.webp" alt="鬼の発音キャンプ 8月22日土曜日 10時から16時 Zoom開催" loading="lazy">
+        </figure>
+
+        <div class="offer-card observer primary-plan rv" id="observer-plan">
+          <span class="ribbon">このページのおすすめ</span>
+          <div class="offer-main">
+            <div class="offer-status">● 観察席・受付中</div>
+            <h2>鬼キャン観察席</h2>
+            <p class="offer-date">8/22（土）10:00-16:00｜Zoom｜途中入退場OK</p>
+            <ul class="include-list">
+              <li>参加者への公開発音添削をライブで観察</li>
+              <li>カメラOFF・マイクOFFで参加</li>
+              <li>途中入退場OK・当日参加できなくても録画で受講可能</li>
+              <li>予習特典「鬼キャンライブラリー」 <small>― お申し込み後にご案内</small></li>
+              <li>講座終了後のQ&amp;A、聞き分けクイズ・練習メニュー</li>
+              <li>本編録画・教材を1年間利用</li>
+            </ul>
+            <p class="not-included">※まりあ元帥による、ご自身への直接添削・診断・評価は含まれません。</p>
+          </div>
+          <div class="offer-side">
+            <div class="price-label">参加費</div>
+            <div class="price"><strong>19,800</strong><span>円（税込）</span></div>
+            <a class="cta cta-gold" href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1">観察席に申し込む →</a>
+          </div>
+        </div>
+
+        <div class="offer-card coached secondary-plan rv" id="coaching-plan">
+          <div class="offer-main">
+            <div class="offer-status">ご自身への直接添削をご希望の方へ</div>
+            <h2>添削付プランもあります</h2>
+            <p class="offer-date">カメラON・マイクON｜原則フル参加</p>
+            <ul class="include-list">
+              <li>まりあ元帥による、その場での発音添削</li>
+              <li>観察席の内容・教材もすべて含む</li>
+            </ul>
+          </div>
+          <div class="offer-side">
+            <div class="price-label">参加費</div>
+            <div class="price"><strong>30,000</strong><span>円（税込）</span></div>
+            <a class="cta cta-secondary" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1">添削付プランを見る →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="narrow">
+        <p class="section-kicker"><span class="kicker-icon" aria-hidden="true">?</span>よくある質問</p>
+        <h2 class="section-title rv">気になるところ、先にお答えします。</h2>
+        <div class="faq-list rv">
+          <details open><summary>観察席は、ただZoomを見ているだけですか？</summary><p>いいえ。公開添削を見比べながら、まりあ元帥がどこに注目し、何を変えようとしているのかを学びます。講座後は録画・聞き分けクイズ・練習メニューを使い、自分の練習へつなげます。</p></details>
+          <details><summary>6時間すべて参加する必要がありますか？</summary><p>観察席は途中入退場OKです。当日の参加が難しい場合も、本編録画と教材を公開後1年間利用できます。</p></details>
+          <details><summary>カメラやマイクは必要ですか？</summary><p>観察席では、レッスンの進行上、カメラ・マイクともにOFFでご参加ください。人前で発音する必要はありません。質問は最後のQ&amp;Aで回答します。</p></details>
+          <details><summary>自分の発音も見てもらえますか？</summary><p>観察席には、ご自身への直接添削・診断・評価は含まれません。直接添削をご希望の場合は添削付プランをお選びください。</p></details>
+          <details><summary>初心者ですが、ついていけますか？</summary><p>参加できます。口の形・音の目立たせ方・音のつながり・リズム・抑揚を、土台から順番に扱います。発音記号が読めなくても問題ありません。お申し込み後にご案内する鬼キャンライブラリーで予習しておくと、当日がさらに濃くなります。</p></details>
+          <details><summary>予習は必要ですか？いつから始められますか？</summary><p>お申し込み後、予習特典「鬼キャンライブラリー」（発音記号動画・母音クイズ）をご案内します。当日までの予習課題はここから出ます。早くお申し込みいただくほど予習期間を長く使えます。<small>※通常、お申し込み確認後5分〜12時間を目安にご案内します。深夜・早朝のお申し込みは、お時間をいただく場合があります。</small></p></details>
+          <details><summary>どの地域の英語発音を学びますか？</summary><p>アメリカ英語の発音を扱います。母音、強勢（アクセント）、リンキング、リズム、イントネーションを、アメリカ英語の音と話し方を基準に学びます。</p></details>
+          <details><summary>録画や練習メニューはいつ届きますか？</summary><p>鬼キャン終了後、録画と内容を確認してから順次お届けします。今回のメンバーは、届いたときから1年間利用できます。</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap">
+        <p class="section-kicker">WATCH. NOTICE. PRACTICE.</p>
+        <h2 class="section-title rv">見ることで、<br>発音の学び方は変えられる。</h2>
+        <p class="rv">顔出しも発言も不要です。公開添削から気づきを持ち帰り、録画と教材で自分の練習へ変えてください。</p>
+        <a class="cta cta-gold rv" href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1">観察席に申し込む →</a>
+        <a class="cta cta-secondary rv" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1">添削付プランを見る →</a>
+        <a class="subtle-link rv" href="#plans">観察席の内容をもう一度確認する</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="toc-backdrop" id="tocBackdrop"></div>
+  <nav class="toc-sheet" id="tocSheet" aria-label="ページ内目次">
+    <p class="toc-title">読みたいところへ</p>
+    <ul class="toc-list">
+      <li><a class="toc-item" href="#intro-video"><span aria-hidden="true">▶</span>90秒動画</a></li>
+      <li><a class="toc-item" href="#flow"><span aria-hidden="true">🔥</span>6時間の流れ</a></li>
+      <li><a class="toc-item" href="#curriculum"><span aria-hidden="true">✦</span>学ぶ6テーマ</a></li>
+      <li><a class="toc-item" href="#sample"><span aria-hidden="true">📚</span>予習・教材</a></li>
+      <li><a class="toc-item" href="#voices"><span aria-hidden="true">💬</span>参加者の声</a></li>
+      <li><a class="toc-item" href="#plans"><span aria-hidden="true">🎟</span>料金・申込</a></li>
+      <li><a class="toc-item" href="#faq"><span aria-hidden="true">?</span>よくある質問</a></li>
+    </ul>
+  </nav>
+
+  <div class="fixed-cta hidden" id="fixedCta" aria-label="固定申込バー">
+    <div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
+    <div class="fixed-status">
+      <span class="live">観察席｜受付中</span>
+      <span class="count" id="countdown">8/22（土）10:00–16:00</span>
+    </div>
+    <div class="fixed-inner">
+      <a class="cta" href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1">観察席に申し込む<small>19,800円（税込）｜MOSHへ</small></a>
+      <button class="toc-button" id="tocButton" type="button" aria-expanded="false" aria-controls="tocSheet">☰ 目次<small>MENU</small></button>
+    </div>
+  </div>
+
+  <script>
+    // 固定フッター：「CONTENTS」が画面に入るタイミングで表示する
+    const fixedCta = document.getElementById('fixedCta');
+    const scrollBar = document.getElementById('scrollBar');
+    const contentsGate = document.querySelector('.video-next');
+    function updateFixedCta() {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      scrollBar.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + '%';
+      fixedCta.classList.toggle('hidden', contentsGate.getBoundingClientRect().top > innerHeight);
+    }
+    addEventListener('scroll', updateFixedCta, { passive: true });
+    addEventListener('resize', updateFixedCta, { passive: true });
+    updateFixedCta();
+    (function () {
+      const el = document.getElementById('countdown');
+      const now = new Date();
+      const eventDay = new Date(2026, 7, 22);
+      const eventEnd = new Date(2026, 7, 22, 23, 59, 59);
+      if (now <= eventEnd) {
+        const left = Math.ceil((eventDay - now) / 86400000);
+        el.textContent = left <= 0 ? '8/22（土）本日開催' : '8/22（土）開催まであと' + left + '日';
+      } else {
+        el.textContent = '今回の開催は終了しました';
+      }
+    })();
+
+    const io = new IntersectionObserver((es) => es.forEach((e) => {
+      if (e.isIntersecting) {
+        const sibs = Array.from(e.target.parentElement.children).filter(x => x.classList.contains('rv'));
+        e.target.style.transitionDelay = (sibs.indexOf(e.target) % 4) * 90 + 'ms';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    }), { threshold: .12 });
+    document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const plansTarget = document.getElementById('plans');
+    function alignPlans() {
+      const top = scrollY + plansTarget.getBoundingClientRect().top - 50;
+      const root = document.documentElement;
+      root.style.scrollBehavior = 'auto';
+      scrollTo({ top, behavior: 'auto' });
+      setTimeout(() => root.style.removeProperty('scroll-behavior'), 0);
+    }
+    document.querySelectorAll('a[href="#plans"]').forEach(link => link.addEventListener('click', event => {
+      event.preventDefault();
+      if (location.hash !== '#plans') history.pushState(null, '', '#plans');
+      alignPlans();
+      requestAnimationFrame(alignPlans);
+    }));
+    if (location.hash === '#plans') {
+      requestAnimationFrame(alignPlans);
+      addEventListener('load', alignPlans, { once: true });
+    }
+    addEventListener('hashchange', () => {
+      if (location.hash === '#plans') alignPlans();
+    });
+
+    const counterObserver = new IntersectionObserver((entries) => entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = Number(el.dataset.target);
+      const decimals = Number(el.dataset.dec || 0);
+      if (reduceMotion) {
+        el.textContent = target.toFixed(decimals);
+      } else {
+        const start = performance.now();
+        const tick = now => {
+          const progress = Math.min((now - start) / 900, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = (target * eased).toFixed(decimals);
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }
+      counterObserver.unobserve(el);
+    }), { threshold: .55 });
+    document.querySelectorAll('.stats-strip .num').forEach(el => counterObserver.observe(el));
+
+    // 母音バスターズ特別案内で好評だった「いつでも開ける目次」を移植
+    const tocButton = document.getElementById('tocButton');
+    const tocSheet = document.getElementById('tocSheet');
+    const tocBackdrop = document.getElementById('tocBackdrop');
+    function setToc(open) {
+      tocSheet.classList.toggle('open', open);
+      tocBackdrop.classList.toggle('open', open);
+      tocButton.setAttribute('aria-expanded', String(open));
+    }
+    tocButton.addEventListener('click', () => setToc(!tocSheet.classList.contains('open')));
+    tocBackdrop.addEventListener('click', () => setToc(false));
+    tocSheet.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setToc(false)));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') setToc(false);
+    });
+
+    const QUIZ = [
+      { image: '../assets/vowel-quiz-ae.png', alt: '母音 /æ/ の口の形',
+        options: [
+          { t: '/æ/', ipa: '横＋顎を下げる', ok: true },
+          { t: '/ɑ/', ipa: '縦に大きく', ok: false },
+          { t: '/ʌ/', ipa: '力を抜く', ok: false },
+          { t: '/ɝ/', ipa: '舌を後ろへ', ok: false }
+        ],
+        good: '正解は <strong>/æ/</strong>。口を横に緊張させ、口角を斜め上へ。顎を下げて、舌先は下の歯ぐきの後ろに置きます。',
+        bad: 'おしい。<strong>口を横に緊張させながら、顎をしっかり下げる</strong>形に注目して、もう一度選んでみましょう。' },
+      { image: '../assets/vowel-quiz-aa.png', alt: '母音 /ɑ/ の口の形',
+        options: [
+          { t: '/æ/', ipa: '横＋顎を下げる', ok: false },
+          { t: '/ɑ/', ipa: '縦に大きく', ok: true },
+          { t: '/ʌ/', ipa: '力を抜く', ok: false },
+          { t: '/ɝ/', ipa: '舌を後ろへ', ok: false }
+        ],
+        good: '正解は <strong>/ɑ/</strong>。口を縦に大きく開き、四方八方へ広げず、顎をしっかり下げます。',
+        bad: 'おしい。<strong>口を縦に大きく開き、顎をしっかり下げる</strong>形に注目して、もう一度選んでみましょう。' }
+    ];
+    let qi = 0, answered = false;
+    const quizImage = document.getElementById('quiz-image');
+    const quizPrompt = document.getElementById('quiz-question-prompt');
+    const optBox = document.getElementById('quiz-options');
+    const result = document.getElementById('quiz-result');
+    const nextBtn = document.getElementById('quiz-next');
+    const dots = Array.from(document.querySelectorAll('.quiz-progress i'));
+
+    function loadQ() {
+      const q = QUIZ[qi];
+      answered = false;
+      quizImage.src = q.image;
+      quizImage.alt = q.alt;
+      quizPrompt.textContent = `第${qi + 1}問：この口の形はどの母音？`;
+      result.textContent = '画像を見て、いちばん近い発音記号を選んでください。';
+      nextBtn.style.display = 'none';
+      optBox.innerHTML = '';
+      q.options.forEach(o => {
+        const b = document.createElement('button');
+        b.className = 'quiz-option'; b.type = 'button';
+        b.innerHTML = `${o.t}<small>${o.ipa}</small>`;
+        b.addEventListener('click', () => {
+          if (answered) return;
+          answered = true;
+          if (o.ok) { b.classList.add('correct'); result.innerHTML = q.good; }
+          else { b.classList.add('wrong'); result.innerHTML = q.bad; answered = false; return; }
+          dots[qi].classList.add('done');
+          nextBtn.style.display = 'block';
+          nextBtn.textContent = qi < QUIZ.length - 1 ? '次の問題へ →' : '結果を見る →';
+        });
+        optBox.appendChild(b);
+      });
+    }
+    nextBtn.addEventListener('click', () => {
+      if (qi < QUIZ.length - 1) { qi++; loadQ(); }
+      else {
+        optBox.innerHTML = '';
+        quizPrompt.textContent = 'クイズ終了';
+        nextBtn.style.display = 'none';
+        result.innerHTML = `<strong>2問クリア。</strong>鬼キャンライブラリーには、口の形・発音記号・音声から母音を確認できるクイズを用意しています。当日はこの「見抜く目」ごと、まりあ元帥に鍛えてもらいましょう。`;
+      }
+    });
+    loadQ();
+  </script>
+</body>
+</html>
