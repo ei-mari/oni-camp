@@ -190,11 +190,23 @@
     }
     @keyframes foil { 0%,100% { background-position: 0% 0; } 50% { background-position: 100% 0; } }
     .price span { font-size: 12px; font-weight: 800; padding: 2px 7px; border: 1px solid rgba(247,200,95,.35); border-radius: 6px; color: var(--gold-soft); }
+    .regular-price { margin: 0 0 5px; color: #978879; font-size: 11px; font-weight: 700; text-align: center; }
+    .regular-price s { text-decoration-thickness: 1px; }
     .early-price {
-      margin: -2px 0 13px; padding: 9px 11px; border: 1px solid rgba(247,200,95,.38); border-radius: 10px;
-      background: linear-gradient(135deg, rgba(247,200,95,.14), rgba(240,68,46,.08));
-      color: #ffe7aa; font-size: 11px; font-weight: 900; line-height: 1.55; text-align: center;
+      position: relative; margin: 0 0 15px; padding: 12px 10px 11px; border: 1px solid rgba(255,211,102,.7); border-radius: 13px;
+      background: linear-gradient(135deg, rgba(247,200,95,.24), rgba(240,68,46,.16));
+      box-shadow: 0 10px 26px rgba(247,200,95,.12), inset 0 1px rgba(255,255,255,.16);
+      color: #fff3c7; text-align: center;
     }
+    .early-price small { display: block; margin-bottom: 3px; color: #ffe6a3; font-size: 10px; font-weight: 900; letter-spacing: .06em; }
+    .early-price strong {
+      display: inline-block; font-family: var(--serif); font-size: 34px; line-height: 1;
+      background: linear-gradient(100deg, #d89c18, #fff0af 45%, #ffc84d 70%, #fff0af);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      filter: drop-shadow(0 2px 7px rgba(0,0,0,.55));
+    }
+    .early-price span { margin-left: 3px; color: #fff3c7; font-size: 11px; font-weight: 900; }
+    .early-price em { display: block; margin-top: 5px; color: #fff8e1; font-size: 10px; font-style: normal; font-weight: 900; }
     .line-price { margin: -2px 0 14px; color: #e9dccb; font-size: 12px; }
     .line-price b { color: var(--gold-soft); }
     .cta {
@@ -592,7 +604,9 @@
     .compare td.no { color: #7d6f61; font-weight: 700; }
     .compare tbody td:first-of-type { background: rgba(247,200,95,.06); }
     .compare .price-row td { font-family: var(--serif); font-size: 15px; }
-    .compare .early-price-note { display: block; margin-top: 5px; color: #ffe6a3; font-family: "Noto Sans JP", sans-serif; font-size: 8.5px; font-weight: 800; line-height: 1.45; }
+    .compare .regular-price-note { display: block; margin-bottom: 3px; color: #8f8174; font-family: "Noto Sans JP", sans-serif; font-size: 8px; font-weight: 700; line-height: 1.35; }
+    .compare .early-price-note { display: block; color: #ffe6a3; font-family: var(--serif); font-size: 17px; font-weight: 900; line-height: 1.2; text-shadow: 0 0 12px rgba(247,200,95,.24); }
+    .compare .early-price-deadline { display: block; margin-top: 4px; color: #f7c85f; font-family: "Noto Sans JP", sans-serif; font-size: 8px; font-weight: 900; line-height: 1.35; }
     .plan-detail-heading { margin: 42px 0 18px; text-align: center; }
     .plan-detail-heading span { display: block; color: var(--gold); font-size: 10px; font-weight: 900; letter-spacing: .2em; }
     .plan-detail-heading h3 { margin: 7px 0 5px; color: #fff2d8; font-family: var(--serif); font-size: 20px; }
@@ -1187,7 +1201,7 @@
               <tr><th>ご自身への添削</th><td class="yes">あり</td><td class="no">なし</td></tr>
               <tr><th>途中入退場</th><td>原則フル参加</td><td class="yes">OK</td></tr>
               <tr><th>録画・教材1年間</th><td class="yes">含む</td><td class="yes">含む</td></tr>
-              <tr class="price-row"><th>参加費（税込）</th><td class="yes">30,000円<small class="early-price-note">※9月13日までは<br>早割25,000円（税込）</small></td><td>19,800円</td></tr>
+              <tr class="price-row"><th>参加費（税込）</th><td class="yes"><small class="regular-price-note">通常 <s>30,000円</s></small><strong class="early-price-note">25,000円</strong><small class="early-price-deadline">9月13日までの早割価格</small></td><td>19,800円</td></tr>
             </tbody>
           </table>
         </div>
@@ -1220,8 +1234,8 @@
           </div>
           <div class="offer-side">
             <div class="price-label">参加費</div>
-            <div class="price"><strong>30,000</strong><span>円（税込）</span></div>
-            <p class="early-price">※早割価格として9月13日までは25,000円（税込）</p>
+            <p class="regular-price">通常 <s>30,000円（税込）</s></p>
+            <div class="early-price"><small>SUMMER EARLY PRICE</small><strong>25,000</strong><span>円（税込）</span><em>9月13日まで</em></div>
             <a class="cta cta-gold" href="https://mosh.jp/services/344acd1e80e64a4c99773efbb4b65f9a?openExternalBrowser=1">添削付プランに申し込む →</a>
             <p class="not-included">※発音時の口の動きと音声を確認するため、カメラ・マイクの使用が必須です。</p>
           </div>
