@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="2026年8月22日（土）開催。まりあ元帥があなたの発音をその場で直す少人数制の添削付プラン。観察席も選べる、アメリカ英語発音の6時間集中キャンプ。">
+  <meta name="description" content="2026年9月22日（火）開催。まりあ元帥があなたの発音をその場で直す少人数制の添削付プラン。観察席も選べる、アメリカ英語発音の6時間集中キャンプ。">
   <meta name="theme-color" content="#0b0806">
   <meta property="og:title" content="鬼キャン｜アメリカ英語の発音キャンプ 2026">
-  <meta property="og:description" content="8/22（土）10:00-16:00開催。まりあ元帥の直接添削で、アメリカ英語の発音を母音からリズム・イントネーションまで整える6時間。">
+  <meta property="og:description" content="9/22（火）10:00-16:00開催。まりあ元帥の直接添削で、アメリカ英語の発音を母音からリズム・イントネーションまで整える6時間。">
   <meta property="og:image" content="../assets/thumbnail.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -190,6 +190,11 @@
     }
     @keyframes foil { 0%,100% { background-position: 0% 0; } 50% { background-position: 100% 0; } }
     .price span { font-size: 12px; font-weight: 800; padding: 2px 7px; border: 1px solid rgba(247,200,95,.35); border-radius: 6px; color: var(--gold-soft); }
+    .early-price {
+      margin: -2px 0 13px; padding: 9px 11px; border: 1px solid rgba(247,200,95,.38); border-radius: 10px;
+      background: linear-gradient(135deg, rgba(247,200,95,.14), rgba(240,68,46,.08));
+      color: #ffe7aa; font-size: 11px; font-weight: 900; line-height: 1.55; text-align: center;
+    }
     .line-price { margin: -2px 0 14px; color: #e9dccb; font-size: 12px; }
     .line-price b { color: var(--gold-soft); }
     .cta {
@@ -587,6 +592,7 @@
     .compare td.no { color: #7d6f61; font-weight: 700; }
     .compare tbody td:first-of-type { background: rgba(247,200,95,.06); }
     .compare .price-row td { font-family: var(--serif); font-size: 15px; }
+    .compare .early-price-note { display: block; margin-top: 5px; color: #ffe6a3; font-family: "Noto Sans JP", sans-serif; font-size: 8.5px; font-weight: 800; line-height: 1.45; }
     .plan-detail-heading { margin: 42px 0 18px; text-align: center; }
     .plan-detail-heading span { display: block; color: var(--gold); font-size: 10px; font-weight: 900; letter-spacing: .2em; }
     .plan-detail-heading h3 { margin: 7px 0 5px; color: #fff2d8; font-family: var(--serif); font-size: 20px; }
@@ -596,6 +602,21 @@
       border-radius: 22px; background: #050403; box-shadow: 0 24px 64px rgba(0,0,0,.4);
     }
     .offer-visual img { width: 100%; aspect-ratio: 16/9; object-fit: cover; animation: offerBreath 10s ease-in-out infinite alternate; }
+    .offer-visual.schedule-visual { position: relative; isolation: isolate; min-height: 245px; background: #050403; }
+    .offer-visual.schedule-visual img { height: 100%; min-height: 245px; filter: brightness(.45) saturate(.9); object-position: 62% center; }
+    .schedule-visual::after {
+      content: ""; position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(90deg, rgba(0,0,0,.9) 0 38%, rgba(0,0,0,.28) 72%, rgba(0,0,0,.08));
+      pointer-events: none;
+    }
+    .schedule-copy {
+      position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; justify-content: center;
+      padding: 24px 22px; color: #fff8e8; text-shadow: 0 3px 14px rgba(0,0,0,.95);
+    }
+    .schedule-copy small { color: var(--gold); font-size: 10px; font-weight: 900; letter-spacing: .12em; }
+    .schedule-copy strong { margin-top: 6px; color: var(--gold-soft); font-family: var(--serif); font-size: clamp(34px, 11vw, 54px); line-height: 1.05; }
+    .schedule-copy span { margin-top: 5px; font-family: var(--serif); font-size: clamp(20px, 6.8vw, 31px); font-weight: 800; letter-spacing: .03em; }
+    .schedule-copy em { align-self: flex-start; margin-top: 12px; padding: 4px 10px; border: 1px solid rgba(247,200,95,.5); border-radius: 999px; background: rgba(0,0,0,.55); color: #f6dfaa; font-size: 10px; font-style: normal; font-weight: 800; }
     .offer-visual.observer-visual { border-radius: 22px; }
     .offer-visual.observer-visual img { aspect-ratio: 1; object-fit: contain; }
     @keyframes offerBreath { from { scale: 1; } to { scale: 1.025; } }
@@ -677,8 +698,9 @@
     .fixed-cta.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
     .scroll-progress { height: 3px; width: 100%; border-radius: 18px 18px 0 0; background: rgba(255,255,255,.08); overflow: hidden; }
     .scroll-progress i { display: block; height: 100%; width: 0%; background: linear-gradient(90deg, var(--red), var(--gold)); transition: width .15s linear; }
-    .fixed-status { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 7px 14px 0; font-size: 10.5px; font-weight: 800; color: var(--gold-soft); }
+    .fixed-status { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 7px 14px 0; font-size: clamp(8px, 2.4vw, 10.5px); font-weight: 800; color: var(--gold-soft); }
     .fixed-status .live { display: inline-flex; align-items: center; gap: 6px; color: var(--green); }
+    .fixed-status .live, .fixed-status .count { white-space: nowrap; }
     .fixed-status .live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: pulse 1.6s infinite; }
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
     .fixed-status .count { color: #ffd9d0; }
@@ -882,7 +904,7 @@
   </style>
 </head>
 <body>
-  <div class="topbar"><span>8/22開催</span>まりあ元帥の直接添削・アメリカ英語</div>
+  <div class="topbar"><span>9/22開催</span>まりあ元帥の直接添削・アメリカ英語</div>
   <div class="ambient-embers" aria-hidden="true">
     <i style="--x:8%;--s:4px;--d:10s;--delay:-2s;--drift:22px"></i>
     <i style="--x:21%;--s:3px;--d:13s;--delay:-7s;--drift:-16px"></i>
@@ -1165,7 +1187,7 @@
               <tr><th>ご自身への添削</th><td class="yes">あり</td><td class="no">なし</td></tr>
               <tr><th>途中入退場</th><td>原則フル参加</td><td class="yes">OK</td></tr>
               <tr><th>録画・教材1年間</th><td class="yes">含む</td><td class="yes">含む</td></tr>
-              <tr class="price-row"><th>参加費（税込）</th><td class="yes">30,000円</td><td>19,800円</td></tr>
+              <tr class="price-row"><th>参加費（税込）</th><td class="yes">30,000円<small class="early-price-note">※9月13日までは<br>早割25,000円（税込）</small></td><td>19,800円</td></tr>
             </tbody>
           </table>
         </div>
@@ -1176,8 +1198,9 @@
           <p>内容をご確認のうえ、ご希望のプランをお選びください。</p>
         </div>
 
-        <figure class="offer-visual rv">
-          <img src="../assets/vowel-busters-special-date.webp" alt="鬼の発音キャンプ 8月22日土曜日 10時から16時 Zoom開催" loading="lazy">
+        <figure class="offer-visual schedule-visual rv">
+          <img src="../assets/onicamp-observer-hero-v3.webp" alt="鬼の発音キャンプ開催イメージ" loading="lazy">
+          <figcaption class="schedule-copy"><small>鬼の発音キャンプ</small><strong>9/22（火）</strong><span>10:00–16:00</span><em>Zoom開催｜お昼休憩あり</em></figcaption>
         </figure>
 
         <div class="offer-card coached primary-plan rv" id="coaching-plan">
@@ -1185,7 +1208,7 @@
           <div class="offer-main">
             <div class="offer-status">● 添削付プラン・受付中</div>
             <h2>鬼キャン添削付プラン</h2>
-            <p class="offer-date">8/22（土）10:00-16:00｜オンライン開催（Zoom）</p>
+            <p class="offer-date">9/22（火）10:00-16:00｜オンライン開催（Zoom）</p>
             <ul class="include-list">
               <li>まりあ元帥による、その場での発音添削 <small>― あなたの癖を特定し、変わるまで直します</small></li>
               <li>予習特典「鬼キャンライブラリー」 <small>― お申し込み後にご案内</small></li>
@@ -1198,7 +1221,8 @@
           <div class="offer-side">
             <div class="price-label">参加費</div>
             <div class="price"><strong>30,000</strong><span>円（税込）</span></div>
-            <a class="cta cta-gold" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1">添削付プランに申し込む →</a>
+            <p class="early-price">※早割価格として9月13日までは25,000円（税込）</p>
+            <a class="cta cta-gold" href="https://mosh.jp/services/344acd1e80e64a4c99773efbb4b65f9a?openExternalBrowser=1">添削付プランに申し込む →</a>
             <p class="not-included">※発音時の口の動きと音声を確認するため、カメラ・マイクの使用が必須です。</p>
           </div>
         </div>
@@ -1251,7 +1275,7 @@
         <p class="section-kicker">GET CORRECTED. UNDERSTAND. PRACTICE.</p>
         <h2 class="section-title rv">次に変わるのは、<br>あなたの番。</h2>
         <p class="rv">その場で直接直されたい方には添削付プラン。当日の参加方法や顔出しが難しい方には観察席。あなたに合う席で、鬼キャンの6時間を持ち帰ってください。</p>
-        <a class="cta cta-gold rv" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1" style="margin-bottom:10px;">添削付プランに申し込む →</a>
+        <a class="cta cta-gold rv" href="https://mosh.jp/services/344acd1e80e64a4c99773efbb4b65f9a?openExternalBrowser=1" style="margin-bottom:10px;">添削付プランに申し込む →</a>
         <a class="cta cta-secondary rv" href="https://mosh.jp/services/f20be2da220941e2a6f8e9186e974eaa?openExternalBrowser=1">観察席を選ぶ →</a>
         <a class="subtle-link rv" href="#plans">プランをもう一度確認する</a>
       </div>
@@ -1276,10 +1300,10 @@
     <div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
     <div class="fixed-status">
       <span class="live">PLANS｜2つから選べます</span>
-      <span class="count" id="countdown">8/22（土）10:00–16:00</span>
+      <span class="count" id="countdown">9/22（火）10:00–16:00</span>
     </div>
     <div class="fixed-inner">
-      <a class="cta" href="https://mosh.jp/services/2fc1e73f965e45a888958eb2b21cb6be?openExternalBrowser=1">添削付プランに申し込む<small>MOSH申込ページへ</small></a>
+      <a class="cta" href="https://mosh.jp/services/344acd1e80e64a4c99773efbb4b65f9a?openExternalBrowser=1">添削付プランに申し込む<small>MOSH申込ページへ</small></a>
       <button class="toc-button" id="tocButton" type="button" aria-expanded="false" aria-controls="tocSheet">☰ 目次<small>MENU</small></button>
     </div>
   </div>
@@ -1300,11 +1324,11 @@
     (function () {
       const el = document.getElementById('countdown');
       const now = new Date();
-      const eventDay = new Date(2026, 7, 22);
-      const eventEnd = new Date(2026, 7, 22, 23, 59, 59);
+      const eventDay = new Date(2026, 8, 22);
+      const eventEnd = new Date(2026, 8, 22, 23, 59, 59);
       if (now <= eventEnd) {
         const left = Math.ceil((eventDay - now) / 86400000);
-        el.textContent = left <= 0 ? '8/22（土）本日開催' : '8/22（土）開催まであと' + left + '日';
+        el.textContent = left <= 0 ? '9/22（火）本日開催' : '9/22（火）開催まであと' + left + '日';
       } else {
         el.textContent = '今回の開催は終了しました';
       }
